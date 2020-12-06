@@ -22,26 +22,16 @@ namespace Server
         public Loading()
         {
             InitializeComponent();
-            LoadImages();
             timer1.Enabled = true;
             timer2.Enabled = true;
             timer3.Enabled = true;
-        }
-        private void LoadImages()
-        {
-            for (int i = 0; i <= 199; i++)
-            {
-                string path = $@"{Directory.GetParent(Path.GetFullPath(Application.StartupPath)).Parent.FullName}\Resources\img\{"logo" + i}.png";
-                Image image = Image.FromFile(path);
-                images[i] = image;
-            }
         }
 
         int i = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
             i = i % 200;
-            pictureBox1.Image = images[i];
+            pictureBox1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject($"logo{i}");
             i += 1;
         }
         private void freeMemory()
