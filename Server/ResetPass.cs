@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Server.Resources.classes;
 
 namespace Server
 {
@@ -22,8 +23,10 @@ namespace Server
                 return cp;
             }
         }
-        public ResetPass()
+        private string email;
+        public ResetPass(string email)
         {
+            this.email = email;
             InitializeComponent();
             textBox1.AutoSize = false;
             textBox1.Size = new Size(371, 22);
@@ -87,6 +90,21 @@ namespace Server
                 PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                 VeBorder(usertb, eventArgs, 240, 71, 71);
                 tbUserDontHandle = true;
+            }
+            else
+            {
+                int rs = Controller.changePassword(this.email, textBox1.Text);
+                if( rs == 1)
+                {
+                    Msb.Show("Thay đổi thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }else if( rs == -1)
+                {
+                    Msb.Show("Mật khẩu chưa được thay đổi ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if( rs == -99)
+                {
+                    Msb.Show("Lỗi kết nối đến server vui lòng truy cập lại sau !", " Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             textBox1.Enabled = true;
         }

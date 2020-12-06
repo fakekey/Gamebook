@@ -36,6 +36,7 @@
     <ApplicationIcon>Resources\img\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MySql.Data, Version=8.0.21.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -76,6 +77,8 @@
       <DependentUpon>ResetPass.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\classes\BorderRadius.cs" />
+    <Compile Include="Resources\classes\Controller.cs" />
+    <Compile Include="Resources\classes\DBconfigs.cs" />
     <Compile Include="Resources\classes\DragControl.cs" />
     <Compile Include="Resources\classes\Msb.cs" />
     <Compile Include="Resources\classes\WinAPI.cs" />

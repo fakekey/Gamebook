@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Server.Resources.classes;
 
 namespace Server
 {
@@ -213,10 +214,24 @@ namespace Server
 
             if (textBox1.Text != string.Empty && textBox2.Text != string.Empty)
             {
-                DashBoard f = new DashBoard();
-                Hide();
-                f.ShowDialog();
-                Close();
+                int rs = Controller.checkLogin(textBox1.Text, textBox2.Text);
+                if(rs == 1)
+                {
+                    DashBoard f = new DashBoard();
+                    Hide();
+                    f.ShowDialog();
+                    Close();
+                }else if( rs == 0)
+                {
+                    Msb.Show("Tài khoản của bạn không có quyền truy cập !", "Lỗi quyền truy cập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }else if(rs == -99)
+                {
+                    Msb.Show("Lỗi kết nối đến server vui lòng truy cập lại sau !", " Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }else if(rs == -1)
+                {
+                    Msb.Show("Sai tài Khoản / mật khẩu. Vui lòng đăng nhập lại !", " Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
         }
 
@@ -247,10 +262,23 @@ namespace Server
             }
             else
             {
-                ResetPass f = new ResetPass();
-                Hide();
-                f.ShowDialog();
-                Show();
+                int rs = Controller.checkEmail(textBox1.Text);
+                if( rs == 1)
+                {
+                    ResetPass f = new ResetPass(textBox1.Text);
+                    Hide();
+                    f.ShowDialog();
+                    Show();
+                }
+                else if( rs == -1)
+                {
+                    Msb.Show("Không tồn tại tài Khoản. Vui lòng đăng nhập lại !", " Lỗi đăng nhập", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if(rs == -99)
+                {
+                    Msb.Show("Lỗi kết nối đến server vui lòng truy cập lại sau !", " Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
             }
             textBox1.Enabled = true;
             textBox2.Enabled = true;
