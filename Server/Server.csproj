@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FFAA3149-3FE6-4454-AD42-0CA83FC46CB8}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Server</RootNamespace>
+    <AssemblyName>Server</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\img\icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DashBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DashBoard.Designer.cs">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\classes\BorderRadius.cs" />
+    <Compile Include="Resources\classes\DragControl.cs" />
+    <Compile Include="Resources\classes\Msb.cs" />
+    <Compile Include="Resources\classes\WinAPI.cs" />
+    <Compile Include="Resources\component\MsbOK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\component\MsbOK.designer.cs">
+      <DependentUpon>MsbOK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\component\MsbYesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\component\MsbYesNo.designer.cs">
+      <DependentUpon>MsbYesNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\component\NoFocusButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="DashBoard.resx">
+      <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resources\component\MsbOK.resx">
+      <DependentUpon>MsbOK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\component\MsbYesNo.resx">
+      <DependentUpon>MsbYesNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Resources\img\bg.png" />
+    <Content Include="Resources\img\icon.ico" />
+    <Content Include="Resources\img\icons8-brake-warning-100.png" />
+    <Content Include="Resources\img\icons8-cancel-100.png" />
+    <Content Include="Resources\img\icons8-help-100.png" />
+    <Content Include="Resources\img\icons8-ok-100.png" />
+    <Content Include="Resources\img\logo.png" />
+    <Content Include="Resources\img\logo0.png" />
+    <Content Include="Resources\img\logo1.png" />
+    <Content Include="Resources\img\logo10.png" />
+    <Content Include="Resources\img\logo100.png" />
+    <Content Include="Resources\img\logo101.png" />
+    <Content Include="Resources\img\logo102.png" />
+    <Content Include="Resources\img\logo103.png" />
+    <Content Include="Resources\img\logo104.png" />
+    <Content Include="Resources\img\logo105.png" />
+    <Content Include="Resources\img\logo106.png" />
+    <Content Include="Resources\img\logo107.png" />
+    <Content Include="Resources\img\logo108.png" />
+    <Content Include="Resources\img\logo109.png" />
+    <Content Include="Resources\img\logo11.png" />
+    <Content Include="Resources\img\logo110.png" />
+    <Content Include="Resources\img\logo111.png" />
+    <Content Include="Resources\img\logo112.png" />
+    <Content Include="Resources\img\logo113.png" />
+    <Content Include="Resources\img\logo114.png" />
+    <Content Include="Resources\img\logo115.png" />
+    <Content Include="Resources\img\logo116.png" />
+    <Content Include="Resources\img\logo117.png" />
+    <Content Include="Resources\img\logo118.png" />
+    <Content Include="Resources\img\logo119.png" />
+    <Content Include="Resources\img\logo12.png" />
+    <Content Include="Resources\img\logo120.png" />
+    <Content Include="Resources\img\logo121.png" />
+    <Content Include="Resources\img\logo122.png" />
+    <Content Include="Resources\img\logo123.png" />
+    <Content Include="Resources\img\logo124.png" />
+    <Content Include="Resources\img\logo125.png" />
+    <Content Include="Resources\img\logo126.png" />
+    <Content Include="Resources\img\logo127.png" />
+    <Content Include="Resources\img\logo128.png" />
+    <Content Include="Resources\img\logo129.png" />
+    <Content Include="Resources\img\logo13.png" />
+    <Content Include="Resources\img\logo130.png" />
+    <Content Include="Resources\img\logo131.png" />
+    <Content Include="Resources\img\logo132.png" />
+    <Content Include="Resources\img\logo133.png" />
+    <Content Include="Resources\img\logo134.png" />
+    <Content Include="Resources\img\logo135.png" />
+    <Content Include="Resources\img\logo136.png" />
+    <Content Include="Resources\img\logo137.png" />
+    <Content Include="Resources\img\logo138.png" />
+    <Content Include="Resources\img\logo139.png" />
+    <Content Include="Resources\img\logo14.png" />
+    <Content Include="Resources\img\logo140.png" />
+    <Content Include="Resources\img\logo141.png" />
+    <Content Include="Resources\img\logo142.png" />
+    <Content Include="Resources\img\logo143.png" />
+    <Content Include="Resources\img\logo144.png" />
+    <Content Include="Resources\img\logo145.png" />
+    <Content Include="Resources\img\logo146.png" />
+    <Content Include="Resources\img\logo147.png" />
+    <Content Include="Resources\img\logo148.png" />
+    <Content Include="Resources\img\logo149.png" />
+    <Content Include="Resources\img\logo15.png" />
+    <Content Include="Resources\img\logo150.png" />
+    <Content Include="Resources\img\logo151.png" />
+    <Content Include="Resources\img\logo152.png" />
+    <Content Include="Resources\img\logo153.png" />
+    <Content Include="Resources\img\logo154.png" />
+    <Content Include="Resources\img\logo155.png" />
+    <Content Include="Resources\img\logo156.png" />
+    <Content Include="Resources\img\logo157.png" />
+    <Content Include="Resources\img\logo158.png" />
+    <Content Include="Resources\img\logo159.png" />
+    <Content Include="Resources\img\logo16.png" />
+    <Content Include="Resources\img\logo160.png" />
+    <Content Include="Resources\img\logo161.png" />
+    <Content Include="Resources\img\logo162.png" />
+    <Content Include="Resources\img\logo163.png" />
+    <Content Include="Resources\img\logo164.png" />
+    <Content Include="Resources\img\logo165.png" />
+    <Content Include="Resources\img\logo166.png" />
+    <Content Include="Resources\img\logo167.png" />
+    <Content Include="Resources\img\logo168.png" />
+    <Content Include="Resources\img\logo169.png" />
+    <Content Include="Resources\img\logo17.png" />
+    <Content Include="Resources\img\logo170.png" />
+    <Content Include="Resources\img\logo171.png" />
+    <Content Include="Resources\img\logo172.png" />
+    <Content Include="Resources\img\logo173.png" />
+    <Content Include="Resources\img\logo174.png" />
+    <Content Include="Resources\img\logo175.png" />
+    <Content Include="Resources\img\logo176.png" />
+    <Content Include="Resources\img\logo177.png" />
+    <Content Include="Resources\img\logo178.png" />
+    <Content Include="Resources\img\logo179.png" />
+    <Content Include="Resources\img\logo18.png" />
+    <Content Include="Resources\img\logo180.png" />
+    <Content Include="Resources\img\logo181.png" />
+    <Content Include="Resources\img\logo182.png" />
+    <Content Include="Resources\img\logo183.png" />
+    <Content Include="Resources\img\logo184.png" />
+    <Content Include="Resources\img\logo185.png" />
+    <Content Include="Resources\img\logo186.png" />
+    <Content Include="Resources\img\logo187.png" />
+    <Content Include="Resources\img\logo188.png" />
+    <Content Include="Resources\img\logo189.png" />
+    <Content Include="Resources\img\logo19.png" />
+    <Content Include="Resources\img\logo190.png" />
+    <Content Include="Resources\img\logo191.png" />
+    <Content Include="Resources\img\logo192.png" />
+    <Content Include="Resources\img\logo193.png" />
+    <Content Include="Resources\img\logo194.png" />
+    <Content Include="Resources\img\logo195.png" />
+    <Content Include="Resources\img\logo196.png" />
+    <Content Include="Resources\img\logo197.png" />
+    <Content Include="Resources\img\logo198.png" />
+    <Content Include="Resources\img\logo199.png" />
+    <Content Include="Resources\img\logo2.png" />
+    <Content Include="Resources\img\logo20.png" />
+    <Content Include="Resources\img\logo21.png" />
+    <Content Include="Resources\img\logo22.png" />
+    <Content Include="Resources\img\logo23.png" />
+    <Content Include="Resources\img\logo24.png" />
+    <Content Include="Resources\img\logo25.png" />
+    <Content Include="Resources\img\logo26.png" />
+    <Content Include="Resources\img\logo27.png" />
+    <Content Include="Resources\img\logo28.png" />
+    <Content Include="Resources\img\logo29.png" />
+    <Content Include="Resources\img\logo3.png" />
+    <Content Include="Resources\img\logo30.png" />
+    <Content Include="Resources\img\logo31.png" />
+    <Content Include="Resources\img\logo32.png" />
+    <Content Include="Resources\img\logo33.png" />
+    <Content Include="Resources\img\logo34.png" />
+    <Content Include="Resources\img\logo35.png" />
+    <Content Include="Resources\img\logo36.png" />
+    <Content Include="Resources\img\logo37.png" />
+    <Content Include="Resources\img\logo38.png" />
+    <Content Include="Resources\img\logo39.png" />
+    <Content Include="Resources\img\logo4.png" />
+    <Content Include="Resources\img\logo40.png" />
+    <Content Include="Resources\img\logo41.png" />
+    <Content Include="Resources\img\logo42.png" />
+    <Content Include="Resources\img\logo43.png" />
+    <Content Include="Resources\img\logo44.png" />
+    <Content Include="Resources\img\logo45.png" />
+    <Content Include="Resources\img\logo46.png" />
+    <Content Include="Resources\img\logo47.png" />
+    <Content Include="Resources\img\logo48.png" />
+    <Content Include="Resources\img\logo49.png" />
+    <Content Include="Resources\img\logo5.png" />
+    <Content Include="Resources\img\logo50.png" />
+    <Content Include="Resources\img\logo51.png" />
+    <Content Include="Resources\img\logo52.png" />
+    <Content Include="Resources\img\logo53.png" />
+    <Content Include="Resources\img\logo54.png" />
+    <Content Include="Resources\img\logo55.png" />
+    <Content Include="Resources\img\logo56.png" />
+    <Content Include="Resources\img\logo57.png" />
+    <Content Include="Resources\img\logo58.png" />
+    <Content Include="Resources\img\logo59.png" />
+    <Content Include="Resources\img\logo6.png" />
+    <Content Include="Resources\img\logo60.png" />
+    <Content Include="Resources\img\logo61.png" />
+    <Content Include="Resources\img\logo62.png" />
+    <Content Include="Resources\img\logo63.png" />
+    <Content Include="Resources\img\logo64.png" />
+    <Content Include="Resources\img\logo65.png" />
+    <Content Include="Resources\img\logo66.png" />
+    <Content Include="Resources\img\logo67.png" />
+    <Content Include="Resources\img\logo68.png" />
+    <Content Include="Resources\img\logo69.png" />
+    <Content Include="Resources\img\logo7.png" />
+    <Content Include="Resources\img\logo70.png" />
+    <Content Include="Resources\img\logo71.png" />
+    <Content Include="Resources\img\logo72.png" />
+    <Content Include="Resources\img\logo73.png" />
+    <Content Include="Resources\img\logo74.png" />
+    <Content Include="Resources\img\logo75.png" />
+    <Content Include="Resources\img\logo76.png" />
+    <Content Include="Resources\img\logo77.png" />
+    <Content Include="Resources\img\logo78.png" />
+    <Content Include="Resources\img\logo79.png" />
+    <Content Include="Resources\img\logo8.png" />
+    <Content Include="Resources\img\logo80.png" />
+    <Content Include="Resources\img\logo81.png" />
+    <Content Include="Resources\img\logo82.png" />
+    <Content Include="Resources\img\logo83.png" />
+    <Content Include="Resources\img\logo84.png" />
+    <Content Include="Resources\img\logo85.png" />
+    <Content Include="Resources\img\logo86.png" />
+    <Content Include="Resources\img\logo87.png" />
+    <Content Include="Resources\img\logo88.png" />
+    <Content Include="Resources\img\logo89.png" />
+    <Content Include="Resources\img\logo9.png" />
+    <Content Include="Resources\img\logo90.png" />
+    <Content Include="Resources\img\logo91.png" />
+    <Content Include="Resources\img\logo92.png" />
+    <Content Include="Resources\img\logo93.png" />
+    <Content Include="Resources\img\logo94.png" />
+    <Content Include="Resources\img\logo95.png" />
+    <Content Include="Resources\img\logo96.png" />
+    <Content Include="Resources\img\logo97.png" />
+    <Content Include="Resources\img\logo98.png" />
+    <Content Include="Resources\img\logo99.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
