@@ -54,7 +54,7 @@ namespace Server
 
         private void Loading_Load(object sender, EventArgs e)
         {
-            WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
+            WinAPI.AnimateWindow(this.Handle, 450, WinAPI.BLEND);
             timer3_Tick(null, null);
         }
         string[] mess = new string[] { "INITIALIZING...", "LOADING...", "STARTING..." };

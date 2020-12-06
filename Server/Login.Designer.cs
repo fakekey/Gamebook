@@ -33,6 +33,7 @@ namespace Server
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.btnLogin = new Server.NoFocusButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,13 +49,13 @@ namespace Server
             this.lbUser = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.btnLogin = new Server.NoFocusButton();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -89,6 +90,26 @@ namespace Server
             this.panel4.Size = new System.Drawing.Size(382, 122);
             this.panel4.TabIndex = 0;
             // 
+            // btnLogin
+            // 
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
+            this.btnLogin.FlatAppearance.BorderSize = 0;
+            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(9)))), ((int)(((byte)(12)))));
+            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(18)))), ((int)(((byte)(24)))));
+            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLogin.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.btnLogin.Location = new System.Drawing.Point(0, 19);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.Size = new System.Drawing.Size(382, 48);
+            this.btnLogin.TabIndex = 0;
+            this.btnLogin.Text = "Login";
+            this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.panel6);
@@ -121,7 +142,7 @@ namespace Server
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.label5.Size = new System.Drawing.Size(382, 29);
-            this.label5.TabIndex = 3;
+            this.label5.TabIndex = 0;
             this.label5.Text = "Forgot your password?";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
@@ -174,7 +195,7 @@ namespace Server
             this.lbPass.Name = "lbPass";
             this.lbPass.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.lbPass.Size = new System.Drawing.Size(0, 23);
-            this.lbPass.TabIndex = 1;
+            this.lbPass.TabIndex = 0;
             this.lbPass.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label4
@@ -209,7 +230,7 @@ namespace Server
             this.usertb.Location = new System.Drawing.Point(0, 39);
             this.usertb.Name = "usertb";
             this.usertb.Size = new System.Drawing.Size(382, 42);
-            this.usertb.TabIndex = 0;
+            this.usertb.TabIndex = 1;
             this.usertb.Paint += new System.Windows.Forms.PaintEventHandler(this.usertb_Paint);
             // 
             // textBox1
@@ -247,7 +268,7 @@ namespace Server
             this.lbUser.Name = "lbUser";
             this.lbUser.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.lbUser.Size = new System.Drawing.Size(0, 23);
-            this.lbUser.TabIndex = 2;
+            this.lbUser.TabIndex = 0;
             this.lbUser.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label3
@@ -266,6 +287,7 @@ namespace Server
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -273,6 +295,21 @@ namespace Server
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(382, 110);
             this.panel2.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(229)))), ((int)(((byte)(224)))));
+            this.label7.Location = new System.Drawing.Point(348, 9);
+            this.label7.Margin = new System.Windows.Forms.Padding(0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(27, 21);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "🗕";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label2
             // 
@@ -310,7 +347,7 @@ namespace Server
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(26, 17);
-            this.label6.TabIndex = 1;
+            this.label6.TabIndex = 0;
             this.label6.Text = "✖";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
@@ -328,26 +365,6 @@ namespace Server
             // 
             this.timer3.Interval = 3950;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
-            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLogin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLogin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(28)))), ((int)(((byte)(36)))));
-            this.btnLogin.FlatAppearance.BorderSize = 0;
-            this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(9)))), ((int)(((byte)(12)))));
-            this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(18)))), ((int)(((byte)(24)))));
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.btnLogin.Location = new System.Drawing.Point(0, 19);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(382, 48);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Login";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // Login
             // 
@@ -379,6 +396,7 @@ namespace Server
             this.userlb.ResumeLayout(false);
             this.userlb.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -410,5 +428,6 @@ namespace Server
         private System.Windows.Forms.Label lbPass;
         private System.Windows.Forms.Label lbUser;
         private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Label label7;
     }
 }

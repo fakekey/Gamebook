@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Server
@@ -27,8 +28,7 @@ namespace Server
 
         private void Login_Load(object sender, EventArgs e)
         {
-            WinAPI.AnimateWindow(this.Handle, 1000, WinAPI.BLEND);
-            label1.Select();
+            WinAPI.AnimateWindow(this.Handle, 550, WinAPI.BLEND);
         }
 
         private void usertb_Paint(object sender, PaintEventArgs e)
@@ -219,6 +219,11 @@ namespace Server
                 f.ShowDialog();
                 Close();
             }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }
