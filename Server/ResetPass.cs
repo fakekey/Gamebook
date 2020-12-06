@@ -94,16 +94,31 @@ namespace Server
             else
             {
                 int rs = Controller.changePassword(this.email, textBox1.Text);
-                if( rs == 1)
+                switch (rs)
                 {
-                    Msb.Show("Thay đổi thành công", "Thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }else if( rs == -1)
-                {
-                    Msb.Show("Mật khẩu chưa được thay đổi ", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else if( rs == -99)
-                {
-                    Msb.Show("Lỗi kết nối đến server vui lòng truy cập lại sau !", " Lỗi hệ thống", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    case 1:
+                        lbUser.Text = "Thành công";
+                        label3.ForeColor = Color.FromArgb(77, 222, 19);
+                        PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
+                        VeBorder(usertb, eventArgs, 77, 222, 19);
+                        tbUserDontHandle = true;
+                        break;
+                    case -1:
+                        lbUser.Text = "Mật khẩu chưa được thay đổi";
+                        label3.ForeColor = Color.FromArgb(240, 71, 71);
+                        PaintEventArgs eventArgs2 = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
+                        VeBorder(usertb, eventArgs2, 240, 71, 71);
+                        tbUserDontHandle = true;
+                        break;
+                    case -99:
+                        lbUser.Text = "Lỗi kết nối đến hệ thống";
+                        label3.ForeColor = Color.FromArgb(240, 71, 71);
+                        PaintEventArgs eventArgs3 = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
+                        VeBorder(usertb, eventArgs3, 240, 71, 71);
+                        tbUserDontHandle = true;
+                        break;
+                    default:
+                        break;
                 }
             }
             textBox1.Enabled = true;
