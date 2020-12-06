@@ -297,6 +297,9 @@ namespace Server
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(382, 110);
             this.panel2.TabIndex = 0;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
+            this.panel2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseMove);
+            this.panel2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseUp);
             // 
             // label7
             // 
@@ -334,9 +337,6 @@ namespace Server
             this.label1.TabIndex = 0;
             this.label1.Text = "Welcome back!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.label1_MouseDown);
-            this.label1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.label1_MouseMove);
-            this.label1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.label1_MouseUp);
             // 
             // label6
             // 
@@ -360,12 +360,12 @@ namespace Server
             // 
             // timer2
             // 
-            this.timer2.Interval = 4000;
+            this.timer2.Interval = 2000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // timer3
             // 
-            this.timer3.Interval = 3950;
+            this.timer3.Interval = 1950;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // timer4
