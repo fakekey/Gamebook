@@ -123,22 +123,6 @@ namespace Server
         {
             label5.Font = new Font("Quicksand", 13F, FontStyle.Bold, GraphicsUnit.Pixel, 0);
         }
-
-        private void label1_MouseDown(object sender, MouseEventArgs e)
-        {
-            DragControl.mouseDown(this);
-        }
-
-        private void label1_MouseUp(object sender, MouseEventArgs e)
-        {
-            DragControl.mouseUp();
-        }
-
-        private void label1_MouseMove(object sender, MouseEventArgs e)
-        {
-            DragControl.mouseMove(this);
-        }
-
         private void label6_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -312,6 +296,21 @@ namespace Server
             }
             textBox1.Enabled = true;
             textBox2.Enabled = true;
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            DragControl.mouseDown(this);
+        }
+
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        {
+            DragControl.mouseMove(this);
+        }
+
+        private void panel2_MouseUp(object sender, MouseEventArgs e)
+        {
+            DragControl.mouseUp();
         }
     }
 }
