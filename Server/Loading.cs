@@ -57,11 +57,11 @@ namespace Server
             WinAPI.AnimateWindow(this.Handle, 450, WinAPI.BLEND);
             timer3_Tick(null, null);
         }
-        string[] mess = new string[] { "INITIALIZING...", "LOADING...", "STARTING..." };
+        string[] mess = new string[] { "CHECKING FOR UPDATES...", "INITIALIZING...", "LOADING...", "STARTING..." };
         int k = 0;
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if (k < 3)
+            if (k < 4)
             {
                 label1.Text = mess[k];
             }

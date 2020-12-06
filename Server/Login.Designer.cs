@@ -56,6 +56,7 @@ namespace Server
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -145,6 +146,7 @@ namespace Server
             this.label5.TabIndex = 0;
             this.label5.Text = "Forgot your password?";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
             this.label5.MouseLeave += new System.EventHandler(this.label5_MouseLeave);
             // 
@@ -366,6 +368,11 @@ namespace Server
             this.timer3.Interval = 3950;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
+            // timer4
+            // 
+            this.timer4.Interval = 1000;
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            // 
             // Login
             // 
             this.AcceptButton = this.btnLogin;
@@ -429,5 +436,6 @@ namespace Server
         private System.Windows.Forms.Label lbUser;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Timer timer4;
     }
 }

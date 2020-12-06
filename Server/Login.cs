@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace Server
@@ -224,6 +223,37 @@ namespace Server
         private void label7_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            lbUser.Text = "";
+            label3.ForeColor = Color.FromArgb(138, 142, 147);
+            timer4.Enabled = true;
+            textBox1.Enabled = false;
+            textBox2.Enabled = false;
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            timer4.Stop();
+            if (textBox1.Text == string.Empty)
+            {
+                lbUser.Text = "- This field cannot be empty";
+                label3.ForeColor = Color.FromArgb(240, 71, 71);
+                PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
+                VeBorder(usertb, eventArgs, 240, 71, 71);
+                tbUserDontHandle = true;
+            }
+            else
+            {
+                ResetPass f = new ResetPass();
+                Hide();
+                f.ShowDialog();
+                Show();
+            }
+            textBox1.Enabled = true;
+            textBox2.Enabled = true;
         }
     }
 }

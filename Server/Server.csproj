@@ -69,6 +69,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResetPass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ResetPass.Designer.cs">
+      <DependentUpon>ResetPass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\classes\BorderRadius.cs" />
     <Compile Include="Resources\classes\DragControl.cs" />
     <Compile Include="Resources\classes\Msb.cs" />
@@ -107,6 +113,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResetPass.resx">
+      <DependentUpon>ResetPass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\component\MsbOK.resx">
       <DependentUpon>MsbOK.cs</DependentUpon>
     </EmbeddedResource>
@@ -129,6 +138,7 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Resources\img\bg.png" />
+    <Content Include="Resources\img\forgotPass.png" />
     <Content Include="Resources\img\icon.ico" />
     <Content Include="Resources\img\icons8-brake-warning-100.png" />
     <Content Include="Resources\img\icons8-cancel-100.png" />
