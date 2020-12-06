@@ -17,8 +17,6 @@ namespace Server
                 return cp;
             }
         }
-
-        Image[] images = new Image[200];
         public Loading()
         {
             InitializeComponent();
@@ -39,7 +37,7 @@ namespace Server
             timer1.Dispose();
             timer2.Dispose();
             timer3.Dispose();
-            images = null;
+            mess = null;
             GC.Collect();
             GC.WaitForPendingFinalizers();
         }
