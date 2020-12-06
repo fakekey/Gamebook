@@ -77,20 +77,7 @@
     </Compile>
     <Compile Include="Resources\classes\BorderRadius.cs" />
     <Compile Include="Resources\classes\DragControl.cs" />
-    <Compile Include="Resources\classes\Msb.cs" />
     <Compile Include="Resources\classes\WinAPI.cs" />
-    <Compile Include="Resources\component\MsbOK.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Resources\component\MsbOK.designer.cs">
-      <DependentUpon>MsbOK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Resources\component\MsbYesNo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Resources\component\MsbYesNo.designer.cs">
-      <DependentUpon>MsbYesNo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Resources\component\NoFocusButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -115,12 +102,6 @@
     </Compile>
     <EmbeddedResource Include="ResetPass.resx">
       <DependentUpon>ResetPass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\component\MsbOK.resx">
-      <DependentUpon>MsbOK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\component\MsbYesNo.resx">
-      <DependentUpon>MsbYesNo.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
