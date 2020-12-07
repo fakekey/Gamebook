@@ -10,8 +10,8 @@ using System.Threading.Tasks;
 namespace Server.Resources.classes
 {
     static class Controller
-    {   
-        public static int checkLogin(string email, string password )
+    {
+        public static int checkLogin(string email, string password)
         {
             // case = 0 : sai quyen
             // case = 1: dung
@@ -19,8 +19,7 @@ namespace Server.Resources.classes
             // case = -99: loi ket noi database
             try
             {
-                DBconfigs db = new DBconfigs();
-                MySqlConnection con = new MySqlConnection(db.ConnectionString);
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
                 con.Open();
                 string query = "Select * from account where Email = @email and Password = @pass";
                 MySqlCommand cmd = con.CreateCommand();
@@ -33,12 +32,13 @@ namespace Server.Resources.classes
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dt);
                 con.Close();
-                int count_acc = int.Parse(dt.Rows.Count.ToString());
 
-                if(count_acc == 0)
+                int count_acc = int.Parse(dt.Rows.Count.ToString());
+                if (count_acc == 0)
                 {
                     return -1;
-                }else if(count_acc == 1)
+                }
+                else if (count_acc == 1)
                 {
                     if (dt.Rows[0].ItemArray[2].ToString() == "1" || dt.Rows[0].ItemArray[2].ToString() == "2") return 1;
                     else return 0;
@@ -57,8 +57,7 @@ namespace Server.Resources.classes
             // case -99: loi he thong
             try
             {
-                DBconfigs db = new DBconfigs();
-                MySqlConnection con = new MySqlConnection(db.ConnectionString);
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
                 con.Open();
                 string query = "Select Count(*) from account where Email = @email";
                 MySqlCommand cmd = con.CreateCommand();
@@ -81,15 +80,14 @@ namespace Server.Resources.classes
             return -99;
         }
 
-        public static int changePassword(string email , string pass)
+        public static int changePassword(string email, string pass)
         {
             // case 1: thay doi thanh cong
             // case -1: thay doi khong thanh cong
             // case -99: loi ket noi
             try
             {
-                DBconfigs db = new DBconfigs();
-                MySqlConnection con = new MySqlConnection(db.ConnectionString);
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
                 con.Open();
                 string query = "UPDATE account Set `Password` = @pass Where `Email` = @email";
                 MySqlCommand cmd = con.CreateCommand();

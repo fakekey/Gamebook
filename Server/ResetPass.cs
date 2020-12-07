@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Server.Resources.classes;
 
@@ -82,7 +76,11 @@ namespace Server
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            timer3.Stop();
             timer1.Stop();
+            j = 0;
+            timerIsAlive = false;
+            btnLogin.Text = "Change Password";
             if (textBox1.Text == string.Empty)
             {
                 lbUser.Text = "- This field cannot be empty";
@@ -97,21 +95,22 @@ namespace Server
                 switch (rs)
                 {
                     case 1:
-                        lbUser.Text = "Thành công";
+                        lbUser.ForeColor = Color.FromArgb(77, 222, 19);
+                        lbUser.Text = "- Success! Please login with new password";
                         label3.ForeColor = Color.FromArgb(77, 222, 19);
                         PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs, 77, 222, 19);
                         tbUserDontHandle = true;
                         break;
                     case -1:
-                        lbUser.Text = "Mật khẩu chưa được thay đổi";
+                        lbUser.Text = "- Failed! Please try again";
                         label3.ForeColor = Color.FromArgb(240, 71, 71);
                         PaintEventArgs eventArgs2 = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs2, 240, 71, 71);
                         tbUserDontHandle = true;
                         break;
                     case -99:
-                        lbUser.Text = "Lỗi kết nối đến hệ thống";
+                        lbUser.Text = "- Connection error";
                         label3.ForeColor = Color.FromArgb(240, 71, 71);
                         PaintEventArgs eventArgs3 = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs3, 240, 71, 71);
@@ -123,13 +122,28 @@ namespace Server
             }
             textBox1.Enabled = true;
         }
-
+        int j = 0;
+        string[] dotArr = new string[] { "•", "• •", "• • •" };
+        bool timerIsAlive = false;
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            j = j % 3;
+            btnLogin.Text = dotArr[j];
+            j++;
+        }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            lbUser.Text = "";
-            label3.ForeColor = Color.FromArgb(138, 142, 147);
-            timer1.Enabled = true;
-            textBox1.Enabled = false;
+            if (timerIsAlive == false)
+            {
+                lbUser.Text = "";
+                lbUser.ForeColor = Color.FromArgb(240, 71, 71);
+                label3.ForeColor = Color.FromArgb(138, 142, 147);
+                timerIsAlive = true;
+                timer3.Enabled = true;
+                timer3_Tick(null, null);
+                timer1.Enabled = true;
+                textBox1.Enabled = false;
+            }
         }
 
         private void ResetPass_MouseDown(object sender, MouseEventArgs e)

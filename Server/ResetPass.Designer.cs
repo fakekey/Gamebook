@@ -43,6 +43,7 @@ namespace Server
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.usertb.SuspendLayout();
             this.userlb.SuspendLayout();
             this.SuspendLayout();
@@ -108,7 +109,7 @@ namespace Server
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbUser.Location = new System.Drawing.Point(98, 15);
+            this.lbUser.Location = new System.Drawing.Point(98, 16);
             this.lbUser.Margin = new System.Windows.Forms.Padding(0);
             this.lbUser.Name = "lbUser";
             this.lbUser.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
@@ -194,6 +195,11 @@ namespace Server
             this.timer2.Interval = 500;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // timer3
+            // 
+            this.timer3.Interval = 300;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // ResetPass
             // 
             this.AcceptButton = this.btnLogin;
@@ -240,5 +246,6 @@ namespace Server
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
     }
 }

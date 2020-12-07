@@ -192,7 +192,7 @@ namespace Server
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbPass.Location = new System.Drawing.Point(68, 15);
+            this.lbPass.Location = new System.Drawing.Point(68, 16);
             this.lbPass.Margin = new System.Windows.Forms.Padding(0);
             this.lbPass.Name = "lbPass";
             this.lbPass.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
@@ -265,7 +265,7 @@ namespace Server
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbUser.Location = new System.Drawing.Point(155, 15);
+            this.lbUser.Location = new System.Drawing.Point(124, 16);
             this.lbUser.Margin = new System.Windows.Forms.Padding(0);
             this.lbUser.Name = "lbUser";
             this.lbUser.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
@@ -284,7 +284,7 @@ namespace Server
             this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.label3.Size = new System.Drawing.Size(382, 39);
             this.label3.TabIndex = 0;
-            this.label3.Text = "EMAIL OR PHONE NUMBER";
+            this.label3.Text = "EMAIL OR USERNAME";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panel2
@@ -355,22 +355,22 @@ namespace Server
             // 
             // timer1
             // 
-            this.timer1.Interval = 500;
+            this.timer1.Interval = 300;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // timer2
             // 
-            this.timer2.Interval = 2000;
+            this.timer2.Interval = 1000;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // timer3
             // 
-            this.timer3.Interval = 1950;
+            this.timer3.Interval = 950;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // timer4
             // 
-            this.timer4.Interval = 1000;
+            this.timer4.Interval = 300;
             this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
             // Login
