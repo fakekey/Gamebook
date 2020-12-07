@@ -202,7 +202,7 @@ namespace Server
                 switch (rs)
                 {
                     case 1:
-                        DashBoard f = new DashBoard();
+                        DashBoard f = new DashBoard(textBox1.Text);
                         Hide();
                         f.ShowDialog();
                         Close();
