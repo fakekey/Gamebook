@@ -16,6 +16,8 @@ namespace Server
         {
             InitializeComponent();
             lbName.Text = name;
+            panel20.Visible = false;
+            message1.Hien = message2.Hien = message3.Hien = message4.Hien = message5.Hien = false;
         }
         protected override CreateParams CreateParams
         {
@@ -30,6 +32,8 @@ namespace Server
         private void DashBoard_Load(object sender, EventArgs e)
         {
             WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
+            panel4_MouseMove(null, null);
+            icoHome_Click(null, null);
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -67,15 +71,23 @@ namespace Server
 
         private void panel17_Click(object sender, EventArgs e)
         {
-            if (panel2.Width != 73)
+            if (panel2.Width != 97)
             {
-                panel2.Width = 73;
+                label2.Text = label3.Text = label4.Text = label5.Text = label6.Text = "";
+                panel2.Width = 97;
                 panel18.BackgroundImage = Properties.Resources.icons8_next_page_48px;
+                panel20.Visible = true;
             }
             else
             {
-                panel2.Width = 200;
+                label2.Text = "Home";
+                label3.Text = "Users";
+                label4.Text = "Products";
+                label5.Text = "Bills";
+                label6.Text = "Collapse";
+                panel2.Width = 217;
                 panel18.BackgroundImage = Properties.Resources.icons8_back_to_48px;
+                panel20.Visible = false;
             }
         }
 
@@ -89,95 +101,160 @@ namespace Server
         {
             if (activeOne == true)
             {
-                if (icoUser.Radius == 14)
+                if (panel2.Width == 97)
                 {
-                    icoUser.rColor = Color.FromArgb(54, 57, 63);
-                    icoUser.Radius = 48;
-                    icoUser.Refresh();
-                    active2.rColor = Color.Transparent;
-                    active2.Refresh();
+                    message2.Hien = false;
                 }
+                if (userIsActive == false)
+                {
+                    if (icoUser.Radius == 14)
+                    {
+                        icoUser.rColor = Color.FromArgb(54, 57, 63);
+                        icoUser.Radius = 48;
+                        icoUser.Refresh();
+                        active2.rColor = Color.Transparent;
+                        active2.Refresh();
+                    }
+                }
+
             }
             else
             {
-                if (icoHome.Radius == 14)
+                if (panel2.Width == 97)
                 {
-                    icoHome.rColor = Color.FromArgb(54, 57, 63);
-                    icoHome.Radius = 48;
-                    icoHome.Refresh();
-                    active1.rColor = Color.Transparent;
-                    active1.Refresh();
+                    message1.Hien = false;
+                }
+                if (homeIsActive == false)
+                {
+                    if (icoHome.Radius == 14)
+                    {
+                        icoHome.rColor = Color.FromArgb(54, 57, 63);
+                        icoHome.Radius = 48;
+                        icoHome.Refresh();
+                        active1.rColor = Color.Transparent;
+                        active1.Refresh();
+                    }
                 }
             }
             if (activeTwo == true)
             {
-                if (icoHome.Radius == 14)
+                if (panel2.Width == 97)
                 {
-                    icoHome.rColor = Color.FromArgb(54, 57, 63);
-                    icoHome.Radius = 48;
-                    icoHome.Refresh();
-                    active1.rColor = Color.Transparent;
-                    active1.Refresh();
+                    message1.Hien = false;
                 }
-                if (icoProduct.Radius == 14)
+                if (homeIsActive == false)
                 {
-                    icoProduct.rColor = Color.FromArgb(54, 57, 63);
-                    icoProduct.Radius = 48;
-                    icoProduct.Refresh();
-                    active3.rColor = Color.Transparent;
-                    active3.Refresh();
+                    if (icoHome.Radius == 14)
+                    {
+                        icoHome.rColor = Color.FromArgb(54, 57, 63);
+                        icoHome.Radius = 48;
+                        icoHome.Refresh();
+                        active1.rColor = Color.Transparent;
+                        active1.Refresh();
+                    }
+                }
+                if (panel2.Width == 97)
+                {
+                    message3.Hien = false;
+                }
+                if (productIsActive == false)
+                {
+                    if (icoProduct.Radius == 14)
+                    {
+                        icoProduct.rColor = Color.FromArgb(54, 57, 63);
+                        icoProduct.Radius = 48;
+                        icoProduct.Refresh();
+                        active3.rColor = Color.Transparent;
+                        active3.Refresh();
+                    }
                 }
             }
             else
             {
-                if (icoUser.Radius == 14)
+                if (panel2.Width == 97)
                 {
-                    icoUser.rColor = Color.FromArgb(54, 57, 63);
-                    icoUser.Radius = 48;
-                    icoUser.Refresh();
-                    active2.rColor = Color.Transparent;
-                    active2.Refresh();
+                    message2.Hien = false;
+                }
+                if (userIsActive == false)
+                {
+                    if (icoUser.Radius == 14)
+                    {
+                        icoUser.rColor = Color.FromArgb(54, 57, 63);
+                        icoUser.Radius = 48;
+                        icoUser.Refresh();
+                        active2.rColor = Color.Transparent;
+                        active2.Refresh();
+                    }
                 }
             }
             if (activeThree == true)
             {
-                if (icoUser.Radius == 14)
+                if (panel2.Width == 97)
                 {
-                    icoUser.rColor = Color.FromArgb(54, 57, 63);
-                    icoUser.Radius = 48;
-                    icoUser.Refresh();
-                    active2.rColor = Color.Transparent;
-                    active2.Refresh();
+                    message2.Hien = false;
                 }
-                if (icoBill.Radius == 14)
+                if (userIsActive == false)
                 {
-                    icoBill.rColor = Color.FromArgb(54, 57, 63);
-                    icoBill.Radius = 48;
-                    icoBill.Refresh();
-                    active4.rColor = Color.Transparent;
-                    active4.Refresh();
+                    if (icoUser.Radius == 14)
+                    {
+                        icoUser.rColor = Color.FromArgb(54, 57, 63);
+                        icoUser.Radius = 48;
+                        icoUser.Refresh();
+                        active2.rColor = Color.Transparent;
+                        active2.Refresh();
+                    }
                 }
+                if (panel2.Width == 97)
+                {
+                    message4.Hien = false;
+                }
+                if (billIsActive == false)
+                {
+                    if (icoBill.Radius == 14)
+                    {
+                        icoBill.rColor = Color.FromArgb(54, 57, 63);
+                        icoBill.Radius = 48;
+                        icoBill.Refresh();
+                        active4.rColor = Color.Transparent;
+                        active4.Refresh();
+                    }
+                }
+
             }
             else
             {
-                if (icoProduct.Radius == 14)
+                if (panel2.Width == 97)
                 {
-                    icoProduct.rColor = Color.FromArgb(54, 57, 63);
-                    icoProduct.Radius = 48;
-                    icoProduct.Refresh();
-                    active3.rColor = Color.Transparent;
-                    active3.Refresh();
+                    message3.Hien = false;
+                }
+                if (productIsActive == false)
+                {
+                    if (icoProduct.Radius == 14)
+                    {
+                        icoProduct.rColor = Color.FromArgb(54, 57, 63);
+                        icoProduct.Radius = 48;
+                        icoProduct.Refresh();
+                        active3.rColor = Color.Transparent;
+                        active3.Refresh();
+                    }
                 }
             }
             if (activeFour == true)
             {
-                if (icoProduct.Radius == 14)
+                if (panel2.Width == 97)
                 {
-                    icoProduct.rColor = Color.FromArgb(54, 57, 63);
-                    icoProduct.Radius = 48;
-                    icoProduct.Refresh();
-                    active3.rColor = Color.Transparent;
-                    active3.Refresh();
+                    message3.Hien = false;
+                }
+                if (productIsActive == false)
+                {
+                    if (icoProduct.Radius == 14)
+                    {
+                        icoProduct.rColor = Color.FromArgb(54, 57, 63);
+                        icoProduct.Radius = 48;
+                        icoProduct.Refresh();
+                        active3.rColor = Color.Transparent;
+                        active3.Refresh();
+                    }
                 }
                 if (icoCollapse.Radius == 14)
                 {
@@ -187,27 +264,45 @@ namespace Server
                     active5.rColor = Color.Transparent;
                     active5.Refresh();
                 }
+                if (panel2.Width == 97)
+                {
+                    message5.Hien = false;
+                }
             }
             else
             {
-                if (icoBill.Radius == 14)
+                if (panel2.Width == 97)
                 {
-                    icoBill.rColor = Color.FromArgb(54, 57, 63);
-                    icoBill.Radius = 48;
-                    icoBill.Refresh();
-                    active4.rColor = Color.Transparent;
-                    active4.Refresh();
+                    message4.Hien = false;
+                }
+                if (billIsActive == false)
+                {
+                    if (icoBill.Radius == 14)
+                    {
+                        icoBill.rColor = Color.FromArgb(54, 57, 63);
+                        icoBill.Radius = 48;
+                        icoBill.Refresh();
+                        active4.rColor = Color.Transparent;
+                        active4.Refresh();
+                    }
                 }
             }
             if (activeFive == true)
             {
-                if (icoBill.Radius == 14)
+                if (panel2.Width == 97)
                 {
-                    icoBill.rColor = Color.FromArgb(54, 57, 63);
-                    icoBill.Radius = 48;
-                    icoBill.Refresh();
-                    active4.rColor = Color.Transparent;
-                    active4.Refresh();
+                    message4.Hien = false;
+                }
+                if (billIsActive == false)
+                {
+                    if (icoBill.Radius == 14)
+                    {
+                        icoBill.rColor = Color.FromArgb(54, 57, 63);
+                        icoBill.Radius = 48;
+                        icoBill.Refresh();
+                        active4.rColor = Color.Transparent;
+                        active4.Refresh();
+                    }
                 }
             }
             else
@@ -220,6 +315,11 @@ namespace Server
                     active5.rColor = Color.Transparent;
                     active5.Refresh();
                 }
+                if (panel2.Width == 97)
+                {
+                    message5.Hien = false;
+                }
+
             }
         }
         private void panel17_MouseMove(object sender, MouseEventArgs e)
@@ -234,6 +334,10 @@ namespace Server
                 icoCollapse.rColor = Color.FromArgb(114, 137, 218);
                 icoCollapse.Radius = 14;
                 icoCollapse.Refresh();
+            }
+            if (panel2.Width == 97)
+            {
+                message5.Hien = true;
             }
         }
 
@@ -256,6 +360,10 @@ namespace Server
                 icoUser.Radius = 14;
                 icoUser.Refresh();
             }
+            if (panel2.Width == 97)
+            {
+                message2.Hien = true;
+            }
         }
 
         private void panel11_MouseMove(object sender, MouseEventArgs e)
@@ -270,6 +378,10 @@ namespace Server
                 icoProduct.rColor = Color.FromArgb(114, 137, 218);
                 icoProduct.Radius = 14;
                 icoProduct.Refresh();
+            }
+            if (panel2.Width == 97)
+            {
+                message3.Hien = true;
             }
         }
 
@@ -286,6 +398,10 @@ namespace Server
                 icoBill.Radius = 14;
                 icoBill.Refresh();
             }
+            if (panel2.Width == 97)
+            {
+                message4.Hien = true;
+            }
         }
 
         private void panel4_MouseMove(object sender, MouseEventArgs e)
@@ -301,18 +417,10 @@ namespace Server
                 icoHome.Radius = 14;
                 icoHome.Refresh();
             }
-        }
-
-        private void panel7_MouseMove(object sender, MouseEventArgs e)
-        {
-            activeOne = activeTwo = activeThree = activeFour = activeFive = false;
-            clear();
-        }
-
-        private void sPanel3_MouseMove(object sender, MouseEventArgs e)
-        {
-            activeOne = activeTwo = activeThree = activeFour = activeFive = false;
-            clear();
+            if (panel2.Width == 97)
+            {
+                message1.Hien = true;
+            }
         }
 
         private void label6_Click(object sender, EventArgs e)
@@ -328,6 +436,109 @@ namespace Server
         private void panel18_Click(object sender, EventArgs e)
         {
             panel17_Click(null, null);
+        }
+        bool homeIsActive = false;
+        bool userIsActive = false;
+        bool productIsActive = false;
+        bool billIsActive = false;
+        private void panel4_Click(object sender, EventArgs e)
+        {
+            userIsActive = productIsActive = billIsActive = false;
+            homeIsActive = true;
+            clear();
+        }
+
+        private void panel8_Click(object sender, EventArgs e)
+        {
+            homeIsActive = productIsActive = billIsActive = false;
+            userIsActive = true;
+            clear();
+        }
+
+        private void panel11_Click(object sender, EventArgs e)
+        {
+            userIsActive = homeIsActive = billIsActive = false;
+            productIsActive = true;
+            clear();
+        }
+
+        private void panel14_Click(object sender, EventArgs e)
+        {
+            userIsActive = productIsActive = homeIsActive = false;
+            billIsActive = true;
+            clear();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            panel4_Click(null, null);
+        }
+
+        private void icoHome_Click(object sender, EventArgs e)
+        {
+            panel4_Click(null, null);
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            panel4_Click(null, null);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            panel8_Click(null, null);
+        }
+
+        private void icoUser_Click(object sender, EventArgs e)
+        {
+            panel8_Click(null, null);
+        }
+
+        private void panel9_Click(object sender, EventArgs e)
+        {
+            panel8_Click(null, null);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            panel11_Click(null, null);
+        }
+
+        private void icoProduct_Click(object sender, EventArgs e)
+        {
+            panel11_Click(null, null);
+        }
+
+        private void panel12_Click(object sender, EventArgs e)
+        {
+            panel11_Click(null, null);
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            panel14_Click(null, null);
+        }
+
+        private void icoBill_Click(object sender, EventArgs e)
+        {
+            panel14_Click(null, null);
+        }
+
+        private void panel15_Click(object sender, EventArgs e)
+        {
+            panel14_Click(null, null);
+        }
+
+        private void panelRadius1_MouseMove(object sender, MouseEventArgs e)
+        {
+            activeOne = activeTwo = activeThree = activeFour = activeFive = false;
+            clear();
+        }
+
+        private void panel7_MouseMove_1(object sender, MouseEventArgs e)
+        {
+            activeOne = activeTwo = activeThree = activeFour = activeFive = false;
+            clear();
         }
     }
 }
