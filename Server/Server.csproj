@@ -81,12 +81,15 @@
     <Compile Include="ResetPass.Designer.cs">
       <DependentUpon>ResetPass.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\classes\BorderRadius.cs" />
     <Compile Include="Resources\classes\Controller.cs" />
     <Compile Include="Resources\classes\DBconfigs.cs" />
     <Compile Include="Resources\classes\DragControl.cs" />
+    <Compile Include="Resources\classes\GraphicsExtension.cs" />
     <Compile Include="Resources\classes\WinAPI.cs" />
     <Compile Include="Resources\component\NoFocusButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\component\PanelRadius.cs">
       <SubType>Component</SubType>
     </Compile>
     <EmbeddedResource Include="DashBoard.resx">
@@ -131,7 +134,14 @@
     <Content Include="Resources\img\icons8-minimize-window-18.png" />
     <Content Include="Resources\img\icons8-multiply-20.png" />
     <Content Include="Resources\img\icons8-ok-100.png" />
+    <Content Include="Resources\img\icons8_back_to_48px.png" />
+    <Content Include="Resources\img\icons8_bill_48px.png" />
     <Content Include="Resources\img\icons8_customer_18px.png" />
+    <Content Include="Resources\img\icons8_game_controller_48px.png" />
+    <Content Include="Resources\img\icons8_home_48px.png" />
+    <Content Include="Resources\img\icons8_menu_18px.png" />
+    <Content Include="Resources\img\icons8_next_page_48px.png" />
+    <Content Include="Resources\img\icons8_user_48px.png" />
     <Content Include="Resources\img\logo.png" />
     <Content Include="Resources\img\logo0.png" />
     <Content Include="Resources\img\logo1.png" />

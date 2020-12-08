@@ -127,14 +127,11 @@
   <data name="logo181" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo181.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo179" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo179.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo113" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo113.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo155" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo155.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo142" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo142.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo99" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo99.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,11 +148,8 @@
   <data name="logo41" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo41.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo65" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo65.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo113" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo113.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo180" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo117" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo117.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,14 +175,17 @@
   <data name="logo80" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo126" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo126.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo198" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo198.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo91" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo91.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo85" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo85.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo37" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo37.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,6 +199,9 @@
   <data name="logo187" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo187.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo148" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo148.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo10" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo10.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,11 +211,11 @@
   <data name="logo178" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo178.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo154" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo154.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo166" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo166.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_menu_18px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8_menu_18px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo96" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo96.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,14 +229,8 @@
   <data name="logo125" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo125.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo188" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo134" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo134.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo98" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo98.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo162" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo162.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,11 +238,17 @@
   <data name="logo197" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo197.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo39" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo39.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo108" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo108.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo54" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo54.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_customer_18px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8_customer_18px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo28" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo28.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,8 +259,8 @@
   <data name="logo171" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo171.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo14" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo98" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo98.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -280,6 +280,9 @@
   <data name="logo84" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo84.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo39" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo39.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo190" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo190.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -298,9 +301,6 @@
   <data name="logo73" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo73.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo48" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo62" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo62.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -316,8 +316,8 @@
   <data name="logo77" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo77.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo160" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo160.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo186" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo186.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo118" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo118.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -325,14 +325,17 @@
   <data name="logo44" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo44.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo54" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo54.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo46" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo130" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo165" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo165.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo186" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo186.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo92" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo92.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -345,6 +348,9 @@
   </data>
   <data name="logo161" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo161.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo14" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo14.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -379,6 +385,9 @@
   <data name="logo15" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo15.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo184" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo184.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo101" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo101.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -400,20 +409,26 @@
   <data name="logo107" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo107.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_back_to_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8_back_to_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo179" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo179.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo63" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo63.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo120" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo120.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo169" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo169.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo177" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo177.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo87" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo87.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo85" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo85.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo82" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo82.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -436,9 +451,6 @@
   <data name="logo45" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo45.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo49" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo49.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -447,6 +459,9 @@
   </data>
   <data name="logo164" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo164.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo27" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo89" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo89.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -463,8 +478,14 @@
   <data name="logo11" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo160" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo160.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo47" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_game_controller_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8_game_controller_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo140" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo140.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -496,11 +517,11 @@
   <data name="logo81" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo81.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo42" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo42.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo174" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo174.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo115" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo115.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -511,8 +532,8 @@
   <data name="logo66" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo66.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo108" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo108.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo172" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo172.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo104" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo104.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -529,14 +550,11 @@
   <data name="logo26" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo26.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo130" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo130.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo174" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo174.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo70" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo70.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo180" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo180.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo83" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo83.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -544,8 +562,8 @@
   <data name="logo114" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo114.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo148" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo148.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo129" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo129.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -562,8 +580,8 @@
   <data name="logo33" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo33.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo191" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo191.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo91" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo91.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo123" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo123.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -601,6 +619,9 @@
   <data name="logo59" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo59.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8_home_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8_home_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo193" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo193.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -610,8 +631,11 @@
   <data name="logo133" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo133.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo169" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo169.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo191" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo191.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo188" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo188.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo52" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo52.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -624,9 +648,6 @@
   </data>
   <data name="logo132" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo132.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo116" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo116.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -655,8 +676,8 @@
   <data name="logo57" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo57.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo27" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo27.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo175" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo175.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -685,20 +706,23 @@
   <data name="logo18" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo65" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo65.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo192" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo192.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo184" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo184.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo142" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo142.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo34" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo34.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo9" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons8_user_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8_user_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo25" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo25.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -718,14 +742,11 @@
   <data name="logo122" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo122.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo172" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo172.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_bill_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8_bill_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo46" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo126" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo126.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo154" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo154.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo61" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo61.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -736,7 +757,7 @@
   <data name="icons8-maximize-button-18" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\icons8-maximize-button-18.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8_customer_18px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\icons8_customer_18px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8_next_page_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8_next_page_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
