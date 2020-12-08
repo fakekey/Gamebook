@@ -35,22 +35,40 @@ namespace Server
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbName = new System.Windows.Forms.Label();
+            this.btnMin = new Server.NoFocusButton();
+            this.btnMax = new Server.NoFocusButton();
+            this.btnExit = new Server.NoFocusButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
+            this.icoCollapse = new Server.PanelRadius();
+            this.panel18 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.active5 = new Server.PanelRadius();
             this.panel14 = new System.Windows.Forms.Panel();
+            this.icoBill = new Server.PanelRadius();
+            this.panel15 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
+            this.active4 = new Server.PanelRadius();
             this.panel11 = new System.Windows.Forms.Panel();
+            this.icoProduct = new Server.PanelRadius();
+            this.panel12 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.active3 = new Server.PanelRadius();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.icoUser = new Server.PanelRadius();
+            this.panel9 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.active2 = new Server.PanelRadius();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.icoHome = new Server.PanelRadius();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panelsd = new System.Windows.Forms.Panel();
+            this.active1 = new Server.PanelRadius();
             this.line1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panelRadius1 = new Server.PanelRadius();
@@ -60,45 +78,27 @@ namespace Server
             this.message3 = new Server.Message();
             this.message2 = new Server.Message();
             this.message1 = new Server.Message();
-            this.icoCollapse = new Server.PanelRadius();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.active5 = new Server.PanelRadius();
-            this.icoBill = new Server.PanelRadius();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.active4 = new Server.PanelRadius();
-            this.icoProduct = new Server.PanelRadius();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.active3 = new Server.PanelRadius();
-            this.icoUser = new Server.PanelRadius();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.active2 = new Server.PanelRadius();
-            this.icoHome = new Server.PanelRadius();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.active1 = new Server.PanelRadius();
-            this.btnMin = new Server.NoFocusButton();
-            this.btnMax = new Server.NoFocusButton();
-            this.btnExit = new Server.NoFocusButton();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel17.SuspendLayout();
+            this.icoCollapse.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel14.SuspendLayout();
+            this.icoBill.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.icoProduct.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel8.SuspendLayout();
+            this.icoUser.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.icoHome.SuspendLayout();
             this.panelsd.SuspendLayout();
             this.line1.SuspendLayout();
             this.panelRadius1.SuspendLayout();
             this.panel20.SuspendLayout();
-            this.icoCollapse.SuspendLayout();
-            this.icoBill.SuspendLayout();
-            this.icoProduct.SuspendLayout();
-            this.icoUser.SuspendLayout();
-            this.icoHome.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -164,6 +164,67 @@ namespace Server
             this.lbName.Size = new System.Drawing.Size(12, 25);
             this.lbName.TabIndex = 5;
             // 
+            // btnMin
+            // 
+            this.btnMin.BackgroundImage = global::Server.Properties.Resources.icons8_minimize_window_18;
+            this.btnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMin.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.btnMin.FlatAppearance.BorderSize = 0;
+            this.btnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMin.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnMin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.btnMin.Location = new System.Drawing.Point(1278, 0);
+            this.btnMin.Name = "btnMin";
+            this.btnMin.Size = new System.Drawing.Size(30, 30);
+            this.btnMin.TabIndex = 2;
+            this.btnMin.UseVisualStyleBackColor = true;
+            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
+            // 
+            // btnMax
+            // 
+            this.btnMax.BackgroundImage = global::Server.Properties.Resources.icons8_maximize_button_18;
+            this.btnMax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMax.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMax.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.btnMax.FlatAppearance.BorderSize = 0;
+            this.btnMax.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.btnMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
+            this.btnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMax.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnMax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.btnMax.Location = new System.Drawing.Point(1308, 0);
+            this.btnMax.Name = "btnMax";
+            this.btnMax.Size = new System.Drawing.Size(30, 30);
+            this.btnMax.TabIndex = 1;
+            this.btnMax.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMax.UseVisualStyleBackColor = true;
+            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackgroundImage = global::Server.Properties.Resources.icons8_multiply_20;
+            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.btnExit.FlatAppearance.BorderSize = 0;
+            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
+            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
+            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.btnExit.Location = new System.Drawing.Point(1338, 0);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(30, 30);
+            this.btnExit.TabIndex = 0;
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
@@ -194,6 +255,32 @@ namespace Server
             this.panel17.Click += new System.EventHandler(this.panel17_Click);
             this.panel17.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel17_MouseMove);
             // 
+            // icoCollapse
+            // 
+            this.icoCollapse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.icoCollapse.Controls.Add(this.panel18);
+            this.icoCollapse.Location = new System.Drawing.Point(21, 9);
+            this.icoCollapse.Name = "icoCollapse";
+            this.icoCollapse.Padding = new System.Windows.Forms.Padding(10);
+            this.icoCollapse.Radius = 48;
+            this.icoCollapse.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.icoCollapse.rSize = new System.Drawing.Size(48, 48);
+            this.icoCollapse.Size = new System.Drawing.Size(49, 49);
+            this.icoCollapse.TabIndex = 1;
+            this.icoCollapse.TopLeft = new System.Drawing.Point(0, 0);
+            this.icoCollapse.Click += new System.EventHandler(this.icoCollapse_Click);
+            // 
+            // panel18
+            // 
+            this.panel18.BackgroundImage = global::Server.Properties.Resources.icons8_back_to_48px;
+            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel18.Location = new System.Drawing.Point(10, 10);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(29, 29);
+            this.panel18.TabIndex = 0;
+            this.panel18.Click += new System.EventHandler(this.panel18_Click);
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -216,6 +303,18 @@ namespace Server
             this.panel19.Size = new System.Drawing.Size(6, 68);
             this.panel19.TabIndex = 1;
             // 
+            // active5
+            // 
+            this.active5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.active5.Location = new System.Drawing.Point(0, 26);
+            this.active5.Name = "active5";
+            this.active5.Radius = 12;
+            this.active5.rColor = System.Drawing.Color.Transparent;
+            this.active5.rSize = new System.Drawing.Size(12, 19);
+            this.active5.Size = new System.Drawing.Size(6, 20);
+            this.active5.TabIndex = 0;
+            this.active5.TopLeft = new System.Drawing.Point(-8, 0);
+            // 
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.Transparent;
@@ -230,6 +329,32 @@ namespace Server
             this.panel14.TabIndex = 3;
             this.panel14.Click += new System.EventHandler(this.panel14_Click);
             this.panel14.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel14_MouseMove);
+            // 
+            // icoBill
+            // 
+            this.icoBill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.icoBill.Controls.Add(this.panel15);
+            this.icoBill.Location = new System.Drawing.Point(22, 9);
+            this.icoBill.Name = "icoBill";
+            this.icoBill.Padding = new System.Windows.Forms.Padding(10);
+            this.icoBill.Radius = 48;
+            this.icoBill.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.icoBill.rSize = new System.Drawing.Size(48, 48);
+            this.icoBill.Size = new System.Drawing.Size(49, 49);
+            this.icoBill.TabIndex = 1;
+            this.icoBill.TopLeft = new System.Drawing.Point(0, 0);
+            this.icoBill.Click += new System.EventHandler(this.icoBill_Click);
+            // 
+            // panel15
+            // 
+            this.panel15.BackgroundImage = global::Server.Properties.Resources.icons8_bill_48px;
+            this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel15.Location = new System.Drawing.Point(10, 10);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(29, 29);
+            this.panel15.TabIndex = 0;
+            this.panel15.Click += new System.EventHandler(this.panel15_Click);
             // 
             // label5
             // 
@@ -253,6 +378,18 @@ namespace Server
             this.panel16.Size = new System.Drawing.Size(6, 68);
             this.panel16.TabIndex = 1;
             // 
+            // active4
+            // 
+            this.active4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.active4.Location = new System.Drawing.Point(0, 26);
+            this.active4.Name = "active4";
+            this.active4.Radius = 12;
+            this.active4.rColor = System.Drawing.Color.Transparent;
+            this.active4.rSize = new System.Drawing.Size(12, 19);
+            this.active4.Size = new System.Drawing.Size(6, 20);
+            this.active4.TabIndex = 0;
+            this.active4.TopLeft = new System.Drawing.Point(-8, 0);
+            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.Transparent;
@@ -267,6 +404,32 @@ namespace Server
             this.panel11.TabIndex = 2;
             this.panel11.Click += new System.EventHandler(this.panel11_Click);
             this.panel11.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel11_MouseMove);
+            // 
+            // icoProduct
+            // 
+            this.icoProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.icoProduct.Controls.Add(this.panel12);
+            this.icoProduct.Location = new System.Drawing.Point(22, 9);
+            this.icoProduct.Name = "icoProduct";
+            this.icoProduct.Padding = new System.Windows.Forms.Padding(10);
+            this.icoProduct.Radius = 48;
+            this.icoProduct.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.icoProduct.rSize = new System.Drawing.Size(48, 48);
+            this.icoProduct.Size = new System.Drawing.Size(49, 49);
+            this.icoProduct.TabIndex = 1;
+            this.icoProduct.TopLeft = new System.Drawing.Point(0, 0);
+            this.icoProduct.Click += new System.EventHandler(this.icoProduct_Click);
+            // 
+            // panel12
+            // 
+            this.panel12.BackgroundImage = global::Server.Properties.Resources.icons8_game_controller_48px;
+            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(10, 10);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(29, 29);
+            this.panel12.TabIndex = 0;
+            this.panel12.Click += new System.EventHandler(this.panel12_Click);
             // 
             // label4
             // 
@@ -290,6 +453,18 @@ namespace Server
             this.panel13.Size = new System.Drawing.Size(6, 68);
             this.panel13.TabIndex = 1;
             // 
+            // active3
+            // 
+            this.active3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.active3.Location = new System.Drawing.Point(0, 26);
+            this.active3.Name = "active3";
+            this.active3.Radius = 10;
+            this.active3.rColor = System.Drawing.Color.Transparent;
+            this.active3.rSize = new System.Drawing.Size(12, 19);
+            this.active3.Size = new System.Drawing.Size(6, 20);
+            this.active3.TabIndex = 0;
+            this.active3.TopLeft = new System.Drawing.Point(-8, 0);
+            // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.Transparent;
@@ -304,6 +479,32 @@ namespace Server
             this.panel8.TabIndex = 1;
             this.panel8.Click += new System.EventHandler(this.panel8_Click);
             this.panel8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseMove);
+            // 
+            // icoUser
+            // 
+            this.icoUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.icoUser.Controls.Add(this.panel9);
+            this.icoUser.Location = new System.Drawing.Point(23, 9);
+            this.icoUser.Name = "icoUser";
+            this.icoUser.Padding = new System.Windows.Forms.Padding(10);
+            this.icoUser.Radius = 48;
+            this.icoUser.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.icoUser.rSize = new System.Drawing.Size(48, 48);
+            this.icoUser.Size = new System.Drawing.Size(49, 49);
+            this.icoUser.TabIndex = 1;
+            this.icoUser.TopLeft = new System.Drawing.Point(0, 0);
+            this.icoUser.Click += new System.EventHandler(this.icoUser_Click);
+            // 
+            // panel9
+            // 
+            this.panel9.BackgroundImage = global::Server.Properties.Resources.icons8_user_48px;
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(10, 10);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(29, 29);
+            this.panel9.TabIndex = 0;
+            this.panel9.Click += new System.EventHandler(this.panel9_Click);
             // 
             // label3
             // 
@@ -327,6 +528,18 @@ namespace Server
             this.panel10.Size = new System.Drawing.Size(6, 68);
             this.panel10.TabIndex = 1;
             // 
+            // active2
+            // 
+            this.active2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.active2.Location = new System.Drawing.Point(0, 26);
+            this.active2.Name = "active2";
+            this.active2.Radius = 10;
+            this.active2.rColor = System.Drawing.Color.Transparent;
+            this.active2.rSize = new System.Drawing.Size(12, 19);
+            this.active2.Size = new System.Drawing.Size(6, 20);
+            this.active2.TabIndex = 0;
+            this.active2.TopLeft = new System.Drawing.Point(-8, 0);
+            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.Transparent;
@@ -342,6 +555,32 @@ namespace Server
             this.panel4.TabIndex = 0;
             this.panel4.Click += new System.EventHandler(this.panel4_Click);
             this.panel4.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseMove);
+            // 
+            // icoHome
+            // 
+            this.icoHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.icoHome.Controls.Add(this.panel5);
+            this.icoHome.Location = new System.Drawing.Point(23, 9);
+            this.icoHome.Name = "icoHome";
+            this.icoHome.Padding = new System.Windows.Forms.Padding(10);
+            this.icoHome.Radius = 48;
+            this.icoHome.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.icoHome.rSize = new System.Drawing.Size(48, 48);
+            this.icoHome.Size = new System.Drawing.Size(49, 49);
+            this.icoHome.TabIndex = 1;
+            this.icoHome.TopLeft = new System.Drawing.Point(0, 0);
+            this.icoHome.Click += new System.EventHandler(this.icoHome_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.BackgroundImage = global::Server.Properties.Resources.icons8_home_48px;
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(10, 10);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(29, 29);
+            this.panel5.TabIndex = 0;
+            this.panel5.Click += new System.EventHandler(this.panel5_Click);
             // 
             // label2
             // 
@@ -364,6 +603,18 @@ namespace Server
             this.panelsd.Padding = new System.Windows.Forms.Padding(0, 25, 0, 21);
             this.panelsd.Size = new System.Drawing.Size(6, 66);
             this.panelsd.TabIndex = 1;
+            // 
+            // active1
+            // 
+            this.active1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.active1.Location = new System.Drawing.Point(0, 25);
+            this.active1.Name = "active1";
+            this.active1.Radius = 10;
+            this.active1.rColor = System.Drawing.Color.Transparent;
+            this.active1.rSize = new System.Drawing.Size(12, 19);
+            this.active1.Size = new System.Drawing.Size(6, 20);
+            this.active1.TabIndex = 0;
+            this.active1.TopLeft = new System.Drawing.Point(-8, 0);
             // 
             // line1
             // 
@@ -468,257 +719,6 @@ namespace Server
             this.message1.Size = new System.Drawing.Size(93, 68);
             this.message1.TabIndex = 0;
             // 
-            // icoCollapse
-            // 
-            this.icoCollapse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.icoCollapse.Controls.Add(this.panel18);
-            this.icoCollapse.Location = new System.Drawing.Point(21, 9);
-            this.icoCollapse.Name = "icoCollapse";
-            this.icoCollapse.Padding = new System.Windows.Forms.Padding(10);
-            this.icoCollapse.Radius = 48;
-            this.icoCollapse.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.icoCollapse.rSize = new System.Drawing.Size(48, 48);
-            this.icoCollapse.Size = new System.Drawing.Size(49, 49);
-            this.icoCollapse.TabIndex = 1;
-            this.icoCollapse.TopLeft = new System.Drawing.Point(0, 0);
-            this.icoCollapse.Click += new System.EventHandler(this.icoCollapse_Click);
-            // 
-            // panel18
-            // 
-            this.panel18.BackgroundImage = global::Server.Properties.Resources.icons8_back_to_48px;
-            this.panel18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel18.Location = new System.Drawing.Point(10, 10);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(29, 29);
-            this.panel18.TabIndex = 0;
-            this.panel18.Click += new System.EventHandler(this.panel18_Click);
-            // 
-            // active5
-            // 
-            this.active5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.active5.Location = new System.Drawing.Point(0, 26);
-            this.active5.Name = "active5";
-            this.active5.Radius = 12;
-            this.active5.rColor = System.Drawing.Color.Transparent;
-            this.active5.rSize = new System.Drawing.Size(12, 19);
-            this.active5.Size = new System.Drawing.Size(6, 20);
-            this.active5.TabIndex = 0;
-            this.active5.TopLeft = new System.Drawing.Point(-8, 0);
-            // 
-            // icoBill
-            // 
-            this.icoBill.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.icoBill.Controls.Add(this.panel15);
-            this.icoBill.Location = new System.Drawing.Point(22, 9);
-            this.icoBill.Name = "icoBill";
-            this.icoBill.Padding = new System.Windows.Forms.Padding(10);
-            this.icoBill.Radius = 48;
-            this.icoBill.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.icoBill.rSize = new System.Drawing.Size(48, 48);
-            this.icoBill.Size = new System.Drawing.Size(49, 49);
-            this.icoBill.TabIndex = 1;
-            this.icoBill.TopLeft = new System.Drawing.Point(0, 0);
-            this.icoBill.Click += new System.EventHandler(this.icoBill_Click);
-            // 
-            // panel15
-            // 
-            this.panel15.BackgroundImage = global::Server.Properties.Resources.icons8_bill_48px;
-            this.panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(10, 10);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(29, 29);
-            this.panel15.TabIndex = 0;
-            this.panel15.Click += new System.EventHandler(this.panel15_Click);
-            // 
-            // active4
-            // 
-            this.active4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.active4.Location = new System.Drawing.Point(0, 26);
-            this.active4.Name = "active4";
-            this.active4.Radius = 12;
-            this.active4.rColor = System.Drawing.Color.Transparent;
-            this.active4.rSize = new System.Drawing.Size(12, 19);
-            this.active4.Size = new System.Drawing.Size(6, 20);
-            this.active4.TabIndex = 0;
-            this.active4.TopLeft = new System.Drawing.Point(-8, 0);
-            // 
-            // icoProduct
-            // 
-            this.icoProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.icoProduct.Controls.Add(this.panel12);
-            this.icoProduct.Location = new System.Drawing.Point(22, 9);
-            this.icoProduct.Name = "icoProduct";
-            this.icoProduct.Padding = new System.Windows.Forms.Padding(10);
-            this.icoProduct.Radius = 48;
-            this.icoProduct.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.icoProduct.rSize = new System.Drawing.Size(48, 48);
-            this.icoProduct.Size = new System.Drawing.Size(49, 49);
-            this.icoProduct.TabIndex = 1;
-            this.icoProduct.TopLeft = new System.Drawing.Point(0, 0);
-            this.icoProduct.Click += new System.EventHandler(this.icoProduct_Click);
-            // 
-            // panel12
-            // 
-            this.panel12.BackgroundImage = global::Server.Properties.Resources.icons8_game_controller_48px;
-            this.panel12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(10, 10);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(29, 29);
-            this.panel12.TabIndex = 0;
-            this.panel12.Click += new System.EventHandler(this.panel12_Click);
-            // 
-            // active3
-            // 
-            this.active3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.active3.Location = new System.Drawing.Point(0, 26);
-            this.active3.Name = "active3";
-            this.active3.Radius = 10;
-            this.active3.rColor = System.Drawing.Color.Transparent;
-            this.active3.rSize = new System.Drawing.Size(12, 19);
-            this.active3.Size = new System.Drawing.Size(6, 20);
-            this.active3.TabIndex = 0;
-            this.active3.TopLeft = new System.Drawing.Point(-8, 0);
-            // 
-            // icoUser
-            // 
-            this.icoUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.icoUser.Controls.Add(this.panel9);
-            this.icoUser.Location = new System.Drawing.Point(23, 9);
-            this.icoUser.Name = "icoUser";
-            this.icoUser.Padding = new System.Windows.Forms.Padding(10);
-            this.icoUser.Radius = 48;
-            this.icoUser.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.icoUser.rSize = new System.Drawing.Size(48, 48);
-            this.icoUser.Size = new System.Drawing.Size(49, 49);
-            this.icoUser.TabIndex = 1;
-            this.icoUser.TopLeft = new System.Drawing.Point(0, 0);
-            this.icoUser.Click += new System.EventHandler(this.icoUser_Click);
-            // 
-            // panel9
-            // 
-            this.panel9.BackgroundImage = global::Server.Properties.Resources.icons8_user_48px;
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(10, 10);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(29, 29);
-            this.panel9.TabIndex = 0;
-            this.panel9.Click += new System.EventHandler(this.panel9_Click);
-            // 
-            // active2
-            // 
-            this.active2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.active2.Location = new System.Drawing.Point(0, 26);
-            this.active2.Name = "active2";
-            this.active2.Radius = 10;
-            this.active2.rColor = System.Drawing.Color.Transparent;
-            this.active2.rSize = new System.Drawing.Size(12, 19);
-            this.active2.Size = new System.Drawing.Size(6, 20);
-            this.active2.TabIndex = 0;
-            this.active2.TopLeft = new System.Drawing.Point(-8, 0);
-            // 
-            // icoHome
-            // 
-            this.icoHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.icoHome.Controls.Add(this.panel5);
-            this.icoHome.Location = new System.Drawing.Point(23, 9);
-            this.icoHome.Name = "icoHome";
-            this.icoHome.Padding = new System.Windows.Forms.Padding(10);
-            this.icoHome.Radius = 48;
-            this.icoHome.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.icoHome.rSize = new System.Drawing.Size(48, 48);
-            this.icoHome.Size = new System.Drawing.Size(49, 49);
-            this.icoHome.TabIndex = 1;
-            this.icoHome.TopLeft = new System.Drawing.Point(0, 0);
-            this.icoHome.Click += new System.EventHandler(this.icoHome_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.BackgroundImage = global::Server.Properties.Resources.icons8_home_48px;
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(10, 10);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(29, 29);
-            this.panel5.TabIndex = 0;
-            this.panel5.Click += new System.EventHandler(this.panel5_Click);
-            // 
-            // active1
-            // 
-            this.active1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.active1.Location = new System.Drawing.Point(0, 25);
-            this.active1.Name = "active1";
-            this.active1.Radius = 10;
-            this.active1.rColor = System.Drawing.Color.Transparent;
-            this.active1.rSize = new System.Drawing.Size(12, 19);
-            this.active1.Size = new System.Drawing.Size(6, 20);
-            this.active1.TabIndex = 0;
-            this.active1.TopLeft = new System.Drawing.Point(-8, 0);
-            // 
-            // btnMin
-            // 
-            this.btnMin.BackgroundImage = global::Server.Properties.Resources.icons8_minimize_window_18;
-            this.btnMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMin.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMin.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.btnMin.FlatAppearance.BorderSize = 0;
-            this.btnMin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
-            this.btnMin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.btnMin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMin.Font = new System.Drawing.Font("Segoe UI", 19F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnMin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.btnMin.Location = new System.Drawing.Point(1278, 0);
-            this.btnMin.Name = "btnMin";
-            this.btnMin.Size = new System.Drawing.Size(30, 30);
-            this.btnMin.TabIndex = 2;
-            this.btnMin.UseVisualStyleBackColor = true;
-            this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
-            // 
-            // btnMax
-            // 
-            this.btnMax.BackgroundImage = global::Server.Properties.Resources.icons8_maximize_button_18;
-            this.btnMax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnMax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMax.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnMax.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.btnMax.FlatAppearance.BorderSize = 0;
-            this.btnMax.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
-            this.btnMax.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(43)))), ((int)(((byte)(46)))));
-            this.btnMax.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMax.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnMax.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.btnMax.Location = new System.Drawing.Point(1308, 0);
-            this.btnMax.Name = "btnMax";
-            this.btnMax.Size = new System.Drawing.Size(30, 30);
-            this.btnMax.TabIndex = 1;
-            this.btnMax.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMax.UseVisualStyleBackColor = true;
-            this.btnMax.Click += new System.EventHandler(this.btnMax_Click);
-            // 
-            // btnExit
-            // 
-            this.btnExit.BackgroundImage = global::Server.Properties.Resources.icons8_multiply_20;
-            this.btnExit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnExit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.btnExit.FlatAppearance.BorderSize = 0;
-            this.btnExit.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.btnExit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnExit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.btnExit.Location = new System.Drawing.Point(1338, 0);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(30, 30);
-            this.btnExit.TabIndex = 0;
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -741,27 +741,27 @@ namespace Server
             this.panel2.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
+            this.icoCollapse.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
+            this.icoBill.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel11.PerformLayout();
+            this.icoProduct.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
+            this.icoUser.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            this.icoHome.ResumeLayout(false);
             this.panelsd.ResumeLayout(false);
             this.line1.ResumeLayout(false);
             this.panelRadius1.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
-            this.icoCollapse.ResumeLayout(false);
-            this.icoBill.ResumeLayout(false);
-            this.icoProduct.ResumeLayout(false);
-            this.icoUser.ResumeLayout(false);
-            this.icoHome.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

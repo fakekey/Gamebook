@@ -73,18 +73,14 @@ namespace Server
         {
             if (panel2.Width != 97)
             {
-                label2.Text = label3.Text = label4.Text = label5.Text = label6.Text = "";
+                label2.Visible = label3.Visible = label4.Visible = label5.Visible = label6.Visible = false;
                 panel2.Width = 97;
                 panel18.BackgroundImage = Properties.Resources.icons8_next_page_48px;
                 panel20.Visible = true;
             }
             else
             {
-                label2.Text = "Home";
-                label3.Text = "Users";
-                label4.Text = "Products";
-                label5.Text = "Bills";
-                label6.Text = "Collapse";
+                label2.Visible = label3.Visible = label4.Visible = label5.Visible = label6.Visible = true;
                 panel2.Width = 217;
                 panel18.BackgroundImage = Properties.Resources.icons8_back_to_48px;
                 panel20.Visible = false;

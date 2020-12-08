@@ -18,6 +18,6 @@ namespace Server
         }
         public string mText { get => lbText.Text; set => lbText.Text = value; }
         public Size mSize { get => panelRadius1.rSize; set => panelRadius1.rSize = value; }
-        public bool Hien { set => panel1.Visible = panel2.Visible = value; }
+        public bool Hien { set => triangle1.Visible = panelRadius1.Visible = value; }
     }
 }
