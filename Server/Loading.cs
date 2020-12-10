@@ -57,7 +57,7 @@ namespace Server
             WinAPI.AnimateWindow(this.Handle, 450, WinAPI.BLEND);
             timer3_Tick(null, null);
         }
-        string[] mess = new string[] { "CHECKING FOR UPDATES...", "INITIALIZING...", "LOADING...", "STARTING..." };
+        string[] mess = new string[] { "KIỂM TRA CẬP NHẬT...", "ĐANG KHỞI TẠO...", "ĐANG TẢI...", "ĐANG BẮT ĐẦU..." };
         int k = 0;
         private void timer3_Tick(object sender, EventArgs e)
         {

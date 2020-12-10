@@ -77,7 +77,7 @@ namespace Server
                 t.Add(label6, "Width", 0);
                 t.Run();
                 Transition.Run(panel2, "Width", 97, new EaseInEaseOut(600));
-                Transition.Run(panel20, "Width", 102, new EaseInEaseOut(600));
+                Transition.Run(panel20, "Width", 118, new EaseInEaseOut(500));
                 panel18.BackgroundImage = Properties.Resources.icons8_next_page_48px;
                 message5.Hien = true;
                 message5.Visible = true;
@@ -85,14 +85,14 @@ namespace Server
             else
             {
                 Transition t = new Transition(new EaseInEaseOut(200));
-                t.Add(label2, "Width", 56);
-                t.Add(label3, "Width", 53);
-                t.Add(label4, "Width", 79);
-                t.Add(label5, "Width", 40);
-                t.Add(label6, "Width", 75);
+                t.Add(label2, "Width", 87);
+                t.Add(label3, "Width", 100);
+                t.Add(label4, "Width", 88);
+                t.Add(label5, "Width", 88);
+                t.Add(label6, "Width", 131);
                 t.Run();
                 Transition.Run(panel2, "Width", 217, new EaseInEaseOut(600));
-                Transition.Run(panel20, "Width", 0, new EaseInEaseOut(180));
+                Transition.Run(panel20, "Width", 0, new EaseInEaseOut(200));
                 panel18.BackgroundImage = Properties.Resources.icons8_back_to_48px;
                 message5.Hien = false;
                 message5.Visible = false;
@@ -544,6 +544,12 @@ namespace Server
         }
 
         private void panel20_MouseMove(object sender, MouseEventArgs e)
+        {
+            activeOne = activeTwo = activeThree = activeFour = activeFive = false;
+            clear();
+        }
+
+        private void panel23_MouseMove(object sender, MouseEventArgs e)
         {
             activeOne = activeTwo = activeThree = activeFour = activeFive = false;
             clear();

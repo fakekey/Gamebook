@@ -81,7 +81,7 @@ namespace Server
             this.message2 = new Server.Message();
             this.message4 = new Server.Message();
             this.message3 = new Server.Message();
-            this.panel23 = new System.Windows.Forms.Panel();
+            this.pnDisplay = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -291,9 +291,9 @@ namespace Server
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(80, 21);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 24);
+            this.label6.Size = new System.Drawing.Size(131, 24);
             this.label6.TabIndex = 3;
-            this.label6.Text = "Collapse";
+            this.label6.Text = "Thu gọn menu";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // panel19
@@ -365,9 +365,9 @@ namespace Server
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(80, 21);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 24);
+            this.label5.Size = new System.Drawing.Size(88, 24);
             this.label5.TabIndex = 3;
-            this.label5.Text = "Bills";
+            this.label5.Text = "Hóa đơn";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // panel16
@@ -439,9 +439,9 @@ namespace Server
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(80, 21);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 24);
+            this.label4.Size = new System.Drawing.Size(88, 24);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Products";
+            this.label4.Text = "Sản phẩm";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panel13
@@ -513,9 +513,9 @@ namespace Server
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(81, 21);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 24);
+            this.label3.Size = new System.Drawing.Size(100, 24);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Users";
+            this.label3.Text = "Thành viên";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // panel10
@@ -588,9 +588,9 @@ namespace Server
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(81, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 24);
+            this.label2.Size = new System.Drawing.Size(87, 24);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Home";
+            this.label2.Text = "Trang chủ";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // panelsd
@@ -668,7 +668,7 @@ namespace Server
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(76)))), ((int)(((byte)(81)))));
-            this.label8.Location = new System.Drawing.Point(10, 9);
+            this.label8.Location = new System.Drawing.Point(16, 9);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 19);
             this.label8.TabIndex = 9;
@@ -679,7 +679,7 @@ namespace Server
             this.panel22.BackColor = System.Drawing.Color.Transparent;
             this.panel22.BackgroundImage = global::Server.Properties.Resources.icons8_edit_user_18px;
             this.panel22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel22.Location = new System.Drawing.Point(7, 26);
+            this.panel22.Location = new System.Drawing.Point(13, 26);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(30, 30);
             this.panel22.TabIndex = 8;
@@ -690,7 +690,7 @@ namespace Server
             this.lbQuyen.BackColor = System.Drawing.Color.Transparent;
             this.lbQuyen.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbQuyen.ForeColor = System.Drawing.Color.White;
-            this.lbQuyen.Location = new System.Drawing.Point(37, 26);
+            this.lbQuyen.Location = new System.Drawing.Point(43, 26);
             this.lbQuyen.Name = "lbQuyen";
             this.lbQuyen.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.lbQuyen.Size = new System.Drawing.Size(0, 25);
@@ -700,38 +700,38 @@ namespace Server
             // 
             this.message5.BackColor = System.Drawing.Color.Transparent;
             this.message5.Location = new System.Drawing.Point(3, 274);
-            this.message5.mSize = new System.Drawing.Size(74, 36);
-            this.message5.mText = "Expand";
+            this.message5.mSize = new System.Drawing.Size(82, 36);
+            this.message5.mText = "Mở rộng";
             this.message5.Name = "message5";
-            this.message5.Size = new System.Drawing.Size(97, 68);
+            this.message5.Size = new System.Drawing.Size(89, 68);
             this.message5.TabIndex = 4;
             // 
             // message1
             // 
             this.message1.BackColor = System.Drawing.Color.Transparent;
             this.message1.Location = new System.Drawing.Point(3, 0);
-            this.message1.mSize = new System.Drawing.Size(64, 36);
-            this.message1.mText = "Home";
+            this.message1.mSize = new System.Drawing.Size(94, 36);
+            this.message1.mText = "Trang chủ";
             this.message1.Name = "message1";
-            this.message1.Size = new System.Drawing.Size(97, 70);
+            this.message1.Size = new System.Drawing.Size(104, 70);
             this.message1.TabIndex = 0;
             // 
             // message2
             // 
             this.message2.BackColor = System.Drawing.Color.Transparent;
             this.message2.Location = new System.Drawing.Point(3, 70);
-            this.message2.mSize = new System.Drawing.Size(63, 36);
-            this.message2.mText = "Users";
+            this.message2.mSize = new System.Drawing.Size(102, 36);
+            this.message2.mText = "Thành viên";
             this.message2.Name = "message2";
-            this.message2.Size = new System.Drawing.Size(97, 68);
+            this.message2.Size = new System.Drawing.Size(108, 68);
             this.message2.TabIndex = 1;
             // 
             // message4
             // 
             this.message4.BackColor = System.Drawing.Color.Transparent;
             this.message4.Location = new System.Drawing.Point(3, 206);
-            this.message4.mSize = new System.Drawing.Size(50, 36);
-            this.message4.mText = "Bills";
+            this.message4.mSize = new System.Drawing.Size(83, 36);
+            this.message4.mText = "Hóa đơn";
             this.message4.Name = "message4";
             this.message4.Size = new System.Drawing.Size(97, 68);
             this.message4.TabIndex = 3;
@@ -740,19 +740,22 @@ namespace Server
             // 
             this.message3.BackColor = System.Drawing.Color.Transparent;
             this.message3.Location = new System.Drawing.Point(3, 138);
-            this.message3.mSize = new System.Drawing.Size(86, 36);
-            this.message3.mText = "Products";
+            this.message3.mSize = new System.Drawing.Size(94, 36);
+            this.message3.mText = "Sản phẩm";
             this.message3.Name = "message3";
-            this.message3.Size = new System.Drawing.Size(97, 68);
+            this.message3.Size = new System.Drawing.Size(104, 68);
             this.message3.TabIndex = 2;
             // 
-            // panel23
+            // pnDisplay
             // 
-            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel23.Location = new System.Drawing.Point(217, 30);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(1151, 738);
-            this.panel23.TabIndex = 2;
+            this.pnDisplay.BackColor = System.Drawing.Color.Transparent;
+            this.pnDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnDisplay.Location = new System.Drawing.Point(217, 30);
+            this.pnDisplay.Name = "pnDisplay";
+            this.pnDisplay.Padding = new System.Windows.Forms.Padding(20);
+            this.pnDisplay.Size = new System.Drawing.Size(1151, 738);
+            this.pnDisplay.TabIndex = 2;
+            this.pnDisplay.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel23_MouseMove);
             // 
             // DashBoard
             // 
@@ -760,7 +763,7 @@ namespace Server
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(1368, 768);
-            this.Controls.Add(this.panel23);
+            this.Controls.Add(this.pnDisplay);
             this.Controls.Add(this.panel20);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -851,6 +854,6 @@ namespace Server
         private System.Windows.Forms.Panel panel22;
         private System.Windows.Forms.Label lbQuyen;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Panel pnDisplay;
     }
 }

@@ -82,7 +82,7 @@ namespace Server
             btnLogin.Text = "Change Password";
             if (textBox1.Text == string.Empty)
             {
-                lbUser.Text = "- This field cannot be empty";
+                lbUser.Text = "- Mục này không thể bỏ trống";
                 label3.ForeColor = Color.FromArgb(240, 71, 71);
                 PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                 VeBorder(usertb, eventArgs, 240, 71, 71);
@@ -95,21 +95,21 @@ namespace Server
                 {
                     case 1:
                         lbUser.ForeColor = Color.FromArgb(77, 222, 19);
-                        lbUser.Text = "- Success! Please login with new password";
+                        lbUser.Text = "- Thành công! Mời bạn quay trở lại đăng nhập";
                         label3.ForeColor = Color.FromArgb(77, 222, 19);
                         PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs, 77, 222, 19);
                         tbUserDontHandle = true;
                         break;
                     case -1:
-                        lbUser.Text = "- Failed! Please try again";
+                        lbUser.Text = "- Thất bại! Vui lòng thử lại sau";
                         label3.ForeColor = Color.FromArgb(240, 71, 71);
                         PaintEventArgs eventArgs2 = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs2, 240, 71, 71);
                         tbUserDontHandle = true;
                         break;
                     case -99:
-                        lbUser.Text = "- Connection error";
+                        lbUser.Text = "- Lỗi kết nối";
                         label3.ForeColor = Color.FromArgb(240, 71, 71);
                         PaintEventArgs eventArgs3 = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs3, 240, 71, 71);

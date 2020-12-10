@@ -107,7 +107,7 @@ namespace Server
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(382, 48);
             this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Đăng nhập";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -144,7 +144,7 @@ namespace Server
             this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.label5.Size = new System.Drawing.Size(382, 29);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Forgot your password?";
+            this.label5.Text = "Bạn quên mật khẩu?";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
@@ -192,7 +192,7 @@ namespace Server
             this.lbPass.AutoSize = true;
             this.lbPass.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbPass.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbPass.Location = new System.Drawing.Point(68, 16);
+            this.lbPass.Location = new System.Drawing.Point(64, 16);
             this.lbPass.Margin = new System.Windows.Forms.Padding(0);
             this.lbPass.Name = "lbPass";
             this.lbPass.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
@@ -211,7 +211,7 @@ namespace Server
             this.label4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.label4.Size = new System.Drawing.Size(382, 39);
             this.label4.TabIndex = 0;
-            this.label4.Text = "PASSWORD";
+            this.label4.Text = "MẬT KHẨU";
             this.label4.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panel5
@@ -265,7 +265,7 @@ namespace Server
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbUser.Location = new System.Drawing.Point(124, 16);
+            this.lbUser.Location = new System.Drawing.Point(67, 16);
             this.lbUser.Margin = new System.Windows.Forms.Padding(0);
             this.lbUser.Name = "lbUser";
             this.lbUser.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
@@ -284,7 +284,7 @@ namespace Server
             this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.label3.Size = new System.Drawing.Size(382, 39);
             this.label3.TabIndex = 0;
-            this.label3.Text = "EMAIL OR USERNAME";
+            this.label3.Text = "TÀI KHOẢN";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panel2
@@ -324,7 +324,7 @@ namespace Server
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(382, 30);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Login now for management!";
+            this.label2.Text = "Đăng nhập ngay để bắt đầu quản lý";
             this.label2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label1
@@ -335,7 +335,7 @@ namespace Server
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(382, 40);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Welcome back!";
+            this.label1.Text = "Chào mừng trở lại!";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // label6

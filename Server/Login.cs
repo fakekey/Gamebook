@@ -171,7 +171,7 @@ namespace Server
             switch (textBox1.Text)
             {
                 case "":
-                    lbUser.Text = "- This field cannot be empty";
+                    lbUser.Text = "- Mục này không thể bỏ trống";
                     label3.ForeColor = Color.FromArgb(240, 71, 71);
                     PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                     VeBorder(usertb, eventArgs, 240, 71, 71);
@@ -183,7 +183,7 @@ namespace Server
             switch (textBox2.Text)
             {
                 case "":
-                    lbPass.Text = "- This field cannot be empty";
+                    lbPass.Text = "- Mục này không thể bỏ trống";
                     label4.ForeColor = Color.FromArgb(240, 71, 71);
                     PaintEventArgs eventArgs = new PaintEventArgs(passtb.CreateGraphics(), passtb.ClientRectangle);
                     VeBorder(passtb, eventArgs, 240, 71, 71);
@@ -207,26 +207,26 @@ namespace Server
                         Close();
                         break;
                     case 0:
-                        lbUser.Text = "- Permission to access is denied";
+                        lbUser.Text = "- Quyền truy cập bị từ chối";
                         label3.ForeColor = Color.FromArgb(240, 71, 71);
                         PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs, 240, 71, 71);
                         tbUserDontHandle = true;
                         break;
                     case -1:
-                        lbUser.Text = "- Login or password is invalid";
+                        lbUser.Text = "- Tài khoản hoặc mật khẩu không đúng";
                         label3.ForeColor = Color.FromArgb(240, 71, 71);
                         PaintEventArgs eventArgs2 = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs2, 240, 71, 71);
                         tbUserDontHandle = true;
-                        lbPass.Text = "- Login or password is invalid";
+                        lbPass.Text = "- Tài khoản hoặc mật khẩu không đúng";
                         label4.ForeColor = Color.FromArgb(240, 71, 71);
                         PaintEventArgs eventArgs1 = new PaintEventArgs(passtb.CreateGraphics(), passtb.ClientRectangle);
                         VeBorder(passtb, eventArgs1, 240, 71, 71);
                         tbPassDontHandle = true;
                         break;
                     case -99:
-                        lbUser.Text = "- Connection error";
+                        lbUser.Text = "- Lỗi kết nối";
                         label3.ForeColor = Color.FromArgb(240, 71, 71);
                         PaintEventArgs eventArgs3 = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs3, 240, 71, 71);
@@ -257,7 +257,7 @@ namespace Server
             timer4.Stop();
             if (textBox1.Text == string.Empty)
             {
-                lbUser.Text = "- This field cannot be empty";
+                lbUser.Text = "- Mục này không thể bỏ trống";
                 label3.ForeColor = Color.FromArgb(240, 71, 71);
                 PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                 VeBorder(usertb, eventArgs, 240, 71, 71);
@@ -275,14 +275,14 @@ namespace Server
                         Show();
                         break;
                     case -1:
-                        lbUser.Text = "- Account does not exist";
+                        lbUser.Text = "- Tài khoản này không tồn tại";
                         label3.ForeColor = Color.FromArgb(240, 71, 71);
                         PaintEventArgs eventArgs2 = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs2, 240, 71, 71);
                         tbUserDontHandle = true;
                         break;
                     case -99:
-                        lbUser.Text = "- Connection error";
+                        lbUser.Text = "- Lỗi kết nối";
                         label3.ForeColor = Color.FromArgb(240, 71, 71);
                         PaintEventArgs eventArgs3 = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
                         VeBorder(usertb, eventArgs3, 240, 71, 71);

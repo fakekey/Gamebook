@@ -66,7 +66,7 @@ namespace Server
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(382, 40);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Change Your Password";
+            this.label1.Text = "Thay Đổi Mật Khẩu";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // usertb
@@ -109,7 +109,7 @@ namespace Server
             this.lbUser.AutoSize = true;
             this.lbUser.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbUser.Location = new System.Drawing.Point(98, 16);
+            this.lbUser.Location = new System.Drawing.Point(89, 16);
             this.lbUser.Margin = new System.Windows.Forms.Padding(0);
             this.lbUser.Name = "lbUser";
             this.lbUser.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
@@ -128,7 +128,7 @@ namespace Server
             this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.label3.Size = new System.Drawing.Size(382, 39);
             this.label3.TabIndex = 0;
-            this.label3.Text = "NEW PASSWORD";
+            this.label3.Text = "MẬT KHẨU MỚI";
             this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // btnLogin
@@ -146,7 +146,7 @@ namespace Server
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(382, 48);
             this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "Change Password";
+            this.btnLogin.Text = "Xác Nhận";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -162,13 +162,13 @@ namespace Server
             this.label5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label5.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.label5.Location = new System.Drawing.Point(210, 337);
+            this.label5.Location = new System.Drawing.Point(221, 337);
             this.label5.Margin = new System.Windows.Forms.Padding(0);
             this.label5.Name = "label5";
             this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.label5.Size = new System.Drawing.Size(46, 24);
+            this.label5.Size = new System.Drawing.Size(117, 24);
             this.label5.TabIndex = 5;
-            this.label5.Text = "Login.";
+            this.label5.Text = "Đăng nhập ngay.";
             this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.label5.Click += new System.EventHandler(this.label5_Click);
             this.label5.MouseEnter += new System.EventHandler(this.label5_MouseEnter);
@@ -185,9 +185,9 @@ namespace Server
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.label2.Size = new System.Drawing.Size(165, 24);
+            this.label2.Size = new System.Drawing.Size(180, 24);
             this.label2.TabIndex = 6;
-            this.label2.Text = "Still remember password?";
+            this.label2.Text = "Bạn vẫn nhớ mật khẩu sao?";
             this.label2.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // timer2
