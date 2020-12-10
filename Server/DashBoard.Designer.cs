@@ -72,11 +72,16 @@ namespace Server
             this.line1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel22 = new System.Windows.Forms.Panel();
+            this.lbQuyen = new System.Windows.Forms.Label();
             this.message5 = new Server.Message();
-            this.message4 = new Server.Message();
             this.message1 = new Server.Message();
-            this.message3 = new Server.Message();
             this.message2 = new Server.Message();
+            this.message4 = new Server.Message();
+            this.message3 = new Server.Message();
+            this.panel23 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,6 +102,7 @@ namespace Server
             this.panelsd.SuspendLayout();
             this.line1.SuspendLayout();
             this.panel20.SuspendLayout();
+            this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -631,75 +637,130 @@ namespace Server
             // 
             // panel20
             // 
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.panel20.Controls.Add(this.panel21);
             this.panel20.Controls.Add(this.message5);
-            this.panel20.Controls.Add(this.message4);
             this.panel20.Controls.Add(this.message1);
-            this.panel20.Controls.Add(this.message3);
             this.panel20.Controls.Add(this.message2);
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Controls.Add(this.message4);
+            this.panel20.Controls.Add(this.message3);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel20.Location = new System.Drawing.Point(217, 30);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(1151, 738);
+            this.panel20.Size = new System.Drawing.Size(0, 738);
             this.panel20.TabIndex = 0;
             this.panel20.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel20_MouseMove);
+            // 
+            // panel21
+            // 
+            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(46)))));
+            this.panel21.Controls.Add(this.label8);
+            this.panel21.Controls.Add(this.panel22);
+            this.panel21.Controls.Add(this.lbQuyen);
+            this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel21.Location = new System.Drawing.Point(0, 677);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(0, 61);
+            this.panel21.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(76)))), ((int)(((byte)(81)))));
+            this.label8.Location = new System.Drawing.Point(10, 9);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(82, 19);
+            this.label8.TabIndex = 9;
+            this.label8.Text = "GAMEBOOK";
+            // 
+            // panel22
+            // 
+            this.panel22.BackColor = System.Drawing.Color.Transparent;
+            this.panel22.BackgroundImage = global::Server.Properties.Resources.icons8_edit_user_18px;
+            this.panel22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel22.Location = new System.Drawing.Point(7, 26);
+            this.panel22.Name = "panel22";
+            this.panel22.Size = new System.Drawing.Size(30, 30);
+            this.panel22.TabIndex = 8;
+            // 
+            // lbQuyen
+            // 
+            this.lbQuyen.AutoSize = true;
+            this.lbQuyen.BackColor = System.Drawing.Color.Transparent;
+            this.lbQuyen.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lbQuyen.ForeColor = System.Drawing.Color.White;
+            this.lbQuyen.Location = new System.Drawing.Point(37, 26);
+            this.lbQuyen.Name = "lbQuyen";
+            this.lbQuyen.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
+            this.lbQuyen.Size = new System.Drawing.Size(0, 25);
+            this.lbQuyen.TabIndex = 7;
             // 
             // message5
             // 
             this.message5.BackColor = System.Drawing.Color.Transparent;
-            this.message5.Location = new System.Drawing.Point(5, 272);
+            this.message5.Location = new System.Drawing.Point(3, 274);
             this.message5.mSize = new System.Drawing.Size(74, 36);
             this.message5.mText = "Expand";
             this.message5.Name = "message5";
             this.message5.Size = new System.Drawing.Size(97, 68);
             this.message5.TabIndex = 4;
             // 
-            // message4
-            // 
-            this.message4.BackColor = System.Drawing.Color.Transparent;
-            this.message4.Location = new System.Drawing.Point(5, 204);
-            this.message4.mSize = new System.Drawing.Size(50, 36);
-            this.message4.mText = "Bills";
-            this.message4.Name = "message4";
-            this.message4.Size = new System.Drawing.Size(97, 68);
-            this.message4.TabIndex = 3;
-            // 
             // message1
             // 
             this.message1.BackColor = System.Drawing.Color.Transparent;
-            this.message1.Location = new System.Drawing.Point(5, -2);
+            this.message1.Location = new System.Drawing.Point(3, 0);
             this.message1.mSize = new System.Drawing.Size(64, 36);
             this.message1.mText = "Home";
             this.message1.Name = "message1";
             this.message1.Size = new System.Drawing.Size(97, 70);
             this.message1.TabIndex = 0;
             // 
-            // message3
-            // 
-            this.message3.BackColor = System.Drawing.Color.Transparent;
-            this.message3.Location = new System.Drawing.Point(5, 136);
-            this.message3.mSize = new System.Drawing.Size(86, 36);
-            this.message3.mText = "Products";
-            this.message3.Name = "message3";
-            this.message3.Size = new System.Drawing.Size(97, 68);
-            this.message3.TabIndex = 2;
-            // 
             // message2
             // 
             this.message2.BackColor = System.Drawing.Color.Transparent;
-            this.message2.Location = new System.Drawing.Point(5, 68);
+            this.message2.Location = new System.Drawing.Point(3, 70);
             this.message2.mSize = new System.Drawing.Size(63, 36);
             this.message2.mText = "Users";
             this.message2.Name = "message2";
             this.message2.Size = new System.Drawing.Size(97, 68);
             this.message2.TabIndex = 1;
             // 
+            // message4
+            // 
+            this.message4.BackColor = System.Drawing.Color.Transparent;
+            this.message4.Location = new System.Drawing.Point(3, 206);
+            this.message4.mSize = new System.Drawing.Size(50, 36);
+            this.message4.mText = "Bills";
+            this.message4.Name = "message4";
+            this.message4.Size = new System.Drawing.Size(97, 68);
+            this.message4.TabIndex = 3;
+            // 
+            // message3
+            // 
+            this.message3.BackColor = System.Drawing.Color.Transparent;
+            this.message3.Location = new System.Drawing.Point(3, 138);
+            this.message3.mSize = new System.Drawing.Size(86, 36);
+            this.message3.mText = "Products";
+            this.message3.Name = "message3";
+            this.message3.Size = new System.Drawing.Size(97, 68);
+            this.message3.TabIndex = 2;
+            // 
+            // panel23
+            // 
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel23.Location = new System.Drawing.Point(217, 30);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(1151, 738);
+            this.panel23.TabIndex = 2;
+            // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(1368, 768);
+            this.Controls.Add(this.panel23);
             this.Controls.Add(this.panel20);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -731,6 +792,8 @@ namespace Server
             this.panelsd.ResumeLayout(false);
             this.line1.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
+            this.panel21.ResumeLayout(false);
+            this.panel21.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -780,9 +843,14 @@ namespace Server
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel20;
         private Message message5;
-        private Message message4;
         private Message message1;
-        private Message message3;
         private Message message2;
+        private Message message4;
+        private Message message3;
+        private System.Windows.Forms.Panel panel21;
+        private System.Windows.Forms.Panel panel22;
+        private System.Windows.Forms.Label lbQuyen;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel23;
     }
 }

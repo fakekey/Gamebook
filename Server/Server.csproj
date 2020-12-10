@@ -173,6 +173,7 @@
     <Content Include="Resources\img\icons8_back_to_48px.png" />
     <Content Include="Resources\img\icons8_bill_48px.png" />
     <Content Include="Resources\img\icons8_customer_18px.png" />
+    <Content Include="Resources\img\icons8_edit_user_18px.png" />
     <Content Include="Resources\img\icons8_game_controller_48px.png" />
     <Content Include="Resources\img\icons8_home_48px.png" />
     <Content Include="Resources\img\icons8_menu_18px.png" />

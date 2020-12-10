@@ -5,6 +5,7 @@ namespace Server
 {
     static class Controller
     {
+        public static string quyenLogin;
         public static int checkLogin(string email, string password)
         {
             // case = 0 : sai quyen
@@ -34,6 +35,7 @@ namespace Server
                 }
                 else if (count_acc == 1)
                 {
+                    quyenLogin = dt.Rows[0].ItemArray[2].ToString();
                     if (dt.Rows[0].ItemArray[2].ToString() == "1" || dt.Rows[0].ItemArray[2].ToString() == "2") return 1;
                     else return 0;
                 }

@@ -8,10 +8,11 @@ namespace Server
 {
     public partial class DashBoard : Form
     {
-        public DashBoard(string name)
+        public DashBoard(string name, string quyen)
         {
             InitializeComponent();
             lbName.Text = name;
+            lbQuyen.Text = quyen;
             message1.Hien = message2.Hien = message3.Hien = message4.Hien = message5.Hien = false;
         }
         protected override CreateParams CreateParams
@@ -76,6 +77,7 @@ namespace Server
                 t.Add(label6, "Width", 0);
                 t.Run();
                 Transition.Run(panel2, "Width", 97, new EaseInEaseOut(600));
+                Transition.Run(panel20, "Width", 102, new EaseInEaseOut(600));
                 panel18.BackgroundImage = Properties.Resources.icons8_next_page_48px;
                 message5.Hien = true;
                 message5.Visible = true;
@@ -90,6 +92,7 @@ namespace Server
                 t.Add(label6, "Width", 75);
                 t.Run();
                 Transition.Run(panel2, "Width", 217, new EaseInEaseOut(600));
+                Transition.Run(panel20, "Width", 0, new EaseInEaseOut(180));
                 panel18.BackgroundImage = Properties.Resources.icons8_back_to_48px;
                 message5.Hien = false;
                 message5.Visible = false;
