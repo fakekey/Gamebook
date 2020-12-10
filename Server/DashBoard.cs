@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Transitions;
+using Transitions.TransitionTypes;
 using System.Windows.Forms;
 
 namespace Server
@@ -16,7 +12,6 @@ namespace Server
         {
             InitializeComponent();
             lbName.Text = name;
-            panel20.Visible = false;
             message1.Hien = message2.Hien = message3.Hien = message4.Hien = message5.Hien = false;
         }
         protected override CreateParams CreateParams
@@ -73,17 +68,31 @@ namespace Server
         {
             if (panel2.Width != 97)
             {
-                label2.Visible = label3.Visible = label4.Visible = label5.Visible = label6.Visible = false;
-                panel2.Width = 97;
+                Transition t = new Transition(new EaseInEaseOut(100));
+                t.Add(label2, "Width", 0);
+                t.Add(label3, "Width", 0);
+                t.Add(label4, "Width", 0);
+                t.Add(label5, "Width", 0);
+                t.Add(label6, "Width", 0);
+                t.Run();
+                Transition.Run(panel2, "Width", 97, new EaseInEaseOut(600));
                 panel18.BackgroundImage = Properties.Resources.icons8_next_page_48px;
-                panel20.Visible = true;
+                message5.Hien = true;
+                message5.Visible = true;
             }
             else
             {
-                label2.Visible = label3.Visible = label4.Visible = label5.Visible = label6.Visible = true;
-                panel2.Width = 217;
+                Transition t = new Transition(new EaseInEaseOut(200));
+                t.Add(label2, "Width", 56);
+                t.Add(label3, "Width", 53);
+                t.Add(label4, "Width", 79);
+                t.Add(label5, "Width", 40);
+                t.Add(label6, "Width", 75);
+                t.Run();
+                Transition.Run(panel2, "Width", 217, new EaseInEaseOut(600));
                 panel18.BackgroundImage = Properties.Resources.icons8_back_to_48px;
-                panel20.Visible = false;
+                message5.Hien = false;
+                message5.Visible = false;
             }
         }
 
@@ -327,7 +336,7 @@ namespace Server
             {
                 active5.rColor = Color.White;
                 active5.Refresh();
-                icoCollapse.rColor = Color.FromArgb(114, 137, 218);
+                icoCollapse.rColor = Color.FromArgb(67, 181, 129);
                 icoCollapse.Radius = 14;
                 icoCollapse.Refresh();
             }
@@ -352,7 +361,7 @@ namespace Server
             {
                 active2.rColor = Color.White;
                 active2.Refresh();
-                icoUser.rColor = Color.FromArgb(114, 137, 218);
+                icoUser.rColor = Color.FromArgb(67, 181, 129);
                 icoUser.Radius = 14;
                 icoUser.Refresh();
             }
@@ -371,7 +380,7 @@ namespace Server
             {
                 active3.rColor = Color.White;
                 active3.Refresh();
-                icoProduct.rColor = Color.FromArgb(114, 137, 218);
+                icoProduct.rColor = Color.FromArgb(67, 181, 129);
                 icoProduct.Radius = 14;
                 icoProduct.Refresh();
             }
@@ -390,7 +399,7 @@ namespace Server
             {
                 active4.rColor = Color.White;
                 active4.Refresh();
-                icoBill.rColor = Color.FromArgb(114, 137, 218);
+                icoBill.rColor = Color.FromArgb(67, 181, 129);
                 icoBill.Radius = 14;
                 icoBill.Refresh();
             }
@@ -525,13 +534,13 @@ namespace Server
             panel14_Click(null, null);
         }
 
-        private void panelRadius1_MouseMove(object sender, MouseEventArgs e)
+        private void panel7_MouseMove_1(object sender, MouseEventArgs e)
         {
             activeOne = activeTwo = activeThree = activeFour = activeFive = false;
             clear();
         }
 
-        private void panel7_MouseMove_1(object sender, MouseEventArgs e)
+        private void panel20_MouseMove(object sender, MouseEventArgs e)
         {
             activeOne = activeTwo = activeThree = activeFour = activeFive = false;
             clear();

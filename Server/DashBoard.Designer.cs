@@ -71,13 +71,12 @@ namespace Server
             this.active1 = new Server.PanelRadius();
             this.line1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.panelRadius1 = new Server.PanelRadius();
             this.panel20 = new System.Windows.Forms.Panel();
             this.message5 = new Server.Message();
             this.message4 = new Server.Message();
+            this.message1 = new Server.Message();
             this.message3 = new Server.Message();
             this.message2 = new Server.Message();
-            this.message1 = new Server.Message();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -97,7 +96,6 @@ namespace Server
             this.icoHome.SuspendLayout();
             this.panelsd.SuspendLayout();
             this.line1.SuspendLayout();
-            this.panelRadius1.SuspendLayout();
             this.panel20.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -132,11 +130,11 @@ namespace Server
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Whitney Semibold", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(76)))), ((int)(((byte)(81)))));
             this.label1.Location = new System.Drawing.Point(9, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 15);
+            this.label1.Size = new System.Drawing.Size(82, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "GAMEBOOK";
             // 
@@ -283,7 +281,6 @@ namespace Server
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(80, 21);
@@ -358,7 +355,6 @@ namespace Server
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(80, 21);
@@ -433,7 +429,6 @@ namespace Server
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(80, 21);
@@ -508,7 +503,6 @@ namespace Server
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(81, 21);
@@ -584,7 +578,6 @@ namespace Server
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(81, 23);
@@ -636,88 +629,70 @@ namespace Server
             this.panel6.Size = new System.Drawing.Size(177, 2);
             this.panel6.TabIndex = 0;
             // 
-            // panelRadius1
-            // 
-            this.panelRadius1.Controls.Add(this.panel20);
-            this.panelRadius1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelRadius1.Location = new System.Drawing.Point(217, 30);
-            this.panelRadius1.Name = "panelRadius1";
-            this.panelRadius1.Radius = 7;
-            this.panelRadius1.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.panelRadius1.rSize = new System.Drawing.Size(1926, 1086);
-            this.panelRadius1.Size = new System.Drawing.Size(1151, 738);
-            this.panelRadius1.TabIndex = 2;
-            this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
-            this.panelRadius1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelRadius1_MouseMove);
-            // 
             // panel20
             // 
-            this.panel20.BackColor = System.Drawing.Color.Transparent;
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.panel20.Controls.Add(this.message5);
             this.panel20.Controls.Add(this.message4);
+            this.panel20.Controls.Add(this.message1);
             this.panel20.Controls.Add(this.message3);
             this.panel20.Controls.Add(this.message2);
-            this.panel20.Controls.Add(this.message1);
-            this.panel20.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel20.Location = new System.Drawing.Point(0, 0);
+            this.panel20.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel20.Location = new System.Drawing.Point(217, 30);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(93, 738);
+            this.panel20.Size = new System.Drawing.Size(1151, 738);
             this.panel20.TabIndex = 0;
+            this.panel20.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel20_MouseMove);
             // 
             // message5
             // 
             this.message5.BackColor = System.Drawing.Color.Transparent;
-            this.message5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.message5.Location = new System.Drawing.Point(0, 272);
+            this.message5.Location = new System.Drawing.Point(5, 272);
             this.message5.mSize = new System.Drawing.Size(74, 36);
             this.message5.mText = "Expand";
             this.message5.Name = "message5";
-            this.message5.Size = new System.Drawing.Size(93, 68);
+            this.message5.Size = new System.Drawing.Size(97, 68);
             this.message5.TabIndex = 4;
             // 
             // message4
             // 
             this.message4.BackColor = System.Drawing.Color.Transparent;
-            this.message4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.message4.Location = new System.Drawing.Point(0, 204);
+            this.message4.Location = new System.Drawing.Point(5, 204);
             this.message4.mSize = new System.Drawing.Size(50, 36);
             this.message4.mText = "Bills";
             this.message4.Name = "message4";
-            this.message4.Size = new System.Drawing.Size(93, 68);
+            this.message4.Size = new System.Drawing.Size(97, 68);
             this.message4.TabIndex = 3;
+            // 
+            // message1
+            // 
+            this.message1.BackColor = System.Drawing.Color.Transparent;
+            this.message1.Location = new System.Drawing.Point(5, -2);
+            this.message1.mSize = new System.Drawing.Size(64, 36);
+            this.message1.mText = "Home";
+            this.message1.Name = "message1";
+            this.message1.Size = new System.Drawing.Size(97, 70);
+            this.message1.TabIndex = 0;
             // 
             // message3
             // 
             this.message3.BackColor = System.Drawing.Color.Transparent;
-            this.message3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.message3.Location = new System.Drawing.Point(0, 136);
+            this.message3.Location = new System.Drawing.Point(5, 136);
             this.message3.mSize = new System.Drawing.Size(86, 36);
             this.message3.mText = "Products";
             this.message3.Name = "message3";
-            this.message3.Size = new System.Drawing.Size(93, 68);
+            this.message3.Size = new System.Drawing.Size(97, 68);
             this.message3.TabIndex = 2;
             // 
             // message2
             // 
             this.message2.BackColor = System.Drawing.Color.Transparent;
-            this.message2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.message2.Location = new System.Drawing.Point(0, 68);
+            this.message2.Location = new System.Drawing.Point(5, 68);
             this.message2.mSize = new System.Drawing.Size(63, 36);
             this.message2.mText = "Users";
             this.message2.Name = "message2";
-            this.message2.Size = new System.Drawing.Size(93, 68);
+            this.message2.Size = new System.Drawing.Size(97, 68);
             this.message2.TabIndex = 1;
-            // 
-            // message1
-            // 
-            this.message1.BackColor = System.Drawing.Color.Transparent;
-            this.message1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.message1.Location = new System.Drawing.Point(0, 0);
-            this.message1.mSize = new System.Drawing.Size(64, 36);
-            this.message1.mText = "Home";
-            this.message1.Name = "message1";
-            this.message1.Size = new System.Drawing.Size(93, 68);
-            this.message1.TabIndex = 0;
             // 
             // DashBoard
             // 
@@ -725,7 +700,7 @@ namespace Server
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
             this.ClientSize = new System.Drawing.Size(1368, 768);
-            this.Controls.Add(this.panelRadius1);
+            this.Controls.Add(this.panel20);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -740,27 +715,21 @@ namespace Server
             this.panel7.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
             this.icoCollapse.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
             this.icoBill.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.icoProduct.ResumeLayout(false);
             this.panel13.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
             this.icoUser.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.icoHome.ResumeLayout(false);
             this.panelsd.ResumeLayout(false);
             this.line1.ResumeLayout(false);
-            this.panelRadius1.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -807,13 +776,12 @@ namespace Server
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel19;
         private PanelRadius active5;
-        private PanelRadius panelRadius1;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel20;
-        private Message message1;
         private Message message5;
         private Message message4;
+        private Message message1;
         private Message message3;
         private Message message2;
     }
