@@ -11,6 +11,30 @@ namespace Server
         public DashBoard(string name, string quyen)
         {
             InitializeComponent();
+            btnAll = new NoFocusButton()
+            {
+                Height = 45,
+                Cursor = Cursors.Hand,
+                BackColor = Color.FromArgb(40, 42, 46),
+                Dock = DockStyle.Bottom,
+                FlatStyle = FlatStyle.Flat,
+                Font = new Font("Quicksand", 13F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
+                ForeColor = Color.FromArgb(142, 146, 126),
+                Text = "Tất cả",
+                UseVisualStyleBackColor = false,
+            };
+            btnThem = new NoFocusButton()
+            {
+                Height = 45,
+                Cursor = Cursors.Hand,
+                BackColor = Color.FromArgb(40, 42, 46),
+                Dock = DockStyle.Bottom,
+                FlatStyle = FlatStyle.Flat,
+                Font = new Font("Quicksand", 13F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
+                ForeColor = Color.FromArgb(142, 146, 126),
+                Text = "Thêm mới",
+                UseVisualStyleBackColor = false,
+            };
             lbName.Text = name;
             lbQuyen.Text = quyen;
             message1.Hien = message2.Hien = message3.Hien = message4.Hien = message5.Hien = false;
@@ -77,7 +101,11 @@ namespace Server
                 t.Add(label6, "Width", 0);
                 t.Run();
                 Transition.Run(panel2, "Width", 97, new EaseInEaseOut(600));
-                Transition.Run(panel20, "Width", 118, new EaseInEaseOut(500));
+                Transition.Run(panel20, "Width", 118, new EaseInEaseOut(100));
+                Transition t2 = new Transition(new EaseInEaseOut(100));
+                t2.Add(btnAll, "Width", 118);
+                t2.Add(btnThem, "Width", 118);
+                t2.Run();
                 panel18.BackgroundImage = Properties.Resources.icons8_next_page_48px;
                 message5.Hien = true;
                 message5.Visible = true;
@@ -92,7 +120,11 @@ namespace Server
                 t.Add(label6, "Width", 131);
                 t.Run();
                 Transition.Run(panel2, "Width", 217, new EaseInEaseOut(600));
-                Transition.Run(panel20, "Width", 0, new EaseInEaseOut(200));
+                Transition.Run(panel20, "Width", 0, new EaseInEaseOut(100));
+                Transition t2 = new Transition(new EaseInEaseOut(100));
+                t2.Add(btnAll, "Width", 0);
+                t2.Add(btnThem, "Width", 0);
+                t2.Run();
                 panel18.BackgroundImage = Properties.Resources.icons8_back_to_48px;
                 message5.Hien = false;
                 message5.Visible = false;
@@ -461,6 +493,32 @@ namespace Server
             homeIsActive = productIsActive = billIsActive = false;
             userIsActive = true;
             clear();
+            btnAll.FlatAppearance.BorderSize = 0;
+            btnAll.FlatAppearance.BorderColor = Color.FromArgb(41, 43, 47);
+            btnAll.FlatAppearance.MouseOverBackColor = Color.FromArgb(52, 55, 60);
+            btnAll.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 57, 63);
+            btnThem.FlatAppearance.BorderSize = 0;
+            btnThem.FlatAppearance.BorderColor = Color.FromArgb(41, 43, 47);
+            btnThem.FlatAppearance.MouseOverBackColor = Color.FromArgb(52, 55, 60);
+            btnThem.FlatAppearance.MouseDownBackColor = Color.FromArgb(55, 57, 63);
+            pnFunction.Controls.Clear();
+            pnFunction.Controls.Add(btnAll);
+            pnFunction.Controls.Add(btnThem);
+            fUsers = new Users();
+            AddForm(fUsers);
+            btnThem.Click += BtnThem_Click;
+            btnAll.Click += BtnAll_Click;
+        }
+
+        private void BtnAll_Click(object sender, EventArgs e)
+        {
+            fUsers = new Users();
+            AddForm(fUsers);
+        }
+
+        private void BtnThem_Click(object sender, EventArgs e)
+        {
+            fUsers.btnAdd_Click(null, null);
         }
 
         private void panel11_Click(object sender, EventArgs e)
@@ -554,5 +612,17 @@ namespace Server
             activeOne = activeTwo = activeThree = activeFour = activeFive = false;
             clear();
         }
+        private void AddForm(Form form)
+        {
+            pnDisplay.Controls.Clear();
+            form.TopLevel = false;
+            form.AutoScroll = true;
+            form.Dock = DockStyle.Fill;
+            pnDisplay.Controls.Add(form);
+            form.Show();
+        }
+        private NoFocusButton btnAll;
+        private NoFocusButton btnThem;
+        private Users fUsers;
     }
 }

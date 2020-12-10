@@ -72,6 +72,10 @@ namespace Server
             this.line1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.pncc = new System.Windows.Forms.Panel();
+            this.pnFunction = new System.Windows.Forms.Panel();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.panel24 = new System.Windows.Forms.Panel();
             this.panel21 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.panel22 = new System.Windows.Forms.Panel();
@@ -102,6 +106,8 @@ namespace Server
             this.panelsd.SuspendLayout();
             this.line1.SuspendLayout();
             this.panel20.SuspendLayout();
+            this.pncc.SuspendLayout();
+            this.panel23.SuspendLayout();
             this.panel21.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -638,6 +644,7 @@ namespace Server
             // panel20
             // 
             this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.panel20.Controls.Add(this.pncc);
             this.panel20.Controls.Add(this.panel21);
             this.panel20.Controls.Add(this.message5);
             this.panel20.Controls.Add(this.message1);
@@ -651,6 +658,47 @@ namespace Server
             this.panel20.TabIndex = 0;
             this.panel20.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel20_MouseMove);
             // 
+            // pncc
+            // 
+            this.pncc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.pncc.Controls.Add(this.pnFunction);
+            this.pncc.Controls.Add(this.panel23);
+            this.pncc.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pncc.Location = new System.Drawing.Point(0, 536);
+            this.pncc.Name = "pncc";
+            this.pncc.Size = new System.Drawing.Size(0, 125);
+            this.pncc.TabIndex = 6;
+            // 
+            // pnFunction
+            // 
+            this.pnFunction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(46)))));
+            this.pnFunction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnFunction.Location = new System.Drawing.Point(0, 0);
+            this.pnFunction.Name = "pnFunction";
+            this.pnFunction.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
+            this.pnFunction.Size = new System.Drawing.Size(0, 123);
+            this.pnFunction.TabIndex = 1;
+            // 
+            // panel23
+            // 
+            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(46)))));
+            this.panel23.Controls.Add(this.panel24);
+            this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel23.Location = new System.Drawing.Point(0, 123);
+            this.panel23.Name = "panel23";
+            this.panel23.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.panel23.Size = new System.Drawing.Size(0, 2);
+            this.panel23.TabIndex = 0;
+            // 
+            // panel24
+            // 
+            this.panel24.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
+            this.panel24.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel24.Location = new System.Drawing.Point(20, 0);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(0, 2);
+            this.panel24.TabIndex = 0;
+            // 
             // panel21
             // 
             this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(46)))));
@@ -658,9 +706,9 @@ namespace Server
             this.panel21.Controls.Add(this.panel22);
             this.panel21.Controls.Add(this.lbQuyen);
             this.panel21.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel21.Location = new System.Drawing.Point(0, 677);
+            this.panel21.Location = new System.Drawing.Point(0, 661);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(0, 61);
+            this.panel21.Size = new System.Drawing.Size(0, 77);
             this.panel21.TabIndex = 5;
             // 
             // label8
@@ -668,7 +716,7 @@ namespace Server
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(76)))), ((int)(((byte)(81)))));
-            this.label8.Location = new System.Drawing.Point(16, 9);
+            this.label8.Location = new System.Drawing.Point(17, 14);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(82, 19);
             this.label8.TabIndex = 9;
@@ -679,7 +727,7 @@ namespace Server
             this.panel22.BackColor = System.Drawing.Color.Transparent;
             this.panel22.BackgroundImage = global::Server.Properties.Resources.icons8_edit_user_18px;
             this.panel22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel22.Location = new System.Drawing.Point(13, 26);
+            this.panel22.Location = new System.Drawing.Point(13, 31);
             this.panel22.Name = "panel22";
             this.panel22.Size = new System.Drawing.Size(30, 30);
             this.panel22.TabIndex = 8;
@@ -690,7 +738,7 @@ namespace Server
             this.lbQuyen.BackColor = System.Drawing.Color.Transparent;
             this.lbQuyen.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbQuyen.ForeColor = System.Drawing.Color.White;
-            this.lbQuyen.Location = new System.Drawing.Point(43, 26);
+            this.lbQuyen.Location = new System.Drawing.Point(43, 31);
             this.lbQuyen.Name = "lbQuyen";
             this.lbQuyen.Padding = new System.Windows.Forms.Padding(0, 2, 0, 0);
             this.lbQuyen.Size = new System.Drawing.Size(0, 25);
@@ -795,6 +843,8 @@ namespace Server
             this.panelsd.ResumeLayout(false);
             this.line1.ResumeLayout(false);
             this.panel20.ResumeLayout(false);
+            this.pncc.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
             this.ResumeLayout(false);
@@ -855,5 +905,9 @@ namespace Server
         private System.Windows.Forms.Label lbQuyen;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel pnDisplay;
+        private System.Windows.Forms.Panel pncc;
+        private System.Windows.Forms.Panel pnFunction;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.Panel panel24;
     }
 }
