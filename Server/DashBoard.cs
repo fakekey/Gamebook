@@ -101,8 +101,8 @@ namespace Server
                 t.Add(label6, "Width", 0);
                 t.Run();
                 Transition.Run(panel2, "Width", 97, new EaseInEaseOut(600));
-                Transition.Run(panel20, "Width", 118, new EaseInEaseOut(100));
-                Transition t2 = new Transition(new EaseInEaseOut(100));
+                Transition.Run(panel20, "Width", 118, new EaseInEaseOut(40));
+                Transition t2 = new Transition(new EaseInEaseOut(40));
                 t2.Add(btnAll, "Width", 118);
                 t2.Add(btnThem, "Width", 118);
                 t2.Run();
@@ -120,8 +120,8 @@ namespace Server
                 t.Add(label6, "Width", 131);
                 t.Run();
                 Transition.Run(panel2, "Width", 217, new EaseInEaseOut(600));
-                Transition.Run(panel20, "Width", 0, new EaseInEaseOut(100));
-                Transition t2 = new Transition(new EaseInEaseOut(100));
+                Transition.Run(panel20, "Width", 0, new EaseInEaseOut(40));
+                Transition t2 = new Transition(new EaseInEaseOut(40));
                 t2.Add(btnAll, "Width", 0);
                 t2.Add(btnThem, "Width", 0);
                 t2.Run();

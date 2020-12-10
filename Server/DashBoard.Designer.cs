@@ -643,7 +643,7 @@ namespace Server
             // 
             // panel20
             // 
-            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.panel20.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(46)))));
             this.panel20.Controls.Add(this.pncc);
             this.panel20.Controls.Add(this.panel21);
             this.panel20.Controls.Add(this.message5);
@@ -660,7 +660,7 @@ namespace Server
             // 
             // pncc
             // 
-            this.pncc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.pncc.BackColor = System.Drawing.Color.Transparent;
             this.pncc.Controls.Add(this.pnFunction);
             this.pncc.Controls.Add(this.panel23);
             this.pncc.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -671,7 +671,7 @@ namespace Server
             // 
             // pnFunction
             // 
-            this.pnFunction.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(46)))));
+            this.pnFunction.BackColor = System.Drawing.Color.Transparent;
             this.pnFunction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnFunction.Location = new System.Drawing.Point(0, 0);
             this.pnFunction.Name = "pnFunction";
@@ -681,7 +681,7 @@ namespace Server
             // 
             // panel23
             // 
-            this.panel23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(46)))));
+            this.panel23.BackColor = System.Drawing.Color.Transparent;
             this.panel23.Controls.Add(this.panel24);
             this.panel23.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel23.Location = new System.Drawing.Point(0, 123);
@@ -701,7 +701,7 @@ namespace Server
             // 
             // panel21
             // 
-            this.panel21.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(42)))), ((int)(((byte)(46)))));
+            this.panel21.BackColor = System.Drawing.Color.Transparent;
             this.panel21.Controls.Add(this.label8);
             this.panel21.Controls.Add(this.panel22);
             this.panel21.Controls.Add(this.lbQuyen);
@@ -767,7 +767,7 @@ namespace Server
             // message2
             // 
             this.message2.BackColor = System.Drawing.Color.Transparent;
-            this.message2.Location = new System.Drawing.Point(3, 70);
+            this.message2.Location = new System.Drawing.Point(2, 70);
             this.message2.mSize = new System.Drawing.Size(102, 36);
             this.message2.mText = "Thành viên";
             this.message2.Name = "message2";

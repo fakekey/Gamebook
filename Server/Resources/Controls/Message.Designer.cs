@@ -87,11 +87,12 @@ namespace Server
             // 
             this.lbText.AutoSize = true;
             this.lbText.Dock = System.Windows.Forms.DockStyle.Left;
-            this.lbText.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbText.Font = new System.Drawing.Font("Quicksand", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbText.ForeColor = System.Drawing.Color.White;
             this.lbText.Location = new System.Drawing.Point(5, 4);
             this.lbText.Name = "lbText";
-            this.lbText.Size = new System.Drawing.Size(56, 24);
+            this.lbText.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.lbText.Size = new System.Drawing.Size(53, 24);
             this.lbText.TabIndex = 0;
             this.lbText.Text = "Home";
             // 
