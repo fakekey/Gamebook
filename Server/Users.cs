@@ -17,6 +17,11 @@ namespace Server
         public Users()
         {
             InitializeComponent();
+            btnTatCa_Click(null, null);
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            textBox1.AutoSize = false;
+            textBox1.Size = new Size(230, 22);
         }
 
         public void btnAdd_Click(object sender, EventArgs e)
@@ -137,6 +142,8 @@ namespace Server
         {
             admin = nhanvien = khach = false;
             tatca = true;
+            btnTatCa.ForeColor = Color.White;
+            pnTatCa.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
         }
 
@@ -186,6 +193,49 @@ namespace Server
                 pnKhach.rColor = Color.Transparent;
                 pnKhach.Refresh();
             }
+        }
+        private void VeBorder(Control control, PaintEventArgs e, int r, int g, int b)
+        {
+            ControlPaint.DrawBorder(e.Graphics, control.ClientRectangle, Color.FromArgb(r, g, b), ButtonBorderStyle.Solid);
+        }
+
+        private void usertb_Paint(object sender, PaintEventArgs e)
+        {
+            VeBorder(usertb, e, 34, 36, 40);
+        }
+
+        bool tbUserDontHandle = false;
+
+        private void textBox1_MouseEnter(object sender, EventArgs e)
+        {
+            if (tbUserDontHandle == false)
+            {
+                PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
+                VeBorder(usertb, eventArgs, 4, 4, 5);
+            }
+        }
+
+        private void textBox1_MouseLeave(object sender, EventArgs e)
+        {
+            if (tbUserDontHandle == false)
+            {
+                PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
+                VeBorder(usertb, eventArgs, 34, 36, 40);
+            }
+        }
+
+        private void textBox1_Enter(object sender, EventArgs e)
+        {
+            tbUserDontHandle = true;
+            PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
+            VeBorder(usertb, eventArgs, 114, 137, 218);
+        }
+
+        private void textBox1_Leave(object sender, EventArgs e)
+        {
+            PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
+            VeBorder(usertb, eventArgs, 34, 36, 40);
+            tbUserDontHandle = false;
         }
     }
 }
