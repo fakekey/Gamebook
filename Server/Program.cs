@@ -16,7 +16,7 @@ namespace Server
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DashBoard("camdalavip@gmail.com", "Admin"));
+            Application.Run(new DashBoard("Admin", "Admin"));
         }
     }
 }

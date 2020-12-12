@@ -11,6 +11,11 @@ namespace Server
         public DashBoard(string name, string quyen)
         {
             InitializeComponent();
+            if (quyen != "Admin")
+            {
+                panel8.Visible = false;
+                message2.Visible = false;
+            }
             btnAll = new NoFocusButton()
             {
                 Height = 45,

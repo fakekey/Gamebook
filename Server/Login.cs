@@ -204,7 +204,7 @@ namespace Server
                         DashBoard f = new DashBoard(textBox1.Text, Controller.quyenLogin == "1" ? "Admin" : "Stuff");
                         Hide();
                         f.ShowDialog();
-                        Close();
+                        Show();
                         break;
                     case 0:
                         lbUser.Text = "- Quyền truy cập bị từ chối";

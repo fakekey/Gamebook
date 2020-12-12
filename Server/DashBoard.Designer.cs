@@ -81,10 +81,10 @@ namespace Server
             this.panel22 = new System.Windows.Forms.Panel();
             this.lbQuyen = new System.Windows.Forms.Label();
             this.message5 = new Server.Message();
-            this.message1 = new Server.Message();
-            this.message2 = new Server.Message();
             this.message4 = new Server.Message();
             this.message3 = new Server.Message();
+            this.message2 = new Server.Message();
+            this.message1 = new Server.Message();
             this.pnDisplay = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -647,10 +647,10 @@ namespace Server
             this.panel20.Controls.Add(this.pncc);
             this.panel20.Controls.Add(this.panel21);
             this.panel20.Controls.Add(this.message5);
-            this.panel20.Controls.Add(this.message1);
-            this.panel20.Controls.Add(this.message2);
             this.panel20.Controls.Add(this.message4);
             this.panel20.Controls.Add(this.message3);
+            this.panel20.Controls.Add(this.message2);
+            this.panel20.Controls.Add(this.message1);
             this.panel20.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel20.Location = new System.Drawing.Point(217, 30);
             this.panel20.Name = "panel20";
@@ -747,52 +747,57 @@ namespace Server
             // message5
             // 
             this.message5.BackColor = System.Drawing.Color.Transparent;
-            this.message5.Location = new System.Drawing.Point(3, 274);
+            this.message5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.message5.Location = new System.Drawing.Point(0, 274);
             this.message5.mSize = new System.Drawing.Size(82, 36);
             this.message5.mText = "Mở rộng";
             this.message5.Name = "message5";
-            this.message5.Size = new System.Drawing.Size(89, 68);
+            this.message5.Size = new System.Drawing.Size(0, 68);
             this.message5.TabIndex = 4;
-            // 
-            // message1
-            // 
-            this.message1.BackColor = System.Drawing.Color.Transparent;
-            this.message1.Location = new System.Drawing.Point(3, 0);
-            this.message1.mSize = new System.Drawing.Size(94, 36);
-            this.message1.mText = "Trang chủ";
-            this.message1.Name = "message1";
-            this.message1.Size = new System.Drawing.Size(104, 70);
-            this.message1.TabIndex = 0;
-            // 
-            // message2
-            // 
-            this.message2.BackColor = System.Drawing.Color.Transparent;
-            this.message2.Location = new System.Drawing.Point(2, 70);
-            this.message2.mSize = new System.Drawing.Size(102, 36);
-            this.message2.mText = "Thành viên";
-            this.message2.Name = "message2";
-            this.message2.Size = new System.Drawing.Size(108, 68);
-            this.message2.TabIndex = 1;
             // 
             // message4
             // 
             this.message4.BackColor = System.Drawing.Color.Transparent;
-            this.message4.Location = new System.Drawing.Point(3, 206);
+            this.message4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.message4.Location = new System.Drawing.Point(0, 206);
             this.message4.mSize = new System.Drawing.Size(83, 36);
             this.message4.mText = "Hóa đơn";
             this.message4.Name = "message4";
-            this.message4.Size = new System.Drawing.Size(97, 68);
+            this.message4.Size = new System.Drawing.Size(0, 68);
             this.message4.TabIndex = 3;
             // 
             // message3
             // 
             this.message3.BackColor = System.Drawing.Color.Transparent;
-            this.message3.Location = new System.Drawing.Point(3, 138);
+            this.message3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.message3.Location = new System.Drawing.Point(0, 138);
             this.message3.mSize = new System.Drawing.Size(94, 36);
             this.message3.mText = "Sản phẩm";
             this.message3.Name = "message3";
-            this.message3.Size = new System.Drawing.Size(104, 68);
+            this.message3.Size = new System.Drawing.Size(0, 68);
             this.message3.TabIndex = 2;
+            // 
+            // message2
+            // 
+            this.message2.BackColor = System.Drawing.Color.Transparent;
+            this.message2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.message2.Location = new System.Drawing.Point(0, 70);
+            this.message2.mSize = new System.Drawing.Size(102, 36);
+            this.message2.mText = "Thành viên";
+            this.message2.Name = "message2";
+            this.message2.Size = new System.Drawing.Size(0, 68);
+            this.message2.TabIndex = 1;
+            // 
+            // message1
+            // 
+            this.message1.BackColor = System.Drawing.Color.Transparent;
+            this.message1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.message1.Location = new System.Drawing.Point(0, 0);
+            this.message1.mSize = new System.Drawing.Size(94, 36);
+            this.message1.mText = "Trang chủ";
+            this.message1.Name = "message1";
+            this.message1.Size = new System.Drawing.Size(0, 70);
+            this.message1.TabIndex = 0;
             // 
             // pnDisplay
             // 

@@ -119,6 +119,12 @@
     <Compile Include="Resources\Controls\BoxBorder.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Resources\Controls\ListMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\ListMember.Designer.cs">
+      <DependentUpon>ListMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Controls\Message.cs">
       <SubType>UserControl</SubType>
     </Compile>
