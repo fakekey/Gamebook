@@ -545,11 +545,11 @@ namespace Server
             this.label4.Cursor = System.Windows.Forms.Cursors.Default;
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.label4.Location = new System.Drawing.Point(49, 0);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(51, 0);
             this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(362, 57);
+            this.label4.Padding = new System.Windows.Forms.Padding(54, 0, 0, 0);
+            this.label4.Size = new System.Drawing.Size(361, 57);
             this.label4.TabIndex = 1;
             this.label4.Text = "Họ tên";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -560,8 +560,8 @@ namespace Server
             this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.checkBox1.Location = new System.Drawing.Point(3, 3);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Padding = new System.Windows.Forms.Padding(20, 6, 0, 0);
-            this.checkBox1.Size = new System.Drawing.Size(40, 51);
+            this.checkBox1.Padding = new System.Windows.Forms.Padding(29, 6, 0, 0);
+            this.checkBox1.Size = new System.Drawing.Size(42, 51);
             this.checkBox1.TabIndex = 0;
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
@@ -571,11 +571,11 @@ namespace Server
             this.label6.Cursor = System.Windows.Forms.Cursors.Default;
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.label6.Location = new System.Drawing.Point(417, 0);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(418, 0);
             this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
-            this.label6.Size = new System.Drawing.Size(362, 57);
+            this.label6.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.label6.Size = new System.Drawing.Size(361, 57);
             this.label6.TabIndex = 1;
             this.label6.Text = "Email";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -586,10 +586,10 @@ namespace Server
             this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(785, 0);
             this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(40, 0, 0, 0);
+            this.label8.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
             this.label8.Size = new System.Drawing.Size(363, 57);
             this.label8.TabIndex = 1;
             this.label8.Text = "Vai trò";
@@ -599,7 +599,7 @@ namespace Server
             // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
             this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 46F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
@@ -619,9 +619,9 @@ namespace Server
             // 
             this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(74)))));
             this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(20, 0);
+            this.panel15.Location = new System.Drawing.Point(16, 0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1111, 2);
+            this.panel15.Size = new System.Drawing.Size(1119, 2);
             this.panel15.TabIndex = 0;
             // 
             // panel14
@@ -631,7 +631,7 @@ namespace Server
             this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel14.Location = new System.Drawing.Point(0, 251);
             this.panel14.Name = "panel14";
-            this.panel14.Padding = new System.Windows.Forms.Padding(20, 0, 20, 0);
+            this.panel14.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
             this.panel14.Size = new System.Drawing.Size(1151, 2);
             this.panel14.TabIndex = 7;
             // 
@@ -642,6 +642,7 @@ namespace Server
             this.pnDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnDisplay.Location = new System.Drawing.Point(0, 253);
             this.pnDisplay.Name = "pnDisplay";
+            this.pnDisplay.Padding = new System.Windows.Forms.Padding(16, 10, 16, 16);
             this.pnDisplay.Size = new System.Drawing.Size(1151, 485);
             this.pnDisplay.TabIndex = 8;
             // 

@@ -166,6 +166,9 @@
     <EmbeddedResource Include="ResetPass.resx">
       <DependentUpon>ResetPass.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\ListMember.resx">
+      <DependentUpon>ListMember.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Controls\Message.resx">
       <DependentUpon>Message.cs</DependentUpon>
     </EmbeddedResource>

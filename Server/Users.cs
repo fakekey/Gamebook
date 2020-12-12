@@ -22,8 +22,58 @@ namespace Server
             comboBox2.SelectedIndex = 0;
             textBox1.AutoSize = false;
             textBox1.Size = new Size(230, 22);
+            for (int i = ds.Length - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0)
+                {
+                    pnDisplay.Controls.Add(new ListMember()
+                    {
+                        lTen = ds[i].HoTen,
+                        lEmail = ds[i].Email,
+                        lVaiTro = ds[i].VaiTro,
+                        bgColor = ListMember.FIRST_COLOR,
+                        isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
+                    });
+                }
+                else
+                {
+                    pnDisplay.Controls.Add(
+                    new ListMember()
+                    {
+                        lTen = ds[i].HoTen,
+                        lEmail = ds[i].Email,
+                        lVaiTro = ds[i].VaiTro,
+                        bgColor = ListMember.SECOND_COLOR,
+                        isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
+                    });
+                }
+            }
         }
-
+        //demo
+        struct MayThangNgu
+        {
+            public string HoTen;
+            public string Email;
+            public string VaiTro;
+            public MayThangNgu(string a, string b, string c)
+            {
+                HoTen = a;
+                Email = b;
+                VaiTro = c;
+            }
+        }
+        MayThangNgu[] ds = new MayThangNgu[] {
+            new MayThangNgu("Admin","admin","Admin"),
+            new MayThangNgu("Nguyễn Thế Trường","truongnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
+            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
+            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Admin","admin","Admin"),
+            new MayThangNgu("Nguyễn Thế Trường","truongnt@gmail.com","Nhân viên"),
+        };
         public void btnAdd_Click(object sender, EventArgs e)
         {
             AddForm(new AddUser());
