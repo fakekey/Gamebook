@@ -501,6 +501,7 @@ namespace Server
             this.noFocusButton3.TabIndex = 5;
             this.noFocusButton3.Text = "Tìm kiếm";
             this.noFocusButton3.UseVisualStyleBackColor = false;
+            this.noFocusButton3.Click += new System.EventHandler(this.noFocusButton3_Click);
             // 
             // noFocusButton2
             // 

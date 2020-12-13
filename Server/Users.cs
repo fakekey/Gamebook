@@ -14,6 +14,10 @@ namespace Server
 {
     public partial class Users : Form
     {
+        List<User> dsnv = new List<User>();
+        List<User> dsuser = new List<User>();
+        List<User> dsadmin = new List<User>();
+        List<User> dsAll = new List<User>();
         public Users()
         {
             InitializeComponent();
@@ -22,6 +26,34 @@ namespace Server
             comboBox2.SelectedIndex = 0;
             textBox1.AutoSize = false;
             textBox1.Size = new Size(230, 22);
+            dsnv = Controller.getNhanVien();
+            dsuser = Controller.getKhach();
+            dsadmin = Controller.getAdmin();
+            if (dsnv != null && dsuser != null && dsadmin != null)
+            {
+                label3.Text = "(" + dsadmin.Count.ToString() + ")";
+                label5.Text = "(" + dsnv.Count.ToString() + ")";
+                label7.Text = "(" + dsuser.Count.ToString() + ")";
+                dsAll.AddRange(dsadmin);
+                dsAll.AddRange(dsnv);
+                dsAll.AddRange(dsuser);
+            }
+            else
+            {
+                btnAdmin.Enabled = false;
+                btnKhach.Enabled = false;
+                btnNhanVien.Enabled = false;
+                
+            }
+            if (dsAll != null)
+            {
+                label2.Text = "(" + dsAll.Count.ToString() + ")";
+                addToPanel(dsAll);
+            }
+            else
+            {
+                btnTatCa.Enabled = false;
+            }
         }
         private int nUsers;
         public int leftPaddingEmail
@@ -38,8 +70,8 @@ namespace Server
                 label8.Padding = new Padding(value, 0, 0, 0);
             }
         }
-        //demo
-        struct MayThangNgu
+        #region demo
+        /*struct MayThangNgu
         {
             public string HoTen;
             public string Email;
@@ -74,7 +106,39 @@ namespace Server
             new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
             new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
         };
-        MayThangNgu[] ds2 = new MayThangNgu[0];
+        MayThangNgu[] ds2 = new MayThangNgu[0];*/
+        #endregion
+
+
+        private void addToPanel(List<User> ds)
+        {
+            for (int i = ds.Count - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0)
+                {
+                    pnDisplay.Controls.Add(new ListMember()
+                    {
+                        lTen = ds[i].Hoten,
+                        lEmail = ds[i].Email,
+                        lVaiTro = ds[i].Quyen,
+                        bgColor = ListMember.FIRST_COLOR,
+                        isNotAdmin = (ds[i].Quyen != "Admin") ? true : false
+                    });
+                }
+                else
+                {
+                    pnDisplay.Controls.Add(
+                    new ListMember()
+                    {
+                        lTen = ds[i].Hoten,
+                        lEmail = ds[i].Email,
+                        lVaiTro = ds[i].Quyen,
+                        bgColor = ListMember.SECOND_COLOR,
+                        isNotAdmin = (ds[i].Quyen != "Admin") ? true : false
+                    });
+                }
+            }
+        }
         public void btnAdd_Click(object sender, EventArgs e)
         {
             AddForm(new AddUser());
@@ -89,6 +153,19 @@ namespace Server
             form.Show();
         }
 
+        private void NoData()
+        {
+            pnDisplay.Controls.Add(new Label()
+            {
+                BackColor = Color.Transparent,
+                Dock = DockStyle.Fill,
+                Font = new Font("Quicksand", 14F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
+                ForeColor = Color.White,
+                Padding = new Padding(0, 0, 0, 50),
+                Text = "Không tìm thấy dữ liệu",
+                TextAlign = ContentAlignment.MiddleCenter,
+            });
+        }
         private void btnTatCa_MouseEnter(object sender, EventArgs e)
         {
             if (tatca == false)
@@ -196,50 +273,16 @@ namespace Server
             btnTatCa.ForeColor = Color.White;
             pnTatCa.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
-            nUsers = ds.Length;
+            nUsers = dsAll.Count;
             ReSize();
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
-                for (int i = ds.Length - 1; i >= 0; i--)
-                {
-                    if (i % 2 == 0)
-                    {
-                        pnDisplay.Controls.Add(new ListMember()
-                        {
-                            lTen = ds[i].HoTen,
-                            lEmail = ds[i].Email,
-                            lVaiTro = ds[i].VaiTro,
-                            bgColor = ListMember.FIRST_COLOR,
-                            isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
-                        });
-                    }
-                    else
-                    {
-                        pnDisplay.Controls.Add(
-                        new ListMember()
-                        {
-                            lTen = ds[i].HoTen,
-                            lEmail = ds[i].Email,
-                            lVaiTro = ds[i].VaiTro,
-                            bgColor = ListMember.SECOND_COLOR,
-                            isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
-                        });
-                    }
-                }
+                addToPanel(dsAll);
             }
             else
             {
-                pnDisplay.Controls.Add(new Label()
-                {
-                    BackColor = Color.Transparent,
-                    Dock = DockStyle.Fill,
-                    Font = new Font("Quicksand", 14F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
-                    ForeColor = Color.White,
-                    Padding = new Padding(0, 0, 0, 50),
-                    Text = "Không tìm thấy dữ liệu",
-                    TextAlign = ContentAlignment.MiddleCenter,
-                });
+                NoData();
             }
         }
 
@@ -248,50 +291,16 @@ namespace Server
             tatca = nhanvien = khach = false;
             admin = true;
             clear();
-            nUsers = ds1.Length;
+            nUsers = dsadmin.Count;
             ReSize();
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
-                for (int i = ds1.Length - 1; i >= 0; i--)
-                {
-                    if (i % 2 == 0)
-                    {
-                        pnDisplay.Controls.Add(new ListMember()
-                        {
-                            lTen = ds1[i].HoTen,
-                            lEmail = ds1[i].Email,
-                            lVaiTro = ds1[i].VaiTro,
-                            bgColor = ListMember.FIRST_COLOR,
-                            isNotAdmin = (ds1[i].VaiTro != "Admin") ? true : false
-                        });
-                    }
-                    else
-                    {
-                        pnDisplay.Controls.Add(
-                        new ListMember()
-                        {
-                            lTen = ds1[i].HoTen,
-                            lEmail = ds1[i].Email,
-                            lVaiTro = ds1[i].VaiTro,
-                            bgColor = ListMember.SECOND_COLOR,
-                            isNotAdmin = (ds1[i].VaiTro != "Admin") ? true : false
-                        });
-                    }
-                }
+                addToPanel(dsadmin);
             }
             else
             {
-                pnDisplay.Controls.Add(new Label()
-                {
-                    BackColor = Color.Transparent,
-                    Dock = DockStyle.Fill,
-                    Font = new Font("Quicksand", 14F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
-                    ForeColor = Color.White,
-                    Padding = new Padding(0, 0, 0, 50),
-                    Text = "Không tìm thấy dữ liệu",
-                    TextAlign = ContentAlignment.MiddleCenter,
-                });
+                NoData();
             }
         }
 
@@ -300,50 +309,16 @@ namespace Server
             admin = tatca = khach = false;
             nhanvien = true;
             clear();
-            nUsers = ds2.Length;
+            nUsers = dsnv.Count;
             ReSize();
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
-                for (int i = ds2.Length - 1; i >= 0; i--)
-                {
-                    if (i % 2 == 0)
-                    {
-                        pnDisplay.Controls.Add(new ListMember()
-                        {
-                            lTen = ds2[i].HoTen,
-                            lEmail = ds2[i].Email,
-                            lVaiTro = ds2[i].VaiTro,
-                            bgColor = ListMember.FIRST_COLOR,
-                            isNotAdmin = (ds2[i].VaiTro != "Admin") ? true : false
-                        });
-                    }
-                    else
-                    {
-                        pnDisplay.Controls.Add(
-                        new ListMember()
-                        {
-                            lTen = ds2[i].HoTen,
-                            lEmail = ds2[i].Email,
-                            lVaiTro = ds2[i].VaiTro,
-                            bgColor = ListMember.SECOND_COLOR,
-                            isNotAdmin = (ds2[i].VaiTro != "Admin") ? true : false
-                        });
-                    }
-                }
+                addToPanel(dsnv);
             }
             else
             {
-                pnDisplay.Controls.Add(new Label()
-                {
-                    BackColor = Color.Transparent,
-                    Dock = DockStyle.Fill,
-                    Font = new Font("Quicksand", 14F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
-                    ForeColor = Color.White,
-                    Padding = new Padding(0, 0, 0, 50),
-                    Text = "Không tìm thấy dữ liệu",
-                    TextAlign = ContentAlignment.MiddleCenter,
-                });
+                NoData();
             }
         }
 
@@ -352,6 +327,17 @@ namespace Server
             admin = nhanvien = tatca = false;
             khach = true;
             clear();
+            nUsers = dsuser.Count;
+            ReSize();
+            pnDisplay.Controls.Clear();
+            if (nUsers != 0)
+            {
+                addToPanel(dsuser);
+            }
+            else
+            {
+                NoData();
+            }
         }
         private void clear()
         {
@@ -457,6 +443,66 @@ namespace Server
             {
                 item.isChecked = checkBox1.Checked ? true : false;
             }
+        }
+
+        private void noFocusButton3_Click(object sender, EventArgs e)
+        {
+            string txtFind = textBox1.Text;
+            textBox1.Text = "";
+            List<User> dstk = new List<User>(0);
+            if (tatca == true)
+            {
+                foreach (User item in dsAll)
+                {
+                    if (item.Hoten.Contains(txtFind) || item.Email.Contains(txtFind) || item.Quyen.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if (admin == true)
+            {
+                foreach (User item in dsadmin)
+                {
+                    if (item.Hoten.Contains(txtFind) || item.Email.Contains(txtFind) || item.Quyen.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if (nhanvien == true)
+            {
+                foreach (User item in dsnv)
+                {
+                    if (item.Hoten.Contains(txtFind) || item.Email.Contains(txtFind) || item.Quyen.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if (khach == true)
+            {
+                foreach (User item in dsuser)
+                {
+                    if (item.Hoten.Contains(txtFind) || item.Email.Contains(txtFind) || item.Quyen.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            clear();
+            nUsers = dstk.Count;
+            ReSize();
+            pnDisplay.Controls.Clear();
+            if (nUsers != 0)
+            {
+                addToPanel(dstk);
+            }
+            else
+            {
+                NoData();
+            }
+
         }
     }
 }
