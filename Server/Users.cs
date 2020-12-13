@@ -34,7 +34,6 @@ namespace Server
             loadOverlay.Controls.Add(icoOverlay);
             this.Controls.Add(loadOverlay);
             comboBox1.SelectedIndex = 0;
-            comboBox2.SelectedIndex = 0;
             textBox1.AutoSize = false;
             textBox1.Size = new Size(230, 22);
             dsnv = Controller.getNhanVien();
@@ -535,6 +534,9 @@ namespace Server
             clear();
             nUsers = dstk.Count;
             ReSize();
+            timer1.Enabled = true;
+            timer1_Tick(null, null);
+            timer2.Enabled = true;
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
