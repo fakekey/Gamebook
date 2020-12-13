@@ -133,7 +133,7 @@ namespace Server
             this.btnXoa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnXoa.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnXoa.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(42)))), ((int)(((byte)(49)))));
+            this.btnXoa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(119)))), ((int)(((byte)(117)))));
             this.btnXoa.Location = new System.Drawing.Point(74, 0);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
@@ -141,6 +141,8 @@ namespace Server
             this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.MouseEnter += new System.EventHandler(this.btnXoa_MouseEnter);
+            this.btnXoa.MouseLeave += new System.EventHandler(this.btnXoa_MouseLeave);
             // 
             // btnSua
             // 
@@ -148,7 +150,7 @@ namespace Server
             this.btnSua.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSua.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.btnSua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.btnSua.Location = new System.Drawing.Point(0, 0);
             this.btnSua.Name = "btnSua";
             this.btnSua.Padding = new System.Windows.Forms.Padding(41, 0, 0, 0);
@@ -156,6 +158,8 @@ namespace Server
             this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.MouseEnter += new System.EventHandler(this.btnSua_MouseEnter);
+            this.btnSua.MouseLeave += new System.EventHandler(this.btnSua_MouseLeave);
             // 
             // panel2
             // 

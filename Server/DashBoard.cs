@@ -59,12 +59,18 @@ namespace Server
             if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
-                fUsers.ReSize();
+                if (fUsers != null)
+                {
+                    fUsers.ReSize();
+                }
             }
             else
             {
                 this.WindowState = FormWindowState.Normal;
-                fUsers.ReSize();
+                if (fUsers != null)
+                {
+                    fUsers.ReSize();
+                }
             }
         }
 
