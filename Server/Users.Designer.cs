@@ -29,6 +29,7 @@ namespace Server
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelRadius1 = new Server.PanelRadius();
@@ -70,6 +71,8 @@ namespace Server
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.pnDisplay = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panelRadius1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -625,6 +628,16 @@ namespace Server
             this.pnDisplay.Size = new System.Drawing.Size(1151, 487);
             this.pnDisplay.TabIndex = 8;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 800;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Users
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -710,5 +723,7 @@ namespace Server
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel pnDisplay;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }

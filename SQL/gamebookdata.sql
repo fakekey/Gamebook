@@ -11,7 +11,7 @@
  Target Server Version : 100414
  File Encoding         : 65001
 
- Date: 06/12/2020 20:30:52
+ Date: 13/12/2020 11:01:56
 */
 
 SET NAMES utf8mb4;
@@ -36,6 +36,8 @@ CREATE TABLE `account`  (
 -- ----------------------------
 INSERT INTO `account` VALUES ('admin', '21232f297a57a5a743894a0e4a801fc3', '1');
 INSERT INTO `account` VALUES ('anhnt@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '2');
+INSERT INTO `account` VALUES ('chauvv@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '3');
+INSERT INTO `account` VALUES ('khanhnt@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '3');
 INSERT INTO `account` VALUES ('ngochoang@gmail.com', 'fe01ce2a7fbac8fafaed7c982a04e229', '3');
 INSERT INTO `account` VALUES ('truongnt@gmail.com', 'fe01ce2a7fbac8fafaed7c982a04e229', '2');
 
@@ -91,15 +93,18 @@ CREATE TABLE `khach hang`  (
   `MAKH` int(10) NOT NULL AUTO_INCREMENT,
   `Email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `SĐT` varchar(11) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
+  `Họ Tên` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`MAKH`) USING BTREE,
   INDEX `kh_acc`(`Email`) USING BTREE,
   CONSTRAINT `kh_acc` FOREIGN KEY (`Email`) REFERENCES `account` (`Email`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of khach hang
 -- ----------------------------
-INSERT INTO `khach hang` VALUES (1, 'ngochoang@gmail.com', '19001515');
+INSERT INTO `khach hang` VALUES (1, 'ngochoang@gmail.com', '19001515', 'Ngọc Hoàng');
+INSERT INTO `khach hang` VALUES (2, 'chauvv@gmail.com', '18888888', 'Vũ Vương Châu');
+INSERT INTO `khach hang` VALUES (3, 'khanhnt@gmail.com', '12332444', 'Nguyễn Thu Khanh');
 
 -- ----------------------------
 -- Table structure for nhan vien
@@ -109,7 +114,6 @@ CREATE TABLE `nhan vien`  (
   `MANV` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Họ Tên` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `Chức vụ` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`MANV`) USING BTREE,
   INDEX `nv_acc`(`Email`) USING BTREE,
   CONSTRAINT `nv_acc` FOREIGN KEY (`Email`) REFERENCES `account` (`Email`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -118,8 +122,9 @@ CREATE TABLE `nhan vien`  (
 -- ----------------------------
 -- Records of nhan vien
 -- ----------------------------
-INSERT INTO `nhan vien` VALUES ('NV01', 'Nguyễn Thế Trường', 'truongnt@gmail.com', 'Bán Hàng');
-INSERT INTO `nhan vien` VALUES ('NV02', 'Trần Ánh', 'anhnt@gmail.com', 'Bán Hàng');
+INSERT INTO `nhan vien` VALUES ('NV00', 'Admin', 'admin');
+INSERT INTO `nhan vien` VALUES ('NV01', 'Nguyễn Thế Trường', 'truongnt@gmail.com');
+INSERT INTO `nhan vien` VALUES ('NV02', 'Trần Ánh', 'anhnt@gmail.com');
 
 -- ----------------------------
 -- Table structure for quyen
@@ -134,10 +139,9 @@ CREATE TABLE `quyen`  (
 -- ----------------------------
 -- Records of quyen
 -- ----------------------------
-INSERT INTO `quyen` VALUES ('1', 'admin');
-INSERT INTO `quyen` VALUES ('2', 'nhanvien');
-INSERT INTO `quyen` VALUES ('3', 'khach');
-INSERT INTO `quyen` VALUES ('4', 'block');
+INSERT INTO `quyen` VALUES ('1', 'Admin');
+INSERT INTO `quyen` VALUES ('2', 'Nhân Viên ');
+INSERT INTO `quyen` VALUES ('3', 'Khách Hàng');
 
 -- ----------------------------
 -- Table structure for san pham
@@ -185,6 +189,24 @@ CREATE TABLE `tinh trang don hang`  (
 INSERT INTO `tinh trang don hang` VALUES (1, 'Chưa xử lý');
 INSERT INTO `tinh trang don hang` VALUES (2, 'Đã chốt đơn');
 INSERT INTO `tinh trang don hang` VALUES (3, 'Hủy');
+
+-- ----------------------------
+-- View structure for userkhach
+-- ----------------------------
+DROP VIEW IF EXISTS `userkhach`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `userkhach` AS SELECT account.Email , `khach hang`.`Họ Tên`, quyen.`Ten quyen`
+From account, `khach hang` , quyen
+WHERE account.Email = `khach hang`.Email and account.ID_quyen = quyen.ID_quyen
+GROUP BY account.Email ;
+
+-- ----------------------------
+-- View structure for usernv
+-- ----------------------------
+DROP VIEW IF EXISTS `usernv`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `usernv` AS SELECT account.Email , `nhan vien`.`Họ Tên`, quyen.`Ten quyen`
+From account, `nhan vien` , quyen
+WHERE account.Email = `nhan vien`.Email and account.ID_quyen = quyen.ID_quyen
+GROUP BY account.Email ;
 
 -- ----------------------------
 -- View structure for vhoadon

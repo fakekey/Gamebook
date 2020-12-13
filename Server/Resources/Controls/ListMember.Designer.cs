@@ -69,7 +69,7 @@ namespace Server
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label9.Cursor = System.Windows.Forms.Cursors.Default;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label9.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
