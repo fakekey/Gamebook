@@ -97,6 +97,10 @@ namespace Server
                 panel2.Width = 217;
                 panel18.BackgroundImage = Properties.Resources.icons8_back_to_48px;
             }
+            if (fUsers != null)
+            {
+                fUsers.ReSize();
+            }
         }
 
         bool activeOne = false;

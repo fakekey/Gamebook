@@ -59,13 +59,11 @@ namespace Server
             if (dsAll != null)
             {
                 label2.Text = "(" + dsAll.Count.ToString() + ")";
-                addToPanel(dsAll);
             }
             else
             {
                 btnTatCa.Enabled = false;
             }
-            btnTatCa_Click(null, null);
         }
         private int nUsers;
         public int leftPaddingEmail
@@ -436,15 +434,20 @@ namespace Server
 
         public void ReSize()
         {
-            if (this.Width == 1151)
+            if (this.Width == 1111)
             {
                 loadOverlay.Bounds = new Rectangle(0, 251, 1111, 447);
                 loadOverlay.Padding = new Padding(505, 132, 505, 200);
             }
-            else if (this.Width == 1111)
+            else if (this.Width == 1231)
             {
-                loadOverlay.Bounds = new Rectangle(0, 251, 1111, 447);
-                loadOverlay.Padding = new Padding(505, 132, 505, 200);
+                loadOverlay.Bounds = new Rectangle(0, 251, 1231, 447);
+                loadOverlay.Padding = new Padding(565, 132, 565, 200);
+            }
+            else if (this.Width == 1783)
+            {
+                loadOverlay.Bounds = new Rectangle(0, 251, 1783, 759);
+                loadOverlay.Padding = new Padding(760, 200, 760, 300);
             }
             else
             {
