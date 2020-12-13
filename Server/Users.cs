@@ -574,5 +574,82 @@ namespace Server
             loadOverlay.Visible = false;
             pnDisplay.Visible = true;
         }
+
+        private void noFocusButton1_Click(object sender, EventArgs e)
+        {
+            if(comboBox1.SelectedItem.ToString() == "Xóa")
+            {
+                foreach(ListMember item in pnDisplay.Controls)
+                {
+                    if(item.isChecked == true && item.lVaiTro == "Nhân Viên")
+                    {
+                        Controller.XoaNV(item.lEmail);
+                    }
+                    if(item.isChecked == true && item.lVaiTro == "Khách Hàng")
+                    {
+                        Controller.XoaKhach(item.lEmail);
+                    }
+                }
+                reload();
+            }
+        }
+
+        private void reload()
+        {
+            dsadmin = dsuser = dsnv = null;
+            dsAll.Clear();
+            dsnv = Controller.getNhanVien();
+            dsuser = Controller.getKhach();
+            dsadmin = Controller.getAdmin();
+            if (dsnv != null && dsuser != null && dsadmin != null)
+            {
+                label3.Text = "(" + dsadmin.Count.ToString() + ")";
+                label5.Text = "(" + dsnv.Count.ToString() + ")";
+                label7.Text = "(" + dsuser.Count.ToString() + ")";
+                dsAll.AddRange(dsadmin);
+                dsAll.AddRange(dsnv);
+                dsAll.AddRange(dsuser);
+            }
+            else
+            {
+                btnAdmin.Enabled = false;
+                btnKhach.Enabled = false;
+                btnNhanVien.Enabled = false;
+
+            }
+            if (dsAll != null)
+            {
+                label2.Text = "(" + dsAll.Count.ToString() + ")";
+            }
+            else
+            {
+                btnTatCa.Enabled = false;
+            }
+            pnDisplay.Controls.Clear();
+            if (tatca == true)
+            {
+                nUsers = dsAll.Count;
+                ReSize();
+                addToPanel(dsAll);
+            }
+            if (admin == true)
+            {
+                nUsers = dsadmin.Count;
+                ReSize();
+                addToPanel(dsadmin);
+            }
+            if (nhanvien == true)
+            {
+                nUsers = dsnv.Count;
+                ReSize();
+                addToPanel(dsnv);
+            }
+            if (khach == true)
+            {
+                nUsers = dsuser.Count;
+                ReSize();
+                addToPanel(dsuser);
+            }
+        }
     }
 }

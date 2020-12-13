@@ -186,5 +186,66 @@ namespace Server
                 return null;
             }
         }
+        public static void XoaNV(string email)
+        {
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("xoanv", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.Add(new MySqlParameter("A", email));
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public static void XoaKhach(string email)
+        {
+            string makh = "";
+            List<string> hd = new List<string>();
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            // lay ra makh
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("SELECT MAKH from `khach hang` WHERE `khach hang`.Email = @email ", con);
+            cmd.Parameters.Add(new MySqlParameter("@email", email));
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                makh = reader.GetString(0);
+            }
+            con.Close();
+            // lay ra mahd
+            con.Open();
+            cmd = new MySqlCommand("SELECT MAHD from `hoa don` WHERE `hoa don`.MAKH = @makh ", con);
+            cmd.Parameters.Add(new MySqlParameter("@makh", makh));
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                string x = reader.GetString(0);
+                hd.Add(x);
+            }
+            con.Close();
+            // xoa chi tiet hoa don
+            foreach(string item in hd)
+            {
+                con.Open();
+                cmd = new MySqlCommand("DELETE from `chi tiet hoa don` WHERE `chi tiet hoa don`.MAHD ='"+item+"'",con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+            }
+            // xoa hoa don
+            con.Open();
+            cmd = new MySqlCommand("DELETE from `hoa don` WHERE `hoa don`.MAKH= '"+makh+"'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            // xoa khach hang 
+            con.Open();
+            cmd = new MySqlCommand("DELETE from `khach hang` WHERE `khach hang`.Email = '"+ email+"'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            // xoa account 
+            con.Open();
+            cmd = new MySqlCommand("DELETE from account WHERE account.Email ='" + email+"'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }
