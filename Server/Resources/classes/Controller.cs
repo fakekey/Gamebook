@@ -1,4 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
+using Server.Resources.Models;
+using System.Collections.Generic;
 using System.Data;
 
 namespace Server
@@ -99,6 +101,90 @@ namespace Server
             catch
             {
                 return -99;
+            }
+        }
+
+        public static List<User> getNhanVien()
+        {
+            List<User> dsnv = new List<User>();
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select * From usernv where `Ten quyen`='Nhân Viên'";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string Email = reader.GetString(0);
+                    string Ten = reader.GetString(1);
+                    string quyen = reader.GetString(2);
+                    User nv = new User(Email, quyen, Ten);
+                    dsnv.Add(nv);
+                }
+                return dsnv;
+            }
+            catch
+            {
+                return null;
+            }
+            
+        }
+        public static List<User> getAdmin()
+        {
+            List<User> ds = new List<User>();
+            try
+            {
+                
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select * From usernv where `Ten quyen`='Admin'";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string Email = reader.GetString(0);
+                    string Ten = reader.GetString(1);
+                    string quyen = reader.GetString(2);
+                    User nv = new User(Email, quyen, Ten);
+                    ds.Add(nv);
+                }
+                return ds;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public static List<User> getKhach()
+        {   
+            try
+            {
+                List<User> ds = new List<User>();
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select * From userkhach";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string Email = reader.GetString(0);
+                    string Ten = reader.GetString(1);
+                    string quyen = reader.GetString(2);
+                    User nv = new User(Email, quyen, Ten);
+                    ds.Add(nv);
+                }
+                return ds;
+            }
+            catch
+            {
+                return null;
             }
         }
     }
