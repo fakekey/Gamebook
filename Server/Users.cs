@@ -22,31 +22,20 @@ namespace Server
             comboBox2.SelectedIndex = 0;
             textBox1.AutoSize = false;
             textBox1.Size = new Size(230, 22);
-            for (int i = ds.Length - 1; i >= 0; i--)
+        }
+        private int nUsers;
+        public int leftPaddingEmail
+        {
+            set
             {
-                if (i % 2 == 0)
-                {
-                    pnDisplay.Controls.Add(new ListMember()
-                    {
-                        lTen = ds[i].HoTen,
-                        lEmail = ds[i].Email,
-                        lVaiTro = ds[i].VaiTro,
-                        bgColor = ListMember.FIRST_COLOR,
-                        isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
-                    });
-                }
-                else
-                {
-                    pnDisplay.Controls.Add(
-                    new ListMember()
-                    {
-                        lTen = ds[i].HoTen,
-                        lEmail = ds[i].Email,
-                        lVaiTro = ds[i].VaiTro,
-                        bgColor = ListMember.SECOND_COLOR,
-                        isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
-                    });
-                }
+                label6.Padding = new Padding(value, 0, 0, 0);
+            }
+        }
+        public int leftPaddingVaiTro
+        {
+            set
+            {
+                label8.Padding = new Padding(value, 0, 0, 0);
             }
         }
         //demo
@@ -68,11 +57,22 @@ namespace Server
             new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
             new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
             new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
+            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
             new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
             new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
             new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
+        };
+        MayThangNgu[] ds1 = new MayThangNgu[] {
             new MayThangNgu("Admin","admin","Admin"),
             new MayThangNgu("Nguyễn Thế Trường","truongnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
+            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
+            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
+            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
         };
         public void btnAdd_Click(object sender, EventArgs e)
         {
@@ -195,6 +195,35 @@ namespace Server
             btnTatCa.ForeColor = Color.White;
             pnTatCa.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
+            nUsers = ds.Length;
+            ReSize();
+            pnDisplay.Controls.Clear();
+            for (int i = ds.Length - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0)
+                {
+                    pnDisplay.Controls.Add(new ListMember()
+                    {
+                        lTen = ds[i].HoTen,
+                        lEmail = ds[i].Email,
+                        lVaiTro = ds[i].VaiTro,
+                        bgColor = ListMember.FIRST_COLOR,
+                        isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
+                    });
+                }
+                else
+                {
+                    pnDisplay.Controls.Add(
+                    new ListMember()
+                    {
+                        lTen = ds[i].HoTen,
+                        lEmail = ds[i].Email,
+                        lVaiTro = ds[i].VaiTro,
+                        bgColor = ListMember.SECOND_COLOR,
+                        isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
+                    });
+                }
+            }
         }
 
         private void btnAdmin_Click(object sender, EventArgs e)
@@ -202,6 +231,35 @@ namespace Server
             tatca = nhanvien = khach = false;
             admin = true;
             clear();
+            nUsers = ds1.Length;
+            ReSize();
+            pnDisplay.Controls.Clear();
+            for (int i = ds1.Length - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0)
+                {
+                    pnDisplay.Controls.Add(new ListMember()
+                    {
+                        lTen = ds1[i].HoTen,
+                        lEmail = ds1[i].Email,
+                        lVaiTro = ds1[i].VaiTro,
+                        bgColor = ListMember.FIRST_COLOR,
+                        isNotAdmin = (ds1[i].VaiTro != "Admin") ? true : false
+                    });
+                }
+                else
+                {
+                    pnDisplay.Controls.Add(
+                    new ListMember()
+                    {
+                        lTen = ds1[i].HoTen,
+                        lEmail = ds1[i].Email,
+                        lVaiTro = ds1[i].VaiTro,
+                        bgColor = ListMember.SECOND_COLOR,
+                        isNotAdmin = (ds1[i].VaiTro != "Admin") ? true : false
+                    });
+                }
+            }
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
@@ -286,6 +344,33 @@ namespace Server
             PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
             VeBorder(usertb, eventArgs, 34, 36, 40);
             tbUserDontHandle = false;
+        }
+
+        public void ReSize()
+        {
+            if (nUsers < 7)
+            {
+                leftPaddingEmail = 44;
+                leftPaddingVaiTro = 34;
+            }
+            if (nUsers >= 7 && nUsers < 11)
+            {
+                if (this.Width == 1111)
+                {
+                    leftPaddingEmail = 38;
+                    leftPaddingVaiTro = 22;
+                }
+                else
+                {
+                    leftPaddingEmail = 44;
+                    leftPaddingVaiTro = 34;
+                }
+            }
+            else if (nUsers >= 11)
+            {
+                leftPaddingEmail = 38;
+                leftPaddingVaiTro = 22;
+            }
         }
     }
 }

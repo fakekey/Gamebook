@@ -125,12 +125,6 @@
     <Compile Include="Resources\Controls\ListMember.Designer.cs">
       <DependentUpon>ListMember.cs</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Controls\Message.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Resources\Controls\Message.Designer.cs">
-      <DependentUpon>Message.cs</DependentUpon>
-    </Compile>
     <Compile Include="Resources\Controls\NoFocusButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -168,9 +162,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Controls\ListMember.resx">
       <DependentUpon>ListMember.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Controls\Message.resx">
-      <DependentUpon>Message.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
