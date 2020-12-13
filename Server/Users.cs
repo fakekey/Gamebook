@@ -9,11 +9,17 @@ using System.Threading.Tasks;
 using Transitions;
 using Transitions.TransitionTypes;
 using System.Windows.Forms;
+using Server.Resources.Models;
 
 namespace Server
 {
     public partial class Users : Form
     {
+        // khoi tao danh sach
+        List<User> dsnv = new List<User>();
+        List<User> dsuser = new List<User>();
+        List<User> dsadmin = new List<User>();
+        List<User> dsAll = new List<User>();
         public Users()
         {
             InitializeComponent();
@@ -22,6 +28,52 @@ namespace Server
             comboBox2.SelectedIndex = 0;
             textBox1.AutoSize = false;
             textBox1.Size = new Size(230, 22);
+            dsnv = Controller.getNhanVien();
+            dsuser = Controller.getKhach();
+            dsadmin = Controller.getAdmin();
+            if (dsnv != null && dsuser != null && dsadmin != null)
+            {
+                label3.Text = "("+dsadmin.Count.ToString()+")";
+                label5.Text = "("+dsnv.Count.ToString()+")";
+                label7.Text = "(" + dsuser.Count.ToString() + ")";
+                dsAll.AddRange(dsadmin);
+                dsAll.AddRange(dsnv);
+                dsAll.AddRange(dsuser);
+            }
+            else
+            {
+                // show in label : no data found !
+            }
+            if (dsAll != null)
+            {
+                label2.Text = "("+dsAll.Count.ToString()+")";
+                for (int i = dsAll.Count - 1; i >= 0; i--)
+                {
+                    if (i % 2 == 0)
+                    {
+                        pnDisplay.Controls.Add(new ListMember()
+                        {
+                            lTen = dsAll[i].Hoten,
+                            lEmail = dsAll[i].Email,
+                            lVaiTro = dsAll[i].Quyen,
+                            bgColor = ListMember.FIRST_COLOR,
+                            isNotAdmin = (dsAll[i].Quyen != "Admin") ? true : false
+                        });
+                    }
+                    else
+                    {
+                        pnDisplay.Controls.Add(
+                        new ListMember()
+                        {
+                            lTen = dsAll[i].Hoten,
+                            lEmail = dsAll[i].Email,
+                            lVaiTro = dsAll[i].Quyen,
+                            bgColor = ListMember.SECOND_COLOR,
+                            isNotAdmin = (dsAll[i].Quyen != "Admin") ? true : false
+                        });
+                    }
+                }
+            }
         }
         private int nUsers;
         public int leftPaddingEmail
@@ -38,42 +90,7 @@ namespace Server
                 label8.Padding = new Padding(value, 0, 0, 0);
             }
         }
-        //demo
-        struct MayThangNgu
-        {
-            public string HoTen;
-            public string Email;
-            public string VaiTro;
-            public MayThangNgu(string a, string b, string c)
-            {
-                HoTen = a;
-                Email = b;
-                VaiTro = c;
-            }
-        }
-        MayThangNgu[] ds = new MayThangNgu[] {
-            new MayThangNgu("Admin","admin","Admin"),
-            new MayThangNgu("Nguyễn Thế Trường","truongnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-        };
-        MayThangNgu[] ds1 = new MayThangNgu[] {
-            new MayThangNgu("Admin","admin","Admin"),
-            new MayThangNgu("Nguyễn Thế Trường","truongnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-        };
+
         public void btnAdd_Click(object sender, EventArgs e)
         {
             AddForm(new AddUser());
@@ -183,7 +200,7 @@ namespace Server
                 pnKhach.Refresh();
             }
         }
-        bool tatca = false;
+        bool tatca = true;
         bool admin = false;
         bool nhanvien = false;
         bool khach = false;
@@ -195,20 +212,20 @@ namespace Server
             btnTatCa.ForeColor = Color.White;
             pnTatCa.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
-            nUsers = ds.Length;
+            nUsers = dsAll.Count;
             ReSize();
             pnDisplay.Controls.Clear();
-            for (int i = ds.Length - 1; i >= 0; i--)
+            for (int i = dsAll.Count - 1; i >= 0; i--)
             {
                 if (i % 2 == 0)
                 {
                     pnDisplay.Controls.Add(new ListMember()
                     {
-                        lTen = ds[i].HoTen,
-                        lEmail = ds[i].Email,
-                        lVaiTro = ds[i].VaiTro,
+                        lTen = dsAll[i].Hoten,
+                        lEmail = dsAll[i].Email,
+                        lVaiTro = dsAll[i].Quyen,
                         bgColor = ListMember.FIRST_COLOR,
-                        isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
+                        isNotAdmin = (dsAll[i].Quyen != "Admin") ? true : false
                     });
                 }
                 else
@@ -216,11 +233,11 @@ namespace Server
                     pnDisplay.Controls.Add(
                     new ListMember()
                     {
-                        lTen = ds[i].HoTen,
-                        lEmail = ds[i].Email,
-                        lVaiTro = ds[i].VaiTro,
+                        lTen = dsAll[i].Hoten,
+                        lEmail = dsAll[i].Email,
+                        lVaiTro = dsAll[i].Quyen,
                         bgColor = ListMember.SECOND_COLOR,
-                        isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
+                        isNotAdmin = (dsAll[i].Quyen != "Admin") ? true : false
                     });
                 }
             }
@@ -231,20 +248,20 @@ namespace Server
             tatca = nhanvien = khach = false;
             admin = true;
             clear();
-            nUsers = ds1.Length;
+            nUsers = dsadmin.Count;
             ReSize();
             pnDisplay.Controls.Clear();
-            for (int i = ds1.Length - 1; i >= 0; i--)
+            for (int i = dsadmin.Count - 1; i >= 0; i--)
             {
                 if (i % 2 == 0)
                 {
                     pnDisplay.Controls.Add(new ListMember()
                     {
-                        lTen = ds1[i].HoTen,
-                        lEmail = ds1[i].Email,
-                        lVaiTro = ds1[i].VaiTro,
+                        lTen = dsadmin[i].Hoten,
+                        lEmail = dsadmin[i].Email,
+                        lVaiTro = dsadmin[i].Quyen,
                         bgColor = ListMember.FIRST_COLOR,
-                        isNotAdmin = (ds1[i].VaiTro != "Admin") ? true : false
+                        isNotAdmin = (dsadmin[i].Quyen != "Admin") ? true : false
                     });
                 }
                 else
@@ -252,11 +269,11 @@ namespace Server
                     pnDisplay.Controls.Add(
                     new ListMember()
                     {
-                        lTen = ds1[i].HoTen,
-                        lEmail = ds1[i].Email,
-                        lVaiTro = ds1[i].VaiTro,
+                        lTen = dsadmin[i].Hoten,
+                        lEmail = dsadmin[i].Email,
+                        lVaiTro = dsadmin[i].Quyen,
                         bgColor = ListMember.SECOND_COLOR,
-                        isNotAdmin = (ds1[i].VaiTro != "Admin") ? true : false
+                        isNotAdmin = (dsadmin[i].Quyen != "Admin") ? true : false
                     });
                 }
             }
@@ -267,6 +284,35 @@ namespace Server
             admin = tatca = khach = false;
             nhanvien = true;
             clear();
+            nUsers = dsnv.Count;
+            ReSize();
+            pnDisplay.Controls.Clear();
+            for (int i = dsnv.Count - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0)
+                {
+                    pnDisplay.Controls.Add(new ListMember()
+                    {
+                        lTen = dsnv[i].Hoten,
+                        lEmail = dsnv[i].Email,
+                        lVaiTro = dsnv[i].Quyen,
+                        bgColor = ListMember.FIRST_COLOR,
+                        isNotAdmin = (dsnv[i].Quyen != "Admin") ? true : false
+                    });
+                }
+                else
+                {
+                    pnDisplay.Controls.Add(
+                    new ListMember()
+                    {
+                        lTen = dsnv[i].Hoten,
+                        lEmail = dsnv[i].Email,
+                        lVaiTro = dsnv[i].Quyen,
+                        bgColor = ListMember.SECOND_COLOR,
+                        isNotAdmin = (dsnv[i].Quyen != "Admin") ? true : false
+                    });
+                }
+            }
         }
 
         private void btnKhach_Click(object sender, EventArgs e)
@@ -274,6 +320,36 @@ namespace Server
             admin = nhanvien = tatca = false;
             khach = true;
             clear();
+            nUsers = dsnv.Count;
+            ReSize();
+            pnDisplay.Controls.Clear();
+            for (int i = dsuser.Count - 1; i >= 0; i--)
+            {
+                if (i % 2 == 0)
+                {
+                    pnDisplay.Controls.Add(new ListMember()
+                    {
+                        lTen = dsuser[i].Hoten,
+                        lEmail = dsuser[i].Email,
+                        lVaiTro = dsuser[i].Quyen,
+                        bgColor = ListMember.FIRST_COLOR,
+                        isNotAdmin = (dsuser[i].Quyen != "Admin") ? true : false
+                    });
+                }
+                else
+                {
+                    pnDisplay.Controls.Add(
+                    new ListMember()
+                    {
+                        lTen = dsuser[i].Hoten,
+                        lEmail = dsuser[i].Email,
+                        lVaiTro = dsuser[i].Quyen,
+                        bgColor = ListMember.SECOND_COLOR,
+                        isNotAdmin = (dsuser[i].Quyen != "Admin") ? true : false
+                    });
+                }
+            }
+
         }
         private void clear()
         {
@@ -371,6 +447,54 @@ namespace Server
                 leftPaddingEmail = 38;
                 leftPaddingVaiTro = 22;
             }
+        }
+
+        private void noFocusButton3_Click(object sender, EventArgs e)
+        {
+            string textFind = textBox1.Text;
+            List<User> dstk = new List<User>();
+            if(tatca == true)
+            {
+                foreach(User item in dsAll)
+                {
+                    if(item.Hoten.Contains(textFind) || item.Email.Contains(textFind) || item.Quyen.Contains(textFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if (nhanvien == true)
+            {
+                foreach (User item in dsnv)
+                {
+                    if (item.Hoten.Contains(textFind) || item.Email.Contains(textFind) || item.Quyen.Contains(textFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if(khach == true)
+            {
+                foreach (User item in dsuser)
+                {
+                    if (item.Hoten.Contains(textFind) || item.Email.Contains(textFind) || item.Quyen.Contains(textFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if (admin == true)
+            {
+                foreach (User item in dsadmin)
+                {
+                    if (item.Hoten.Contains(textFind) || item.Email.Contains(textFind) || item.Quyen.Contains(textFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            nUsers = dstk.Count;
+            pnDisplay.Controls.Clear();
         }
     }
 }
