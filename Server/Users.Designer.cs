@@ -31,65 +31,62 @@ namespace Server
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panelRadius1 = new Server.PanelRadius();
+            this.btnAdd = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pnTatCa = new Server.PanelRadius();
+            this.btnTatCa = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.pnAdmin = new Server.PanelRadius();
+            this.btnAdmin = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.pnNhanVien = new Server.PanelRadius();
+            this.btnNhanVien = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
+            this.pnKhach = new Server.PanelRadius();
+            this.btnKhach = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.usertb = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.noFocusButton3 = new Server.NoFocusButton();
+            this.noFocusButton2 = new Server.NoFocusButton();
+            this.noFocusButton1 = new Server.NoFocusButton();
             this.label4 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.panel14 = new System.Windows.Forms.Panel();
             this.pnDisplay = new System.Windows.Forms.Panel();
-            this.noFocusButton3 = new Server.NoFocusButton();
-            this.noFocusButton2 = new Server.NoFocusButton();
-            this.noFocusButton1 = new Server.NoFocusButton();
-            this.pnKhach = new Server.PanelRadius();
-            this.btnKhach = new System.Windows.Forms.Label();
-            this.pnNhanVien = new Server.PanelRadius();
-            this.btnNhanVien = new System.Windows.Forms.Label();
-            this.pnAdmin = new Server.PanelRadius();
-            this.btnAdmin = new System.Windows.Forms.Label();
-            this.pnTatCa = new Server.PanelRadius();
-            this.btnTatCa = new System.Windows.Forms.Label();
-            this.panelRadius1 = new Server.PanelRadius();
-            this.btnAdd = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
+            this.panelRadius1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.pnTatCa.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.pnAdmin.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.pnNhanVien.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel12.SuspendLayout();
+            this.pnKhach.SuspendLayout();
             this.panel2.SuspendLayout();
             this.usertb.SuspendLayout();
             this.panel13.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.pnKhach.SuspendLayout();
-            this.pnNhanVien.SuspendLayout();
-            this.pnAdmin.SuspendLayout();
-            this.pnTatCa.SuspendLayout();
-            this.panelRadius1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -113,6 +110,33 @@ namespace Server
             this.panel1.Size = new System.Drawing.Size(1151, 44);
             this.panel1.TabIndex = 2;
             // 
+            // panelRadius1
+            // 
+            this.panelRadius1.Controls.Add(this.btnAdd);
+            this.panelRadius1.Location = new System.Drawing.Point(153, 0);
+            this.panelRadius1.Name = "panelRadius1";
+            this.panelRadius1.Radius = 0;
+            this.panelRadius1.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(181)))), ((int)(((byte)(129)))));
+            this.panelRadius1.rSize = new System.Drawing.Size(114, 37);
+            this.panelRadius1.Size = new System.Drawing.Size(115, 38);
+            this.panelRadius1.TabIndex = 1;
+            this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(115, 38);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Thêm mới";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.label2);
@@ -133,6 +157,36 @@ namespace Server
             this.label2.Size = new System.Drawing.Size(33, 21);
             this.label2.TabIndex = 2;
             this.label2.Text = "(15)";
+            // 
+            // pnTatCa
+            // 
+            this.pnTatCa.BackColor = System.Drawing.Color.Transparent;
+            this.pnTatCa.Controls.Add(this.btnTatCa);
+            this.pnTatCa.Location = new System.Drawing.Point(0, 11);
+            this.pnTatCa.Name = "pnTatCa";
+            this.pnTatCa.Radius = 5;
+            this.pnTatCa.rColor = System.Drawing.Color.Transparent;
+            this.pnTatCa.rSize = new System.Drawing.Size(101, 24);
+            this.pnTatCa.Size = new System.Drawing.Size(102, 25);
+            this.pnTatCa.TabIndex = 1;
+            this.pnTatCa.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnTatCa
+            // 
+            this.btnTatCa.BackColor = System.Drawing.Color.Transparent;
+            this.btnTatCa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTatCa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTatCa.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnTatCa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.btnTatCa.Location = new System.Drawing.Point(0, 0);
+            this.btnTatCa.Name = "btnTatCa";
+            this.btnTatCa.Size = new System.Drawing.Size(102, 25);
+            this.btnTatCa.TabIndex = 0;
+            this.btnTatCa.Text = "Tất cả";
+            this.btnTatCa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
+            this.btnTatCa.MouseEnter += new System.EventHandler(this.btnTatCa_MouseEnter);
+            this.btnTatCa.MouseLeave += new System.EventHandler(this.btnTatCa_MouseLeave);
             // 
             // panel4
             // 
@@ -174,6 +228,36 @@ namespace Server
             this.label3.TabIndex = 2;
             this.label3.Text = "(15)";
             // 
+            // pnAdmin
+            // 
+            this.pnAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.pnAdmin.Controls.Add(this.btnAdmin);
+            this.pnAdmin.Location = new System.Drawing.Point(15, 11);
+            this.pnAdmin.Name = "pnAdmin";
+            this.pnAdmin.Radius = 5;
+            this.pnAdmin.rColor = System.Drawing.Color.Transparent;
+            this.pnAdmin.rSize = new System.Drawing.Size(101, 24);
+            this.pnAdmin.Size = new System.Drawing.Size(102, 25);
+            this.pnAdmin.TabIndex = 1;
+            this.pnAdmin.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdmin.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.btnAdmin.Location = new System.Drawing.Point(0, 0);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.Size = new System.Drawing.Size(102, 25);
+            this.btnAdmin.TabIndex = 0;
+            this.btnAdmin.Text = "Admin";
+            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
+            this.btnAdmin.MouseEnter += new System.EventHandler(this.btnAdmin_MouseEnter);
+            this.btnAdmin.MouseLeave += new System.EventHandler(this.btnAdmin_MouseLeave);
+            // 
             // panel7
             // 
             this.panel7.Controls.Add(this.panel8);
@@ -214,6 +298,36 @@ namespace Server
             this.label5.TabIndex = 2;
             this.label5.Text = "(15)";
             // 
+            // pnNhanVien
+            // 
+            this.pnNhanVien.BackColor = System.Drawing.Color.Transparent;
+            this.pnNhanVien.Controls.Add(this.btnNhanVien);
+            this.pnNhanVien.Location = new System.Drawing.Point(15, 11);
+            this.pnNhanVien.Name = "pnNhanVien";
+            this.pnNhanVien.Radius = 5;
+            this.pnNhanVien.rColor = System.Drawing.Color.Transparent;
+            this.pnNhanVien.rSize = new System.Drawing.Size(101, 24);
+            this.pnNhanVien.Size = new System.Drawing.Size(102, 25);
+            this.pnNhanVien.TabIndex = 1;
+            this.pnNhanVien.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnNhanVien
+            // 
+            this.btnNhanVien.BackColor = System.Drawing.Color.Transparent;
+            this.btnNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNhanVien.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.btnNhanVien.Location = new System.Drawing.Point(0, 0);
+            this.btnNhanVien.Name = "btnNhanVien";
+            this.btnNhanVien.Size = new System.Drawing.Size(102, 25);
+            this.btnNhanVien.TabIndex = 0;
+            this.btnNhanVien.Text = "Nhân viên";
+            this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
+            this.btnNhanVien.MouseEnter += new System.EventHandler(this.btnNhanVien_MouseEnter);
+            this.btnNhanVien.MouseLeave += new System.EventHandler(this.btnNhanVien_MouseLeave);
+            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.panel11);
@@ -253,6 +367,36 @@ namespace Server
             this.label7.Size = new System.Drawing.Size(33, 21);
             this.label7.TabIndex = 2;
             this.label7.Text = "(15)";
+            // 
+            // pnKhach
+            // 
+            this.pnKhach.BackColor = System.Drawing.Color.Transparent;
+            this.pnKhach.Controls.Add(this.btnKhach);
+            this.pnKhach.Location = new System.Drawing.Point(17, 11);
+            this.pnKhach.Name = "pnKhach";
+            this.pnKhach.Radius = 5;
+            this.pnKhach.rColor = System.Drawing.Color.Transparent;
+            this.pnKhach.rSize = new System.Drawing.Size(101, 24);
+            this.pnKhach.Size = new System.Drawing.Size(102, 25);
+            this.pnKhach.TabIndex = 1;
+            this.pnKhach.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnKhach
+            // 
+            this.btnKhach.BackColor = System.Drawing.Color.Transparent;
+            this.btnKhach.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnKhach.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKhach.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnKhach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.btnKhach.Location = new System.Drawing.Point(0, 0);
+            this.btnKhach.Name = "btnKhach";
+            this.btnKhach.Size = new System.Drawing.Size(102, 25);
+            this.btnKhach.TabIndex = 0;
+            this.btnKhach.Text = "Khách hàng";
+            this.btnKhach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnKhach.Click += new System.EventHandler(this.btnKhach_Click);
+            this.btnKhach.MouseEnter += new System.EventHandler(this.btnKhach_MouseEnter);
+            this.btnKhach.MouseLeave += new System.EventHandler(this.btnKhach_MouseLeave);
             // 
             // panel2
             // 
@@ -340,113 +484,6 @@ namespace Server
             this.panel13.Size = new System.Drawing.Size(1151, 82);
             this.panel13.TabIndex = 4;
             // 
-            // label4
-            // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(51, 0);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(54, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(361, 57);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Họ tên";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.Location = new System.Drawing.Point(3, 3);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Padding = new System.Windows.Forms.Padding(29, 6, 0, 0);
-            this.checkBox1.Size = new System.Drawing.Size(42, 51);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label6
-            // 
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label6.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(418, 0);
-            this.label6.Name = "label6";
-            this.label6.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
-            this.label6.Size = new System.Drawing.Size(361, 57);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Email";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label8.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(785, 0);
-            this.label8.Name = "label8";
-            this.label8.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.label8.Size = new System.Drawing.Size(363, 57);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "Vai trò";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this.tableLayoutPanel1.Controls.Add(this.label8, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 194);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1151, 57);
-            this.tableLayoutPanel1.TabIndex = 6;
-            // 
-            // panel15
-            // 
-            this.panel15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(69)))), ((int)(((byte)(74)))));
-            this.panel15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel15.Location = new System.Drawing.Point(16, 0);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(1119, 2);
-            this.panel15.TabIndex = 0;
-            // 
-            // panel14
-            // 
-            this.panel14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
-            this.panel14.Controls.Add(this.panel15);
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel14.Location = new System.Drawing.Point(0, 251);
-            this.panel14.Name = "panel14";
-            this.panel14.Padding = new System.Windows.Forms.Padding(16, 0, 16, 0);
-            this.panel14.Size = new System.Drawing.Size(1151, 2);
-            this.panel14.TabIndex = 7;
-            // 
-            // pnDisplay
-            // 
-            this.pnDisplay.AutoScroll = true;
-            this.pnDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
-            this.pnDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnDisplay.Location = new System.Drawing.Point(0, 253);
-            this.pnDisplay.Name = "pnDisplay";
-            this.pnDisplay.Padding = new System.Windows.Forms.Padding(16, 10, 16, 16);
-            this.pnDisplay.Size = new System.Drawing.Size(1151, 485);
-            this.pnDisplay.TabIndex = 8;
-            // 
             // noFocusButton3
             // 
             this.noFocusButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -499,152 +536,93 @@ namespace Server
             this.noFocusButton1.Text = "Áp dụng";
             this.noFocusButton1.UseVisualStyleBackColor = false;
             // 
-            // pnKhach
+            // label4
             // 
-            this.pnKhach.BackColor = System.Drawing.Color.Transparent;
-            this.pnKhach.Controls.Add(this.btnKhach);
-            this.pnKhach.Location = new System.Drawing.Point(17, 11);
-            this.pnKhach.Name = "pnKhach";
-            this.pnKhach.Radius = 5;
-            this.pnKhach.rColor = System.Drawing.Color.Transparent;
-            this.pnKhach.rSize = new System.Drawing.Size(101, 24);
-            this.pnKhach.Size = new System.Drawing.Size(102, 25);
-            this.pnKhach.TabIndex = 1;
-            this.pnKhach.TopLeft = new System.Drawing.Point(0, 0);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(51, 0);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(54, 0, 0, 0);
+            this.label4.Size = new System.Drawing.Size(361, 57);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Họ tên";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnKhach
+            // checkBox1
             // 
-            this.btnKhach.BackColor = System.Drawing.Color.Transparent;
-            this.btnKhach.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnKhach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnKhach.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnKhach.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.btnKhach.Location = new System.Drawing.Point(0, 0);
-            this.btnKhach.Name = "btnKhach";
-            this.btnKhach.Size = new System.Drawing.Size(102, 25);
-            this.btnKhach.TabIndex = 0;
-            this.btnKhach.Text = "Khách hàng";
-            this.btnKhach.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnKhach.Click += new System.EventHandler(this.btnKhach_Click);
-            this.btnKhach.MouseEnter += new System.EventHandler(this.btnKhach_MouseEnter);
-            this.btnKhach.MouseLeave += new System.EventHandler(this.btnKhach_MouseLeave);
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.checkBox1.Location = new System.Drawing.Point(3, 3);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Padding = new System.Windows.Forms.Padding(29, 6, 0, 0);
+            this.checkBox1.Size = new System.Drawing.Size(42, 51);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // pnNhanVien
+            // label6
             // 
-            this.pnNhanVien.BackColor = System.Drawing.Color.Transparent;
-            this.pnNhanVien.Controls.Add(this.btnNhanVien);
-            this.pnNhanVien.Location = new System.Drawing.Point(15, 11);
-            this.pnNhanVien.Name = "pnNhanVien";
-            this.pnNhanVien.Radius = 5;
-            this.pnNhanVien.rColor = System.Drawing.Color.Transparent;
-            this.pnNhanVien.rSize = new System.Drawing.Size(101, 24);
-            this.pnNhanVien.Size = new System.Drawing.Size(102, 25);
-            this.pnNhanVien.TabIndex = 1;
-            this.pnNhanVien.TopLeft = new System.Drawing.Point(0, 0);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(418, 0);
+            this.label6.Name = "label6";
+            this.label6.Padding = new System.Windows.Forms.Padding(44, 0, 0, 0);
+            this.label6.Size = new System.Drawing.Size(361, 57);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Email";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // btnNhanVien
+            // label8
             // 
-            this.btnNhanVien.BackColor = System.Drawing.Color.Transparent;
-            this.btnNhanVien.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNhanVien.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnNhanVien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.btnNhanVien.Location = new System.Drawing.Point(0, 0);
-            this.btnNhanVien.Name = "btnNhanVien";
-            this.btnNhanVien.Size = new System.Drawing.Size(102, 25);
-            this.btnNhanVien.TabIndex = 0;
-            this.btnNhanVien.Text = "Nhân viên";
-            this.btnNhanVien.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnNhanVien.Click += new System.EventHandler(this.btnNhanVien_Click);
-            this.btnNhanVien.MouseEnter += new System.EventHandler(this.btnNhanVien_MouseEnter);
-            this.btnNhanVien.MouseLeave += new System.EventHandler(this.btnNhanVien_MouseLeave);
+            this.label8.BackColor = System.Drawing.Color.Transparent;
+            this.label8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label8.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(785, 0);
+            this.label8.Name = "label8";
+            this.label8.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
+            this.label8.Size = new System.Drawing.Size(363, 57);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "Vai trò";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // pnAdmin
+            // tableLayoutPanel1
             // 
-            this.pnAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.pnAdmin.Controls.Add(this.btnAdmin);
-            this.pnAdmin.Location = new System.Drawing.Point(15, 11);
-            this.pnAdmin.Name = "pnAdmin";
-            this.pnAdmin.Radius = 5;
-            this.pnAdmin.rColor = System.Drawing.Color.Transparent;
-            this.pnAdmin.rSize = new System.Drawing.Size(101, 24);
-            this.pnAdmin.Size = new System.Drawing.Size(102, 25);
-            this.pnAdmin.TabIndex = 1;
-            this.pnAdmin.TopLeft = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.tableLayoutPanel1.ColumnCount = 4;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 48F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.label8, 3, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label6, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.label4, 1, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 194);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1151, 57);
+            this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // btnAdmin
+            // pnDisplay
             // 
-            this.btnAdmin.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdmin.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnAdmin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.btnAdmin.Location = new System.Drawing.Point(0, 0);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(102, 25);
-            this.btnAdmin.TabIndex = 0;
-            this.btnAdmin.Text = "Admin";
-            this.btnAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            this.btnAdmin.MouseEnter += new System.EventHandler(this.btnAdmin_MouseEnter);
-            this.btnAdmin.MouseLeave += new System.EventHandler(this.btnAdmin_MouseLeave);
-            // 
-            // pnTatCa
-            // 
-            this.pnTatCa.BackColor = System.Drawing.Color.Transparent;
-            this.pnTatCa.Controls.Add(this.btnTatCa);
-            this.pnTatCa.Location = new System.Drawing.Point(0, 11);
-            this.pnTatCa.Name = "pnTatCa";
-            this.pnTatCa.Radius = 5;
-            this.pnTatCa.rColor = System.Drawing.Color.Transparent;
-            this.pnTatCa.rSize = new System.Drawing.Size(101, 24);
-            this.pnTatCa.Size = new System.Drawing.Size(102, 25);
-            this.pnTatCa.TabIndex = 1;
-            this.pnTatCa.TopLeft = new System.Drawing.Point(0, 0);
-            // 
-            // btnTatCa
-            // 
-            this.btnTatCa.BackColor = System.Drawing.Color.Transparent;
-            this.btnTatCa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTatCa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTatCa.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnTatCa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.btnTatCa.Location = new System.Drawing.Point(0, 0);
-            this.btnTatCa.Name = "btnTatCa";
-            this.btnTatCa.Size = new System.Drawing.Size(102, 25);
-            this.btnTatCa.TabIndex = 0;
-            this.btnTatCa.Text = "Tất cả";
-            this.btnTatCa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
-            this.btnTatCa.MouseEnter += new System.EventHandler(this.btnTatCa_MouseEnter);
-            this.btnTatCa.MouseLeave += new System.EventHandler(this.btnTatCa_MouseLeave);
-            // 
-            // panelRadius1
-            // 
-            this.panelRadius1.Controls.Add(this.btnAdd);
-            this.panelRadius1.Location = new System.Drawing.Point(153, 0);
-            this.panelRadius1.Name = "panelRadius1";
-            this.panelRadius1.Radius = 0;
-            this.panelRadius1.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(181)))), ((int)(((byte)(129)))));
-            this.panelRadius1.rSize = new System.Drawing.Size(114, 37);
-            this.panelRadius1.Size = new System.Drawing.Size(115, 38);
-            this.panelRadius1.TabIndex = 1;
-            this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdd.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(0, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(115, 38);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm mới";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.pnDisplay.AutoScroll = true;
+            this.pnDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(49)))), ((int)(((byte)(54)))));
+            this.pnDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnDisplay.Location = new System.Drawing.Point(0, 251);
+            this.pnDisplay.Name = "pnDisplay";
+            this.pnDisplay.Padding = new System.Windows.Forms.Padding(16, 10, 16, 16);
+            this.pnDisplay.Size = new System.Drawing.Size(1151, 487);
+            this.pnDisplay.TabIndex = 8;
             // 
             // Users
             // 
@@ -653,7 +631,6 @@ namespace Server
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(1151, 738);
             this.Controls.Add(this.pnDisplay);
-            this.Controls.Add(this.panel14);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel13);
             this.Controls.Add(this.panel2);
@@ -663,29 +640,28 @@ namespace Server
             this.Text = "Users";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panelRadius1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.pnTatCa.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
+            this.pnAdmin.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.pnNhanVien.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel12.ResumeLayout(false);
             this.panel12.PerformLayout();
+            this.pnKhach.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.usertb.ResumeLayout(false);
             this.usertb.PerformLayout();
             this.panel13.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.pnKhach.ResumeLayout(false);
-            this.pnNhanVien.ResumeLayout(false);
-            this.pnAdmin.ResumeLayout(false);
-            this.pnTatCa.ResumeLayout(false);
-            this.panelRadius1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -732,8 +708,6 @@ namespace Server
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel pnDisplay;
     }
 }

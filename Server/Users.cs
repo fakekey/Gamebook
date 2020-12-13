@@ -74,6 +74,7 @@ namespace Server
             new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
             new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
         };
+        MayThangNgu[] ds2 = new MayThangNgu[0];
         public void btnAdd_Click(object sender, EventArgs e)
         {
             AddForm(new AddUser());
@@ -198,31 +199,47 @@ namespace Server
             nUsers = ds.Length;
             ReSize();
             pnDisplay.Controls.Clear();
-            for (int i = ds.Length - 1; i >= 0; i--)
+            if (nUsers != 0)
             {
-                if (i % 2 == 0)
+                for (int i = ds.Length - 1; i >= 0; i--)
                 {
-                    pnDisplay.Controls.Add(new ListMember()
+                    if (i % 2 == 0)
                     {
-                        lTen = ds[i].HoTen,
-                        lEmail = ds[i].Email,
-                        lVaiTro = ds[i].VaiTro,
-                        bgColor = ListMember.FIRST_COLOR,
-                        isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
-                    });
+                        pnDisplay.Controls.Add(new ListMember()
+                        {
+                            lTen = ds[i].HoTen,
+                            lEmail = ds[i].Email,
+                            lVaiTro = ds[i].VaiTro,
+                            bgColor = ListMember.FIRST_COLOR,
+                            isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
+                        });
+                    }
+                    else
+                    {
+                        pnDisplay.Controls.Add(
+                        new ListMember()
+                        {
+                            lTen = ds[i].HoTen,
+                            lEmail = ds[i].Email,
+                            lVaiTro = ds[i].VaiTro,
+                            bgColor = ListMember.SECOND_COLOR,
+                            isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
+                        });
+                    }
                 }
-                else
+            }
+            else
+            {
+                pnDisplay.Controls.Add(new Label()
                 {
-                    pnDisplay.Controls.Add(
-                    new ListMember()
-                    {
-                        lTen = ds[i].HoTen,
-                        lEmail = ds[i].Email,
-                        lVaiTro = ds[i].VaiTro,
-                        bgColor = ListMember.SECOND_COLOR,
-                        isNotAdmin = (ds[i].VaiTro != "Admin") ? true : false
-                    });
-                }
+                    BackColor = Color.Transparent,
+                    Dock = DockStyle.Fill,
+                    Font = new Font("Quicksand", 14F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
+                    ForeColor = Color.White,
+                    Padding = new Padding(0, 0, 0, 50),
+                    Text = "Không tìm thấy dữ liệu",
+                    TextAlign = ContentAlignment.MiddleCenter,
+                });
             }
         }
 
@@ -234,31 +251,47 @@ namespace Server
             nUsers = ds1.Length;
             ReSize();
             pnDisplay.Controls.Clear();
-            for (int i = ds1.Length - 1; i >= 0; i--)
+            if (nUsers != 0)
             {
-                if (i % 2 == 0)
+                for (int i = ds1.Length - 1; i >= 0; i--)
                 {
-                    pnDisplay.Controls.Add(new ListMember()
+                    if (i % 2 == 0)
                     {
-                        lTen = ds1[i].HoTen,
-                        lEmail = ds1[i].Email,
-                        lVaiTro = ds1[i].VaiTro,
-                        bgColor = ListMember.FIRST_COLOR,
-                        isNotAdmin = (ds1[i].VaiTro != "Admin") ? true : false
-                    });
+                        pnDisplay.Controls.Add(new ListMember()
+                        {
+                            lTen = ds1[i].HoTen,
+                            lEmail = ds1[i].Email,
+                            lVaiTro = ds1[i].VaiTro,
+                            bgColor = ListMember.FIRST_COLOR,
+                            isNotAdmin = (ds1[i].VaiTro != "Admin") ? true : false
+                        });
+                    }
+                    else
+                    {
+                        pnDisplay.Controls.Add(
+                        new ListMember()
+                        {
+                            lTen = ds1[i].HoTen,
+                            lEmail = ds1[i].Email,
+                            lVaiTro = ds1[i].VaiTro,
+                            bgColor = ListMember.SECOND_COLOR,
+                            isNotAdmin = (ds1[i].VaiTro != "Admin") ? true : false
+                        });
+                    }
                 }
-                else
+            }
+            else
+            {
+                pnDisplay.Controls.Add(new Label()
                 {
-                    pnDisplay.Controls.Add(
-                    new ListMember()
-                    {
-                        lTen = ds1[i].HoTen,
-                        lEmail = ds1[i].Email,
-                        lVaiTro = ds1[i].VaiTro,
-                        bgColor = ListMember.SECOND_COLOR,
-                        isNotAdmin = (ds1[i].VaiTro != "Admin") ? true : false
-                    });
-                }
+                    BackColor = Color.Transparent,
+                    Dock = DockStyle.Fill,
+                    Font = new Font("Quicksand", 14F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
+                    ForeColor = Color.White,
+                    Padding = new Padding(0, 0, 0, 50),
+                    Text = "Không tìm thấy dữ liệu",
+                    TextAlign = ContentAlignment.MiddleCenter,
+                });
             }
         }
 
@@ -267,6 +300,51 @@ namespace Server
             admin = tatca = khach = false;
             nhanvien = true;
             clear();
+            nUsers = ds2.Length;
+            ReSize();
+            pnDisplay.Controls.Clear();
+            if (nUsers != 0)
+            {
+                for (int i = ds2.Length - 1; i >= 0; i--)
+                {
+                    if (i % 2 == 0)
+                    {
+                        pnDisplay.Controls.Add(new ListMember()
+                        {
+                            lTen = ds2[i].HoTen,
+                            lEmail = ds2[i].Email,
+                            lVaiTro = ds2[i].VaiTro,
+                            bgColor = ListMember.FIRST_COLOR,
+                            isNotAdmin = (ds2[i].VaiTro != "Admin") ? true : false
+                        });
+                    }
+                    else
+                    {
+                        pnDisplay.Controls.Add(
+                        new ListMember()
+                        {
+                            lTen = ds2[i].HoTen,
+                            lEmail = ds2[i].Email,
+                            lVaiTro = ds2[i].VaiTro,
+                            bgColor = ListMember.SECOND_COLOR,
+                            isNotAdmin = (ds2[i].VaiTro != "Admin") ? true : false
+                        });
+                    }
+                }
+            }
+            else
+            {
+                pnDisplay.Controls.Add(new Label()
+                {
+                    BackColor = Color.Transparent,
+                    Dock = DockStyle.Fill,
+                    Font = new Font("Quicksand", 14F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
+                    ForeColor = Color.White,
+                    Padding = new Padding(0, 0, 0, 50),
+                    Text = "Không tìm thấy dữ liệu",
+                    TextAlign = ContentAlignment.MiddleCenter,
+                });
+            }
         }
 
         private void btnKhach_Click(object sender, EventArgs e)
@@ -370,6 +448,14 @@ namespace Server
             {
                 leftPaddingEmail = 38;
                 leftPaddingVaiTro = 22;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            foreach (ListMember item in pnDisplay.Controls)
+            {
+                item.isChecked = checkBox1.Checked ? true : false;
             }
         }
     }
