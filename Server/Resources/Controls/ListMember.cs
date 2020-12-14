@@ -51,6 +51,14 @@ namespace Server
         private void btnXoa_Click(object sender, EventArgs e)
         {
             CheckClass.count = 1;
+            if(this.lVaiTro == "Nhân Viên")
+            {
+                Controller.XoaNV(this.lEmail);
+            }
+            if(this.lVaiTro == "Khách Hàng")
+            {
+                Controller.XoaKhach(this.lEmail);
+            }
             this.Dispose();
         }
     }

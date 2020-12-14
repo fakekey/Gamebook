@@ -277,6 +277,7 @@ namespace Server
         private void btnTatCa_Click(object sender, EventArgs e)
         {
             CheckClass.count = 0;
+            reload();
             admin = nhanvien = khach = false;
             tatca = true;
             btnTatCa.ForeColor = Color.White;
@@ -300,6 +301,8 @@ namespace Server
 
         private void btnAdmin_Click(object sender, EventArgs e)
         {
+            CheckClass.count = 0;
+            reload();
             tatca = nhanvien = khach = false;
             admin = true;
             clear();
@@ -321,6 +324,8 @@ namespace Server
 
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
+            CheckClass.count = 0;
+            reload();
             admin = tatca = khach = false;
             nhanvien = true;
             clear();
@@ -342,6 +347,8 @@ namespace Server
 
         private void btnKhach_Click(object sender, EventArgs e)
         {
+            CheckClass.count = 0;
+            reload();
             admin = nhanvien = tatca = false;
             khach = true;
             clear();
@@ -655,7 +662,24 @@ namespace Server
         {
             if (CheckClass.count != 0)
             {
-                btnTatCa_Click(null, null);
+                if (tatca == true)
+                {
+                    btnTatCa_Click(sender, e);
+                }
+                if (admin == true)
+                {
+                    btnAdmin_Click(sender, e);
+                }
+                if (nhanvien == true)
+                {
+                    btnNhanVien_Click(null, null);
+                }
+                if (khach == true)
+                {
+                    btnKhach_Click(null, null);
+                }
+                
+                           
             }
         }
     }
