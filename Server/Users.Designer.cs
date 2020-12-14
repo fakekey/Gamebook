@@ -476,6 +476,7 @@ namespace Server
             this.noFocusButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.noFocusButton3.FlatAppearance.BorderSize = 0;
             this.noFocusButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(102)))), ((int)(((byte)(144)))));
+            this.noFocusButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(123)))), ((int)(((byte)(196)))));
             this.noFocusButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.noFocusButton3.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.noFocusButton3.ForeColor = System.Drawing.Color.White;
@@ -494,6 +495,7 @@ namespace Server
             this.noFocusButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.noFocusButton1.FlatAppearance.BorderSize = 0;
             this.noFocusButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(102)))), ((int)(((byte)(144)))));
+            this.noFocusButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(123)))), ((int)(((byte)(196)))));
             this.noFocusButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.noFocusButton1.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.noFocusButton1.ForeColor = System.Drawing.Color.White;

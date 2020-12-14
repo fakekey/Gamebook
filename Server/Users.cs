@@ -79,45 +79,6 @@ namespace Server
                 label8.Padding = new Padding(value, 0, 0, 0);
             }
         }
-        #region demo
-        /*struct MayThangNgu
-        {
-            public string HoTen;
-            public string Email;
-            public string VaiTro;
-            public MayThangNgu(string a, string b, string c)
-            {
-                HoTen = a;
-                Email = b;
-                VaiTro = c;
-            }
-        }
-        MayThangNgu[] ds = new MayThangNgu[] {
-            new MayThangNgu("Admin","admin","Admin"),
-            new MayThangNgu("Nguyễn Thế Trường","truongnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-        };
-        MayThangNgu[] ds1 = new MayThangNgu[] {
-            new MayThangNgu("Admin","admin","Admin"),
-            new MayThangNgu("Nguyễn Thế Trường","truongnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-            new MayThangNgu("Ngọc Hoàng","ngochoang@gmail.com","Khách hàng"),
-            new MayThangNgu("Trần Ngọc Anh","anhnt@gmail.com","Nhân viên"),
-        };
-        MayThangNgu[] ds2 = new MayThangNgu[0];*/
-        #endregion
-
 
         private void addToPanel(List<User> ds)
         {
@@ -150,7 +111,22 @@ namespace Server
         }
         public void btnAdd_Click(object sender, EventArgs e)
         {
-            AddForm(new AddUser());
+            using (f = new Form())
+            {
+                f.StartPosition = FormStartPosition.Manual;
+                f.FormBorderStyle = FormBorderStyle.None;
+                f.ShowInTaskbar = false;
+                f.BackColor = Color.Black;
+                f.Opacity = 0.85f;
+                f.Location = this.Parent.Parent.Location;
+                f.Size = this.Parent.Parent.Size;
+                using (AddUser fOverlay = new AddUser())
+                {
+                    f.Show();
+                    fOverlay.Owner = f;
+                    fOverlay.ShowDialog();
+                }
+            }
         }
         private void AddForm(Form form)
         {
@@ -658,5 +634,6 @@ namespace Server
                 btnTatCa_Click(null, null);
             }
         }
+        private Form f;
     }
 }

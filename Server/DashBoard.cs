@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Drawing;
-using Transitions;
-using Transitions.TransitionTypes;
 using System.Windows.Forms;
 
 namespace Server

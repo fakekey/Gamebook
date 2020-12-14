@@ -193,6 +193,7 @@
     <Content Include="Resources\img\icons8-minimize-window-18.png" />
     <Content Include="Resources\img\icons8-multiply-20.png" />
     <Content Include="Resources\img\icons8-ok-100.png" />
+    <Content Include="Resources\img\icons8_back_arrow_32px.png" />
     <Content Include="Resources\img\icons8_back_to_48px.png" />
     <Content Include="Resources\img\icons8_bill_48px.png" />
     <Content Include="Resources\img\icons8_customer_18px.png" />
