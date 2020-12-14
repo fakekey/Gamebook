@@ -141,6 +141,7 @@ namespace Server
             this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             this.btnXoa.MouseEnter += new System.EventHandler(this.btnXoa_MouseEnter);
             this.btnXoa.MouseLeave += new System.EventHandler(this.btnXoa_MouseLeave);
             // 

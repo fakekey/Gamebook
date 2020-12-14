@@ -592,6 +592,7 @@ namespace Server
             this.pnDisplay.Padding = new System.Windows.Forms.Padding(16, 10, 16, 16);
             this.pnDisplay.Size = new System.Drawing.Size(1151, 487);
             this.pnDisplay.TabIndex = 8;
+            this.pnDisplay.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.pnDisplay_ControlRemoved);
             // 
             // timer1
             // 

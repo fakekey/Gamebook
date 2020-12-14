@@ -47,5 +47,11 @@ namespace Server
         {
             Transition.Run(btnXoa, "ForeColor", Color.FromArgb(255, 119, 117), new EaseInEaseOut(400));
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            CheckClass.count = 1;
+            this.Dispose();
+        }
     }
 }

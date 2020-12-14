@@ -274,9 +274,9 @@ namespace Server
         bool admin = false;
         bool nhanvien = false;
         bool khach = false;
-
         private void btnTatCa_Click(object sender, EventArgs e)
         {
+            CheckClass.count = 0;
             admin = nhanvien = khach = false;
             tatca = true;
             btnTatCa.ForeColor = Color.White;
@@ -577,15 +577,15 @@ namespace Server
 
         private void noFocusButton1_Click(object sender, EventArgs e)
         {
-            if(comboBox1.SelectedItem.ToString() == "Xóa")
+            if (comboBox1.SelectedItem.ToString() == "Xóa")
             {
-                foreach(ListMember item in pnDisplay.Controls)
+                foreach (ListMember item in pnDisplay.Controls)
                 {
-                    if(item.isChecked == true && item.lVaiTro == "Nhân Viên")
+                    if (item.isChecked == true && item.lVaiTro == "Nhân Viên")
                     {
                         Controller.XoaNV(item.lEmail);
                     }
-                    if(item.isChecked == true && item.lVaiTro == "Khách Hàng")
+                    if (item.isChecked == true && item.lVaiTro == "Khách Hàng")
                     {
                         Controller.XoaKhach(item.lEmail);
                     }
@@ -649,6 +649,13 @@ namespace Server
                 nUsers = dsuser.Count;
                 ReSize();
                 addToPanel(dsuser);
+            }
+        }
+        private void pnDisplay_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            if (CheckClass.count != 0)
+            {
+                btnTatCa_Click(null, null);
             }
         }
     }
