@@ -129,14 +129,14 @@ namespace Server
             {
                 return null;
             }
-            
+
         }
         public static List<User> getAdmin()
         {
             List<User> ds = new List<User>();
             try
             {
-                
+
                 MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
                 con.Open();
                 string query = "Select * From usernv where `Ten quyen`='Admin'";
@@ -160,7 +160,7 @@ namespace Server
             }
         }
         public static List<User> getKhach()
-        {   
+        {
             try
             {
                 List<User> ds = new List<User>();
@@ -224,28 +224,96 @@ namespace Server
             }
             con.Close();
             // xoa chi tiet hoa don
-            foreach(string item in hd)
+            foreach (string item in hd)
             {
                 con.Open();
-                cmd = new MySqlCommand("DELETE from `chi tiet hoa don` WHERE `chi tiet hoa don`.MAHD ='"+item+"'",con);
+                cmd = new MySqlCommand("DELETE from `chi tiet hoa don` WHERE `chi tiet hoa don`.MAHD ='" + item + "'", con);
                 cmd.ExecuteNonQuery();
                 con.Close();
             }
             // xoa hoa don
             con.Open();
-            cmd = new MySqlCommand("DELETE from `hoa don` WHERE `hoa don`.MAKH= '"+makh+"'", con);
+            cmd = new MySqlCommand("DELETE from `hoa don` WHERE `hoa don`.MAKH= '" + makh + "'", con);
             cmd.ExecuteNonQuery();
             con.Close();
             // xoa khach hang 
             con.Open();
-            cmd = new MySqlCommand("DELETE from `khach hang` WHERE `khach hang`.Email = '"+ email+"'", con);
+            cmd = new MySqlCommand("DELETE from `khach hang` WHERE `khach hang`.Email = '" + email + "'", con);
             cmd.ExecuteNonQuery();
             con.Close();
             // xoa account 
             con.Open();
-            cmd = new MySqlCommand("DELETE from account WHERE account.Email ='" + email+"'", con);
+            cmd = new MySqlCommand("DELETE from account WHERE account.Email ='" + email + "'", con);
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        public static int ThemUser(string email, string pass, string quyen, string hoten)
+        {   // case 1: thanh cong
+            // case 0: trung tai khoan
+            // case -99: loi ket noi
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select Count(*) from account where Email = @email";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                cmd.Parameters.Add(new MySqlParameter("@email", email));
+                int rs = int.Parse(cmd.ExecuteScalar().ToString());
+                con.Close();
+                if (rs == 1)
+                {
+                    return 0;
+                }
+                if (quyen == "Khách Hàng")
+                {
+                        con.Open();
+                        cmd = new MySqlCommand("INSERT INTO account(`Email`,`Password`,`ID_quyen`) VALUES ( @email, @pass,'3')", con);
+                        cmd.Parameters.Add(new MySqlParameter("@pass", WinAPI.CreateMD5(pass)));
+                        cmd.Parameters.Add(new MySqlParameter("@email", email));
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        con.Open();
+                        cmd = new MySqlCommand("INSERT INTO `khach hang`(`Email`, `Họ Tên`) VALUES (@email,@name);", con);
+                        cmd.Parameters.Add(new MySqlParameter("@name", hoten));
+                        cmd.Parameters.Add(new MySqlParameter("@email", email));
+                        cmd.ExecuteNonQuery();
+                        con.Close();
+                        return 1;
+                }
+                if(quyen == "Nhân Viên")
+                {
+                    con.Open();
+                    cmd = new MySqlCommand("INSERT INTO account(`Email`,`Password`,`ID_quyen`) VALUES ( @email, @pass,'2')", con);
+                    cmd.Parameters.Add(new MySqlParameter("@pass", WinAPI.CreateMD5(pass)));
+                    cmd.Parameters.Add(new MySqlParameter("@email", email));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                if(quyen == "Admin")
+                {
+                    con.Open();
+                    cmd = new MySqlCommand("INSERT INTO account(`Email`,`Password`,`ID_quyen`) VALUES ( @email, @pass,'1')", con);
+                    cmd.Parameters.Add(new MySqlParameter("@pass", WinAPI.CreateMD5(pass)));
+                    cmd.Parameters.Add(new MySqlParameter("@email", email));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                }
+                con.Open();
+                cmd = new MySqlCommand("INSERT INTO `nhan vien`(`Email`, `Họ Tên`) VALUES (@email,@name);", con);
+                cmd.Parameters.Add(new MySqlParameter("@name", hoten));
+                cmd.Parameters.Add(new MySqlParameter("@email", email));
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return 1;
+
+            }
+            catch
+            {
+                return -99;
+            }
         }
     }
 }

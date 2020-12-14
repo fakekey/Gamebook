@@ -202,6 +202,32 @@ namespace Server
                 VeBorder(pass, eventArgs, 240, 71, 71);
                 tbPassDontHandle = true;
             }
+            int rs = Controller.ThemUser(tbMail.Text,tbPass.Text,comboBox1.SelectedItem.ToString(),tbName.Text);
+            if(rs == 1)
+            {
+                lbMail.Text = "- Thành công";
+                lbMail.ForeColor = Color.FromArgb(77, 222, 19);
+                mailb.ForeColor = Color.FromArgb(77, 222, 19);
+                PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
+                VeBorder(mail, eventArgs, 77, 222, 19);
+                tbMailDontHandle = true;
+            }
+            else if( rs == -99)
+            {
+                lbMail.Text = "- Lỗi hệ thống";
+                mailb.ForeColor = Color.FromArgb(240, 71, 71);
+                PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
+                VeBorder(mail, eventArgs, 240, 71, 71);
+                tbMailDontHandle = true;
+            }
+            else if(rs == 0)
+            {
+                lbMail.Text = "- Email đã tồn tại";
+                mailb.ForeColor = Color.FromArgb(240, 71, 71);
+                PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
+                VeBorder(mail, eventArgs, 240, 71, 71);
+                tbMailDontHandle = true;
+            }
             timer3.Stop();
         }
 

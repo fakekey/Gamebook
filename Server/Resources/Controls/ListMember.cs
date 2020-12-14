@@ -13,7 +13,7 @@ using Transitions.TransitionTypes;
 namespace Server
 {
     public partial class ListMember : UserControl
-    {
+    {   
         public static Color FIRST_COLOR = Color.FromArgb(52, 55, 60);
         public static Color SECOND_COLOR = Color.FromArgb(54, 57, 63);
         public ListMember()
@@ -51,11 +51,11 @@ namespace Server
         private void btnXoa_Click(object sender, EventArgs e)
         {
             CheckClass.count = 1;
-            if(this.lVaiTro == "Nhân Viên")
+            if (this.lVaiTro == "Nhân Viên")
             {
                 Controller.XoaNV(this.lEmail);
             }
-            if(this.lVaiTro == "Khách Hàng")
+            if (this.lVaiTro == "Khách Hàng")
             {
                 Controller.XoaKhach(this.lEmail);
             }
