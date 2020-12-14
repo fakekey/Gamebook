@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Server
@@ -178,6 +172,7 @@ namespace Server
 
         private void timer3_Tick(object sender, EventArgs e)
         {
+            timer3.Stop();
             if (tbMail.Text == string.Empty)
             {
                 lbMail.Text = "- Mục này không thể bỏ trống";
@@ -202,33 +197,32 @@ namespace Server
                 VeBorder(pass, eventArgs, 240, 71, 71);
                 tbPassDontHandle = true;
             }
-            int rs = Controller.ThemUser(tbMail.Text,tbPass.Text,comboBox1.SelectedItem.ToString(),tbName.Text);
-            if(rs == 1)
+            int rs = Controller.ThemUser(tbMail.Text, tbPass.Text, comboBox1.SelectedItem.ToString(), tbName.Text);
+            if (rs == 1)
             {
-                lbMail.Text = "- Thành công";
                 lbMail.ForeColor = Color.FromArgb(77, 222, 19);
+                lbMail.Text = "- Thêm thành công!";
                 mailb.ForeColor = Color.FromArgb(77, 222, 19);
                 PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
                 VeBorder(mail, eventArgs, 77, 222, 19);
                 tbMailDontHandle = true;
             }
-            else if( rs == -99)
+            else if (rs == -99)
             {
-                lbMail.Text = "- Lỗi hệ thống";
+                lbMail.Text = "- Lỗi kết nối";
                 mailb.ForeColor = Color.FromArgb(240, 71, 71);
                 PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
                 VeBorder(mail, eventArgs, 240, 71, 71);
                 tbMailDontHandle = true;
             }
-            else if(rs == 0)
+            else if (rs == 0)
             {
-                lbMail.Text = "- Email đã tồn tại";
+                lbMail.Text = "- Email này đã tồn tại";
                 mailb.ForeColor = Color.FromArgb(240, 71, 71);
                 PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
                 VeBorder(mail, eventArgs, 240, 71, 71);
                 tbMailDontHandle = true;
             }
-            timer3.Stop();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -238,6 +232,7 @@ namespace Server
                 lbMail.Text = "";
                 lbName.Text = "";
                 lbPass.Text = "";
+                lbMail.ForeColor = Color.FromArgb(240, 71, 71);
                 mailb.ForeColor = Color.FromArgb(138, 142, 147);
                 namelb.ForeColor = Color.FromArgb(138, 142, 147);
                 passlb.ForeColor = Color.FromArgb(138, 142, 147);

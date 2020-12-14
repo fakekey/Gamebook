@@ -576,6 +576,22 @@ namespace Server
                     }
                 }
                 reload();
+                if (tatca == true)
+                {
+                    btnTatCa_Click(sender, e);
+                }
+                if (admin == true)
+                {
+                    btnAdmin_Click(sender, e);
+                }
+                if (nhanvien == true)
+                {
+                    btnNhanVien_Click(null, null);
+                }
+                if (khach == true)
+                {
+                    btnKhach_Click(null, null);
+                }
             }
         }
 
@@ -656,8 +672,6 @@ namespace Server
                 {
                     btnKhach_Click(null, null);
                 }
-                
-                           
             }
         }
         private Form f;
