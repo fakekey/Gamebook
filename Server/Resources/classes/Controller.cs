@@ -315,5 +315,41 @@ namespace Server
                 return -99;
             }
         }
+        public static int SuaNV(string email, string hoten , string quyen)
+        {
+            // case 1: thanh cong
+            // case -99: loi 
+            try
+            {
+                if(quyen == "Khách Hàng")
+                {
+
+                    MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand("UPDATE `khach hang` SET `khach hang`.`Họ Tên` = @hoten WHERE `khach hang`.Email = @email", con);
+                    cmd.Parameters.Add(new MySqlParameter("@hoten", hoten ));
+                    cmd.Parameters.Add(new MySqlParameter("@email", email));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    return 1;
+                }
+                else
+                {
+                    MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                    con.Open();
+                    MySqlCommand cmd = new MySqlCommand("UPDATE `nhan vien` SET `nhan vien`.`Họ Tên` = @hoten WHERE `nhan vien`.Email = @email", con);
+                    cmd.Parameters.Add(new MySqlParameter("@hoten", hoten));
+                    cmd.Parameters.Add(new MySqlParameter("@email", email));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    return 1;
+                }
+                
+            }
+            catch
+            {
+                return -99;
+            }
+        }
     }
 }

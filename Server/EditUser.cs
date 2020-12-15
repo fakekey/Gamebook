@@ -12,7 +12,8 @@ namespace Server
 {
     public partial class EditUser : Form
     {
-        public EditUser(string email)
+        private string quyen;
+        public EditUser(string email, string vaitro)
         {
             InitializeComponent();
             tbMail.AutoSize = false;
@@ -21,6 +22,7 @@ namespace Server
             tbName.Size = new Size(371, 22);
             tbMail.Enabled = false;
             tbMail.Text = email;
+            quyen = vaitro;
         }
         private void VeBorder(Control control, PaintEventArgs e, int r, int g, int b)
         {
@@ -143,6 +145,28 @@ namespace Server
                 PaintEventArgs eventArgs = new PaintEventArgs(name.CreateGraphics(), name.ClientRectangle);
                 VeBorder(name, eventArgs, 240, 71, 71);
                 tbNameDontHandle = true;
+            }
+            else
+            {
+                int rs = Controller.SuaNV(tbMail.Text, tbName.Text, this.quyen);
+                if(rs == 1)
+                {
+                    lbName.Text = "- Sửa thành công";
+                    lbName.ForeColor = Color.FromArgb(77, 222, 19);
+                    namelb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs = new PaintEventArgs(name.CreateGraphics(), name.ClientRectangle);
+                    VeBorder(name, eventArgs, 77, 222, 19);
+                    tbNameDontHandle = true;
+                }
+                else
+                {
+                    lbName.Text = "- Sửa thất bại";
+                    lbName.ForeColor = Color.FromArgb(240, 71, 71);
+                    namelb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(name.CreateGraphics(), name.ClientRectangle);
+                    VeBorder(name, eventArgs, 240, 71, 71);
+                    tbNameDontHandle = true;
+                }
             }
         }
 

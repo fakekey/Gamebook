@@ -172,57 +172,63 @@ namespace Server
 
         private void timer3_Tick(object sender, EventArgs e)
         {
+            if (tbMail.Text != string.Empty && tbName.Text != string.Empty && tbPass.Text != string.Empty)
+            {
+                int rs = Controller.ThemUser(tbMail.Text, tbPass.Text, comboBox1.SelectedItem.ToString(), tbName.Text);
+                if (rs == 1)
+                {
+                    lbMail.ForeColor = Color.FromArgb(77, 222, 19);
+                    lbMail.Text = "- Thêm thành công!";
+                    mailb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
+                    VeBorder(mail, eventArgs, 77, 222, 19);
+                    tbMailDontHandle = true;
+                }
+                else if (rs == -99)
+                {
+                    lbMail.Text = "- Lỗi kết nối";
+                    mailb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
+                    VeBorder(mail, eventArgs, 240, 71, 71);
+                    tbMailDontHandle = true;
+                }
+                else if (rs == 0)
+                {
+                    lbMail.Text = "- Email này đã tồn tại";
+                    mailb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
+                    VeBorder(mail, eventArgs, 240, 71, 71);
+                    tbMailDontHandle = true;
+                }
+            }
+            else
+            {
+                if (tbMail.Text == string.Empty)
+                {
+                    lbMail.Text = "- Mục này không thể bỏ trống";
+                    mailb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
+                    VeBorder(mail, eventArgs, 240, 71, 71);
+                    tbMailDontHandle = true;
+                }
+                if (tbName.Text == string.Empty)
+                {
+                    lbName.Text = "- Mục này không thể bỏ trống";
+                    namelb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(name.CreateGraphics(), name.ClientRectangle);
+                    VeBorder(name, eventArgs, 240, 71, 71);
+                    tbNameDontHandle = true;
+                }
+                if (tbPass.Text == string.Empty)
+                {
+                    lbPass.Text = "- Mục này không thể bỏ trống";
+                    passlb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(pass.CreateGraphics(), pass.ClientRectangle);
+                    VeBorder(pass, eventArgs, 240, 71, 71);
+                    tbPassDontHandle = true;
+                }
+            }
             timer3.Stop();
-            if (tbMail.Text == string.Empty)
-            {
-                lbMail.Text = "- Mục này không thể bỏ trống";
-                mailb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
-                VeBorder(mail, eventArgs, 240, 71, 71);
-                tbMailDontHandle = true;
-            }
-            if (tbName.Text == string.Empty)
-            {
-                lbName.Text = "- Mục này không thể bỏ trống";
-                namelb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(name.CreateGraphics(), name.ClientRectangle);
-                VeBorder(name, eventArgs, 240, 71, 71);
-                tbNameDontHandle = true;
-            }
-            if (tbPass.Text == string.Empty)
-            {
-                lbPass.Text = "- Mục này không thể bỏ trống";
-                passlb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(pass.CreateGraphics(), pass.ClientRectangle);
-                VeBorder(pass, eventArgs, 240, 71, 71);
-                tbPassDontHandle = true;
-            }
-            int rs = Controller.ThemUser(tbMail.Text, tbPass.Text, comboBox1.SelectedItem.ToString(), tbName.Text);
-            if (rs == 1)
-            {
-                lbMail.ForeColor = Color.FromArgb(77, 222, 19);
-                lbMail.Text = "- Thêm thành công!";
-                mailb.ForeColor = Color.FromArgb(77, 222, 19);
-                PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
-                VeBorder(mail, eventArgs, 77, 222, 19);
-                tbMailDontHandle = true;
-            }
-            else if (rs == -99)
-            {
-                lbMail.Text = "- Lỗi kết nối";
-                mailb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
-                VeBorder(mail, eventArgs, 240, 71, 71);
-                tbMailDontHandle = true;
-            }
-            else if (rs == 0)
-            {
-                lbMail.Text = "- Email này đã tồn tại";
-                mailb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
-                VeBorder(mail, eventArgs, 240, 71, 71);
-                tbMailDontHandle = true;
-            }
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
