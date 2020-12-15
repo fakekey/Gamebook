@@ -30,6 +30,8 @@ namespace Server
             WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
             panel4_MouseMove(null, null);
             icoHome_Click(null, null);
+            CheckClass.location = this.Location;
+            CheckClass.size = this.Size;
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)

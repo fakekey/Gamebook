@@ -121,7 +121,6 @@ namespace Server
                     fOverlay.Owner = f;
                     fOverlay.ShowDialog();
                     btnTatCa_Click(null, null);
-
                 }
             }
         }

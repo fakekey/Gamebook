@@ -63,6 +63,12 @@
     <Compile Include="DashBoard.Designer.cs">
       <DependentUpon>DashBoard.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUser.Designer.cs">
+      <DependentUpon>EditUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Loading.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DashBoard.resx">
       <DependentUpon>DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUser.resx">
+      <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>
