@@ -116,6 +116,7 @@
     <Compile Include="Resources\Classes\Animate\TransitionTypes\ThrowAndCatch.cs" />
     <Compile Include="Resources\Classes\Animate\TransitionTypes\UserDefined.cs" />
     <Compile Include="Resources\Classes\Animate\Utility.cs" />
+    <Compile Include="Resources\Classes\Messagebox.cs" />
     <Compile Include="Resources\Classes\WinAPI.cs" />
     <Compile Include="Resources\Controls\BoxBorder.cs">
       <SubType>Component</SubType>
@@ -125,6 +126,12 @@
     </Compile>
     <Compile Include="Resources\Controls\ListMember.Designer.cs">
       <DependentUpon>ListMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\MsbYesNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\MsbYesNo.Designer.cs">
+      <DependentUpon>MsbYesNo.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\Controls\NoFocusButton.cs">
       <SubType>Component</SubType>
@@ -164,6 +171,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Controls\ListMember.resx">
       <DependentUpon>ListMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\MsbYesNo.resx">
+      <DependentUpon>MsbYesNo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.cs</DependentUpon>

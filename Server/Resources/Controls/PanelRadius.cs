@@ -14,6 +14,7 @@ namespace Server
         {
             Graphics g = e.Graphics;
             g.FillRoundedRectangle(new SolidBrush(rColor), TopLeft.X, TopLeft.Y, rSize.Width, rSize.Height, Radius);
+            
         }
     }
 }

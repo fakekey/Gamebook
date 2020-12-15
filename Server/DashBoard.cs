@@ -40,6 +40,8 @@ namespace Server
         private void panel1_MouseMove(object sender, MouseEventArgs e)
         {
             DragControl.mouseMove(this);
+            CheckClass.location = this.Location;
+            CheckClass.size = this.Size;
         }
 
         private void panel1_MouseUp(object sender, MouseEventArgs e)
@@ -60,6 +62,8 @@ namespace Server
                 if (fUsers != null)
                 {
                     fUsers.ReSize();
+                    CheckClass.location = this.Location;
+                    CheckClass.size = this.Size;
                 }
             }
             else
@@ -68,6 +72,8 @@ namespace Server
                 if (fUsers != null)
                 {
                     fUsers.ReSize();
+                    CheckClass.location = this.Location;
+                    CheckClass.size = this.Size;
                 }
             }
         }

@@ -621,6 +621,7 @@ namespace Server
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Users";
             this.Text = "Users";
+            this.Load += new System.EventHandler(this.Users_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelRadius1.ResumeLayout(false);

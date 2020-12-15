@@ -16,13 +16,14 @@ namespace Server
         {
             Graphics g = e.Graphics;
             g.SmoothingMode = SmoothingMode.AntiAlias;
-            g.FillRoundedRectangle(new SolidBrush(rColor), TopLeft.X, TopLeft.Y, rSize.Width - 1, rSize.Height - 1, Radius);
             int j = -1;
             for (int i = 0; i <= rBorderSize; i++)
             {
-                g.DrawRoundedRectangle(new Pen(new SolidBrush(rBorderColor)), TopLeft.X - i, TopLeft.Y - i, rSize.Width + j, rSize.Height + j, Radius);
+                g.FillRoundedRectangle(new SolidBrush(rBorderColor), TopLeft.X - i, TopLeft.Y - i, rSize.Width + j, rSize.Height + j, Radius);
                 j += 2;
             }
+            g.FillRoundedRectangle(new SolidBrush(rColor), TopLeft.X, TopLeft.Y, rSize.Width - 1, rSize.Height - 1, Radius);
+
         }
     }
 }

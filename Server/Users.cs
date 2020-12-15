@@ -564,33 +564,36 @@ namespace Server
         {
             if (comboBox1.SelectedItem.ToString() == "Xóa")
             {
-                foreach (ListMember item in pnDisplay.Controls)
+                if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    if (item.isChecked == true && item.lVaiTro == "Nhân Viên")
+                    foreach (ListMember item in pnDisplay.Controls)
                     {
-                        Controller.XoaNV(item.lEmail);
+                        if (item.isChecked == true && item.lVaiTro == "Nhân Viên")
+                        {
+                            Controller.XoaNV(item.lEmail);
+                        }
+                        if (item.isChecked == true && item.lVaiTro == "Khách Hàng")
+                        {
+                            Controller.XoaKhach(item.lEmail);
+                        }
                     }
-                    if (item.isChecked == true && item.lVaiTro == "Khách Hàng")
+                    reload();
+                    if (tatca == true)
                     {
-                        Controller.XoaKhach(item.lEmail);
+                        btnTatCa_Click(sender, e);
                     }
-                }
-                reload();
-                if (tatca == true)
-                {
-                    btnTatCa_Click(sender, e);
-                }
-                if (admin == true)
-                {
-                    btnAdmin_Click(sender, e);
-                }
-                if (nhanvien == true)
-                {
-                    btnNhanVien_Click(null, null);
-                }
-                if (khach == true)
-                {
-                    btnKhach_Click(null, null);
+                    if (admin == true)
+                    {
+                        btnAdmin_Click(sender, e);
+                    }
+                    if (nhanvien == true)
+                    {
+                        btnNhanVien_Click(null, null);
+                    }
+                    if (khach == true)
+                    {
+                        btnKhach_Click(null, null);
+                    }
                 }
             }
         }
@@ -675,5 +678,11 @@ namespace Server
             }
         }
         private Form f;
+
+        private void Users_Load(object sender, EventArgs e)
+        {
+            CheckClass.location = this.Parent.Parent.Location;
+            CheckClass.size = this.Parent.Parent.Size;
+        }
     }
 }
