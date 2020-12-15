@@ -28,7 +28,6 @@ namespace Server
         }
         bool tbMailDontHandle = false;
         bool tbNameDontHandle = false;
-        bool tbPassDontHandle = false;
         private void tbMail_MouseEnter(object sender, EventArgs e)
         {
             if (tbMailDontHandle == false)
