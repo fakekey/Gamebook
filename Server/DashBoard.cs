@@ -51,7 +51,10 @@ namespace Server
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if (Messagebox.Show("THÔNG BÁO", "Bạn có chắc muốn đăng xuất không?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void btnMax_Click(object sender, EventArgs e)

@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MsbYesNo));
             this.panelRadius1 = new Server.PanelRadius();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panelRadius2 = new Server.PanelRadius();
             this.label2 = new System.Windows.Forms.Label();
             this.panelRadius3 = new Server.PanelRadius();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panelRadius1.SuspendLayout();
-            this.panelRadius2.SuspendLayout();
-            this.panelRadius3.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panelRadius2.SuspendLayout();
+            this.panelRadius3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelRadius1
@@ -59,6 +59,52 @@
             this.panelRadius1.Size = new System.Drawing.Size(440, 200);
             this.panelRadius1.TabIndex = 0;
             this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Padding = new System.Windows.Forms.Padding(17, 10, 0, 0);
+            this.panel1.Size = new System.Drawing.Size(440, 130);
+            this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label4);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel2.Location = new System.Drawing.Point(17, 37);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(423, 93);
+            this.panel2.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Font = new System.Drawing.Font("Tahoma", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(0, 0);
+            this.label4.Name = "label4";
+            this.label4.Padding = new System.Windows.Forms.Padding(0, 10, 10, 0);
+            this.label4.Size = new System.Drawing.Size(423, 93);
+            this.label4.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
+            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label3.Font = new System.Drawing.Font("Quicksand", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(17, 10);
+            this.label3.Name = "label3";
+            this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
+            this.label3.Size = new System.Drawing.Size(10, 24);
+            this.label3.TabIndex = 2;
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelRadius2
             // 
@@ -122,52 +168,6 @@
             this.label1.MouseEnter += new System.EventHandler(this.label1_MouseEnter);
             this.label1.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(17, 10, 0, 0);
-            this.panel1.Size = new System.Drawing.Size(440, 130);
-            this.panel1.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Font = new System.Drawing.Font("Quicksand", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(17, 10);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.label3.Size = new System.Drawing.Size(10, 24);
-            this.label3.TabIndex = 2;
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(17, 37);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(423, 93);
-            this.panel2.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 17F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(0, 0);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(0, 10, 10, 0);
-            this.label4.Size = new System.Drawing.Size(423, 93);
-            this.label4.TabIndex = 3;
-            // 
             // MsbYesNo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,11 +182,11 @@
             this.Text = "MsbYesNo";
             this.Load += new System.EventHandler(this.MsbYesNo_Load);
             this.panelRadius1.ResumeLayout(false);
-            this.panelRadius2.ResumeLayout(false);
-            this.panelRadius3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
+            this.panelRadius2.ResumeLayout(false);
+            this.panelRadius3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

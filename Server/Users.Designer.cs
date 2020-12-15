@@ -155,9 +155,8 @@ namespace Server
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label2.Location = new System.Drawing.Point(106, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 21);
+            this.label2.Size = new System.Drawing.Size(0, 21);
             this.label2.TabIndex = 2;
-            this.label2.Text = "(15)";
             // 
             // pnTatCa
             // 
@@ -225,9 +224,8 @@ namespace Server
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label3.Location = new System.Drawing.Point(121, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 21);
+            this.label3.Size = new System.Drawing.Size(0, 21);
             this.label3.TabIndex = 2;
-            this.label3.Text = "(15)";
             // 
             // pnAdmin
             // 
@@ -295,9 +293,8 @@ namespace Server
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label5.Location = new System.Drawing.Point(121, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(33, 21);
+            this.label5.Size = new System.Drawing.Size(0, 21);
             this.label5.TabIndex = 2;
-            this.label5.Text = "(15)";
             // 
             // pnNhanVien
             // 
@@ -365,9 +362,8 @@ namespace Server
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label7.Location = new System.Drawing.Point(123, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(33, 21);
+            this.label7.Size = new System.Drawing.Size(0, 21);
             this.label7.TabIndex = 2;
-            this.label7.Text = "(15)";
             // 
             // pnKhach
             // 
@@ -603,7 +599,7 @@ namespace Server
             // 
             // timer2
             // 
-            this.timer2.Interval = 600;
+            this.timer2.Interval = 800;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Users

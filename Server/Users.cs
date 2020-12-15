@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Transitions;
 using Transitions.TransitionTypes;
 using System.Windows.Forms;
@@ -41,9 +36,9 @@ namespace Server
             dsadmin = Controller.getAdmin();
             if (dsnv != null && dsuser != null && dsadmin != null)
             {
-                label3.Text = "(" + dsadmin.Count.ToString() + ")";
-                label5.Text = "(" + dsnv.Count.ToString() + ")";
-                label7.Text = "(" + dsuser.Count.ToString() + ")";
+                label3.Text = $"({dsadmin.Count.ToString()})";
+                label5.Text = $"({dsnv.Count.ToString()})";
+                label7.Text = $"({dsuser.Count.ToString()})";
                 dsAll.AddRange(dsadmin);
                 dsAll.AddRange(dsnv);
                 dsAll.AddRange(dsuser);
@@ -566,38 +561,68 @@ namespace Server
             {
                 if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    foreach (ListMember item in pnDisplay.Controls)
-                    {
-                        if (item.isChecked == true && item.lVaiTro == "Nhân Viên")
-                        {
-                            Controller.XoaNV(item.lEmail);
-                        }
-                        if (item.isChecked == true && item.lVaiTro == "Khách Hàng")
-                        {
-                            Controller.XoaKhach(item.lEmail);
-                        }
-                    }
-                    reload();
                     if (tatca == true)
                     {
-                        btnTatCa_Click(sender, e);
+                        if (dsAll.Count != 0)
+                        {
+                            Xoa();
+                        }
                     }
-                    if (admin == true)
+                    else if (admin == true)
                     {
-                        btnAdmin_Click(sender, e);
+                        if (dsadmin.Count != 0)
+                        {
+                            Xoa();
+                        }
                     }
-                    if (nhanvien == true)
+                    else if (nhanvien == true)
                     {
-                        btnNhanVien_Click(null, null);
+                        if (dsnv.Count != 0)
+                        {
+                            Xoa();
+                        }
                     }
-                    if (khach == true)
+                    else if (khach == true)
                     {
-                        btnKhach_Click(null, null);
+                        if (dsuser.Count != 0)
+                        {
+                            Xoa();
+                        }
                     }
                 }
             }
         }
-
+        private void Xoa()
+        {
+            foreach (ListMember item in pnDisplay.Controls)
+            {
+                if (item.isChecked == true && item.lVaiTro == "Nhân Viên")
+                {
+                    Controller.XoaNV(item.lEmail);
+                }
+                if (item.isChecked == true && item.lVaiTro == "Khách Hàng")
+                {
+                    Controller.XoaKhach(item.lEmail);
+                }
+            }
+            reload();
+            if (tatca == true)
+            {
+                btnTatCa_Click(null, null);
+            }
+            if (admin == true)
+            {
+                btnAdmin_Click(null, null);
+            }
+            if (nhanvien == true)
+            {
+                btnNhanVien_Click(null, null);
+            }
+            if (khach == true)
+            {
+                btnKhach_Click(null, null);
+            }
+        }
         private void reload()
         {
             dsadmin = dsuser = dsnv = null;
