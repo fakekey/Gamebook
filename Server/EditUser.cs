@@ -149,7 +149,7 @@ namespace Server
             else
             {
                 int rs = Controller.SuaNV(tbMail.Text, tbName.Text, this.quyen);
-                if(rs == 1)
+                if (rs == 1)
                 {
                     lbName.Text = "- Sửa thành công";
                     lbName.ForeColor = Color.FromArgb(77, 222, 19);
@@ -175,6 +175,7 @@ namespace Server
             if (timerIsAlive == false)
             {
                 lbName.Text = "";
+                lbName.ForeColor = Color.FromArgb(240, 71, 71);
                 namelb.ForeColor = Color.FromArgb(138, 142, 147);
                 timerIsAlive = true;
                 timer1.Enabled = true;

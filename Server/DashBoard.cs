@@ -27,11 +27,11 @@ namespace Server
         }
         private void DashBoard_Load(object sender, EventArgs e)
         {
+            CheckClass.location = this.Location;
+            CheckClass.size = this.Size;
             WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
             panel4_MouseMove(null, null);
             icoHome_Click(null, null);
-            CheckClass.location = this.Location;
-            CheckClass.size = this.Size;
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -64,21 +64,21 @@ namespace Server
             if (this.WindowState == FormWindowState.Normal)
             {
                 this.WindowState = FormWindowState.Maximized;
+                CheckClass.location = this.Location;
+                CheckClass.size = this.Size;
                 if (fUsers != null)
                 {
                     fUsers.ReSize();
-                    CheckClass.location = this.Location;
-                    CheckClass.size = this.Size;
                 }
             }
             else
             {
                 this.WindowState = FormWindowState.Normal;
+                CheckClass.location = this.Location;
+                CheckClass.size = this.Size;
                 if (fUsers != null)
                 {
                     fUsers.ReSize();
-                    CheckClass.location = this.Location;
-                    CheckClass.size = this.Size;
                 }
             }
         }
