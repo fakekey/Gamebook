@@ -411,9 +411,11 @@ namespace Server
         string isAdd = "";
         private void panel11_Click(object sender, EventArgs e)
         {
-            userIsActive = homeIsActive = billIsActive = false;
+            homeIsActive = userIsActive = billIsActive = false;
             productIsActive = true;
             clear();
+            fProducts = new Products();
+            AddForm(fProducts);
         }
 
         private void panel14_Click(object sender, EventArgs e)
@@ -511,5 +513,6 @@ namespace Server
             isAdd = form.Name;
         }
         private Users fUsers;
+        private Products fProducts;
     }
 }

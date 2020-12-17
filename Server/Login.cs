@@ -28,6 +28,7 @@ namespace Server
         private void Login_Load(object sender, EventArgs e)
         {
             WinAPI.AnimateWindow(this.Handle, 550, WinAPI.BLEND);
+            textBox1.Select();
         }
 
         private void usertb_Paint(object sender, PaintEventArgs e)

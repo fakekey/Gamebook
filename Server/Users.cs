@@ -124,15 +124,6 @@ namespace Server
                 }
             }
         }
-        private void AddForm(Form form)
-        {
-            this.Controls.Clear();
-            form.TopLevel = false;
-            form.AutoScroll = true;
-            form.Dock = DockStyle.Fill;
-            this.Controls.Add(form);
-            form.Show();
-        }
 
         private void NoData()
         {
