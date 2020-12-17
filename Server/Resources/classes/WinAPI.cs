@@ -1,16 +1,10 @@
-﻿using System;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
+﻿using System.Security.Cryptography;
 using System.Text;
 
 namespace Server
 {
     class WinAPI
     {
-        public const int BLEND = 0X80000;
-
-        [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public static extern int AnimateWindow(IntPtr hwand, int dwTime, int dwFlag);
         public static string CreateMD5(string input)
         {
             // Use input string to calculate MD5 hash

@@ -17,11 +17,6 @@ namespace Server
             InitializeComponent();
         }
 
-        private void MsbYesNo_Load(object sender, EventArgs e)
-        {
-            WinAPI.AnimateWindow(this.Handle, 200, WinAPI.BLEND);
-        }
-
         private void label1_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Yes;

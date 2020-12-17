@@ -29,7 +29,6 @@ namespace Server
         {
             CheckClass.location = this.Location;
             CheckClass.size = this.Size;
-            WinAPI.AnimateWindow(this.Handle, 400, WinAPI.BLEND);
             panel4_MouseMove(null, null);
             icoHome_Click(null, null);
         }

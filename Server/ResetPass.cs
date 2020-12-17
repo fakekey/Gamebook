@@ -27,7 +27,6 @@ namespace Server
 
         private void ResetPass_Load(object sender, EventArgs e)
         {
-            WinAPI.AnimateWindow(this.Handle, 550, WinAPI.BLEND);
             textBox1.Select();
         }
 
@@ -79,7 +78,7 @@ namespace Server
             timer1.Stop();
             j = 0;
             timerIsAlive = false;
-            btnLogin.Text = "Change Password";
+            btnLogin.Text = "Xác Nhận";
             if (textBox1.Text == string.Empty)
             {
                 lbUser.Text = "- Mục này không thể bỏ trống";

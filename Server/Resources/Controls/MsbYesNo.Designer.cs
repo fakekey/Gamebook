@@ -180,7 +180,6 @@
             this.Name = "MsbYesNo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "MsbYesNo";
-            this.Load += new System.EventHandler(this.MsbYesNo_Load);
             this.panelRadius1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

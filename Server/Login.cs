@@ -27,7 +27,6 @@ namespace Server
 
         private void Login_Load(object sender, EventArgs e)
         {
-            WinAPI.AnimateWindow(this.Handle, 550, WinAPI.BLEND);
             textBox1.Select();
             if (Properties.Settings.Default.userName != null && Properties.Settings.Default.passWord != null)
             {
@@ -163,7 +162,7 @@ namespace Server
             timer1.Stop();
             timer2.Stop();
             j = 0;
-            btnLogin.Text = "Login";
+            btnLogin.Text = "Đăng nhập";
             textBox1.Enabled = true;
             textBox2.Enabled = true;
             timerIsAlive = false;

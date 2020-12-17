@@ -54,7 +54,6 @@ namespace Server
 
         private void Loading_Load(object sender, EventArgs e)
         {
-            WinAPI.AnimateWindow(this.Handle, 450, WinAPI.BLEND);
             timer3_Tick(null, null);
         }
         string[] mess = new string[] { "KIỂM TRA CẬP NHẬT...", "ĐANG KHỞI TẠO...", "ĐANG TẢI...", "ĐANG BẮT ĐẦU..." };
