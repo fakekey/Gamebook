@@ -31,6 +31,7 @@ namespace Server
             CheckClass.size = this.Size;
             panel4_MouseMove(null, null);
             icoHome_Click(null, null);
+            timer1.Enabled = true;
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -513,5 +514,11 @@ namespace Server
         }
         private Users fUsers;
         private Products fProducts;
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            panel17_Click(null, null);
+        }
     }
 }

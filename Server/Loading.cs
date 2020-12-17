@@ -27,8 +27,8 @@ namespace Server
         int i = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            i = i % 200;
-            pictureBox1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject($"logo{i}");
+            i = i % 125;
+            pictureBox1.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject($"logo{i + 25}");
             i += 1;
         }
         private void freeMemory()
