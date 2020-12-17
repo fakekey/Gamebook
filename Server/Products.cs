@@ -6,8 +6,6 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Transitions;
-using Transitions.TransitionTypes;
 using System.Windows.Forms;
 
 namespace Server
@@ -40,7 +38,7 @@ namespace Server
             }
         }
         products[] dsTest = new products[]{
-                new products(Image.FromFile(@"c:\Users\Admin\Desktop\18.jpg"),"Grand Theft Auto V","AAA","1.51","25/06/2020","30$"),};
+                new products(Properties.Resources.forgotPass,"Grand Theft Auto V","AAA","1.51","25/06/2020","30$"),};
         bool tatca = false;
         bool aaa = false;
         bool indie = false;
@@ -48,9 +46,7 @@ namespace Server
         {
             if (tatca == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnTatCa, "ForeColor", Color.White);
-                t.Run();
+                btnTatCa.ForeColor = Color.White;
                 pnTatCa.rColor = Color.FromArgb(82, 79, 84, 92);
                 pnTatCa.Refresh();
             }
@@ -60,9 +56,7 @@ namespace Server
         {
             if (tatca == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnTatCa, "ForeColor", Color.FromArgb(220, 221, 222));
-                t.Run();
+                btnTatCa.ForeColor = Color.FromArgb(220, 221, 222);
                 pnTatCa.rColor = Color.Transparent;
                 pnTatCa.Refresh();
             }
@@ -71,9 +65,7 @@ namespace Server
         {
             if (aaa == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnAAA, "ForeColor", Color.White);
-                t.Run();
+                btnAAA.ForeColor = Color.White;
                 pnAAA.rColor = Color.FromArgb(82, 79, 84, 92);
                 pnAAA.Refresh();
             }
@@ -83,9 +75,7 @@ namespace Server
         {
             if (aaa == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnAAA, "ForeColor", Color.FromArgb(220, 221, 222));
-                t.Run();
+                btnAAA.ForeColor = Color.FromArgb(220, 221, 222);
                 pnAAA.rColor = Color.Transparent;
                 pnAAA.Refresh();
             }
@@ -95,9 +85,7 @@ namespace Server
         {
             if (indie == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnIndie, "ForeColor", Color.White);
-                t.Run();
+                btnIndie.ForeColor = Color.White;
                 pnIndie.rColor = Color.FromArgb(82, 79, 84, 92);
                 pnIndie.Refresh();
             }
@@ -107,9 +95,7 @@ namespace Server
         {
             if (indie == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnIndie, "ForeColor", Color.FromArgb(220, 221, 222));
-                t.Run();
+                btnIndie.ForeColor = Color.FromArgb(220, 221, 222);
                 pnIndie.rColor = Color.Transparent;
                 pnIndie.Refresh();
             }

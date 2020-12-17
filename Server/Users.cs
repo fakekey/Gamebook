@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
-using Transitions;
-using Transitions.TransitionTypes;
 using System.Windows.Forms;
 
 namespace Server
@@ -142,9 +140,7 @@ namespace Server
         {
             if (tatca == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnTatCa, "ForeColor", Color.White);
-                t.Run();
+                btnTatCa.ForeColor = Color.White;
                 pnTatCa.rColor = Color.FromArgb(82, 79, 84, 92);
                 pnTatCa.Refresh();
             }
@@ -154,9 +150,7 @@ namespace Server
         {
             if (tatca == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnTatCa, "ForeColor", Color.FromArgb(220, 221, 222));
-                t.Run();
+                btnTatCa.ForeColor = Color.FromArgb(220, 221, 222);
                 pnTatCa.rColor = Color.Transparent;
                 pnTatCa.Refresh();
             }
@@ -166,9 +160,7 @@ namespace Server
         {
             if (admin == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnAdmin, "ForeColor", Color.White);
-                t.Run();
+                btnAdmin.ForeColor = Color.White;
                 pnAdmin.rColor = Color.FromArgb(82, 79, 84, 92);
                 pnAdmin.Refresh();
             }
@@ -178,9 +170,7 @@ namespace Server
         {
             if (admin == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnAdmin, "ForeColor", Color.FromArgb(220, 221, 222));
-                t.Run();
+                btnAdmin.ForeColor = Color.FromArgb(220, 221, 222);
                 pnAdmin.rColor = Color.Transparent;
                 pnAdmin.Refresh();
             }
@@ -190,9 +180,7 @@ namespace Server
         {
             if (nhanvien == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnNhanVien, "ForeColor", Color.White);
-                t.Run();
+                btnNhanVien.ForeColor = Color.White;
                 pnNhanVien.rColor = Color.FromArgb(82, 79, 84, 92);
                 pnNhanVien.Refresh();
             }
@@ -202,9 +190,7 @@ namespace Server
         {
             if (nhanvien == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnNhanVien, "ForeColor", Color.FromArgb(220, 221, 222));
-                t.Run();
+                btnNhanVien.ForeColor = Color.FromArgb(220, 221, 222);
                 pnNhanVien.rColor = Color.Transparent;
                 pnNhanVien.Refresh();
             }
@@ -214,9 +200,7 @@ namespace Server
         {
             if (khach == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnKhach, "ForeColor", Color.White);
-                t.Run();
+                btnKhach.ForeColor = Color.White;
                 pnKhach.rColor = Color.FromArgb(82, 79, 84, 92);
                 pnKhach.Refresh();
             }
@@ -226,9 +210,7 @@ namespace Server
         {
             if (khach == false)
             {
-                Transition t = new Transition(new EaseInEaseOut(400));
-                t.Add(btnKhach, "ForeColor", Color.FromArgb(220, 221, 222));
-                t.Run();
+                btnKhach.ForeColor = Color.FromArgb(220, 221, 222);
                 pnKhach.rColor = Color.Transparent;
                 pnKhach.Refresh();
             }

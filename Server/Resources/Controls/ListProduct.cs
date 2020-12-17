@@ -6,8 +6,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Transitions;
-using Transitions.TransitionTypes;
 using System.Windows.Forms;
 
 namespace Server
@@ -31,22 +29,22 @@ namespace Server
         public Image lIcon { get => pictureBox1.Image; set => pictureBox1.Image = value; }
         private void btnSua_MouseEnter(object sender, EventArgs e)
         {
-            Transition.Run(btnSua, "ForeColor", Color.White, new EaseInEaseOut(400));
+            btnSua.ForeColor = Color.White;
         }
 
         private void btnSua_MouseLeave(object sender, EventArgs e)
         {
-            Transition.Run(btnSua, "ForeColor", Color.FromArgb(114, 137, 218), new EaseInEaseOut(400));
+            btnSua.ForeColor = Color.FromArgb(114, 137, 218);
         }
 
         private void btnXoa_MouseEnter(object sender, EventArgs e)
         {
-            Transition.Run(btnXoa, "ForeColor", Color.FromArgb(238, 42, 49), new EaseInEaseOut(400));
+            btnXoa.ForeColor = Color.FromArgb(238, 42, 49);
         }
 
         private void btnXoa_MouseLeave(object sender, EventArgs e)
         {
-            Transition.Run(btnXoa, "ForeColor", Color.FromArgb(255, 119, 117), new EaseInEaseOut(400));
+            btnXoa.ForeColor = Color.FromArgb(255, 119, 117);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
