@@ -210,5 +210,17 @@ namespace Server
                 item.isChecked = checkBox1.Checked ? true : false;
             }
         }
+
+        private void Products_Load(object sender, EventArgs e)
+        {
+            textBox1.Select();
+            timer1.Enabled = true;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            btnTatCa_Click(null, null);
+        }
     }
 }

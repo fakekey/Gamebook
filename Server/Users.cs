@@ -680,6 +680,14 @@ namespace Server
         {
             CheckClass.location = this.Parent.Parent.Location;
             CheckClass.size = this.Parent.Parent.Size;
+            textBox1.Select();
+            timer3.Enabled = true;
+        }
+
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            timer3.Stop();
+            btnTatCa_Click(null, null);
         }
     }
 }

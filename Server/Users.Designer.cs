@@ -71,6 +71,7 @@ namespace Server
             this.pnDisplay = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panelRadius1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -602,6 +603,10 @@ namespace Server
             this.timer2.Interval = 900;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
+            // timer3
+            // 
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // Users
             // 
             this.AcceptButton = this.noFocusButton3;
@@ -689,5 +694,6 @@ namespace Server
         private System.Windows.Forms.Panel pnDisplay;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer3;
     }
 }

@@ -29,6 +29,11 @@ namespace Server
         {
             WinAPI.AnimateWindow(this.Handle, 550, WinAPI.BLEND);
             textBox1.Select();
+            if (Properties.Settings.Default.userName != null && Properties.Settings.Default.passWord != null)
+            {
+                textBox1.Text = Properties.Settings.Default.userName;
+                textBox2.Text = Properties.Settings.Default.passWord;
+            }
         }
 
         private void usertb_Paint(object sender, PaintEventArgs e)
@@ -44,10 +49,7 @@ namespace Server
         {
             ControlPaint.DrawBorder(e.Graphics, control.ClientRectangle, Color.FromArgb(r, g, b), ButtonBorderStyle.Solid);
         }
-        private void VeBorder(Control control, PaintEventArgs e, int a, int r, int g, int b)
-        {
-            ControlPaint.DrawBorder(e.Graphics, control.ClientRectangle, Color.FromArgb(a, r, g, b), ButtonBorderStyle.Solid);
-        }
+
         bool tbUserDontHandle = false;
         bool tbPassDontHandle = false;
         private void textBox1_MouseEnter(object sender, EventArgs e)
@@ -203,6 +205,9 @@ namespace Server
                 {
                     case 1:
                         DashBoard f = new DashBoard(textBox1.Text, Controller.quyenLogin == "1" ? "Admin" : "Stuff");
+                        Properties.Settings.Default.userName = textBox1.Text;
+                        Properties.Settings.Default.passWord = textBox2.Text;
+                        Properties.Settings.Default.Save();
                         Hide();
                         f.ShowDialog();
                         Show();

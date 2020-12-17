@@ -144,7 +144,7 @@ namespace Server
 
         private void AddUser_Load(object sender, EventArgs e)
         {
-            label1.Select();
+            tbMail.Select();
             comboBox1.SelectedIndex = 0;
         }
 

@@ -105,7 +105,7 @@ namespace Server
 
         private void EditUser_Load(object sender, EventArgs e)
         {
-            label1.Select();
+            tbName.Select();
         }
 
         private void panel1_Click(object sender, EventArgs e)
