@@ -177,6 +177,7 @@
             this.noFocusButton1.TabIndex = 1;
             this.noFocusButton1.Text = "Áp dụng";
             this.noFocusButton1.UseVisualStyleBackColor = false;
+            this.noFocusButton1.Click += new System.EventHandler(this.noFocusButton1_Click);
             // 
             // panel2
             // 
@@ -430,6 +431,7 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Xuất Exel";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panelRadius1
             // 
@@ -579,6 +581,7 @@
             this.pnDisplay.Padding = new System.Windows.Forms.Padding(16, 10, 16, 16);
             this.pnDisplay.Size = new System.Drawing.Size(1151, 487);
             this.pnDisplay.TabIndex = 13;
+            this.pnDisplay.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.pnDisplay_ControlRemoved);
             // 
             // timer3
             // 

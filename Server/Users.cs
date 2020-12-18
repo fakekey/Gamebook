@@ -430,10 +430,14 @@ namespace Server
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            foreach (ListMember item in pnDisplay.Controls)
+            if (dsAll.Count != 0)
             {
-                item.isChecked = checkBox1.Checked ? true : false;
+                foreach (ListMember item in pnDisplay.Controls)
+                {
+                    item.isChecked = checkBox1.Checked ? true : false;
+                }
             }
+
         }
 
         private void noFocusButton3_Click(object sender, EventArgs e)
