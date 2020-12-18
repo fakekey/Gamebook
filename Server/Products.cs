@@ -522,10 +522,10 @@ namespace Server
             {
                 if (this.Width == 1231)
                 {
-                    leftPaddingNSX = 25;
-                    leftPaddingPB = 23;
+                    leftPaddingNSX = 26;
+                    leftPaddingPB = 22;
                     leftPaddingNgay = 19;
-                    leftPaddingGia = 16;
+                    leftPaddingGia = 15;
                 }
                 else
                 {
