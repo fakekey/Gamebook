@@ -152,6 +152,7 @@
             this.noFocusButton3.TabIndex = 5;
             this.noFocusButton3.Text = "Tìm kiếm";
             this.noFocusButton3.UseVisualStyleBackColor = false;
+            this.noFocusButton3.Click += new System.EventHandler(this.noFocusButton3_Click);
             // 
             // noFocusButton1
             // 
@@ -202,9 +203,9 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label5.Location = new System.Drawing.Point(121, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 21);
+            this.label5.Size = new System.Drawing.Size(28, 21);
             this.label5.TabIndex = 2;
-            this.label5.Text = "(45)";
+            this.label5.Text = "(0)";
             // 
             // pnIndie
             // 
@@ -272,9 +273,9 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label3.Location = new System.Drawing.Point(121, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(33, 21);
+            this.label3.Size = new System.Drawing.Size(28, 21);
             this.label3.TabIndex = 2;
-            this.label3.Text = "(15)";
+            this.label3.Text = "(0)";
             // 
             // pnAAA
             // 
@@ -342,9 +343,9 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label2.Location = new System.Drawing.Point(106, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 21);
+            this.label2.Size = new System.Drawing.Size(28, 21);
             this.label2.TabIndex = 2;
-            this.label2.Text = "(50)";
+            this.label2.Text = "(0)";
             // 
             // pnTatCa
             // 

@@ -12,14 +12,38 @@ namespace Server
 {
     public partial class Products : Form
     {
+        // danhsach
+        private List<Product> dsAll;
+        private List<Product> dsAAA;
+        private List<Product> dsIndie;
         public Products()
         {
             InitializeComponent();
             comboBox1.SelectedIndex = 0;
             textBox1.AutoSize = false;
             textBox1.Size = new Size(230, 22);
+            dsAll = Controller.getSpAll();
+            dsAAA = Controller.getSpAAA();
+            dsIndie = Controller.getSpIndie();
+            if(dsAll != null)
+            {
+                label2.Text = "(" + dsAll.Count + ")";
+            }
+            else
+            {
+                btnAAA.Enabled = false;
+                btnIndie.Enabled = false;
+            }
+            if (dsAAA != null)
+            {
+                label3.Text = "(" + dsAAA.Count + ")";
+            }
+            if (dsIndie != null)
+            {
+                label5.Text = "(" + dsIndie.Count + ")";
+            }
         }
-        public struct products
+        /*public struct products
         {
             public Image avata;
             public string tieude;
@@ -38,7 +62,41 @@ namespace Server
             }
         }
         products[] dsTest = new products[]{
-                new products(Properties.Resources.forgotPass,"Grand Theft Auto V","AAA","1.51","25/06/2020","30$"),};
+                new products(Properties.Resources.forgotPass,"Grand Theft Auto V","AAA","1.51","25/06/2020","30$"),       
+        };*/
+
+        private void addToPanel(List<Product> ds)
+        {
+            for (int i = 0; i <= ds.Count-1; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    pnDisplay.Controls.Add(new ListProduct() { 
+                        bgColor = ListProduct.FIRST_COLOR, 
+                        lIcon = Image.FromFile(ds[i].Img), 
+                        lTieuDe = ds[i].Title, 
+                        lNsx = ds[i].Cate, 
+                        lPhienBan = ds[i].Version, 
+                        lNgay = ds[i].Daterelease, 
+                        lGia = ds[i].Price.ToString()
+                    });
+                }
+                else
+                {
+                    pnDisplay.Controls.Add(new ListProduct()
+                    {
+                        bgColor = ListProduct.SECOND_COLOR,
+                        lIcon = Image.FromFile(ds[i].Img),
+                        lTieuDe = ds[i].Title,
+                        lNsx = ds[i].Cate,
+                        lPhienBan = ds[i].Version,
+                        lNgay = ds[i].Daterelease,
+                        lGia = ds[i].Price.ToString()
+                    });
+                }
+            }
+        }
+
         bool tatca = false;
         bool aaa = false;
         bool indie = false;
@@ -100,7 +158,7 @@ namespace Server
                 pnIndie.Refresh();
             }
         }
-
+        private int nCount;
         private void btnTatCa_Click(object sender, EventArgs e)
         {
             aaa = indie = false;
@@ -108,17 +166,24 @@ namespace Server
             btnTatCa.ForeColor = Color.White;
             pnTatCa.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
-            for (int i = 0; i < 6; i++)
+            pnDisplay.Controls.Clear();
+            if(dsAll != null)
             {
-                if (i % 2 == 0)
-                {
-                    pnDisplay.Controls.Add(new ListProduct() { bgColor = ListProduct.FIRST_COLOR, lIcon = dsTest[0].avata, lTieuDe = dsTest[0].tieude, lNsx = dsTest[0].nsx, lPhienBan = dsTest[0].pb, lNgay = dsTest[0].ngay, lGia = dsTest[0].gia });
-                }
-                else
-                {
-                    pnDisplay.Controls.Add(new ListProduct() { bgColor = ListProduct.SECOND_COLOR, lIcon = dsTest[0].avata, lTieuDe = dsTest[0].tieude, lNsx = dsTest[0].nsx, lPhienBan = dsTest[0].pb, lNgay = dsTest[0].ngay, lGia = dsTest[0].gia });
-                }
+                nCount = dsAll.Count;
             }
+            else
+            {
+                nCount = 0;
+            }    
+            if(nCount != 0)
+            {
+                addToPanel(dsAll);
+            }
+            else
+            {
+                NoData();
+            }
+
         }
 
         private void btnAAA_Click(object sender, EventArgs e)
@@ -128,6 +193,23 @@ namespace Server
             btnAAA.ForeColor = Color.White;
             pnAAA.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
+            pnDisplay.Controls.Clear();
+            if (dsAll != null)
+            {
+                nCount = dsAAA.Count;
+            }
+            else
+            {
+                nCount = 0;
+            }
+            if (nCount != 0)
+            {
+                addToPanel(dsAAA);
+            }
+            else
+            {
+                NoData();
+            }
         }
 
         private void btnIndie_Click(object sender, EventArgs e)
@@ -137,6 +219,23 @@ namespace Server
             btnIndie.ForeColor = Color.White;
             pnIndie.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
+            pnDisplay.Controls.Clear();
+            if (dsAll != null)
+            {
+                nCount = dsIndie.Count;
+            }
+            else
+            {
+                nCount = 0;
+            }
+            if (nCount != 0)
+            {
+                addToPanel(dsIndie);
+            }
+            else
+            {
+                NoData();
+            }
         }
         private void clear()
         {
@@ -221,6 +320,68 @@ namespace Server
         {
             timer1.Stop();
             btnTatCa_Click(null, null);
+        }
+
+        private void NoData()
+        {
+            pnDisplay.Controls.Add(new Label()
+            {
+                BackColor = Color.Transparent,
+                Dock = DockStyle.Fill,
+                Font = new Font("Quicksand", 14F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
+                ForeColor = Color.White,
+                Padding = new Padding(0, 0, 0, 50),
+                Text = "Không tìm thấy dữ liệu",
+                TextAlign = ContentAlignment.MiddleCenter,
+            });
+        }
+
+        private void noFocusButton3_Click(object sender, EventArgs e)
+        {
+            string txtFind = textBox1.Text;
+            textBox1.Text = "";
+            List<Product> dstk = new List<Product>(0);
+            if (tatca == true)
+            {
+                foreach (Product item in dsAll)
+                {
+                    if (item.Price.ToString().Contains(txtFind) || item.Title.Contains(txtFind) || item.Version.Contains(txtFind) || item.Cate.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if (aaa == true)
+            {
+                foreach (Product item in dsAAA)
+                {
+                    if (item.Price.ToString().Contains(txtFind) || item.Title.Contains(txtFind) || item.Version.Contains(txtFind) || item.Cate.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if (indie == true)
+            {
+                foreach (Product item in dsIndie)
+                {
+                    if (item.Price.ToString().Contains(txtFind) || item.Title.Contains(txtFind) || item.Version.Contains(txtFind) || item.Cate.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            clear();
+            nCount = dstk.Count;
+            pnDisplay.Controls.Clear();
+            if(nCount != 0)
+            {
+                addToPanel(dstk);
+            }
+            else
+            {
+                NoData();
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Data;
 
@@ -349,6 +350,99 @@ namespace Server
             catch
             {
                 return -99;
+            }
+        }
+        public static List<Product> getSpAll()
+        {
+            List<Product> ds = new List<Product>();
+            try
+            {
+
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select * From spAll";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt16(0);
+                    string title = reader.GetString(1);
+                    string cate = reader.GetString(2);
+                    string version = reader.GetString(3);
+                    string price = reader.GetValue(4).ToString();
+                    string date = reader.GetString(5);
+                    string img = reader.GetString(6);
+                    ds.Add(new Product(id, title, cate, version, float.Parse(price), date, img));
+                }
+                return ds;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public static List<Product> getSpAAA()
+        {
+            List<Product> ds = new List<Product>();
+            try
+            {
+
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select * From spAAA";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt16(0);
+                    string title = reader.GetString(1);
+                    string cate = reader.GetString(2);
+                    string version = reader.GetString(3);
+                    string price = reader.GetValue(4).ToString();
+                    string date = reader.GetString(5);
+                    string img = reader.GetString(6);
+                    ds.Add(new Product(id, title, cate, version, float.Parse(price), date, img));
+                }
+                return ds;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+        public static List<Product> getSpIndie()
+        {
+            List<Product> ds = new List<Product>();
+            try
+            {
+
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select * From spIndie";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    int id = reader.GetInt16(0);
+                    string title = reader.GetString(1);
+                    string cate = reader.GetString(2);
+                    string version = reader.GetString(3);
+                    string price = reader.GetValue(4).ToString();
+                    string date = reader.GetString(5);
+                    string img = reader.GetString(6);
+                    ds.Add(new Product(id, title, cate, version, float.Parse(price), date, img));
+                }
+                return ds;
+            }
+            catch
+            {
+                return null;
             }
         }
     }
