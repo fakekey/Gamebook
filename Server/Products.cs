@@ -298,7 +298,7 @@ namespace Server
         {
             if (dsAll.Count != 0)
             {
-                foreach (ListMember item in pnDisplay.Controls)
+                foreach (ListProduct item in pnDisplay.Controls)
                 {
                     item.isChecked = checkBox1.Checked ? true : false;
                 }
@@ -544,8 +544,14 @@ namespace Server
 
         private void label4_Click(object sender, EventArgs e)
         {
+            CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
             reload();
-            if(dsAll.Count != 0)
+            if (dsAll.Count != 0)
             {
                 Controller.InDanhSachSP(dsAll);
             }
@@ -557,7 +563,7 @@ namespace Server
 
         private void noFocusButton1_Click(object sender, EventArgs e)
         {
-            if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không? Nếu xóa các hóa đơn liên quan sẽ bị ảnh hưởng !", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không? Nếu xóa các hóa đơn liên quan sẽ bị ảnh hưởng!", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (tatca == true)
                 {

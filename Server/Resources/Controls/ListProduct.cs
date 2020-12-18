@@ -52,7 +52,7 @@ namespace Server
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không? Nếu xóa các hóa đơn liên quan sẽ bị ảnh hưởng !", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không? Nếu xóa các hóa đơn liên quan sẽ bị ảnh hưởng!", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 CheckClass.count = 1;
                 Controller.XoaSP(this.lID);
