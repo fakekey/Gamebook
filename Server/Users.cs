@@ -602,6 +602,7 @@ namespace Server
         {
             dsadmin = dsuser = dsnv = null;
             dsAll.Clear();
+            freeMemory();
             dsnv = Controller.getNhanVien();
             dsuser = Controller.getKhach();
             dsadmin = Controller.getAdmin();

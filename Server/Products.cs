@@ -416,6 +416,7 @@ namespace Server
         {
             dsAAA = dsIndie = null;
             dsAll.Clear();
+            freeMemory();
             dsAAA = Controller.getSpAAA();
             dsIndie = Controller.getSpIndie();
             if (dsAAA != null && dsIndie != null)
