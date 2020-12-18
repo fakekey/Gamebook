@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : Demo
+ Source Server         : localhost
  Source Server Type    : MySQL
- Source Server Version : 100414
- Source Host           : 127.0.0.1:3306
+ Source Server Version : 100417
+ Source Host           : localhost:3306
  Source Schema         : gamebookdata
 
  Target Server Type    : MySQL
- Target Server Version : 100414
+ Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 18/12/2020 10:47:08
+ Date: 18/12/2020 18:54:06
 */
 
 SET NAMES utf8mb4;
@@ -29,102 +29,112 @@ CREATE TABLE `account`  (
   INDEX `keyquyen`(`ID_quyen`) USING BTREE,
   INDEX `Email`(`Email`) USING BTREE,
   CONSTRAINT `keyquyen` FOREIGN KEY (`ID_quyen`) REFERENCES `quyen` (`ID_quyen`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of account
 -- ----------------------------
 INSERT INTO `account` VALUES ('admin', '21232f297a57a5a743894a0e4a801fc3', '1');
-INSERT INTO `account` VALUES ('camdalavip', '10a96d94b77bcaecb95fdabb4c2b9fa6', '2');
-INSERT INTO `account` VALUES ('CaoNam123@gmail.com', '24dca22fdab7a594baa005d55db4f7bf', '2');
-INSERT INTO `account` VALUES ('longVippro', '3354045a397621cd92406f1f98cde292', '1');
-INSERT INTO `account` VALUES ('NamABC@job.com', '24dca22fdab7a594baa005d55db4f7bf', '2');
-INSERT INTO `account` VALUES ('NamCH@job.com', '24dca22fdab7a594baa005d55db4f7bf', '2');
-INSERT INTO `account` VALUES ('NamNamHiHi@job.com', '24dca22fdab7a594baa005d55db4f7bf', '2');
-INSERT INTO `account` VALUES ('Null@gmail.com', '24dca22fdab7a594baa005d55db4f7bf', '2');
-INSERT INTO `account` VALUES ('tranct1@gmail.com', '24dca22fdab7a594baa005d55db4f7bf', '3');
-INSERT INTO `account` VALUES ('tranct2@gmail.com', '24dca22fdab7a594baa005d55db4f7bf', '3');
-INSERT INTO `account` VALUES ('tranct3@gmail.com', '24dca22fdab7a594baa005d55db4f7bf', '3');
-INSERT INTO `account` VALUES ('tranct@gmail.com', '24dca22fdab7a594baa005d55db4f7bf', '3');
+INSERT INTO `account` VALUES ('anhnt@gmail.com', '1b3cd15a59747b3a5dc04e5d5955af7b', '3');
+INSERT INTO `account` VALUES ('cacbacdeem95@gmail.com', '3186c1596d307d1f036443d323973f0c', '3');
+INSERT INTO `account` VALUES ('camdalavip@gmail.com', 'e1c1a4b781774c30ea6c889ed48aab37', '1');
+INSERT INTO `account` VALUES ('caonam123@gmail.com', 'f0c67f94e0713224da7fa4436b1b766a', '2');
+INSERT INTO `account` VALUES ('chinhnt@gmail.com', 'c7a95686da2265799615cfd1ff2525aa', '3');
+INSERT INTO `account` VALUES ('dodiepkhanh@gmail.com', 'b5794e09d61e4dcc0c7a78d5d95df756', '2');
+INSERT INTO `account` VALUES ('huongleft@gmail.com', 'b67124c5f98bdd42605fbcac6c279ebb', '3');
+INSERT INTO `account` VALUES ('linhcool@gmail.com', 'dba6128e978d638492640f3c4869ffcf', '3');
+INSERT INTO `account` VALUES ('nguyenquyet@gmail.com', '74e8c143f91a302f058c2be8669b40a4', '3');
+INSERT INTO `account` VALUES ('tructiepgame@gmail.com', 'f11065be41be55876fbcf49d014b09c6', '3');
+INSERT INTO `account` VALUES ('truongnt@gmail.com', 'b5794e09d61e4dcc0c7a78d5d95df756', '2');
+INSERT INTO `account` VALUES ('yoneyas@gmail.com', 'ebde58f229c5768e39e7e50255db7d0a', '3');
 
 -- ----------------------------
 -- Table structure for chi tiet hoa don
 -- ----------------------------
 DROP TABLE IF EXISTS `chi tiet hoa don`;
 CREATE TABLE `chi tiet hoa don`  (
-  `ID_cthd` int(200) NOT NULL AUTO_INCREMENT,
-  `MAHD` int(100) NOT NULL,
-  `ID_sp` int(100) NOT NULL,
+  `ID_cthd` int NOT NULL AUTO_INCREMENT,
+  `MAHD` int NOT NULL,
+  `ID_sp` int NOT NULL,
   `Don gia` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
-  `ID_tinhtrang` int(10) NOT NULL DEFAULT 1,
+  `ID_tinhtrang` int NOT NULL DEFAULT 1,
   PRIMARY KEY (`ID_cthd`) USING BTREE,
   INDEX `cthd_hd`(`MAHD`) USING BTREE,
   INDEX `cthd_sp`(`ID_sp`) USING BTREE,
   INDEX `cthd_ttsp`(`ID_tinhtrang`) USING BTREE,
-  CONSTRAINT `cthd_ttsp` FOREIGN KEY (`ID_tinhtrang`) REFERENCES `tinh trang don hang` (`ID_tinhtrang`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `cthd_hd` FOREIGN KEY (`MAHD`) REFERENCES `hoa don` (`MAHD`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `cthd_ttsp` FOREIGN KEY (`ID_tinhtrang`) REFERENCES `tinh trang don hang` (`ID_tinhtrang`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `sthd` FOREIGN KEY (`ID_sp`) REFERENCES `san pham` (`ID_sp`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of chi tiet hoa don
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for hoa don
 -- ----------------------------
 DROP TABLE IF EXISTS `hoa don`;
 CREATE TABLE `hoa don`  (
-  `MAHD` int(100) NOT NULL AUTO_INCREMENT,
-  `MAKH` int(100) NOT NULL,
+  `MAHD` int NOT NULL AUTO_INCREMENT,
+  `MAKH` int NOT NULL,
   `Ngay Mua` date NOT NULL,
   `Tong Tien` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`MAHD`) USING BTREE,
   INDEX `hd_kh`(`MAKH`) USING BTREE,
   CONSTRAINT `hd_kh` FOREIGN KEY (`MAKH`) REFERENCES `khach hang` (`MAKH`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+
+-- ----------------------------
+-- Records of hoa don
+-- ----------------------------
 
 -- ----------------------------
 -- Table structure for khach hang
 -- ----------------------------
 DROP TABLE IF EXISTS `khach hang`;
 CREATE TABLE `khach hang`  (
-  `MAKH` int(100) NOT NULL AUTO_INCREMENT,
+  `MAKH` int NOT NULL AUTO_INCREMENT,
   `Email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Họ Tên` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`MAKH`) USING BTREE,
   INDEX `kh_acc`(`Email`) USING BTREE,
   CONSTRAINT `kh_acc` FOREIGN KEY (`Email`) REFERENCES `account` (`Email`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of khach hang
 -- ----------------------------
-INSERT INTO `khach hang` VALUES (16, 'tranct@gmail.com', 'Hihi');
-INSERT INTO `khach hang` VALUES (17, 'tranct1@gmail.com', 'Nam Cao ');
-INSERT INTO `khach hang` VALUES (18, 'tranct2@gmail.com', 'Nam Cao ');
-INSERT INTO `khach hang` VALUES (19, 'tranct3@gmail.com', 'Nam1');
+INSERT INTO `khach hang` VALUES (20, 'huongleft@gmail.com', 'Tran Thi Mai Huong');
+INSERT INTO `khach hang` VALUES (21, 'nguyenquyet@gmail.com', 'Nguyen Tien Quyet');
+INSERT INTO `khach hang` VALUES (22, 'anhnt@gmail.com', 'Tran Ngoc Anh');
+INSERT INTO `khach hang` VALUES (23, 'chinhnt@gmail.com', 'Nguyen Thi Chinh');
+INSERT INTO `khach hang` VALUES (24, 'yoneyas@gmail.com', 'Dau beo');
+INSERT INTO `khach hang` VALUES (25, 'cacbacdeem95@gmail.com', 'Duong Cong Tu');
+INSERT INTO `khach hang` VALUES (26, 'linhcool@gmail.com', 'Nguyen Thi Linh');
+INSERT INTO `khach hang` VALUES (27, 'tructiepgame@gmail.com', 'Dung CT');
 
 -- ----------------------------
 -- Table structure for nhan vien
 -- ----------------------------
 DROP TABLE IF EXISTS `nhan vien`;
 CREATE TABLE `nhan vien`  (
-  `MANV` int(10) NOT NULL AUTO_INCREMENT,
+  `MANV` int NOT NULL AUTO_INCREMENT,
   `Họ Tên` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`MANV`) USING BTREE,
   INDEX `nv_acc`(`Email`) USING BTREE,
   CONSTRAINT `nv_acc` FOREIGN KEY (`Email`) REFERENCES `account` (`Email`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of nhan vien
 -- ----------------------------
 INSERT INTO `nhan vien` VALUES (1, 'Admin', 'admin');
-INSERT INTO `nhan vien` VALUES (10, 'Đức Long', 'longVippro');
-INSERT INTO `nhan vien` VALUES (12, 'Lã Quốc Nghị', 'camdalavip');
-INSERT INTO `nhan vien` VALUES (13, 'Cao Hoài Nam', 'CaoNam123@gmail.com');
-INSERT INTO `nhan vien` VALUES (14, 'NamCH', 'NamCH@job.com');
-INSERT INTO `nhan vien` VALUES (15, 'Nam 1', 'NamNamHiHi@job.com');
-INSERT INTO `nhan vien` VALUES (16, 'Cu Nam', 'NamABC@job.com');
-INSERT INTO `nhan vien` VALUES (17, 'Cao Cao', 'Null@gmail.com');
+INSERT INTO `nhan vien` VALUES (18, 'La Quoc Nghi', 'camdalavip@gmail.com');
+INSERT INTO `nhan vien` VALUES (19, 'Cao Hoai Nam', 'caonam123@gmail.com');
+INSERT INTO `nhan vien` VALUES (20, 'Nguyen The Truong', 'truongnt@gmail.com');
+INSERT INTO `nhan vien` VALUES (21, 'Do Diep Khanh', 'dodiepkhanh@gmail.com');
 
 -- ----------------------------
 -- Table structure for quyen
@@ -134,7 +144,7 @@ CREATE TABLE `quyen`  (
   `ID_quyen` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Ten quyen` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`ID_quyen`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of quyen
@@ -148,7 +158,7 @@ INSERT INTO `quyen` VALUES ('3', 'Khách Hàng');
 -- ----------------------------
 DROP TABLE IF EXISTS `san pham`;
 CREATE TABLE `san pham`  (
-  `ID_sp` int(100) NOT NULL AUTO_INCREMENT,
+  `ID_sp` int NOT NULL AUTO_INCREMENT,
   `title` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `category` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `version` varchar(35) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
@@ -156,32 +166,32 @@ CREATE TABLE `san pham`  (
   `date release` date NOT NULL,
   `img_path` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`ID_sp`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of san pham
 -- ----------------------------
-INSERT INTO `san pham` VALUES (1, 'Half Life 3', 'AAA', '3.0', 67.00, '2020-01-25', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
-INSERT INTO `san pham` VALUES (2, 'Grand Theft Auto VI', 'AAA', '4.125', 30.00, '2020-10-15', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
-INSERT INTO `san pham` VALUES (3, 'Star Citizen', 'AAA', '2.16', 1.91, '2020-07-23', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
-INSERT INTO `san pham` VALUES (4, 'Star Wars Jedi: Fallen Order 2', 'AAA', '2.0.1', 0.00, '2020-10-25', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
-INSERT INTO `san pham` VALUES (5, 'Project Athia', 'AAA', '2.638', 0.00, '2020-08-03', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
-INSERT INTO `san pham` VALUES (6, 'The Elder Scrolls 6', 'AAA', '6.0.1', 44.97, '2020-05-13', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
-INSERT INTO `san pham` VALUES (7, 'Homeworld 3', 'AAA', '3.1.12', 6.99, '2020-09-01', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
-INSERT INTO `san pham` VALUES (8, 'Fable 2020', 'AAA', '1.3.25', 0.00, '2020-06-01', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
-INSERT INTO `san pham` VALUES (9, 'Dragon Age 4 The Dread Wolf Rise', 'AAA', '4.1.1', 10.00, '2020-07-20', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
-INSERT INTO `san pham` VALUES (10, 'Suicide Squad: Kill the Justice League', 'AAA', '2.3.5', 0.00, '2020-03-27', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
-INSERT INTO `san pham` VALUES (11, 'Demo', 'Indie', '1.0.0', 10.00, '2020-12-06', 'D:\\báo cáo EPU\\Đồ Án .Net\\Code\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (1, 'Half Life 3', 'AAA', '3.0', 67.00, '2020-01-25', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (2, 'Grand Theft Auto VI', 'AAA', '4.125', 30.00, '2020-10-15', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (3, 'Star Citizen', 'AAA', '2.16', 1.91, '2020-07-23', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (4, 'Star Wars Jedi: Fallen Order 2', 'AAA', '2.0.1', 0.00, '2020-10-25', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (5, 'Project Athia', 'AAA', '2.638', 0.00, '2020-08-03', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (6, 'The Elder Scrolls 6', 'AAA', '6.0.1', 44.97, '2020-05-13', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (7, 'Homeworld 3', 'AAA', '3.1.12', 6.99, '2020-09-01', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (8, 'Fable 2020', 'AAA', '1.3.25', 0.00, '2020-06-01', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (9, 'Dragon Age 4 The Dread Wolf Rise', 'AAA', '4.1.1', 10.00, '2020-07-20', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (10, 'Suicide Squad: Kill the Justice League', 'AAA', '2.3.5', 0.00, '2020-03-27', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
+INSERT INTO `san pham` VALUES (11, 'Demo', 'Indie', '1.0.0', 10.00, '2020-12-06', 'C:\\Users\\Nghi\\Desktop\\Gamebook\\Server\\Resources\\img\\forgotPass.png');
 
 -- ----------------------------
 -- Table structure for tinh trang don hang
 -- ----------------------------
 DROP TABLE IF EXISTS `tinh trang don hang`;
 CREATE TABLE `tinh trang don hang`  (
-  `ID_tinhtrang` int(10) NOT NULL AUTO_INCREMENT,
+  `ID_tinhtrang` int NOT NULL AUTO_INCREMENT,
   `TenTinhTrang` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   PRIMARY KEY (`ID_tinhtrang`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of tinh trang don hang

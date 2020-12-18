@@ -70,7 +70,7 @@ namespace Server
                         lNsx = ds[i].Cate,
                         lPhienBan = ds[i].Version,
                         lNgay = ds[i].Daterelease,
-                        lGia = ds[i].Price.ToString()
+                        lGia = ds[i].Price.ToString() + "$"
                     });
                 }
                 else
@@ -83,7 +83,7 @@ namespace Server
                         lNsx = ds[i].Cate,
                         lPhienBan = ds[i].Version,
                         lNgay = ds[i].Daterelease,
-                        lGia = ds[i].Price.ToString()
+                        lGia = ds[i].Price.ToString() + "$"
                     });
                 }
             }
