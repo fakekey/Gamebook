@@ -115,7 +115,6 @@ namespace Server
                         active2.Refresh();
                     }
                 }
-
             }
             else
             {
@@ -244,6 +243,14 @@ namespace Server
         {
             activeOne = activeTwo = activeThree = activeFour = false;
             clear();
+            if (labelBills != null && f4 != null)
+            {
+                labelBills.Close();
+                f4.Close();
+                labelBills = null;
+                f4 = null;
+                freeMemory();
+            }
         }
 
         private void panel8_MouseMove(object sender, MouseEventArgs e)
@@ -290,7 +297,6 @@ namespace Server
                 icoBill.Refresh();
             }
         }
-
         private void panel4_MouseMove(object sender, MouseEventArgs e)
         {
             activeTwo = activeThree = activeFour = false;
@@ -409,6 +415,14 @@ namespace Server
         {
             activeOne = activeTwo = activeThree = activeFour = false;
             clear();
+            if (labelHome != null && f1 != null)
+            {
+                labelHome.Close();
+                f1.Close();
+                labelHome = null;
+                f1 = null;
+                freeMemory();
+            }
         }
 
         private void panel20_MouseMove(object sender, MouseEventArgs e)
@@ -421,6 +435,38 @@ namespace Server
         {
             activeOne = activeTwo = activeThree = activeFour = false;
             clear();
+            if (labelHome != null && f1 != null)
+            {
+                labelHome.Close();
+                f1.Close();
+                labelHome = null;
+                f1 = null;
+                freeMemory();
+            }
+            if (labelUsers != null && f2 != null)
+            {
+                labelUsers.Close();
+                f2.Close();
+                labelUsers = null;
+                f2 = null;
+                freeMemory();
+            }
+            if (labelProducts != null && f3 != null)
+            {
+                labelProducts.Close();
+                f3.Close();
+                labelProducts = null;
+                f3 = null;
+                freeMemory();
+            }
+            if (labelBills != null && f4 != null)
+            {
+                labelBills.Close();
+                f4.Close();
+                labelBills = null;
+                f4 = null;
+                freeMemory();
+            }
         }
         private void AddForm(Form form)
         {
@@ -434,5 +480,158 @@ namespace Server
         }
         private Users fUsers;
         private Products fProducts;
+
+        private Form f1;
+        private Form f2;
+        private Form f3;
+        private Form f4;
+        private lbHome labelHome;
+        private lbUsers labelUsers;
+        private lbProducts labelProducts;
+        private lbBills labelBills;
+        private void panel4_MouseEnter(object sender, EventArgs e)
+        {
+            if (labelUsers != null && f2 != null)
+            {
+                labelUsers.Close();
+                labelUsers = null;
+                f2.Close();
+                f2 = null;
+                freeMemory();
+            }
+            if (f1 == null)
+            {
+                f1 = new Form();
+                f1.StartPosition = FormStartPosition.Manual;
+                f1.FormBorderStyle = FormBorderStyle.None;
+                f1.ShowInTaskbar = false;
+                f1.BackColor = Color.Black;
+                f1.Opacity = 0f;
+                f1.Location = new Point(CheckClass.location.X, CheckClass.location.Y + 30);
+                f1.AutoSize = false;
+                f1.Size = new Size(195, 68);
+                labelHome = new lbHome();
+                f1.Show();
+                labelHome.ShowInTaskbar = false;
+                labelHome.AutoSize = false;
+                labelHome.Owner = f1;
+                labelHome.Location = new Point(CheckClass.location.X + 97, CheckClass.location.Y + 45);
+                labelHome.Show();
+            }
+        }
+
+        private void panel8_MouseEnter(object sender, EventArgs e)
+        {
+            if (labelHome != null && f1 != null)
+            {
+                labelHome.Close();
+                f1.Close();
+                labelHome = null;
+                f1 = null;
+                freeMemory();
+            }
+            if (labelProducts != null && f3 != null)
+            {
+                labelProducts.Close();
+                f3.Close();
+                labelProducts = null;
+                f3 = null;
+                freeMemory();
+            }
+            if (f2 == null)
+            {
+                f2 = new Form();
+                f2.StartPosition = FormStartPosition.Manual;
+                f2.FormBorderStyle = FormBorderStyle.None;
+                f2.ShowInTaskbar = false;
+                f2.BackColor = Color.Black;
+                f2.Opacity = 0f;
+                f2.Location = new Point(CheckClass.location.X, CheckClass.location.Y + 100);
+                f2.AutoSize = false;
+                f2.Size = new Size(200, 68);
+                labelUsers = new lbUsers();
+                f2.Show();
+                labelUsers.ShowInTaskbar = false;
+                labelUsers.AutoSize = false;
+                labelUsers.Owner = f2;
+                labelUsers.Location = new Point(CheckClass.location.X + 97, CheckClass.location.Y + 114);
+                labelUsers.Show();
+            }
+        }
+
+        private void panel11_MouseEnter(object sender, EventArgs e)
+        {
+            if (labelUsers != null && f2 != null)
+            {
+                labelUsers.Close();
+                f2.Close();
+                labelUsers = null;
+                f2 = null;
+                freeMemory();
+            }
+            if (labelBills != null && f4 != null)
+            {
+                labelBills.Close();
+                f4.Close();
+                labelBills = null;
+                f4 = null;
+                freeMemory();
+            }
+            if (f3 == null)
+            {
+                f3 = new Form();
+                f3.StartPosition = FormStartPosition.Manual;
+                f3.FormBorderStyle = FormBorderStyle.None;
+                f3.ShowInTaskbar = false;
+                f3.BackColor = Color.Black;
+                f3.Opacity = 0f;
+                f3.Location = new Point(CheckClass.location.X, CheckClass.location.Y + 168);
+                f3.AutoSize = false;
+                f3.Size = new Size(195, 68);
+                labelProducts = new lbProducts();
+                f3.Show();
+                labelProducts.ShowInTaskbar = false;
+                labelProducts.AutoSize = false;
+                labelProducts.Owner = f3;
+                labelProducts.Location = new Point(CheckClass.location.X + 97, CheckClass.location.Y + 182);
+                labelProducts.Show();
+            }
+        }
+
+        private void panel14_MouseEnter(object sender, EventArgs e)
+        {
+            if (labelProducts != null && f3 != null)
+            {
+                labelProducts.Close();
+                f3.Close();
+                labelProducts = null;
+                f3 = null;
+                freeMemory();
+            }
+            if (f4 == null)
+            {
+                f4 = new Form();
+                f4.StartPosition = FormStartPosition.Manual;
+                f4.FormBorderStyle = FormBorderStyle.None;
+                f4.ShowInTaskbar = false;
+                f4.BackColor = Color.Black;
+                f4.Opacity = 0f;
+                f4.Location = new Point(CheckClass.location.X, CheckClass.location.Y + 236);
+                f4.AutoSize = false;
+                f4.Size = new Size(187, 68);
+                labelBills = new lbBills();
+                f4.Show();
+                labelBills.ShowInTaskbar = false;
+                labelBills.AutoSize = false;
+                labelBills.Owner = f4;
+                labelBills.Location = new Point(CheckClass.location.X + 97, CheckClass.location.Y + 250);
+                labelBills.Show();
+            }
+        }
+        private void freeMemory()
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
     }
 }

@@ -115,6 +115,30 @@
     <Compile Include="Resources\Controls\BoxBorder.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Resources\Controls\lbBills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\lbBills.Designer.cs">
+      <DependentUpon>lbBills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\lbHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\lbHome.Designer.cs">
+      <DependentUpon>lbHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\lbProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\lbProducts.Designer.cs">
+      <DependentUpon>lbProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\lbUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\lbUsers.Designer.cs">
+      <DependentUpon>lbUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Controls\ListMember.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -175,6 +199,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResetPass.resx">
       <DependentUpon>ResetPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\lbBills.resx">
+      <DependentUpon>lbBills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\lbHome.resx">
+      <DependentUpon>lbHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\lbProducts.resx">
+      <DependentUpon>lbProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\lbUsers.resx">
+      <DependentUpon>lbUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Controls\ListMember.resx">
       <DependentUpon>ListMember.cs</DependentUpon>
