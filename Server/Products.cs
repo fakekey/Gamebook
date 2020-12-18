@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Server
 {
     public partial class Products : Form
     {
+        private Panel loadOverlay;
+        private PictureBox icoOverlay;
         // danhsach
         private List<Product> dsAll;
         private List<Product> dsAAA;
@@ -19,65 +16,60 @@ namespace Server
         public Products()
         {
             InitializeComponent();
+            icoOverlay = new PictureBox();
+            icoOverlay.BackColor = Color.Transparent;
+            icoOverlay.Dock = DockStyle.Fill;
+            icoOverlay.SizeMode = PictureBoxSizeMode.Zoom;
+            loadOverlay = new Panel()
+            {
+                Bounds = new Rectangle(0, 251, 1111, 447),
+                Padding = new Padding(505, 132, 505, 200),
+                BackColor = Color.FromArgb(47, 49, 54),
+            };
+            loadOverlay.Controls.Add(icoOverlay);
+            this.Controls.Add(loadOverlay);
             comboBox1.SelectedIndex = 0;
             textBox1.AutoSize = false;
             textBox1.Size = new Size(230, 22);
             dsAll = Controller.getSpAll();
             dsAAA = Controller.getSpAAA();
             dsIndie = Controller.getSpIndie();
-            if(dsAll != null)
+            if (dsIndie != null && dsAAA != null)
             {
-                label2.Text = "(" + dsAll.Count + ")";
+                label3.Text = $"({dsAAA.Count.ToString()})";
+                label5.Text = $"({dsIndie.Count.ToString()})";
+                dsAll.AddRange(dsAAA);
+                dsAll.AddRange(dsIndie);
             }
             else
             {
                 btnAAA.Enabled = false;
                 btnIndie.Enabled = false;
-            }
-            if (dsAAA != null)
-            {
-                label3.Text = "(" + dsAAA.Count + ")";
-            }
-            if (dsIndie != null)
-            {
-                label5.Text = "(" + dsIndie.Count + ")";
-            }
-        }
-        /*public struct products
-        {
-            public Image avata;
-            public string tieude;
-            public string nsx;
-            public string pb;
-            public string ngay;
-            public string gia;
-            public products(Image a, string b, string c, string d, string e, string f)
-            {
-                avata = a;
-                tieude = b;
-                nsx = c;
-                pb = d;
-                ngay = e;
-                gia = f;
-            }
-        }
-        products[] dsTest = new products[]{
-                new products(Properties.Resources.forgotPass,"Grand Theft Auto V","AAA","1.51","25/06/2020","30$"),       
-        };*/
 
+            }
+            if (dsAll != null)
+            {
+                label2.Text = "(" + dsAll.Count.ToString() + ")";
+            }
+            else
+            {
+                btnTatCa.Enabled = false;
+            }
+        }
         private void addToPanel(List<Product> ds)
         {
-            for (int i = 0; i <= ds.Count-1; i++)
+            for (int i = 0; i <= ds.Count - 1; i++)
             {
                 if (i % 2 == 0)
                 {
-                    pnDisplay.Controls.Add(new ListProduct() { 
-                        bgColor = ListProduct.FIRST_COLOR, 
-                        lIcon = Image.FromFile(ds[i].Img), 
-                        lTieuDe = ds[i].Title, 
-                        lNsx = ds[i].Cate, 
-                        lPhienBan = ds[i].Version, 
-                        lNgay = ds[i].Daterelease, 
+                    pnDisplay.Controls.Add(new ListProduct()
+                    {
+                        bgColor = ListProduct.FIRST_COLOR,
+                        lIcon = Image.FromFile(ds[i].Img),
+                        lTieuDe = ds[i].Title,
+                        lNsx = ds[i].Cate,
+                        lPhienBan = ds[i].Version,
+                        lNgay = ds[i].Daterelease,
                         lGia = ds[i].Price.ToString()
                     });
                 }
@@ -161,21 +153,22 @@ namespace Server
         private int nCount;
         private void btnTatCa_Click(object sender, EventArgs e)
         {
+            CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
+            reload();
             aaa = indie = false;
             tatca = true;
             btnTatCa.ForeColor = Color.White;
             pnTatCa.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
+            nCount = dsAll.Count;
+            ReSize();
             pnDisplay.Controls.Clear();
-            if(dsAll != null)
-            {
-                nCount = dsAll.Count;
-            }
-            else
-            {
-                nCount = 0;
-            }    
-            if(nCount != 0)
+            if (nCount != 0)
             {
                 addToPanel(dsAll);
             }
@@ -183,25 +176,23 @@ namespace Server
             {
                 NoData();
             }
-
         }
 
         private void btnAAA_Click(object sender, EventArgs e)
         {
+            CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
+            reload();
             tatca = indie = false;
             aaa = true;
-            btnAAA.ForeColor = Color.White;
-            pnAAA.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
+            nCount = dsAAA.Count;
+            ReSize();
             pnDisplay.Controls.Clear();
-            if (dsAll != null)
-            {
-                nCount = dsAAA.Count;
-            }
-            else
-            {
-                nCount = 0;
-            }
             if (nCount != 0)
             {
                 addToPanel(dsAAA);
@@ -214,20 +205,19 @@ namespace Server
 
         private void btnIndie_Click(object sender, EventArgs e)
         {
+            CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
+            reload();
             aaa = tatca = false;
             indie = true;
-            btnIndie.ForeColor = Color.White;
-            pnIndie.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
+            nCount = dsIndie.Count;
+            ReSize();
             pnDisplay.Controls.Clear();
-            if (dsAll != null)
-            {
-                nCount = dsIndie.Count;
-            }
-            else
-            {
-                nCount = 0;
-            }
             if (nCount != 0)
             {
                 addToPanel(dsIndie);
@@ -313,12 +303,12 @@ namespace Server
         private void Products_Load(object sender, EventArgs e)
         {
             textBox1.Select();
-            timer1.Enabled = true;
+            timer3.Enabled = true;
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void timer3_Tick(object sender, EventArgs e)
         {
-            timer1.Stop();
+            timer3.Stop();
             btnTatCa_Click(null, null);
         }
 
@@ -373,14 +363,177 @@ namespace Server
             }
             clear();
             nCount = dstk.Count;
+            ReSize();
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
             pnDisplay.Controls.Clear();
-            if(nCount != 0)
+            if (nCount != 0)
             {
                 addToPanel(dstk);
             }
             else
             {
                 NoData();
+            }
+        }
+        int i = 0;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            i = i % 125;
+            icoOverlay.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject($"logo{i + 25}");
+            i += 1;
+        }
+        private void freeMemory()
+        {
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            timer1.Stop();
+            timer2.Stop();
+            freeMemory();
+            i = 0;
+            loadOverlay.Visible = false;
+            pnDisplay.Visible = true;
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            timer4.Stop();
+            loadOverlay.Visible = true;
+        }
+        private void reload()
+        {
+            dsAAA = dsIndie = null;
+            dsAll.Clear();
+            dsAAA = Controller.getSpAAA();
+            dsIndie = Controller.getSpIndie();
+            if (dsAAA != null && dsIndie != null)
+            {
+                label3.Text = "(" + dsAAA.Count.ToString() + ")";
+                label5.Text = "(" + dsIndie.Count.ToString() + ")";
+                dsAll.AddRange(dsAAA);
+                dsAll.AddRange(dsIndie);
+            }
+            else
+            {
+                btnAAA.Enabled = false;
+                btnIndie.Enabled = false;
+
+            }
+            if (dsAll != null)
+            {
+                label2.Text = "(" + dsAll.Count.ToString() + ")";
+            }
+            else
+            {
+                btnTatCa.Enabled = false;
+            }
+            pnDisplay.Controls.Clear();
+            if (tatca == true)
+            {
+                nCount = dsAll.Count;
+                ReSize();
+                addToPanel(dsAll);
+            }
+            if (aaa == true)
+            {
+                nCount = dsAAA.Count;
+                ReSize();
+                addToPanel(dsAAA);
+            }
+            if (indie == true)
+            {
+                nCount = dsIndie.Count;
+                ReSize();
+                addToPanel(dsIndie);
+            }
+        }
+        public int leftPaddingNSX
+        {
+            set
+            {
+                label7.Padding = new Padding(value, 0, 0, 0);
+            }
+        }
+        public int leftPaddingPB
+        {
+            set
+            {
+                label8.Padding = new Padding(value, 0, 0, 0);
+            }
+        }
+        public int leftPaddingNgay
+        {
+            set
+            {
+                label9.Padding = new Padding(value, 0, 0, 0);
+            }
+        }
+        public int leftPaddingGia
+        {
+            set
+            {
+                label10.Padding = new Padding(value, 0, 0, 0);
+            }
+        }
+        public void ReSize()
+        {
+            if (this.Width == 1231)
+            {
+                loadOverlay.Bounds = new Rectangle(0, 251, 1231, 447);
+                loadOverlay.Padding = new Padding(565, 132, 565, 200);
+            }
+            else
+            {
+                loadOverlay.Bounds = new Rectangle(0, 251, 1783, 759);
+                loadOverlay.Padding = new Padding(760, 200, 760, 300);
+            }
+            if (nCount < 7)
+            {
+                leftPaddingNSX = 31;
+                leftPaddingPB = 30;
+                leftPaddingNgay = 30;
+                leftPaddingGia = 29;
+            }
+            if (nCount >= 7 && nCount < 11)
+            {
+                if (this.Width == 1231)
+                {
+                    leftPaddingNSX = 25;
+                    leftPaddingPB = 23;
+                    leftPaddingNgay = 19;
+                    leftPaddingGia = 16;
+                }
+                else
+                {
+                    leftPaddingNSX = 31;
+                    leftPaddingPB = 30;
+                    leftPaddingNgay = 30;
+                    leftPaddingGia = 29;
+                }
+            }
+            else if (nCount >= 11)
+            {
+                if (this.Width == 1231)
+                {
+                    leftPaddingNSX = 25;
+                    leftPaddingPB = 23;
+                    leftPaddingNgay = 19;
+                    leftPaddingGia = 16;
+                }
+                else
+                {
+                    leftPaddingNSX = 26;
+                    leftPaddingPB = 21;
+                    leftPaddingNgay = 17;
+                    leftPaddingGia = 12;
+                }
             }
         }
     }

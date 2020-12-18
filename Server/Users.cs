@@ -222,6 +222,11 @@ namespace Server
         private void btnTatCa_Click(object sender, EventArgs e)
         {
             CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
             reload();
             admin = nhanvien = khach = false;
             tatca = true;
@@ -230,9 +235,6 @@ namespace Server
             clear();
             nUsers = dsAll.Count;
             ReSize();
-            timer1.Enabled = true;
-            timer1_Tick(null, null);
-            timer2.Enabled = true;
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
@@ -247,15 +249,17 @@ namespace Server
         private void btnAdmin_Click(object sender, EventArgs e)
         {
             CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
             reload();
             tatca = nhanvien = khach = false;
             admin = true;
             clear();
             nUsers = dsadmin.Count;
             ReSize();
-            timer1.Enabled = true;
-            timer1_Tick(null, null);
-            timer2.Enabled = true;
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
@@ -270,15 +274,17 @@ namespace Server
         private void btnNhanVien_Click(object sender, EventArgs e)
         {
             CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
             reload();
             admin = tatca = khach = false;
             nhanvien = true;
             clear();
             nUsers = dsnv.Count;
             ReSize();
-            timer1.Enabled = true;
-            timer1_Tick(null, null);
-            timer2.Enabled = true;
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
@@ -293,15 +299,17 @@ namespace Server
         private void btnKhach_Click(object sender, EventArgs e)
         {
             CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
             reload();
             admin = nhanvien = tatca = false;
             khach = true;
             clear();
             nUsers = dsuser.Count;
             ReSize();
-            timer1.Enabled = true;
-            timer1_Tick(null, null);
-            timer2.Enabled = true;
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
@@ -385,25 +393,15 @@ namespace Server
 
         public void ReSize()
         {
-            if (this.Width == 1111)
-            {
-                loadOverlay.Bounds = new Rectangle(0, 251, 1111, 447);
-                loadOverlay.Padding = new Padding(505, 132, 505, 200);
-            }
-            else if (this.Width == 1231)
+            if (this.Width == 1231)
             {
                 loadOverlay.Bounds = new Rectangle(0, 251, 1231, 447);
                 loadOverlay.Padding = new Padding(565, 132, 565, 200);
             }
-            else if (this.Width == 1783)
+            else
             {
                 loadOverlay.Bounds = new Rectangle(0, 251, 1783, 759);
                 loadOverlay.Padding = new Padding(760, 200, 760, 300);
-            }
-            else
-            {
-                loadOverlay.Bounds = new Rectangle(0, 251, 1663, 759);
-                loadOverlay.Padding = new Padding(700, 200, 700, 300);
             }
             if (nUsers < 7)
             {
@@ -412,7 +410,7 @@ namespace Server
             }
             if (nUsers >= 7 && nUsers < 11)
             {
-                if (this.Width == 1111)
+                if (this.Width == 1231)
                 {
                     leftPaddingEmail = 38;
                     leftPaddingVaiTro = 22;
@@ -487,8 +485,10 @@ namespace Server
             nUsers = dstk.Count;
             ReSize();
             timer1.Enabled = true;
-            timer1_Tick(null, null);
             timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
@@ -505,8 +505,6 @@ namespace Server
         int i = 0;
         private void timer1_Tick(object sender, EventArgs e)
         {
-            pnDisplay.Visible = false;
-            loadOverlay.Visible = true;
             i = i % 125;
             icoOverlay.Image = (Bitmap)Properties.Resources.ResourceManager.GetObject($"logo{i + 25}");
             i += 1;
@@ -577,6 +575,7 @@ namespace Server
                     Controller.XoaKhach(item.lEmail);
                 }
             }
+            pnDisplay.Visible = false;
             reload();
             if (tatca == true)
             {
@@ -688,6 +687,12 @@ namespace Server
         {
             timer3.Stop();
             btnTatCa_Click(null, null);
+        }
+
+        private void timer4_Tick(object sender, EventArgs e)
+        {
+            timer4.Stop();
+            loadOverlay.Visible = true;
         }
     }
 }

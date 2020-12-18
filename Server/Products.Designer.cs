@@ -33,29 +33,19 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.noFocusButton3 = new Server.NoFocusButton();
-            this.noFocusButton1 = new Server.NoFocusButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
-            this.pnIndie = new Server.PanelRadius();
-            this.btnIndie = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.pnAAA = new Server.PanelRadius();
-            this.btnAAA = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
-            this.pnTatCa = new Server.PanelRadius();
-            this.btnTatCa = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelRadius1 = new Server.PanelRadius();
-            this.btnAdd = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,21 +54,34 @@
             this.label6 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.pnDisplay = new System.Windows.Forms.Panel();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.noFocusButton3 = new Server.NoFocusButton();
+            this.noFocusButton1 = new Server.NoFocusButton();
+            this.pnIndie = new Server.PanelRadius();
+            this.btnIndie = new System.Windows.Forms.Label();
+            this.pnAAA = new Server.PanelRadius();
+            this.btnAAA = new System.Windows.Forms.Label();
+            this.pnTatCa = new Server.PanelRadius();
+            this.btnTatCa = new System.Windows.Forms.Label();
+            this.panelRadius1 = new Server.PanelRadius();
+            this.btnAdd = new System.Windows.Forms.Label();
             this.usertb.SuspendLayout();
             this.panel13.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
-            this.pnIndie.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.pnAAA.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.pnTatCa.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panelRadius1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.pnIndie.SuspendLayout();
+            this.pnAAA.SuspendLayout();
+            this.pnTatCa.SuspendLayout();
+            this.panelRadius1.SuspendLayout();
             this.SuspendLayout();
             // 
             // usertb
@@ -134,44 +137,6 @@
             this.panel13.Size = new System.Drawing.Size(1151, 82);
             this.panel13.TabIndex = 11;
             // 
-            // noFocusButton3
-            // 
-            this.noFocusButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.noFocusButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.noFocusButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.noFocusButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.noFocusButton3.FlatAppearance.BorderSize = 0;
-            this.noFocusButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(102)))), ((int)(((byte)(144)))));
-            this.noFocusButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(123)))), ((int)(((byte)(196)))));
-            this.noFocusButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.noFocusButton3.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.noFocusButton3.ForeColor = System.Drawing.Color.White;
-            this.noFocusButton3.Location = new System.Drawing.Point(1034, 26);
-            this.noFocusButton3.Name = "noFocusButton3";
-            this.noFocusButton3.Size = new System.Drawing.Size(115, 32);
-            this.noFocusButton3.TabIndex = 5;
-            this.noFocusButton3.Text = "Tìm kiếm";
-            this.noFocusButton3.UseVisualStyleBackColor = false;
-            this.noFocusButton3.Click += new System.EventHandler(this.noFocusButton3_Click);
-            // 
-            // noFocusButton1
-            // 
-            this.noFocusButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.noFocusButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.noFocusButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
-            this.noFocusButton1.FlatAppearance.BorderSize = 0;
-            this.noFocusButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(102)))), ((int)(((byte)(144)))));
-            this.noFocusButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(123)))), ((int)(((byte)(196)))));
-            this.noFocusButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.noFocusButton1.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.noFocusButton1.ForeColor = System.Drawing.Color.White;
-            this.noFocusButton1.Location = new System.Drawing.Point(197, 27);
-            this.noFocusButton1.Name = "noFocusButton1";
-            this.noFocusButton1.Size = new System.Drawing.Size(110, 32);
-            this.noFocusButton1.TabIndex = 1;
-            this.noFocusButton1.Text = "Áp dụng";
-            this.noFocusButton1.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel9);
@@ -206,36 +171,6 @@
             this.label5.Size = new System.Drawing.Size(28, 21);
             this.label5.TabIndex = 2;
             this.label5.Text = "(0)";
-            // 
-            // pnIndie
-            // 
-            this.pnIndie.BackColor = System.Drawing.Color.Transparent;
-            this.pnIndie.Controls.Add(this.btnIndie);
-            this.pnIndie.Location = new System.Drawing.Point(15, 11);
-            this.pnIndie.Name = "pnIndie";
-            this.pnIndie.Radius = 5;
-            this.pnIndie.rColor = System.Drawing.Color.Transparent;
-            this.pnIndie.rSize = new System.Drawing.Size(101, 24);
-            this.pnIndie.Size = new System.Drawing.Size(102, 25);
-            this.pnIndie.TabIndex = 1;
-            this.pnIndie.TopLeft = new System.Drawing.Point(0, 0);
-            // 
-            // btnIndie
-            // 
-            this.btnIndie.BackColor = System.Drawing.Color.Transparent;
-            this.btnIndie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnIndie.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnIndie.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnIndie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.btnIndie.Location = new System.Drawing.Point(0, 0);
-            this.btnIndie.Name = "btnIndie";
-            this.btnIndie.Size = new System.Drawing.Size(102, 25);
-            this.btnIndie.TabIndex = 0;
-            this.btnIndie.Text = "Indie Games";
-            this.btnIndie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnIndie.Click += new System.EventHandler(this.btnIndie_Click);
-            this.btnIndie.MouseEnter += new System.EventHandler(this.btnIndie_MouseEnter);
-            this.btnIndie.MouseLeave += new System.EventHandler(this.btnIndie_MouseLeave);
             // 
             // panel7
             // 
@@ -277,36 +212,6 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "(0)";
             // 
-            // pnAAA
-            // 
-            this.pnAAA.BackColor = System.Drawing.Color.Transparent;
-            this.pnAAA.Controls.Add(this.btnAAA);
-            this.pnAAA.Location = new System.Drawing.Point(15, 11);
-            this.pnAAA.Name = "pnAAA";
-            this.pnAAA.Radius = 5;
-            this.pnAAA.rColor = System.Drawing.Color.Transparent;
-            this.pnAAA.rSize = new System.Drawing.Size(101, 24);
-            this.pnAAA.Size = new System.Drawing.Size(102, 25);
-            this.pnAAA.TabIndex = 1;
-            this.pnAAA.TopLeft = new System.Drawing.Point(0, 0);
-            // 
-            // btnAAA
-            // 
-            this.btnAAA.BackColor = System.Drawing.Color.Transparent;
-            this.btnAAA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAAA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAAA.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnAAA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.btnAAA.Location = new System.Drawing.Point(0, 0);
-            this.btnAAA.Name = "btnAAA";
-            this.btnAAA.Size = new System.Drawing.Size(102, 25);
-            this.btnAAA.TabIndex = 0;
-            this.btnAAA.Text = "AAA Games";
-            this.btnAAA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAAA.Click += new System.EventHandler(this.btnAAA_Click);
-            this.btnAAA.MouseEnter += new System.EventHandler(this.btnAAA_MouseEnter);
-            this.btnAAA.MouseLeave += new System.EventHandler(this.btnAAA_MouseLeave);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.panel5);
@@ -347,36 +252,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "(0)";
             // 
-            // pnTatCa
-            // 
-            this.pnTatCa.BackColor = System.Drawing.Color.Transparent;
-            this.pnTatCa.Controls.Add(this.btnTatCa);
-            this.pnTatCa.Location = new System.Drawing.Point(0, 11);
-            this.pnTatCa.Name = "pnTatCa";
-            this.pnTatCa.Radius = 5;
-            this.pnTatCa.rColor = System.Drawing.Color.Transparent;
-            this.pnTatCa.rSize = new System.Drawing.Size(101, 24);
-            this.pnTatCa.Size = new System.Drawing.Size(102, 25);
-            this.pnTatCa.TabIndex = 1;
-            this.pnTatCa.TopLeft = new System.Drawing.Point(0, 0);
-            // 
-            // btnTatCa
-            // 
-            this.btnTatCa.BackColor = System.Drawing.Color.Transparent;
-            this.btnTatCa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTatCa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTatCa.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnTatCa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
-            this.btnTatCa.Location = new System.Drawing.Point(0, 0);
-            this.btnTatCa.Name = "btnTatCa";
-            this.btnTatCa.Size = new System.Drawing.Size(102, 25);
-            this.btnTatCa.TabIndex = 0;
-            this.btnTatCa.Text = "Tất cả";
-            this.btnTatCa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
-            this.btnTatCa.MouseEnter += new System.EventHandler(this.btnTatCa_MouseEnter);
-            this.btnTatCa.MouseLeave += new System.EventHandler(this.btnTatCa_MouseLeave);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -397,32 +272,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1151, 44);
             this.panel1.TabIndex = 9;
-            // 
-            // panelRadius1
-            // 
-            this.panelRadius1.Controls.Add(this.btnAdd);
-            this.panelRadius1.Location = new System.Drawing.Point(153, 0);
-            this.panelRadius1.Name = "panelRadius1";
-            this.panelRadius1.Radius = 0;
-            this.panelRadius1.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(181)))), ((int)(((byte)(129)))));
-            this.panelRadius1.rSize = new System.Drawing.Size(114, 37);
-            this.panelRadius1.Size = new System.Drawing.Size(115, 38);
-            this.panelRadius1.TabIndex = 1;
-            this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdd.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(0, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(115, 38);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Thêm mới";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -458,7 +307,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(1027, 0);
             this.label10.Name = "label10";
-            this.label10.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.label10.Padding = new System.Windows.Forms.Padding(29, 0, 0, 0);
             this.label10.Size = new System.Drawing.Size(121, 57);
             this.label10.TabIndex = 18;
             this.label10.Text = "Giá";
@@ -503,7 +352,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(451, 0);
             this.label7.Name = "label7";
-            this.label7.Padding = new System.Windows.Forms.Padding(30, 0, 0, 0);
+            this.label7.Padding = new System.Windows.Forms.Padding(31, 0, 0, 0);
             this.label7.Size = new System.Drawing.Size(186, 57);
             this.label7.TabIndex = 15;
             this.label7.Text = "Nhà sản xuất";
@@ -547,10 +396,179 @@
             this.pnDisplay.Size = new System.Drawing.Size(1151, 487);
             this.pnDisplay.TabIndex = 13;
             // 
+            // timer3
+            // 
+            this.timer3.Interval = 250;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
             // timer1
             // 
-            this.timer1.Interval = 250;
+            this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
+            // timer4
+            // 
+            this.timer4.Interval = 1;
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
+            // 
+            // noFocusButton3
+            // 
+            this.noFocusButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.noFocusButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.noFocusButton3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.noFocusButton3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.noFocusButton3.FlatAppearance.BorderSize = 0;
+            this.noFocusButton3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(102)))), ((int)(((byte)(144)))));
+            this.noFocusButton3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(123)))), ((int)(((byte)(196)))));
+            this.noFocusButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.noFocusButton3.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.noFocusButton3.ForeColor = System.Drawing.Color.White;
+            this.noFocusButton3.Location = new System.Drawing.Point(1034, 26);
+            this.noFocusButton3.Name = "noFocusButton3";
+            this.noFocusButton3.Size = new System.Drawing.Size(115, 32);
+            this.noFocusButton3.TabIndex = 5;
+            this.noFocusButton3.Text = "Tìm kiếm";
+            this.noFocusButton3.UseVisualStyleBackColor = false;
+            this.noFocusButton3.Click += new System.EventHandler(this.noFocusButton3_Click);
+            // 
+            // noFocusButton1
+            // 
+            this.noFocusButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.noFocusButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.noFocusButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.noFocusButton1.FlatAppearance.BorderSize = 0;
+            this.noFocusButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(90)))), ((int)(((byte)(102)))), ((int)(((byte)(144)))));
+            this.noFocusButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(103)))), ((int)(((byte)(123)))), ((int)(((byte)(196)))));
+            this.noFocusButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.noFocusButton1.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.noFocusButton1.ForeColor = System.Drawing.Color.White;
+            this.noFocusButton1.Location = new System.Drawing.Point(197, 27);
+            this.noFocusButton1.Name = "noFocusButton1";
+            this.noFocusButton1.Size = new System.Drawing.Size(110, 32);
+            this.noFocusButton1.TabIndex = 1;
+            this.noFocusButton1.Text = "Áp dụng";
+            this.noFocusButton1.UseVisualStyleBackColor = false;
+            // 
+            // pnIndie
+            // 
+            this.pnIndie.BackColor = System.Drawing.Color.Transparent;
+            this.pnIndie.Controls.Add(this.btnIndie);
+            this.pnIndie.Location = new System.Drawing.Point(15, 11);
+            this.pnIndie.Name = "pnIndie";
+            this.pnIndie.Radius = 5;
+            this.pnIndie.rColor = System.Drawing.Color.Transparent;
+            this.pnIndie.rSize = new System.Drawing.Size(101, 24);
+            this.pnIndie.Size = new System.Drawing.Size(102, 25);
+            this.pnIndie.TabIndex = 1;
+            this.pnIndie.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnIndie
+            // 
+            this.btnIndie.BackColor = System.Drawing.Color.Transparent;
+            this.btnIndie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnIndie.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnIndie.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnIndie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.btnIndie.Location = new System.Drawing.Point(0, 0);
+            this.btnIndie.Name = "btnIndie";
+            this.btnIndie.Size = new System.Drawing.Size(102, 25);
+            this.btnIndie.TabIndex = 0;
+            this.btnIndie.Text = "Indie Games";
+            this.btnIndie.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnIndie.Click += new System.EventHandler(this.btnIndie_Click);
+            this.btnIndie.MouseEnter += new System.EventHandler(this.btnIndie_MouseEnter);
+            this.btnIndie.MouseLeave += new System.EventHandler(this.btnIndie_MouseLeave);
+            // 
+            // pnAAA
+            // 
+            this.pnAAA.BackColor = System.Drawing.Color.Transparent;
+            this.pnAAA.Controls.Add(this.btnAAA);
+            this.pnAAA.Location = new System.Drawing.Point(15, 11);
+            this.pnAAA.Name = "pnAAA";
+            this.pnAAA.Radius = 5;
+            this.pnAAA.rColor = System.Drawing.Color.Transparent;
+            this.pnAAA.rSize = new System.Drawing.Size(101, 24);
+            this.pnAAA.Size = new System.Drawing.Size(102, 25);
+            this.pnAAA.TabIndex = 1;
+            this.pnAAA.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnAAA
+            // 
+            this.btnAAA.BackColor = System.Drawing.Color.Transparent;
+            this.btnAAA.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAAA.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAAA.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnAAA.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.btnAAA.Location = new System.Drawing.Point(0, 0);
+            this.btnAAA.Name = "btnAAA";
+            this.btnAAA.Size = new System.Drawing.Size(102, 25);
+            this.btnAAA.TabIndex = 0;
+            this.btnAAA.Text = "AAA Games";
+            this.btnAAA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAAA.Click += new System.EventHandler(this.btnAAA_Click);
+            this.btnAAA.MouseEnter += new System.EventHandler(this.btnAAA_MouseEnter);
+            this.btnAAA.MouseLeave += new System.EventHandler(this.btnAAA_MouseLeave);
+            // 
+            // pnTatCa
+            // 
+            this.pnTatCa.BackColor = System.Drawing.Color.Transparent;
+            this.pnTatCa.Controls.Add(this.btnTatCa);
+            this.pnTatCa.Location = new System.Drawing.Point(0, 11);
+            this.pnTatCa.Name = "pnTatCa";
+            this.pnTatCa.Radius = 5;
+            this.pnTatCa.rColor = System.Drawing.Color.Transparent;
+            this.pnTatCa.rSize = new System.Drawing.Size(101, 24);
+            this.pnTatCa.Size = new System.Drawing.Size(102, 25);
+            this.pnTatCa.TabIndex = 1;
+            this.pnTatCa.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnTatCa
+            // 
+            this.btnTatCa.BackColor = System.Drawing.Color.Transparent;
+            this.btnTatCa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTatCa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTatCa.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnTatCa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
+            this.btnTatCa.Location = new System.Drawing.Point(0, 0);
+            this.btnTatCa.Name = "btnTatCa";
+            this.btnTatCa.Size = new System.Drawing.Size(102, 25);
+            this.btnTatCa.TabIndex = 0;
+            this.btnTatCa.Text = "Tất cả";
+            this.btnTatCa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnTatCa.Click += new System.EventHandler(this.btnTatCa_Click);
+            this.btnTatCa.MouseEnter += new System.EventHandler(this.btnTatCa_MouseEnter);
+            this.btnTatCa.MouseLeave += new System.EventHandler(this.btnTatCa_MouseLeave);
+            // 
+            // panelRadius1
+            // 
+            this.panelRadius1.Controls.Add(this.btnAdd);
+            this.panelRadius1.Location = new System.Drawing.Point(153, 0);
+            this.panelRadius1.Name = "panelRadius1";
+            this.panelRadius1.Radius = 0;
+            this.panelRadius1.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(181)))), ((int)(((byte)(129)))));
+            this.panelRadius1.rSize = new System.Drawing.Size(114, 37);
+            this.panelRadius1.Size = new System.Drawing.Size(115, 38);
+            this.panelRadius1.TabIndex = 1;
+            this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnAdd.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(0, 0);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(115, 38);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Thêm mới";
+            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Products
             // 
@@ -573,20 +591,20 @@
             this.panel2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
-            this.pnIndie.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.pnAAA.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            this.pnTatCa.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panelRadius1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            this.pnIndie.ResumeLayout(false);
+            this.pnAAA.ResumeLayout(false);
+            this.pnTatCa.ResumeLayout(false);
+            this.panelRadius1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -627,6 +645,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel pnDisplay;
+        private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.Timer timer4;
     }
 }

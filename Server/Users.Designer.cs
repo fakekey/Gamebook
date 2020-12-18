@@ -72,6 +72,7 @@ namespace Server
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panelRadius1.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -156,8 +157,9 @@ namespace Server
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label2.Location = new System.Drawing.Point(106, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 21);
+            this.label2.Size = new System.Drawing.Size(28, 21);
             this.label2.TabIndex = 2;
+            this.label2.Text = "(0)";
             // 
             // pnTatCa
             // 
@@ -225,8 +227,9 @@ namespace Server
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label3.Location = new System.Drawing.Point(121, 13);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(0, 21);
+            this.label3.Size = new System.Drawing.Size(28, 21);
             this.label3.TabIndex = 2;
+            this.label3.Text = "(0)";
             // 
             // pnAdmin
             // 
@@ -294,8 +297,9 @@ namespace Server
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label5.Location = new System.Drawing.Point(121, 13);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(0, 21);
+            this.label5.Size = new System.Drawing.Size(28, 21);
             this.label5.TabIndex = 2;
+            this.label5.Text = "(0)";
             // 
             // pnNhanVien
             // 
@@ -363,8 +367,9 @@ namespace Server
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
             this.label7.Location = new System.Drawing.Point(123, 13);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 21);
+            this.label7.Size = new System.Drawing.Size(28, 21);
             this.label7.TabIndex = 2;
+            this.label7.Text = "(0)";
             // 
             // pnKhach
             // 
@@ -600,13 +605,18 @@ namespace Server
             // 
             // timer2
             // 
-            this.timer2.Interval = 900;
+            this.timer2.Interval = 600;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // timer3
             // 
             this.timer3.Interval = 250;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // timer4
+            // 
+            this.timer4.Interval = 1;
+            this.timer4.Tick += new System.EventHandler(this.timer4_Tick);
             // 
             // Users
             // 
@@ -696,5 +706,6 @@ namespace Server
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer timer4;
     }
 }

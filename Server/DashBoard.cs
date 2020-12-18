@@ -31,7 +31,6 @@ namespace Server
             CheckClass.size = this.Size;
             panel4_MouseMove(null, null);
             icoHome_Click(null, null);
-            timer1.Enabled = true;
         }
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
@@ -70,6 +69,10 @@ namespace Server
                 {
                     fUsers.ReSize();
                 }
+                if (fProducts != null)
+                {
+                    fProducts.ReSize();
+                }
             }
             else
             {
@@ -80,6 +83,10 @@ namespace Server
                 {
                     fUsers.ReSize();
                 }
+                if (fProducts != null)
+                {
+                    fProducts.ReSize();
+                }
             }
         }
 
@@ -88,35 +95,10 @@ namespace Server
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void panel17_Click(object sender, EventArgs e)
-        {
-            if (panel2.Width != 97)
-            {
-                label2.Width = label3.Width = label4.Width = label5.Width = label6.Width = 0;
-                panel2.Width = 97;
-                panel18.BackgroundImage = Properties.Resources.icons8_next_page_48px;
-            }
-            else
-            {
-                label2.Width = 87;
-                label3.Width = 100;
-                label4.Width = 88;
-                label5.Width = 88;
-                label6.Width = 131;
-                panel2.Width = 217;
-                panel18.BackgroundImage = Properties.Resources.icons8_back_to_48px;
-            }
-            if (fUsers != null)
-            {
-                fUsers.ReSize();
-            }
-        }
-
         bool activeOne = false;
         bool activeTwo = false;
         bool activeThree = false;
         bool activeFour = false;
-        bool activeFive = false;
 
         private void clear()
         {
@@ -241,14 +223,6 @@ namespace Server
                         active3.Refresh();
                     }
                 }
-                if (icoCollapse.Radius == 14)
-                {
-                    icoCollapse.rColor = Color.FromArgb(54, 57, 63);
-                    icoCollapse.Radius = 48;
-                    icoCollapse.Refresh();
-                    active5.rColor = Color.Transparent;
-                    active5.Refresh();
-                }
             }
             else
             {
@@ -263,63 +237,23 @@ namespace Server
                         active4.Refresh();
                     }
                 }
-            }
-            if (activeFive == true)
-            {
-                if (billIsActive == false)
-                {
-                    if (icoBill.Radius == 14)
-                    {
-                        icoBill.rColor = Color.FromArgb(54, 57, 63);
-                        icoBill.Radius = 48;
-                        icoBill.Refresh();
-                        active4.rColor = Color.Transparent;
-                        active4.Refresh();
-                    }
-                }
-            }
-            else
-            {
-                if (icoCollapse.Radius == 14)
-                {
-                    icoCollapse.rColor = Color.FromArgb(54, 57, 63);
-                    icoCollapse.Radius = 48;
-                    icoCollapse.Refresh();
-                    active5.rColor = Color.Transparent;
-                    active5.Refresh();
-                }
-
-            }
-        }
-        private void panel17_MouseMove(object sender, MouseEventArgs e)
-        {
-            activeTwo = activeOne = activeFour = activeThree = false;
-            activeFive = true;
-            clear();
-            if (icoCollapse.Radius == 48)
-            {
-                active5.rColor = Color.White;
-                active5.Refresh();
-                icoCollapse.rColor = Color.FromArgb(67, 181, 129);
-                icoCollapse.Radius = 14;
-                icoCollapse.Refresh();
             }
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
-            activeOne = activeTwo = activeThree = activeFour = activeFive = false;
+            activeOne = activeTwo = activeThree = activeFour = false;
             clear();
         }
 
         private void panel8_MouseMove(object sender, MouseEventArgs e)
         {
-            activeOne = activeThree = activeFour = activeFive = false;
+            activeOne = activeThree = activeFour = false;
             activeTwo = true;
             clear();
             if (icoUser.Radius == 48)
             {
-                active2.rColor = Color.White;
+                active2.rColor = Color.FromArgb(54, 57, 63);
                 active2.Refresh();
                 icoUser.rColor = Color.FromArgb(67, 181, 129);
                 icoUser.Radius = 14;
@@ -329,12 +263,12 @@ namespace Server
 
         private void panel11_MouseMove(object sender, MouseEventArgs e)
         {
-            activeTwo = activeOne = activeFour = activeFive = false;
+            activeTwo = activeOne = activeFour = false;
             activeThree = true;
             clear();
             if (icoProduct.Radius == 48)
             {
-                active3.rColor = Color.White;
+                active3.rColor = Color.FromArgb(54, 57, 63);
                 active3.Refresh();
                 icoProduct.rColor = Color.FromArgb(67, 181, 129);
                 icoProduct.Radius = 14;
@@ -344,12 +278,12 @@ namespace Server
 
         private void panel14_MouseMove(object sender, MouseEventArgs e)
         {
-            activeTwo = activeOne = activeThree = activeFive = false;
+            activeTwo = activeOne = activeThree = false;
             activeFour = true;
             clear();
             if (icoBill.Radius == 48)
             {
-                active4.rColor = Color.White;
+                active4.rColor = Color.FromArgb(54, 57, 63);
                 active4.Refresh();
                 icoBill.rColor = Color.FromArgb(67, 181, 129);
                 icoBill.Radius = 14;
@@ -359,12 +293,12 @@ namespace Server
 
         private void panel4_MouseMove(object sender, MouseEventArgs e)
         {
-            activeTwo = activeThree = activeFour = activeFive = false;
+            activeTwo = activeThree = activeFour = false;
             activeOne = true;
             clear();
             if (icoHome.Radius == 48)
             {
-                active1.rColor = Color.White;
+                active1.rColor = Color.FromArgb(54, 57, 63);
                 active1.Refresh();
                 icoHome.rColor = Color.FromArgb(114, 137, 218);
                 icoHome.Radius = 14;
@@ -372,20 +306,6 @@ namespace Server
             }
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-            panel17_Click(null, null);
-        }
-
-        private void icoCollapse_Click(object sender, EventArgs e)
-        {
-            panel17_Click(null, null);
-        }
-
-        private void panel18_Click(object sender, EventArgs e)
-        {
-            panel17_Click(null, null);
-        }
         bool homeIsActive = false;
         bool userIsActive = false;
         bool productIsActive = false;
@@ -487,19 +407,19 @@ namespace Server
 
         private void panel7_MouseMove_1(object sender, MouseEventArgs e)
         {
-            activeOne = activeTwo = activeThree = activeFour = activeFive = false;
+            activeOne = activeTwo = activeThree = activeFour = false;
             clear();
         }
 
         private void panel20_MouseMove(object sender, MouseEventArgs e)
         {
-            activeOne = activeTwo = activeThree = activeFour = activeFive = false;
+            activeOne = activeTwo = activeThree = activeFour = false;
             clear();
         }
 
         private void panel23_MouseMove(object sender, MouseEventArgs e)
         {
-            activeOne = activeTwo = activeThree = activeFour = activeFive = false;
+            activeOne = activeTwo = activeThree = activeFour = false;
             clear();
         }
         private void AddForm(Form form)
@@ -514,11 +434,5 @@ namespace Server
         }
         private Users fUsers;
         private Products fProducts;
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            timer1.Stop();
-            panel17_Click(null, null);
-        }
     }
 }
