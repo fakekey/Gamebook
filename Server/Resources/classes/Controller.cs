@@ -128,7 +128,7 @@ namespace Server
             }
             catch
             {
-                return null;
+                return dsnv;
             }
 
         }
@@ -157,14 +157,14 @@ namespace Server
             }
             catch
             {
-                return null;
+                return ds;
             }
         }
         public static List<User> getKhach()
         {
+            List<User> ds = new List<User>();
             try
             {
-                List<User> ds = new List<User>();
                 MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
                 con.Open();
                 string query = "Select * From userkhach";
@@ -184,7 +184,7 @@ namespace Server
             }
             catch
             {
-                return null;
+                return ds;
             }
         }
         public static void XoaNV(string email)
@@ -380,7 +380,7 @@ namespace Server
             }
             catch
             {
-                return null;
+                return ds;
             }
         }
         public static List<Product> getSpAAA()
@@ -411,7 +411,7 @@ namespace Server
             }
             catch
             {
-                return null;
+                return ds;
             }
         }
         public static List<Product> getSpIndie()
@@ -442,7 +442,7 @@ namespace Server
             }
             catch
             {
-                return null;
+                return ds;
             }
         }
     }
