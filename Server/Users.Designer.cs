@@ -118,7 +118,7 @@ namespace Server
             this.panelRadius1.Controls.Add(this.btnAdd);
             this.panelRadius1.Location = new System.Drawing.Point(153, 0);
             this.panelRadius1.Name = "panelRadius1";
-            this.panelRadius1.Radius = 0;
+            this.panelRadius1.Radius = 4;
             this.panelRadius1.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(181)))), ((int)(((byte)(129)))));
             this.panelRadius1.rSize = new System.Drawing.Size(114, 37);
             this.panelRadius1.Size = new System.Drawing.Size(115, 38);
@@ -167,7 +167,7 @@ namespace Server
             this.pnTatCa.Controls.Add(this.btnTatCa);
             this.pnTatCa.Location = new System.Drawing.Point(0, 11);
             this.pnTatCa.Name = "pnTatCa";
-            this.pnTatCa.Radius = 5;
+            this.pnTatCa.Radius = 4;
             this.pnTatCa.rColor = System.Drawing.Color.Transparent;
             this.pnTatCa.rSize = new System.Drawing.Size(101, 24);
             this.pnTatCa.Size = new System.Drawing.Size(102, 25);
@@ -237,7 +237,7 @@ namespace Server
             this.pnAdmin.Controls.Add(this.btnAdmin);
             this.pnAdmin.Location = new System.Drawing.Point(15, 11);
             this.pnAdmin.Name = "pnAdmin";
-            this.pnAdmin.Radius = 5;
+            this.pnAdmin.Radius = 4;
             this.pnAdmin.rColor = System.Drawing.Color.Transparent;
             this.pnAdmin.rSize = new System.Drawing.Size(101, 24);
             this.pnAdmin.Size = new System.Drawing.Size(102, 25);
@@ -307,7 +307,7 @@ namespace Server
             this.pnNhanVien.Controls.Add(this.btnNhanVien);
             this.pnNhanVien.Location = new System.Drawing.Point(15, 11);
             this.pnNhanVien.Name = "pnNhanVien";
-            this.pnNhanVien.Radius = 5;
+            this.pnNhanVien.Radius = 4;
             this.pnNhanVien.rColor = System.Drawing.Color.Transparent;
             this.pnNhanVien.rSize = new System.Drawing.Size(101, 24);
             this.pnNhanVien.Size = new System.Drawing.Size(102, 25);
@@ -377,7 +377,7 @@ namespace Server
             this.pnKhach.Controls.Add(this.btnKhach);
             this.pnKhach.Location = new System.Drawing.Point(17, 11);
             this.pnKhach.Name = "pnKhach";
-            this.pnKhach.Radius = 5;
+            this.pnKhach.Radius = 4;
             this.pnKhach.rColor = System.Drawing.Color.Transparent;
             this.pnKhach.rSize = new System.Drawing.Size(101, 24);
             this.pnKhach.Size = new System.Drawing.Size(102, 25);
