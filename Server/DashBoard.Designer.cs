@@ -43,22 +43,22 @@ namespace Server
             this.icoBill = new Server.PanelRadius();
             this.panel15 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
-            this.active4 = new Server.Triangle();
+            this.active4 = new Server.PanelRadius();
             this.panel11 = new System.Windows.Forms.Panel();
             this.icoProduct = new Server.PanelRadius();
             this.panel12 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
-            this.active3 = new Server.Triangle();
+            this.active3 = new Server.PanelRadius();
             this.panel8 = new System.Windows.Forms.Panel();
             this.icoUser = new Server.PanelRadius();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.active2 = new Server.Triangle();
+            this.active2 = new Server.PanelRadius();
             this.panel4 = new System.Windows.Forms.Panel();
             this.icoHome = new Server.PanelRadius();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelsd = new System.Windows.Forms.Panel();
-            this.active1 = new Server.Triangle();
+            this.active1 = new Server.PanelRadius();
             this.line1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.pnDisplay = new System.Windows.Forms.Panel();
@@ -262,8 +262,8 @@ namespace Server
             // panel16
             // 
             this.panel16.Controls.Add(this.active4);
-            this.panel16.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel16.Location = new System.Drawing.Point(89, 0);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Name = "panel16";
             this.panel16.Padding = new System.Windows.Forms.Padding(0, 26, 0, 26);
             this.panel16.Size = new System.Drawing.Size(8, 68);
@@ -274,9 +274,12 @@ namespace Server
             this.active4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.active4.Location = new System.Drawing.Point(0, 26);
             this.active4.Name = "active4";
-            this.active4.rColor = System.Drawing.Color.Transparent;
+            this.active4.Radius = 6;
+            this.active4.rColor = System.Drawing.Color.Empty;
+            this.active4.rSize = new System.Drawing.Size(12, 15);
             this.active4.Size = new System.Drawing.Size(8, 16);
             this.active4.TabIndex = 1;
+            this.active4.TopLeft = new System.Drawing.Point(-7, 0);
             // 
             // panel11
             // 
@@ -322,8 +325,8 @@ namespace Server
             // panel13
             // 
             this.panel13.Controls.Add(this.active3);
-            this.panel13.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel13.Location = new System.Drawing.Point(89, 0);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Name = "panel13";
             this.panel13.Padding = new System.Windows.Forms.Padding(0, 26, 0, 26);
             this.panel13.Size = new System.Drawing.Size(8, 68);
@@ -334,9 +337,12 @@ namespace Server
             this.active3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.active3.Location = new System.Drawing.Point(0, 26);
             this.active3.Name = "active3";
-            this.active3.rColor = System.Drawing.Color.Transparent;
+            this.active3.Radius = 6;
+            this.active3.rColor = System.Drawing.Color.Empty;
+            this.active3.rSize = new System.Drawing.Size(12, 15);
             this.active3.Size = new System.Drawing.Size(8, 16);
             this.active3.TabIndex = 1;
+            this.active3.TopLeft = new System.Drawing.Point(-7, 0);
             // 
             // panel8
             // 
@@ -382,8 +388,8 @@ namespace Server
             // panel10
             // 
             this.panel10.Controls.Add(this.active2);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel10.Location = new System.Drawing.Point(89, 0);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(0, 26, 0, 26);
             this.panel10.Size = new System.Drawing.Size(8, 68);
@@ -394,9 +400,12 @@ namespace Server
             this.active2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.active2.Location = new System.Drawing.Point(0, 26);
             this.active2.Name = "active2";
-            this.active2.rColor = System.Drawing.Color.Transparent;
+            this.active2.Radius = 6;
+            this.active2.rColor = System.Drawing.Color.Empty;
+            this.active2.rSize = new System.Drawing.Size(12, 15);
             this.active2.Size = new System.Drawing.Size(8, 16);
             this.active2.TabIndex = 1;
+            this.active2.TopLeft = new System.Drawing.Point(-7, 0);
             // 
             // panel4
             // 
@@ -443,8 +452,8 @@ namespace Server
             // panelsd
             // 
             this.panelsd.Controls.Add(this.active1);
-            this.panelsd.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelsd.Location = new System.Drawing.Point(89, 0);
+            this.panelsd.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelsd.Location = new System.Drawing.Point(0, 0);
             this.panelsd.Name = "panelsd";
             this.panelsd.Padding = new System.Windows.Forms.Padding(0, 25, 0, 25);
             this.panelsd.Size = new System.Drawing.Size(8, 66);
@@ -455,9 +464,12 @@ namespace Server
             this.active1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.active1.Location = new System.Drawing.Point(0, 25);
             this.active1.Name = "active1";
-            this.active1.rColor = System.Drawing.Color.Transparent;
+            this.active1.Radius = 6;
+            this.active1.rColor = System.Drawing.Color.Empty;
+            this.active1.rSize = new System.Drawing.Size(12, 15);
             this.active1.Size = new System.Drawing.Size(8, 16);
             this.active1.TabIndex = 0;
+            this.active1.TopLeft = new System.Drawing.Point(-7, 0);
             // 
             // line1
             // 
@@ -557,9 +569,9 @@ namespace Server
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pnDisplay;
-        private Triangle active1;
-        private Triangle active4;
-        private Triangle active3;
-        private Triangle active2;
+        private PanelRadius active1;
+        private PanelRadius active4;
+        private PanelRadius active3;
+        private PanelRadius active2;
     }
 }

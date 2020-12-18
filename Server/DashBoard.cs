@@ -260,7 +260,7 @@ namespace Server
             clear();
             if (icoUser.Radius == 48)
             {
-                active2.rColor = Color.FromArgb(54, 57, 63);
+                active2.rColor = Color.White;
                 active2.Refresh();
                 icoUser.rColor = Color.FromArgb(67, 181, 129);
                 icoUser.Radius = 14;
@@ -275,7 +275,7 @@ namespace Server
             clear();
             if (icoProduct.Radius == 48)
             {
-                active3.rColor = Color.FromArgb(54, 57, 63);
+                active3.rColor = Color.White;
                 active3.Refresh();
                 icoProduct.rColor = Color.FromArgb(67, 181, 129);
                 icoProduct.Radius = 14;
@@ -290,7 +290,7 @@ namespace Server
             clear();
             if (icoBill.Radius == 48)
             {
-                active4.rColor = Color.FromArgb(54, 57, 63);
+                active4.rColor = Color.White;
                 active4.Refresh();
                 icoBill.rColor = Color.FromArgb(67, 181, 129);
                 icoBill.Radius = 14;
@@ -304,7 +304,7 @@ namespace Server
             clear();
             if (icoHome.Radius == 48)
             {
-                active1.rColor = Color.FromArgb(54, 57, 63);
+                active1.rColor = Color.White;
                 active1.Refresh();
                 icoHome.rColor = Color.FromArgb(114, 137, 218);
                 icoHome.Radius = 14;
