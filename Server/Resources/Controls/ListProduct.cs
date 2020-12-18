@@ -21,12 +21,15 @@ namespace Server
         }
         public Color bgColor { get => this.BackColor; set => this.BackColor = value; }
         public bool isChecked { get => checkBox1.Checked; set => checkBox1.Checked = value; }
+        private int lid;
         public string lTieuDe { get => lbtieude.Text; set => lbtieude.Text = value; }
         public string lNsx { get => lbnsx.Text; set => lbnsx.Text = value; }
         public string lPhienBan { get => lbpb.Text; set => lbpb.Text = value; }
         public string lNgay { get => lbngay.Text; set => lbngay.Text = value; }
         public string lGia { get => lbgia.Text; set => lbgia.Text = value; }
         public Image lIcon { get => pictureBox1.Image; set => pictureBox1.Image = value; }
+        public int lID { get => lid; set => lid = value; }
+
         private void btnSua_MouseEnter(object sender, EventArgs e)
         {
             btnSua.ForeColor = Color.White;
@@ -49,8 +52,10 @@ namespace Server
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không? Nếu xóa các hóa đơn liên quan sẽ bị ảnh hưởng !", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                CheckClass.count = 1;
+                Controller.XoaSP(this.lID);
                 this.Dispose();
             }
         }

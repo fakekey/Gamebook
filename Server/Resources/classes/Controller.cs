@@ -445,5 +445,90 @@ namespace Server
                 return ds;
             }
         }
+
+        public static void XoaSP(int ID)
+        {
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand($"DELETE from `chi tiet hoa don` WHERE `ID_sp` = '{ID}' ", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            con.Open();
+            cmd = new MySqlCommand($"DELETE from `san pham` WHERE `ID_sp` = '{ID}' ", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+        public static void InDanhSachSP(List<Product> ds)
+        {
+            // khoi tao excel
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet ws = workbook.Sheets["Sheet1"];
+            ws.Name = "Danh Sach San Pham";
+            ws = workbook.ActiveSheet;
+            app.Visible = true;
+            // fill data
+            ws.Cells[1, 4] = "Bảng Danh Sách Sản Phẩm Tổng Hợp ";
+            ws.Cells[3, 2] = $"Hà Nội,ngày {DateTime.Now.Day} tháng {DateTime.Now.Month} năm {DateTime.Now.Year}";
+            ws.Cells[4, 2] = "Người tạo: Admin";
+            // bang
+            ws.Cells[6, 1] = "STT";
+            ws.Cells[6, 2] = "Mã SP";
+            ws.Cells[6, 3] = "Tên SP";
+            ws.Cells[6, 4] = "NSX";
+            ws.Cells[6, 5] = "Phiên Bản";
+            ws.Cells[6, 6] = "NPH";
+            ws.Cells[6, 7] = "Giá";
+
+            for (int i = 0; i < ds.Count; i++)
+            {
+                ws.Cells[i + 7, 1] = i + 1;
+                ws.Cells[i + 7, 2] = ds[i].Id_sp;
+                ws.Cells[i + 7, 3] = ds[i].Title;
+                ws.Cells[i + 7, 4] = ds[i].Cate;
+                ws.Cells[i + 7, 5] = ds[i].Version;
+                ws.Cells[i + 7, 6] = ds[i].Daterelease;
+                ws.Cells[i + 7, 7] = ds[i].Price + "$";
+            }
+            int cell = ds.Count + 8;
+            ws.Cells[cell, 6] = "Chữ Ký Nhân Viên";
+
+
+            // dinh dang
+            ws.PageSetup.Orientation = Microsoft.Office.Interop.Excel.XlPageOrientation.xlPortrait;
+            ws.PageSetup.PaperSize = Microsoft.Office.Interop.Excel.XlPaperSize.xlPaperA4;
+            ws.PageSetup.LeftMargin = 50;
+            ws.PageSetup.RightMargin = 50;
+            ws.PageSetup.TopMargin = 50;
+            ws.PageSetup.BottomMargin = 50;
+
+            ws.Range["A1"].ColumnWidth = 5.13;
+            ws.Range["B1"].ColumnWidth = 7.5;
+            ws.Range["C1"].ColumnWidth = 22.25;
+            ws.Range["D1"].ColumnWidth = 7.75;
+            ws.Range["E1"].ColumnWidth = 10.63;
+            ws.Range["E1", "E100"].NumberFormat = "@";
+            ws.Range["F1"].ColumnWidth = 13.25;
+            ws.Range["F1", "F100"].NumberFormat = "dd/MM/yyyy";
+            ws.Range["G1"].ColumnWidth = 8.38;
+            ws.Range["A1", "G100"].Font.Name = "Times New Roman";
+            ws.Range["A1", "G100"].Font.Size = 14;
+            ws.Range["A7", "G" + (ds.Count + 6)].RowHeight = 30;
+            ws.Range["A7", "G" + (ds.Count + 6)].Font.Size = 12;
+            ws.Range["A7", "G" + (ds.Count + 6)].VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+            ws.Range["A7", "G" + (ds.Count + 6)].HorizontalAlignment = 3;
+            ws.Range["C1", "C100"].WrapText = true;
+            ws.Range["C1", "C100"].HorizontalAlignment = 2;
+            ws.Range["A1", "G1"].MergeCells = true;
+            ws.Range["A1", "G1"].Font.Bold = true;
+            ws.Range["A1", "G1"].HorizontalAlignment = 3;
+            ws.Range["A6", "G6"].Font.Bold = true;
+            ws.Range["A6", "G6"].HorizontalAlignment = 3;
+            ws.Range["A6", "G" + (ds.Count + 6)].Borders.LineStyle = 1;
+            ws.Range["A" + cell, "E" + cell].Font.Size = 14;
+            ws.Range["E" + cell].Font.Bold = true;
+        }
     }
 }

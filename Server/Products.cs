@@ -65,6 +65,7 @@ namespace Server
                     pnDisplay.Controls.Add(new ListProduct()
                     {
                         bgColor = ListProduct.FIRST_COLOR,
+                        lID = ds[i].Id_sp,
                         lIcon = Image.FromFile(ds[i].Img),
                         lTieuDe = ds[i].Title,
                         lNsx = ds[i].Cate,
@@ -78,6 +79,7 @@ namespace Server
                     pnDisplay.Controls.Add(new ListProduct()
                     {
                         bgColor = ListProduct.SECOND_COLOR,
+                        lID = ds[i].Id_sp,
                         lIcon = Image.FromFile(ds[i].Img),
                         lTieuDe = ds[i].Title,
                         lNsx = ds[i].Cate,
@@ -294,9 +296,12 @@ namespace Server
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            foreach (ListProduct item in pnDisplay.Controls)
+            if (dsAll.Count != 0)
             {
-                item.isChecked = checkBox1.Checked ? true : false;
+                foreach (ListMember item in pnDisplay.Controls)
+                {
+                    item.isChecked = checkBox1.Checked ? true : false;
+                }
             }
         }
 
@@ -533,6 +538,91 @@ namespace Server
                     leftPaddingPB = 21;
                     leftPaddingNgay = 17;
                     leftPaddingGia = 12;
+                }
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            reload();
+            if(dsAll.Count != 0)
+            {
+                Controller.InDanhSachSP(dsAll);
+            }
+            else
+            {
+                Messagebox.Show("Cảnh Báo", "Dữ liệu trống khống thể xuất báo cáo", MessageBoxButtons.YesNo);
+            }
+        }
+
+        private void noFocusButton1_Click(object sender, EventArgs e)
+        {
+            if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không? Nếu xóa các hóa đơn liên quan sẽ bị ảnh hưởng !", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (tatca == true)
+                {
+                    if (dsAll.Count != 0)
+                    {
+                        Xoa();
+                    }
+                }
+                else if (aaa == true)
+                {
+                    if (dsAAA.Count != 0)
+                    {
+                        Xoa();
+                    }
+                }
+                else if (indie == true)
+                {
+                    if (dsIndie.Count != 0)
+                    {
+                        Xoa();
+                    }
+                }
+            }
+        }
+
+        private void Xoa()
+        {
+            foreach (ListProduct item in pnDisplay.Controls)
+            {
+                if (item.isChecked == true)
+                {
+                    Controller.XoaSP(item.lID);
+                }
+            }
+            pnDisplay.Visible = false;
+            reload();
+            if (tatca == true)
+            {
+                btnTatCa_Click(null, null);
+            }
+            if (aaa == true)
+            {
+                btnAAA_Click(null, null);
+            }
+            if (indie == true)
+            {
+                btnIndie_Click(null, null);
+            }
+        }
+
+        private void pnDisplay_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            if (CheckClass.count != 0)
+            {
+                if (tatca == true)
+                {
+                    btnTatCa_Click(sender, e);
+                }
+                if (aaa == true)
+                {
+                    btnAAA_Click(sender, e);
+                }
+                if (indie == true)
+                {
+                    btnIndie_Click(null, null);
                 }
             }
         }
