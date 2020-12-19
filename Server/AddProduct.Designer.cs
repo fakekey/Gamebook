@@ -45,6 +45,7 @@ namespace Server
             this.tbthang = new System.Windows.Forms.TextBox();
             this.tbngay = new System.Windows.Forms.TextBox();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.lbngay = new System.Windows.Forms.Label();
             this.ngaylb = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gia = new System.Windows.Forms.Panel();
@@ -72,7 +73,7 @@ namespace Server
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.lbngay = new System.Windows.Forms.Label();
+            this.lbImg = new System.Windows.Forms.Label();
             this.panelRadius1.SuspendLayout();
             this.panelRadius2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -93,6 +94,7 @@ namespace Server
             // panelRadius1
             // 
             this.panelRadius1.BackColor = System.Drawing.Color.Transparent;
+            this.panelRadius1.Controls.Add(this.lbImg);
             this.panelRadius1.Controls.Add(this.btnLogin);
             this.panelRadius1.Controls.Add(this.panelRadius2);
             this.panelRadius1.Controls.Add(this.label5);
@@ -290,6 +292,19 @@ namespace Server
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(366, 39);
             this.panel10.TabIndex = 0;
+            // 
+            // lbngay
+            // 
+            this.lbngay.AutoSize = true;
+            this.lbngay.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lbngay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
+            this.lbngay.Location = new System.Drawing.Point(95, 16);
+            this.lbngay.Margin = new System.Windows.Forms.Padding(0);
+            this.lbngay.Name = "lbngay";
+            this.lbngay.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lbngay.Size = new System.Drawing.Size(0, 23);
+            this.lbngay.TabIndex = 1;
+            this.lbngay.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // ngaylb
             // 
@@ -596,18 +611,18 @@ namespace Server
             this.timer3.Interval = 950;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // lbngay
+            // lbImg
             // 
-            this.lbngay.AutoSize = true;
-            this.lbngay.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lbngay.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbngay.Location = new System.Drawing.Point(95, 16);
-            this.lbngay.Margin = new System.Windows.Forms.Padding(0);
-            this.lbngay.Name = "lbngay";
-            this.lbngay.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lbngay.Size = new System.Drawing.Size(0, 23);
-            this.lbngay.TabIndex = 1;
-            this.lbngay.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lbImg.AutoSize = true;
+            this.lbImg.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lbImg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
+            this.lbImg.Location = new System.Drawing.Point(30, 91);
+            this.lbImg.Margin = new System.Windows.Forms.Padding(0);
+            this.lbImg.Name = "lbImg";
+            this.lbImg.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lbImg.Size = new System.Drawing.Size(0, 23);
+            this.lbImg.TabIndex = 13;
+            this.lbImg.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // AddProduct
             // 
@@ -695,5 +710,6 @@ namespace Server
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Label lbngay;
+        private System.Windows.Forms.Label lbImg;
     }
 }

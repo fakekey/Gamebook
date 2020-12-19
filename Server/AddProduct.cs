@@ -400,6 +400,12 @@ namespace Server
                 VeBorder(phienban, eventArgs, 240, 71, 71);
                 tbPhienBanDontHandle = true;
             }
+            if (fileName == null)
+            {
+                lbImg.Text = "- Mục này không thể bỏ trống";
+                label5.ForeColor = Color.FromArgb(240, 71, 71);
+            }
+            
             timer3.Stop();
         }
 
@@ -425,11 +431,13 @@ namespace Server
                 lbphienban.Text = "";
                 lbgia.Text = "";
                 lbngay.Text = "";
+                lbImg.Text = "";
                 lbtieude.ForeColor = Color.FromArgb(240, 71, 71);
                 tieudelb.ForeColor = Color.FromArgb(138, 142, 147);
                 pblb.ForeColor = Color.FromArgb(138, 142, 147);
                 gialb.ForeColor = Color.FromArgb(138, 142, 147);
                 ngaylb.ForeColor = Color.FromArgb(138, 142, 147);
+                label5.ForeColor = Color.FromArgb(138, 142, 147);
                 timerIsAlive = true;
                 timer1.Enabled = true;
                 timer1_Tick(null, null);
