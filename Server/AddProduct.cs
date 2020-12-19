@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -384,28 +385,51 @@ namespace Server
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if (tbtieude.Text == string.Empty)
-            {
-                lbtieude.Text = "- Mục này không thể bỏ trống";
-                tieudelb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
-                VeBorder(tieude, eventArgs, 240, 71, 71);
-                tbTieuDeDontHandle = true;
+            if(tbtieude.Text != string.Empty && tbphienban.Text != string.Empty && fileName != null)
+            {   
+                string ngay = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
+                string cate = comboBox1.SelectedItem.ToString();
+                float gia = float.Parse(tbgia.Text);
+                string path = fileName.Replace(@"\", @"\\");
+                Product sp = new Product(0, tbtieude.Text, cate, tbphienban.Text, gia, ngay, path);
+                int rs = Controller.ThemSP(sp);
+                if(rs == 1)
+                {
+                    lbImg.Text = "Thêm thành công !";
+                    lbImg.ForeColor = Color.FromArgb(77, 222, 19);
+                }
+                else
+                {
+                    lbImg.Text = "Lỗi hệ thống, thêm thất bại !";
+                    lbImg.ForeColor = Color.FromArgb(240, 71, 71);
+                }
+
             }
-            if (tbphienban.Text == string.Empty)
+            else
             {
-                lbphienban.Text = "- Mục này không thể bỏ trống";
-                pblb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
-                VeBorder(phienban, eventArgs, 240, 71, 71);
-                tbPhienBanDontHandle = true;
+                if (tbtieude.Text == string.Empty)
+                {
+                    lbtieude.Text = "- Mục này không thể bỏ trống";
+                    tieudelb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
+                    VeBorder(tieude, eventArgs, 240, 71, 71);
+                    tbTieuDeDontHandle = true;
+                }
+                if (tbphienban.Text == string.Empty)
+                {
+                    lbphienban.Text = "- Mục này không thể bỏ trống";
+                    pblb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
+                    VeBorder(phienban, eventArgs, 240, 71, 71);
+                    tbPhienBanDontHandle = true;
+                }
+                if (fileName == null)
+                {
+                    lbImg.Text = "- Mục này không thể bỏ trống";
+                    lbImg.ForeColor = Color.FromArgb(240, 71, 71);
+                    label5.ForeColor = Color.FromArgb(240, 71, 71);
+                }
             }
-            if (fileName == null)
-            {
-                lbImg.Text = "- Mục này không thể bỏ trống";
-                label5.ForeColor = Color.FromArgb(240, 71, 71);
-            }
-            
             timer3.Stop();
         }
 

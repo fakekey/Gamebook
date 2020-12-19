@@ -12,10 +12,13 @@ namespace Server
 {
     public partial class EditProduct : Form
     {
-        public EditProduct(string iconPath, string tieude, string phienban, string gia, string ngay, string nsx)
+        private int id;
+        public EditProduct(int id,string iconPath, string tieude, string phienban, string gia, string ngay, string nsx)
         {
             InitializeComponent();
+            this.id = id;
             panel9.BackgroundImage = Image.FromFile(iconPath);
+            fileName = iconPath;
             tbtieude.Text = tieude;
             tbphienban.Text = phienban;
             tbgia.Text = gia.Remove(gia.IndexOf('$'));
@@ -376,7 +379,7 @@ namespace Server
             timer1.Stop();
             timer2.Stop();
             j = 0;
-            btnLogin.Text = "Thêm ngay";
+            btnLogin.Text = "Cập nhật";
             tbtieude.Enabled = true;
             tbphienban.Enabled = true;
             tbgia.Enabled = true;
@@ -388,21 +391,50 @@ namespace Server
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if (tbtieude.Text == string.Empty)
+            if (tbtieude.Text != string.Empty && tbphienban.Text != string.Empty && fileName != null)
             {
-                lbtieude.Text = "- Mục này không thể bỏ trống";
-                tieudelb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
-                VeBorder(tieude, eventArgs, 240, 71, 71);
-                tbTieuDeDontHandle = true;
+                string ngay = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
+                string cate = comboBox1.SelectedItem.ToString();
+                float gia = float.Parse(tbgia.Text);
+                string path = fileName.Replace(@"\", @"\\");
+                Product sp = new Product(this.id, tbtieude.Text, cate, tbphienban.Text, gia, ngay, path);
+                int rs = Controller.SuaSP(sp);
+                if (rs == 1)
+                {
+                    lbImg.Text = "Sửa thành công !";
+                    lbImg.ForeColor = Color.FromArgb(77, 222, 19);
+                }
+                else
+                {
+                    lbImg.Text = "Lỗi hệ thống, sửa thất bại !";
+                    lbImg.ForeColor = Color.FromArgb(240, 71, 71);
+                }
+
             }
-            if (tbphienban.Text == string.Empty)
+            else
             {
-                lbphienban.Text = "- Mục này không thể bỏ trống";
-                pblb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
-                VeBorder(phienban, eventArgs, 240, 71, 71);
-                tbPhienBanDontHandle = true;
+                if (tbtieude.Text == string.Empty)
+                {
+                    lbtieude.Text = "- Mục này không thể bỏ trống";
+                    tieudelb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
+                    VeBorder(tieude, eventArgs, 240, 71, 71);
+                    tbTieuDeDontHandle = true;
+                }
+                if (tbphienban.Text == string.Empty)
+                {
+                    lbphienban.Text = "- Mục này không thể bỏ trống";
+                    pblb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
+                    VeBorder(phienban, eventArgs, 240, 71, 71);
+                    tbPhienBanDontHandle = true;
+                }
+                if (fileName == null)
+                {
+                    lbImg.Text = "- Mục này không thể bỏ trống";
+                    lbImg.ForeColor = Color.FromArgb(240, 71, 71);
+                    label5.ForeColor = Color.FromArgb(240, 71, 71);
+                }
             }
             timer3.Stop();
         }

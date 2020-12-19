@@ -460,6 +460,41 @@ namespace Server
 
         }
 
+        public static int ThemSP(Product sp)
+        {   
+            // return 1: thanh cong
+            //return -99: loi
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO `san pham`(`title`, `category`, `version`, `price`, `date release`,`img_path`) VALUES ('{sp.Title}','{sp.Cate}','{sp.Version}','{sp.Price}','{sp.Daterelease}','{sp.Img}')", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return 1;
+            }
+            catch
+            {
+                return -99;
+            }
+        }
+        public static int SuaSP(Product sp)
+        {
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand($"UPDATE `san pham` SET `title` = '{sp.Title}' , `category` = '{sp.Cate}', `version` = '{sp.Version}', `price` = '{sp.Price}', `date release` = '{sp.Daterelease}', `img_path` ='{sp.Img}' WHERE `ID_sp` = '{sp.Id_sp}'", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return 1;
+            }
+            catch
+            {
+                return -99;
+            }
+        }
+
         public static void InDanhSachSP(List<Product> ds)
         {
             // khoi tao excel
