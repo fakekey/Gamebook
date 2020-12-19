@@ -73,7 +73,7 @@ namespace Server
                 f.Opacity = 0.85f;
                 f.Location = this.Parent.Parent.Parent.Parent.Location;
                 f.Size = this.Parent.Parent.Parent.Parent.Size;
-                using (EditUser fOverlay = new EditUser(lEmail, lVaiTro))
+                using (EditUser fOverlay = new EditUser(lEmail, lTen, lVaiTro))
                 {
                     f.Show();
                     fOverlay.Owner = f;

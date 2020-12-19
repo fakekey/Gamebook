@@ -35,13 +35,13 @@
             this.lbnsx = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnXoa = new System.Windows.Forms.Label();
             this.btnSua = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbtieude = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -152,6 +152,15 @@
             this.panel1.Size = new System.Drawing.Size(134, 64);
             this.panel1.TabIndex = 19;
             // 
+            // panel5
+            // 
+            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel5.Location = new System.Drawing.Point(13, 2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(108, 60);
+            this.panel5.TabIndex = 0;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.panel4);
@@ -231,15 +240,6 @@
             this.lbtieude.TabIndex = 2;
             this.lbtieude.Text = "Tiêu đề";
             // 
-            // panel5
-            // 
-            this.panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(13, 2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(108, 60);
-            this.panel5.TabIndex = 0;
-            // 
             // ListProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -247,6 +247,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "ListProduct";
             this.Size = new System.Drawing.Size(1119, 70);
+            this.Load += new System.EventHandler(this.ListProduct_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
