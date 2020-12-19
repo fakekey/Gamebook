@@ -31,6 +31,7 @@ namespace Server
                             fOverlay.Owner = f;
                             fOverlay.mTitle = title;
                             fOverlay.mContent = content;
+                            fOverlay.Text = title;
                             dr = fOverlay.ShowDialog();
                         }
                     }

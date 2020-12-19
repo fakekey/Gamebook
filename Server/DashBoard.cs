@@ -514,13 +514,13 @@ namespace Server
                 f1.Opacity = 0f;
                 f1.Location = new Point(CheckClass.location.X, CheckClass.location.Y + 30);
                 f1.AutoSize = false;
-                f1.Size = new Size(195, 68);
+                f1.Size = new Size(196, 68);
                 labelHome = new lbHome();
                 f1.Show();
                 labelHome.ShowInTaskbar = false;
                 labelHome.AutoSize = false;
                 labelHome.Owner = f1;
-                labelHome.Location = new Point(CheckClass.location.X + 97, CheckClass.location.Y + 45);
+                labelHome.Location = new Point(CheckClass.location.X + 98, CheckClass.location.Y + 45);
                 labelHome.Show();
             }
         }
@@ -553,13 +553,13 @@ namespace Server
                 f2.Opacity = 0f;
                 f2.Location = new Point(CheckClass.location.X, CheckClass.location.Y + 100);
                 f2.AutoSize = false;
-                f2.Size = new Size(200, 68);
+                f2.Size = new Size(201, 68);
                 labelUsers = new lbUsers();
                 f2.Show();
                 labelUsers.ShowInTaskbar = false;
                 labelUsers.AutoSize = false;
                 labelUsers.Owner = f2;
-                labelUsers.Location = new Point(CheckClass.location.X + 97, CheckClass.location.Y + 114);
+                labelUsers.Location = new Point(CheckClass.location.X + 98, CheckClass.location.Y + 114);
                 labelUsers.Show();
             }
         }
@@ -592,13 +592,13 @@ namespace Server
                 f3.Opacity = 0f;
                 f3.Location = new Point(CheckClass.location.X, CheckClass.location.Y + 168);
                 f3.AutoSize = false;
-                f3.Size = new Size(195, 68);
+                f3.Size = new Size(196, 68);
                 labelProducts = new lbProducts();
                 f3.Show();
                 labelProducts.ShowInTaskbar = false;
                 labelProducts.AutoSize = false;
                 labelProducts.Owner = f3;
-                labelProducts.Location = new Point(CheckClass.location.X + 97, CheckClass.location.Y + 182);
+                labelProducts.Location = new Point(CheckClass.location.X + 98, CheckClass.location.Y + 182);
                 labelProducts.Show();
             }
         }
@@ -623,13 +623,13 @@ namespace Server
                 f4.Opacity = 0f;
                 f4.Location = new Point(CheckClass.location.X, CheckClass.location.Y + 236);
                 f4.AutoSize = false;
-                f4.Size = new Size(187, 68);
+                f4.Size = new Size(188, 68);
                 labelBills = new lbBills();
                 f4.Show();
                 labelBills.ShowInTaskbar = false;
                 labelBills.AutoSize = false;
                 labelBills.Owner = f4;
-                labelBills.Location = new Point(CheckClass.location.X + 97, CheckClass.location.Y + 250);
+                labelBills.Location = new Point(CheckClass.location.X + 98, CheckClass.location.Y + 250);
                 labelBills.Show();
             }
         }

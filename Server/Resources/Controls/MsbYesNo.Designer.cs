@@ -179,7 +179,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MsbYesNo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "MsbYesNo";
             this.panelRadius1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
