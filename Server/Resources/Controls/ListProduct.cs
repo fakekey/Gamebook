@@ -27,7 +27,7 @@ namespace Server
         public string lPhienBan { get => lbpb.Text; set => lbpb.Text = value; }
         public string lNgay { get => lbngay.Text; set => lbngay.Text = value; }
         public string lGia { get => lbgia.Text; set => lbgia.Text = value; }
-        public Image lIcon { get => pictureBox1.Image; set => pictureBox1.Image = value; }
+        public Image lIcon { get => panel5.BackgroundImage; set => panel5.BackgroundImage = value; }
         public int lID { get => lid; set => lid = value; }
 
         private void btnSua_MouseEnter(object sender, EventArgs e)
