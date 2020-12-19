@@ -18,7 +18,7 @@ namespace Server
             panel9.BackgroundImage = Image.FromFile(iconPath);
             tbtieude.Text = tieude;
             tbphienban.Text = phienban;
-            tbgia.Text = gia;
+            tbgia.Text = gia.Remove(gia.IndexOf('$'));
             tbngay.Text = DateTime.Now.Day.ToString();
             tbthang.Text = DateTime.Now.Month.ToString();
             tbnam.Text = DateTime.Now.Year.ToString();
