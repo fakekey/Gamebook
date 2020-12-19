@@ -66,7 +66,7 @@ namespace Server
                     {
                         bgColor = ListProduct.FIRST_COLOR,
                         lID = ds[i].Id_sp,
-                        lIcon = Image.FromFile(ds[i].Img),
+                        lIconPath = ds[i].Img,
                         lTieuDe = ds[i].Title,
                         lNsx = ds[i].Cate,
                         lPhienBan = ds[i].Version,
@@ -80,7 +80,7 @@ namespace Server
                     {
                         bgColor = ListProduct.SECOND_COLOR,
                         lID = ds[i].Id_sp,
-                        lIcon = Image.FromFile(ds[i].Img),
+                        lIconPath = ds[i].Img,
                         lTieuDe = ds[i].Title,
                         lNsx = ds[i].Cate,
                         lPhienBan = ds[i].Version,

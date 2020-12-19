@@ -27,7 +27,7 @@ namespace Server
         public string lPhienBan { get => lbpb.Text; set => lbpb.Text = value; }
         public string lNgay { get => lbngay.Text; set => lbngay.Text = value; }
         public string lGia { get => lbgia.Text; set => lbgia.Text = value; }
-        public Image lIcon { get => panel5.BackgroundImage; set => panel5.BackgroundImage = value; }
+        public string lIconPath { get; set; }
         public int lID { get => lid; set => lid = value; }
 
         private void btnSua_MouseEnter(object sender, EventArgs e)
@@ -62,7 +62,29 @@ namespace Server
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            using (Form f = new Form())
+            {
+                f.StartPosition = FormStartPosition.Manual;
+                f.FormBorderStyle = FormBorderStyle.None;
+                f.ShowInTaskbar = false;
+                f.BackColor = Color.Black;
+                f.Opacity = 0.85f;
+                f.Location = this.Parent.Parent.Parent.Parent.Location;
+                f.Size = this.Parent.Parent.Parent.Parent.Size;
+                using (EditProduct fOverlay = new EditProduct(lIconPath, lTieuDe, lPhienBan, lGia, lNgay, lNsx))
+                {
+                    f.Show();
+                    fOverlay.Owner = f;
+                    fOverlay.ShowDialog();
+                    CheckClass.count = 1;
+                    this.Dispose();
+                }
+            }
+        }
 
+        private void ListProduct_Load(object sender, EventArgs e)
+        {
+            panel5.BackgroundImage = Image.FromFile(lIconPath);
         }
     }
 }

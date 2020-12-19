@@ -1,7 +1,7 @@
 ﻿
 namespace Server
 {
-    partial class AddProduct
+    partial class EditProduct
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace Server
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProduct));
             this.panelRadius1 = new Server.PanelRadius();
             this.btnLogin = new Server.NoFocusButton();
             this.panelRadius2 = new Server.PanelRadius();
@@ -73,7 +73,6 @@ namespace Server
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.lbImg = new System.Windows.Forms.Label();
             this.panelRadius1.SuspendLayout();
             this.panelRadius2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -94,7 +93,6 @@ namespace Server
             // panelRadius1
             // 
             this.panelRadius1.BackColor = System.Drawing.Color.Transparent;
-            this.panelRadius1.Controls.Add(this.lbImg);
             this.panelRadius1.Controls.Add(this.btnLogin);
             this.panelRadius1.Controls.Add(this.panelRadius2);
             this.panelRadius1.Controls.Add(this.label5);
@@ -132,7 +130,7 @@ namespace Server
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(162, 42);
             this.btnLogin.TabIndex = 12;
-            this.btnLogin.Text = "Thêm ngay";
+            this.btnLogin.Text = "Cập nhật";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -580,9 +578,9 @@ namespace Server
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(311, 43);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(223, 30);
+            this.label1.Size = new System.Drawing.Size(217, 30);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Thêm sản phẩm mới";
+            this.label1.Text = "Chỉnh sửa thông tin";
             // 
             // panel1
             // 
@@ -611,20 +609,7 @@ namespace Server
             this.timer3.Interval = 950;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // lbImg
-            // 
-            this.lbImg.AutoSize = true;
-            this.lbImg.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lbImg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbImg.Location = new System.Drawing.Point(30, 91);
-            this.lbImg.Margin = new System.Windows.Forms.Padding(0);
-            this.lbImg.Name = "lbImg";
-            this.lbImg.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lbImg.Size = new System.Drawing.Size(0, 23);
-            this.lbImg.TabIndex = 13;
-            this.lbImg.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // AddProduct
+            // EditProduct
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -634,9 +619,9 @@ namespace Server
             this.Controls.Add(this.panelRadius1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "AddProduct";
+            this.Name = "EditProduct";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm sản phẩm";
+            this.Text = "Chỉnh sửa thông tin";
             this.Load += new System.EventHandler(this.AddProduct_Load);
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
@@ -710,6 +695,5 @@ namespace Server
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Label lbngay;
-        private System.Windows.Forms.Label lbImg;
     }
 }

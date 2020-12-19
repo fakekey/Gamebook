@@ -13,7 +13,7 @@ namespace Server
     public partial class EditUser : Form
     {
         private string quyen;
-        public EditUser(string email, string vaitro)
+        public EditUser(string email, string name, string vaitro)
         {
             InitializeComponent();
             tbMail.AutoSize = false;
@@ -22,6 +22,7 @@ namespace Server
             tbName.Size = new Size(371, 22);
             tbMail.Enabled = false;
             tbMail.Text = email;
+            tbName.Text = name;
             quyen = vaitro;
         }
         private void VeBorder(Control control, PaintEventArgs e, int r, int g, int b)
