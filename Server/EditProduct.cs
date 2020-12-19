@@ -410,7 +410,6 @@ namespace Server
         private void AddProduct_Load(object sender, EventArgs e)
         {
             tbtieude.Select();
-            comboBox1.SelectedIndex = 0;
         }
         private void tbgia_TextChanged(object sender, EventArgs e)
         {
