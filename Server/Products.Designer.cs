@@ -458,6 +458,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm mới";
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tableLayoutPanel1
             // 

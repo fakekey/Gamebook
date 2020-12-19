@@ -638,5 +638,26 @@ namespace Server
                 }
             }
         }
+        private Form f;
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            using (f = new Form())
+            {
+                f.StartPosition = FormStartPosition.Manual;
+                f.FormBorderStyle = FormBorderStyle.None;
+                f.ShowInTaskbar = false;
+                f.BackColor = Color.Black;
+                f.Opacity = 0.85f;
+                f.Location = this.Parent.Parent.Location;
+                f.Size = this.Parent.Parent.Size;
+                using (AddProduct fOverlay = new AddProduct())
+                {
+                    f.Show();
+                    fOverlay.Owner = f;
+                    fOverlay.ShowDialog();
+                    btnTatCa_Click(null, null);
+                }
+            }
+        }
     }
 }

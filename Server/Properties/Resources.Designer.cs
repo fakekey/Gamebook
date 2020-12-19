@@ -143,6 +143,16 @@ namespace Server.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_image_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-image-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_maximize_button_18 {
             get {
                 object obj = ResourceManager.GetObject("icons8-maximize-button-18", resourceCulture);
