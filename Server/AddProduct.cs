@@ -345,7 +345,7 @@ namespace Server
                 tbngay.Text = "28";
             }
         }
-        string fileName;
+        string fileName; //dung cai bien nay ma them vao sql, no la duong dan den file da chon
         private void btnAdd_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false })
