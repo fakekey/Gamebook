@@ -169,6 +169,7 @@ namespace Server
             clear();
             nCount = dsAll.Count;
             ReSize();
+            freeMemory();
             pnDisplay.Controls.Clear();
             if (nCount != 0)
             {
@@ -194,6 +195,7 @@ namespace Server
             clear();
             nCount = dsAAA.Count;
             ReSize();
+            freeMemory();
             pnDisplay.Controls.Clear();
             if (nCount != 0)
             {
@@ -219,6 +221,7 @@ namespace Server
             clear();
             nCount = dsIndie.Count;
             ReSize();
+            freeMemory();
             pnDisplay.Controls.Clear();
             if (nCount != 0)
             {
@@ -374,6 +377,7 @@ namespace Server
             timer4.Enabled = true;
             timer1_Tick(null, null);
             pnDisplay.Visible = false;
+            freeMemory();
             pnDisplay.Controls.Clear();
             if (nCount != 0)
             {
@@ -440,6 +444,7 @@ namespace Server
             {
                 btnTatCa.Enabled = false;
             }
+            freeMemory();
             pnDisplay.Controls.Clear();
             if (tatca == true)
             {

@@ -233,6 +233,7 @@ namespace Server
             btnTatCa.ForeColor = Color.White;
             pnTatCa.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
+            freeMemory();
             nUsers = dsAll.Count;
             ReSize();
             pnDisplay.Controls.Clear();
@@ -260,6 +261,7 @@ namespace Server
             clear();
             nUsers = dsadmin.Count;
             ReSize();
+            freeMemory();
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
@@ -285,6 +287,7 @@ namespace Server
             clear();
             nUsers = dsnv.Count;
             ReSize();
+            freeMemory();
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
@@ -310,6 +313,7 @@ namespace Server
             clear();
             nUsers = dsuser.Count;
             ReSize();
+            freeMemory();
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
@@ -493,6 +497,7 @@ namespace Server
             timer4.Enabled = true;
             timer1_Tick(null, null);
             pnDisplay.Visible = false;
+            freeMemory();
             pnDisplay.Controls.Clear();
             if (nUsers != 0)
             {
@@ -602,7 +607,6 @@ namespace Server
         {
             dsadmin = dsuser = dsnv = null;
             dsAll.Clear();
-            freeMemory();
             dsnv = Controller.getNhanVien();
             dsuser = Controller.getKhach();
             dsadmin = Controller.getAdmin();
@@ -630,6 +634,7 @@ namespace Server
             {
                 btnTatCa.Enabled = false;
             }
+            freeMemory();
             pnDisplay.Controls.Clear();
             if (tatca == true)
             {

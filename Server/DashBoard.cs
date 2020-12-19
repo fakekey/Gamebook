@@ -470,7 +470,12 @@ namespace Server
         }
         private void AddForm(Form form)
         {
-            pnDisplay.Controls.Clear();
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
+            foreach (Form item in pnDisplay.Controls)
+            {
+                item.Dispose();
+            }
             form.TopLevel = false;
             form.AutoScroll = true;
             form.Dock = DockStyle.Fill;
