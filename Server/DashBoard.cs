@@ -73,6 +73,10 @@ namespace Server
                 {
                     fProducts.ReSize();
                 }
+                if (fBills != null)
+                {
+                    fBills.ReSize();
+                }
             }
             else
             {
@@ -86,6 +90,10 @@ namespace Server
                 if (fProducts != null)
                 {
                     fProducts.ReSize();
+                }
+                if (fBills != null)
+                {
+                    fBills.ReSize();
                 }
             }
         }
