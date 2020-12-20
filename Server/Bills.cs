@@ -7,10 +7,10 @@ namespace Server
 {
     public partial class Bills : Form
     {
-        //List<User> dsdaxuly = new List<User>();
-        //List<User> dsdahuy = new List<User>();
-        //List<User> dschuaxuly = new List<User>();
-        //List<User> dsAll = new List<User>();
+        List<Bill> dsdaxuly = new List<Bill>();
+        List<Bill> dsdahuy = new List<Bill>();
+        List<Bill> dschuaxuly = new List<Bill>();
+        List<Bill> dsAll = new List<Bill>();
         public Bills()
         {
             InitializeComponent();
@@ -29,33 +29,42 @@ namespace Server
             comboBox1.SelectedIndex = 0;
             textBox1.AutoSize = false;
             textBox1.Size = new Size(230, 22);
-            //dsdaxuly = Controller.getNhanVien();
-            //dsdahuy = Controller.getKhach();
-            //dschuaxuly = Controller.getAdmin();
-            //if (dsdaxuly != null && dsdahuy != null && dschuaxuly != null)
-            //{
-            //    label3.Text = $"({dschuaxuly.Count.ToString()})";
-            //    label5.Text = $"({dsdaxuly.Count.ToString()})";
-            //    label7.Text = $"({dsdahuy.Count.ToString()})";
-            //    dsAll.AddRange(dschuaxuly);
-            //    dsAll.AddRange(dsdaxuly);
-            //    dsAll.AddRange(dsdahuy);
-            //}
-            //else
-            //{
-            //    btnChua.Enabled = false;
-            //    btnHuy.Enabled = false;
-            //    btnDa.Enabled = false;
+            setdata();
 
-            //}
-            //if (dsAll != null)
-            //{
-            //    label2.Text = "(" + dsAll.Count.ToString() + ")";
-            //}
-            //else
-            //{
-            //    btnTatCa.Enabled = false;
-            //}
+            if (dsAll.Count != 0)
+            {
+                label3.Text = $"({dschuaxuly.Count.ToString()})";
+                label5.Text = $"({dsdaxuly.Count.ToString()})";
+                label7.Text = $"({dsdahuy.Count.ToString()})";
+                label2.Text = $"({dsAll.Count.ToString()})";
+            } 
+            else
+            {
+                btnTatCa.Enabled = false;
+                btnChua.Enabled = false;
+                btnHuy.Enabled = false;
+                btnDa.Enabled = false;
+            }
+        }
+
+        private void setdata()
+        {
+            dsAll = Controller.GetBill();
+            foreach(Bill item in dsAll)
+            {
+                if(item._matinhtrang == "1")
+                {
+                    dschuaxuly.Add(item);
+                }
+                if (item._matinhtrang == "2")
+                {
+                    dsdaxuly.Add(item);
+                }
+                if (item._matinhtrang == "3")
+                {
+                    dsdahuy.Add(item);
+                }
+            }
         }
         private int nBills;
         public int leftPaddingEmail
@@ -72,7 +81,7 @@ namespace Server
                 lbNgayMua.Padding = new Padding(value, 0, 0, 0);
             }
         }
-        struct Bill
+/*        struct Bill
         {
             public string _mahd;
             public string _tenkhach;
@@ -92,10 +101,10 @@ namespace Server
             new Bill("1", "Lã Quốc Nghị", "20/12/2020", "56$", "1"),
             new Bill("2", "Cao Hoài Nam", "20/12/2020", "46$", "2"),
             new Bill("3", "Nguyễn Đức Long", "19/12/2020", "16$", "3")
-        };
-        private void addToPanel(Bill[] ds)
+        };*/
+        private void addToPanel(List<Bill> ds)
         {
-            for (int i = ds.Length - 1; i >= 0; i--)
+            for (int i = 0; i < ds.Count; i++)
             {
                 if (i % 2 == 0)
                 {
@@ -255,7 +264,7 @@ namespace Server
             pnTatCa.rColor = Color.FromArgb(82, 79, 84, 92);
             clear();
             freeMemory();
-            nBills = dsAll.Length;
+            nBills = dsAll.Count;
             //ReSize();
             pnDisplay.Controls.Clear();
             if (nBills != 0)

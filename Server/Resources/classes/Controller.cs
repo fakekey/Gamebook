@@ -495,6 +495,35 @@ namespace Server
             }
         }
 
+        public static List<Bill> GetBill()
+        {
+            List<Bill> ds = new List<Bill>();
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select * From vhoadon";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string _mahd = reader.GetString(0);
+                    string _tenkhach = reader.GetString(1);
+                    string _ngaymua = reader.GetString(2);
+                    string _tongtien = reader.GetString(3);
+                    string _matinhtrang = reader.GetString(4);
+                    ds.Add(new Bill(_mahd, _tenkhach, _ngaymua, _tongtien, _matinhtrang));
+                }
+                return ds;
+            }
+            catch
+            {
+                return ds;
+            }
+        }
+
         public static void InDanhSachSP(List<Product> ds)
         {
             // khoi tao excel
@@ -529,8 +558,6 @@ namespace Server
             }
             int cell = ds.Count + 8;
             ws.Cells[cell, 6] = "Chữ Ký Nhân Viên";
-
-
             // dinh dang
             ws.PageSetup.Orientation = Microsoft.Office.Interop.Excel.XlPageOrientation.xlPortrait;
             ws.PageSetup.PaperSize = Microsoft.Office.Interop.Excel.XlPaperSize.xlPaperA4;

@@ -184,6 +184,7 @@
     <Compile Include="Resources\Controls\Triangle.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Resources\Models\Bill.cs" />
     <Compile Include="Resources\Models\Product.cs" />
     <Compile Include="Resources\Models\User.cs" />
     <Compile Include="Bills.cs">
