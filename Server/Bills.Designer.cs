@@ -426,10 +426,10 @@ namespace Server
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Chức năng...",
-            "Xóa"});
+            "Hủy hoặc Xóa vĩnh viễn"});
             this.comboBox1.Location = new System.Drawing.Point(1, 27);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 31);
+            this.comboBox1.Size = new System.Drawing.Size(230, 31);
             this.comboBox1.TabIndex = 0;
             // 
             // usertb
@@ -503,7 +503,7 @@ namespace Server
             this.noFocusButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.noFocusButton1.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.noFocusButton1.ForeColor = System.Drawing.Color.White;
-            this.noFocusButton1.Location = new System.Drawing.Point(197, 27);
+            this.noFocusButton1.Location = new System.Drawing.Point(237, 27);
             this.noFocusButton1.Name = "noFocusButton1";
             this.noFocusButton1.Size = new System.Drawing.Size(110, 32);
             this.noFocusButton1.TabIndex = 1;
