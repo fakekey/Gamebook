@@ -68,8 +68,8 @@ namespace Server
             this.lbTenKH = new System.Windows.Forms.Label();
             this.lbNgayMua = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lbTinhTrang = new System.Windows.Forms.Label();
+            this.lbTongTien = new System.Windows.Forms.Label();
             this.pnDisplay = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
@@ -578,8 +578,8 @@ namespace Server
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 22F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 12F));
-            this.tableLayoutPanel1.Controls.Add(this.label4, 5, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label9, 4, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbTinhTrang, 5, 0);
+            this.tableLayoutPanel1.Controls.Add(this.lbTongTien, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbNgayMua, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.lbTenKH, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.checkBox1, 0, 0);
@@ -592,35 +592,35 @@ namespace Server
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1151, 57);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
-            // label4
+            // lbTinhTrang
             // 
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label4.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(1019, 0);
-            this.label4.Name = "label4";
-            this.label4.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.label4.Size = new System.Drawing.Size(129, 57);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Đã xử lý";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbTinhTrang.BackColor = System.Drawing.Color.Transparent;
+            this.lbTinhTrang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbTinhTrang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTinhTrang.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lbTinhTrang.ForeColor = System.Drawing.Color.White;
+            this.lbTinhTrang.Location = new System.Drawing.Point(1019, 0);
+            this.lbTinhTrang.Name = "lbTinhTrang";
+            this.lbTinhTrang.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
+            this.lbTinhTrang.Size = new System.Drawing.Size(129, 57);
+            this.lbTinhTrang.TabIndex = 3;
+            this.lbTinhTrang.Text = "Đã xử lý";
+            this.lbTinhTrang.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label9
+            // lbTongTien
             // 
-            this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(777, 0);
-            this.label9.Name = "label9";
-            this.label9.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
-            this.label9.Size = new System.Drawing.Size(236, 57);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Tổng tiền";
-            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lbTongTien.BackColor = System.Drawing.Color.Transparent;
+            this.lbTongTien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbTongTien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lbTongTien.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lbTongTien.ForeColor = System.Drawing.Color.White;
+            this.lbTongTien.Location = new System.Drawing.Point(777, 0);
+            this.lbTongTien.Name = "lbTongTien";
+            this.lbTongTien.Padding = new System.Windows.Forms.Padding(34, 0, 0, 0);
+            this.lbTongTien.Size = new System.Drawing.Size(236, 57);
+            this.lbTongTien.TabIndex = 2;
+            this.lbTongTien.Text = "Tổng tiền";
+            this.lbTongTien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pnDisplay
             // 
@@ -743,7 +743,7 @@ namespace Server
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Timer timer4;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbTongTien;
+        private System.Windows.Forms.Label lbTinhTrang;
     }
 }

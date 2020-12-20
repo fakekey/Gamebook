@@ -58,18 +58,32 @@ namespace Server
             //}
         }
         private int nBills;
-        public int leftPaddingEmail
+        public int leftPaddingTenKH
         {
             set
             {
                 lbTenKH.Padding = new Padding(value, 0, 0, 0);
             }
         }
-        public int leftPaddingVaiTro
+        public int leftPaddingNgayMua
         {
             set
             {
                 lbNgayMua.Padding = new Padding(value, 0, 0, 0);
+            }
+        }
+        public int leftPaddingTien
+        {
+            set
+            {
+                lbTongTien.Padding = new Padding(value, 0, 0, 0);
+            }
+        }
+        public int leftPaddingTinhTrang
+        {
+            set
+            {
+                lbTinhTrang.Padding = new Padding(value, 0, 0, 0);
             }
         }
         struct Bill
@@ -90,8 +104,17 @@ namespace Server
         };
         Bill[] dsAll = new Bill[] {
             new Bill("1", "Lã Quốc Nghị", "20/12/2020", "56$", "1"),
-            new Bill("2", "Cao Hoài Nam", "20/12/2020", "46$", "2"),
-            new Bill("3", "Nguyễn Đức Long", "19/12/2020", "16$", "3")
+            new Bill("2", "Cao Hoài Nam", "20/12/2020", "56$", "2"),
+            new Bill("3", "Nguyễn Đức Long", "19/12/2020", "56$", "3"),
+            new Bill("1", "Lã Quốc Nghị", "20/12/2020", "56$", "1"),
+            new Bill("2", "Cao Hoài Nam", "20/12/2020", "56$", "2"),
+            new Bill("3", "Nguyễn Đức Long", "19/12/2020", "56$", "3"),
+             new Bill("1", "Lã Quốc Nghị", "20/12/2020", "56$", "1"),
+            new Bill("2", "Cao Hoài Nam", "20/12/2020", "56$", "2"),
+            new Bill("3", "Nguyễn Đức Long", "19/12/2020", "56$", "3"),
+            new Bill("2", "Cao Hoài Nam", "20/12/2020", "56$", "2"),
+            new Bill("2", "Cao Hoài Nam", "20/12/2020", "56$", "2"),
+            new Bill("2", "Cao Hoài Nam", "20/12/2020", "56$", "2"),
         };
         private void addToPanel(Bill[] ds)
         {
@@ -256,7 +279,7 @@ namespace Server
             clear();
             freeMemory();
             nBills = dsAll.Length;
-            //ReSize();
+            ReSize();
             pnDisplay.Controls.Clear();
             if (nBills != 0)
             {
@@ -416,42 +439,70 @@ namespace Server
             tbUserDontHandle = false;
         }
 
-        //public void ReSize()
-        //{
-        //    if (this.Width == 1231)
-        //    {
-        //        loadOverlay.Bounds = new Rectangle(0, 251, 1231, 447);
-        //        loadOverlay.Padding = new Padding(565, 132, 565, 200);
-        //    }
-        //    else
-        //    {
-        //        loadOverlay.Bounds = new Rectangle(0, 251, 1783, 759);
-        //        loadOverlay.Padding = new Padding(760, 200, 760, 300);
-        //    }
-        //    if (nBills < 7)
-        //    {
-        //        leftPaddingEmail = 44;
-        //        leftPaddingVaiTro = 34;
-        //    }
-        //    if (nBills >= 7 && nBills < 11)
-        //    {
-        //        if (this.Width == 1231)
-        //        {
-        //            leftPaddingEmail = 38;
-        //            leftPaddingVaiTro = 22;
-        //        }
-        //        else
-        //        {
-        //            leftPaddingEmail = 44;
-        //            leftPaddingVaiTro = 34;
-        //        }
-        //    }
-        //    else if (nBills >= 11)
-        //    {
-        //        leftPaddingEmail = 38;
-        //        leftPaddingVaiTro = 22;
-        //    }
-        //}
+        public void ReSize()
+        {
+            if (this.Width == 1231)
+            {
+                loadOverlay.Bounds = new Rectangle(0, 251, 1231, 447);
+                loadOverlay.Padding = new Padding(565, 132, 565, 200);
+            }
+            else
+            {
+                loadOverlay.Bounds = new Rectangle(0, 251, 1783, 759);
+                loadOverlay.Padding = new Padding(760, 200, 760, 300);
+            }
+            if (nBills < 7)
+            {
+                if (this.Width == 1231)
+                {
+                    leftPaddingTenKH = 44;
+                    leftPaddingNgayMua = 34;
+                    leftPaddingTien = 34;
+                    leftPaddingTinhTrang = 34;
+                }
+                else
+                {
+                    leftPaddingTenKH = 43;
+                    leftPaddingNgayMua = 33;
+                    leftPaddingTien = 32;
+                    leftPaddingTinhTrang = 32;
+                }
+            }
+            if (nBills >= 7 && nBills < 11)
+            {
+                if (this.Width == 1231)
+                {
+                    leftPaddingTenKH = 42;
+                    leftPaddingNgayMua = 27;
+                    leftPaddingTien = 22;
+                    leftPaddingTinhTrang = 18;
+                }
+                else
+                {
+                    leftPaddingTenKH = 43;
+                    leftPaddingNgayMua = 33;
+                    leftPaddingTien = 32;
+                    leftPaddingTinhTrang = 32;
+                }
+            }
+            else if (nBills >= 11)
+            {
+                if (this.Width == 1231)
+                {
+                    leftPaddingTenKH = 42;
+                    leftPaddingNgayMua = 27;
+                    leftPaddingTien = 22;
+                    leftPaddingTinhTrang = 18;
+                }
+                else
+                {
+                    leftPaddingTenKH = 42;
+                    leftPaddingNgayMua = 27;
+                    leftPaddingTien = 22;
+                    leftPaddingTinhTrang = 18;
+                }
+            }
+        }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {

@@ -68,6 +68,7 @@ namespace Server
                 panel2.BackgroundImage = Properties.Resources.icons8_cancel_24;
                 panel2.Dock = DockStyle.Left;
                 panelRadius1.Refresh();
+                btnXoa.Text = "Hủy";
             }
             else if (lTinhTrang == "2")
             {
@@ -75,6 +76,7 @@ namespace Server
                 panel2.BackgroundImage = Properties.Resources.icons8_ok_24;
                 panel2.Dock = DockStyle.Right;
                 panelRadius1.Refresh();
+                btnXoa.Text = "Hủy";
             }
             else
             {
@@ -83,6 +85,7 @@ namespace Server
                 panel2.Dock = DockStyle.Fill;
                 panelRadius1.Refresh();
                 panelRadius1.Enabled = false;
+                btnXoa.Text = "Xóa vĩnh viễn";
             }
         }
     }
