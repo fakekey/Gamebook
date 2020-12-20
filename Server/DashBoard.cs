@@ -349,6 +349,8 @@ namespace Server
             userIsActive = productIsActive = homeIsActive = false;
             billIsActive = true;
             clear();
+            fBills = new Bills();
+            AddForm(fBills);
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -485,6 +487,7 @@ namespace Server
         }
         private Users fUsers;
         private Products fProducts;
+        private Bills fBills;
 
         private Form f1;
         private Form f2;

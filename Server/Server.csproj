@@ -151,6 +151,12 @@
     <Compile Include="Resources\Controls\lbUsers.Designer.cs">
       <DependentUpon>lbUsers.cs</DependentUpon>
     </Compile>
+    <Compile Include="Resources\Controls\ListBill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\ListBill.Designer.cs">
+      <DependentUpon>ListBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Controls\ListMember.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -180,6 +186,12 @@
     </Compile>
     <Compile Include="Resources\Models\Product.cs" />
     <Compile Include="Resources\Models\User.cs" />
+    <Compile Include="Bills.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bills.Designer.cs">
+      <DependentUpon>Bills.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +242,9 @@
     <EmbeddedResource Include="Resources\Controls\lbUsers.resx">
       <DependentUpon>lbUsers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\ListBill.resx">
+      <DependentUpon>ListBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Resources\Controls\ListMember.resx">
       <DependentUpon>ListMember.cs</DependentUpon>
     </EmbeddedResource>
@@ -238,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Controls\MsbYesNo.resx">
       <DependentUpon>MsbYesNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bills.resx">
+      <DependentUpon>Bills.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Users.resx">
       <DependentUpon>Users.cs</DependentUpon>
@@ -260,10 +278,12 @@
     <Content Include="Resources\img\default.jpg" />
     <Content Include="Resources\img\forgotPass.png" />
     <Content Include="Resources\img\icon.ico" />
+    <Content Include="Resources\img\icons8-cancel-24.png" />
     <Content Include="Resources\img\icons8-image-100.png" />
     <Content Include="Resources\img\icons8-maximize-button-18.png" />
     <Content Include="Resources\img\icons8-minimize-window-18.png" />
     <Content Include="Resources\img\icons8-multiply-20.png" />
+    <Content Include="Resources\img\icons8-ok-24.png" />
     <Content Include="Resources\img\icons8_back_arrow_32px.png" />
     <Content Include="Resources\img\icons8_back_to_48px.png" />
     <Content Include="Resources\img\icons8_bill_48px.png" />
