@@ -37,13 +37,6 @@ namespace Server
                 label5.Text = $"({dsdaxuly.Count.ToString()})";
                 label7.Text = $"({dsdahuy.Count.ToString()})";
                 label2.Text = $"({dsAll.Count.ToString()})";
-            } 
-            else
-            {
-                btnTatCa.Enabled = false;
-                btnChua.Enabled = false;
-                btnHuy.Enabled = false;
-                btnDa.Enabled = false;
             }
         }
 
@@ -676,14 +669,6 @@ namespace Server
                 label7.Text = $"({dsdahuy.Count.ToString()})";
                 label2.Text = $"({dsAll.Count.ToString()})";
             }
-            else
-            {
-                btnTatCa.Enabled = false;
-                btnChua.Enabled = false;
-                btnHuy.Enabled = false;
-                btnDa.Enabled = false;
-            }
-
             freeMemory();
             pnDisplay.Controls.Clear();
             if (tatca == true)

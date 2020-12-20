@@ -32,30 +32,15 @@ namespace Server
             dsnv = Controller.getNhanVien();
             dsuser = Controller.getKhach();
             dsadmin = Controller.getAdmin();
-            if (dsnv != null && dsuser != null && dsadmin != null)
-            {
-                label3.Text = $"({dsadmin.Count.ToString()})";
-                label5.Text = $"({dsnv.Count.ToString()})";
-                label7.Text = $"({dsuser.Count.ToString()})";
-                dsAll.AddRange(dsadmin);
-                dsAll.AddRange(dsnv);
-                dsAll.AddRange(dsuser);
-            }
-            else
-            {
-                btnAdmin.Enabled = false;
-                btnKhach.Enabled = false;
-                btnNhanVien.Enabled = false;
 
-            }
-            if (dsAll != null)
-            {
-                label2.Text = "(" + dsAll.Count.ToString() + ")";
-            }
-            else
-            {
-                btnTatCa.Enabled = false;
-            }
+            label3.Text = $"({dsadmin.Count.ToString()})";
+            label5.Text = $"({dsnv.Count.ToString()})";
+            label7.Text = $"({dsuser.Count.ToString()})";
+            dsAll.AddRange(dsadmin);
+            dsAll.AddRange(dsnv);
+            dsAll.AddRange(dsuser);
+            label2.Text = $"({dsAll.Count.ToString()})";
+
         }
         private int nUsers;
         public int leftPaddingEmail
@@ -611,30 +596,13 @@ namespace Server
             dsnv = Controller.getNhanVien();
             dsuser = Controller.getKhach();
             dsadmin = Controller.getAdmin();
-            if (dsnv != null && dsuser != null && dsadmin != null)
-            {
-                label3.Text = "(" + dsadmin.Count.ToString() + ")";
-                label5.Text = "(" + dsnv.Count.ToString() + ")";
-                label7.Text = "(" + dsuser.Count.ToString() + ")";
-                dsAll.AddRange(dsadmin);
-                dsAll.AddRange(dsnv);
-                dsAll.AddRange(dsuser);
-            }
-            else
-            {
-                btnAdmin.Enabled = false;
-                btnKhach.Enabled = false;
-                btnNhanVien.Enabled = false;
-
-            }
-            if (dsAll != null)
-            {
-                label2.Text = "(" + dsAll.Count.ToString() + ")";
-            }
-            else
-            {
-                btnTatCa.Enabled = false;
-            }
+            label3.Text = $"({dsadmin.Count.ToString()})";
+            label5.Text = $"({dsnv.Count.ToString()})";
+            label7.Text = $"({dsuser.Count.ToString()})";
+            dsAll.AddRange(dsadmin);
+            dsAll.AddRange(dsnv);
+            dsAll.AddRange(dsuser);
+            label2.Text = $"({dsAll.Count.ToString()})";
             freeMemory();
             pnDisplay.Controls.Clear();
             if (tatca == true)
