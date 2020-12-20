@@ -17,11 +17,6 @@ namespace Server
             tbPass.Size = new Size(371, 22);
         }
 
-        private void panel1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void VeBorder(Control control, PaintEventArgs e, int r, int g, int b)
         {
             ControlPaint.DrawBorder(e.Graphics, control.ClientRectangle, Color.FromArgb(r, g, b), ButtonBorderStyle.Solid);
@@ -183,6 +178,15 @@ namespace Server
                     PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
                     VeBorder(mail, eventArgs, 77, 222, 19);
                     tbMailDontHandle = true;
+                    namelb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs1 = new PaintEventArgs(name.CreateGraphics(), name.ClientRectangle);
+                    VeBorder(name, eventArgs1, 77, 222, 19);
+                    tbNameDontHandle = true;
+                    passlb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs2 = new PaintEventArgs(pass.CreateGraphics(), pass.ClientRectangle);
+                    VeBorder(pass, eventArgs2, 77, 222, 19);
+                    tbPassDontHandle = true;
+                    vaitrolb.ForeColor = Color.FromArgb(77, 222, 19);
                 }
                 else if (rs == -99)
                 {
@@ -242,6 +246,7 @@ namespace Server
                 mailb.ForeColor = Color.FromArgb(138, 142, 147);
                 namelb.ForeColor = Color.FromArgb(138, 142, 147);
                 passlb.ForeColor = Color.FromArgb(138, 142, 147);
+                vaitrolb.ForeColor = Color.FromArgb(138, 142, 147);
                 timerIsAlive = true;
                 timer1.Enabled = true;
                 timer1_Tick(null, null);
@@ -251,6 +256,11 @@ namespace Server
                 tbName.Enabled = false;
                 tbPass.Enabled = false;
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

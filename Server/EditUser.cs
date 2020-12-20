@@ -109,11 +109,6 @@ namespace Server
             tbName.Select();
         }
 
-        private void panel1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         int j = 0;
         string[] dotArr = new string[] { "•", "• •", "• • •" };
         bool timerIsAlive = false;
@@ -185,6 +180,11 @@ namespace Server
                 timer3.Enabled = true;
                 tbName.Enabled = false;
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

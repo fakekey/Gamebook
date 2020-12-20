@@ -48,10 +48,10 @@
             this.lbMail = new System.Windows.Forms.Label();
             this.mailb = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.btnClose = new Server.NoFocusButton();
             this.panelRadius1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -67,9 +67,9 @@
             // panelRadius1
             // 
             this.panelRadius1.BackColor = System.Drawing.Color.Transparent;
+            this.panelRadius1.Controls.Add(this.btnClose);
             this.panelRadius1.Controls.Add(this.panel2);
             this.panelRadius1.Controls.Add(this.label1);
-            this.panelRadius1.Controls.Add(this.panel1);
             this.panelRadius1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRadius1.Location = new System.Drawing.Point(0, 0);
             this.panelRadius1.Name = "panelRadius1";
@@ -289,18 +289,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Chỉnh sửa thông tin";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::Server.Properties.Resources.icons8_back_arrow_32px;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(32, 32);
-            this.panel1.TabIndex = 1;
-            this.panel1.Click += new System.EventHandler(this.panel1_Click);
-            // 
             // timer1
             // 
             this.timer1.Interval = 300;
@@ -316,12 +304,30 @@
             this.timer3.Interval = 950;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Server.Properties.Resources.icons8_back_arrow_32px;
+            this.btnClose.Location = new System.Drawing.Point(12, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.TabIndex = 14;
+            this.btnClose.TabStop = false;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // EditUser
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(481, 385);
             this.Controls.Add(this.panelRadius1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -369,9 +375,9 @@
         private System.Windows.Forms.Label lbMail;
         private System.Windows.Forms.Label mailb;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
+        private NoFocusButton btnClose;
     }
 }

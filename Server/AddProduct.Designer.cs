@@ -32,10 +32,11 @@ namespace Server
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddProduct));
             this.panelRadius1 = new Server.PanelRadius();
+            this.btnClose = new Server.NoFocusButton();
             this.btnLogin = new Server.NoFocusButton();
             this.panelRadius2 = new Server.PanelRadius();
             this.btnAdd = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.anhlb = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.ngay = new System.Windows.Forms.Panel();
@@ -55,7 +56,7 @@ namespace Server
             this.gialb = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.nsxlb = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.phienban = new System.Windows.Forms.Panel();
             this.tbphienban = new System.Windows.Forms.TextBox();
@@ -69,11 +70,9 @@ namespace Server
             this.lbtieude = new System.Windows.Forms.Label();
             this.tieudelb = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.lbImg = new System.Windows.Forms.Label();
             this.panelRadius1.SuspendLayout();
             this.panelRadius2.SuspendLayout();
             this.panel7.SuspendLayout();
@@ -94,10 +93,10 @@ namespace Server
             // panelRadius1
             // 
             this.panelRadius1.BackColor = System.Drawing.Color.Transparent;
-            this.panelRadius1.Controls.Add(this.lbImg);
+            this.panelRadius1.Controls.Add(this.btnClose);
             this.panelRadius1.Controls.Add(this.btnLogin);
             this.panelRadius1.Controls.Add(this.panelRadius2);
-            this.panelRadius1.Controls.Add(this.label5);
+            this.panelRadius1.Controls.Add(this.anhlb);
             this.panelRadius1.Controls.Add(this.panel9);
             this.panelRadius1.Controls.Add(this.panel7);
             this.panelRadius1.Controls.Add(this.panel3);
@@ -105,7 +104,6 @@ namespace Server
             this.panelRadius1.Controls.Add(this.panel2);
             this.panelRadius1.Controls.Add(this.panel5);
             this.panelRadius1.Controls.Add(this.label1);
-            this.panelRadius1.Controls.Add(this.panel1);
             this.panelRadius1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRadius1.Location = new System.Drawing.Point(0, 0);
             this.panelRadius1.Name = "panelRadius1";
@@ -116,6 +114,22 @@ namespace Server
             this.panelRadius1.Size = new System.Drawing.Size(649, 587);
             this.panelRadius1.TabIndex = 1;
             this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Server.Properties.Resources.icons8_back_arrow_32px;
+            this.btnClose.Location = new System.Drawing.Point(12, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.TabIndex = 13;
+            this.btnClose.TabStop = false;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // btnLogin
             // 
@@ -163,24 +177,24 @@ namespace Server
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // label5
+            // anhlb
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
-            this.label5.Location = new System.Drawing.Point(30, 114);
-            this.label5.Margin = new System.Windows.Forms.Padding(0);
-            this.label5.Name = "label5";
-            this.label5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.label5.Size = new System.Drawing.Size(98, 23);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "ẢNH SẢN PHẨM";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.anhlb.AutoSize = true;
+            this.anhlb.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.anhlb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
+            this.anhlb.Location = new System.Drawing.Point(30, 114);
+            this.anhlb.Margin = new System.Windows.Forms.Padding(0);
+            this.anhlb.Name = "anhlb";
+            this.anhlb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.anhlb.Size = new System.Drawing.Size(98, 23);
+            this.anhlb.TabIndex = 10;
+            this.anhlb.Text = "ẢNH SẢN PHẨM";
+            this.anhlb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
-            this.panel9.BackgroundImage = global::Server.Properties.Resources.icons8_image_100;
+            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
             this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panel9.Location = new System.Drawing.Point(33, 137);
             this.panel9.Name = "panel9";
@@ -396,7 +410,7 @@ namespace Server
             // panel6
             // 
             this.panel6.Controls.Add(this.comboBox1);
-            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.nsxlb);
             this.panel6.Location = new System.Drawing.Point(247, 500);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(366, 61);
@@ -416,18 +430,18 @@ namespace Server
             this.comboBox1.TabIndex = 1;
             this.comboBox1.TabStop = false;
             // 
-            // label3
+            // nsxlb
             // 
-            this.label3.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
-            this.label3.Location = new System.Drawing.Point(0, 3);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.label3.Size = new System.Drawing.Size(108, 39);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "NHÀ SẢN XUẤT";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.nsxlb.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.nsxlb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
+            this.nsxlb.Location = new System.Drawing.Point(0, 3);
+            this.nsxlb.Margin = new System.Windows.Forms.Padding(0);
+            this.nsxlb.Name = "nsxlb";
+            this.nsxlb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.nsxlb.Size = new System.Drawing.Size(108, 39);
+            this.nsxlb.TabIndex = 0;
+            this.nsxlb.Text = "NHÀ SẢN XUẤT";
+            this.nsxlb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panel2
             // 
@@ -584,18 +598,6 @@ namespace Server
             this.label1.TabIndex = 3;
             this.label1.Text = "Thêm sản phẩm mới";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::Server.Properties.Resources.icons8_back_arrow_32px;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(32, 32);
-            this.panel1.TabIndex = 1;
-            this.panel1.Click += new System.EventHandler(this.panel1_Click);
-            // 
             // timer1
             // 
             this.timer1.Interval = 300;
@@ -611,25 +613,13 @@ namespace Server
             this.timer3.Interval = 950;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // lbImg
-            // 
-            this.lbImg.AutoSize = true;
-            this.lbImg.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lbImg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbImg.Location = new System.Drawing.Point(30, 91);
-            this.lbImg.Margin = new System.Windows.Forms.Padding(0);
-            this.lbImg.Name = "lbImg";
-            this.lbImg.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lbImg.Size = new System.Drawing.Size(0, 23);
-            this.lbImg.TabIndex = 13;
-            this.lbImg.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
             // AddProduct
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(649, 587);
             this.Controls.Add(this.panelRadius1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -667,8 +657,6 @@ namespace Server
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private PanelRadius panelRadius1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
@@ -685,7 +673,7 @@ namespace Server
         private System.Windows.Forms.Label pblb;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label nsxlb;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel gia;
         private System.Windows.Forms.TextBox tbgia;
@@ -702,7 +690,7 @@ namespace Server
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label anhlb;
         private PanelRadius panelRadius2;
         private System.Windows.Forms.Label btnAdd;
         private NoFocusButton btnLogin;
@@ -710,6 +698,6 @@ namespace Server
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Label lbngay;
-        private System.Windows.Forms.Label lbImg;
+        private NoFocusButton btnClose;
     }
 }

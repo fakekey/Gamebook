@@ -17,8 +17,11 @@ namespace Server
         {
             InitializeComponent();
             this.id = id;
-            panel9.BackgroundImage = Image.FromFile(iconPath);
-            fileName = iconPath;
+            if (iconPath != string.Empty)
+            {
+                panel9.BackgroundImage = Image.FromFile(iconPath);
+                fileName = iconPath;
+            }
             tbtieude.Text = tieude;
             tbphienban.Text = phienban;
             tbgia.Text = gia.Remove(gia.IndexOf('$'));
@@ -27,11 +30,6 @@ namespace Server
             tbthang.Text = dt.Month.ToString();
             tbnam.Text = dt.Year.ToString();
             comboBox1.SelectedIndex = (nsx == "AAA") ? 0 : 1;
-        }
-
-        private void panel1_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
         private void VeBorder(Control control, PaintEventArgs e, int r, int g, int b)
         {
@@ -392,23 +390,48 @@ namespace Server
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if (tbtieude.Text != string.Empty && tbphienban.Text != string.Empty && fileName != null)
+            if (tbtieude.Text != string.Empty && tbphienban.Text != string.Empty)
             {
-                string ngay = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
+                string ngayt = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
                 string cate = comboBox1.SelectedItem.ToString();
-                float gia = float.Parse(tbgia.Text);
-                string path = fileName.Replace(@"\", @"\\");
-                Product sp = new Product(this.id, tbtieude.Text, cate, tbphienban.Text, gia, ngay, path);
+                float giaca = float.Parse(tbgia.Text);
+                string path = "";
+                if (fileName != null)
+                {
+                    path = fileName.Replace(@"\", @"\\");
+                }
+                Product sp = new Product(this.id, tbtieude.Text, cate, tbphienban.Text, giaca, ngayt, path);
                 int rs = Controller.SuaSP(sp);
                 if (rs == 1)
                 {
-                    lbImg.Text = "Sửa thành công !";
-                    lbImg.ForeColor = Color.FromArgb(77, 222, 19);
+                    lbtieude.ForeColor = Color.FromArgb(77, 222, 19);
+                    lbtieude.Text = "- Cập nhật thành công";
+                    tieudelb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
+                    VeBorder(tieude, eventArgs, 77, 222, 19);
+                    tbTieuDeDontHandle = true;
+                    pblb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs1 = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
+                    VeBorder(phienban, eventArgs1, 77, 222, 19);
+                    tbPhienBanDontHandle = true;
+                    gialb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs2 = new PaintEventArgs(gia.CreateGraphics(), gia.ClientRectangle);
+                    VeBorder(gia, eventArgs2, 77, 222, 19);
+                    tbGiaDontHandle = true;
+                    ngaylb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs3 = new PaintEventArgs(ngay.CreateGraphics(), ngay.ClientRectangle);
+                    VeBorder(ngay, eventArgs3, 77, 222, 19);
+                    tbNgayDontHandle = true;
+                    anhlb.ForeColor = Color.FromArgb(77, 222, 19);
+                    nsxlb.ForeColor = Color.FromArgb(77, 222, 19);
                 }
                 else
                 {
-                    lbImg.Text = "Lỗi hệ thống, sửa thất bại !";
-                    lbImg.ForeColor = Color.FromArgb(240, 71, 71);
+                    lbtieude.Text = "- Cập nhật thất bại";
+                    tieudelb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
+                    VeBorder(tieude, eventArgs, 240, 71, 71);
+                    tbTieuDeDontHandle = true;
                 }
 
             }
@@ -429,12 +452,6 @@ namespace Server
                     PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
                     VeBorder(phienban, eventArgs, 240, 71, 71);
                     tbPhienBanDontHandle = true;
-                }
-                if (fileName == null)
-                {
-                    lbImg.Text = "- Mục này không thể bỏ trống";
-                    lbImg.ForeColor = Color.FromArgb(240, 71, 71);
-                    label5.ForeColor = Color.FromArgb(240, 71, 71);
                 }
             }
             timer3.Stop();
@@ -466,6 +483,8 @@ namespace Server
                 pblb.ForeColor = Color.FromArgb(138, 142, 147);
                 gialb.ForeColor = Color.FromArgb(138, 142, 147);
                 ngaylb.ForeColor = Color.FromArgb(138, 142, 147);
+                anhlb.ForeColor = Color.FromArgb(138, 142, 147);
+                nsxlb.ForeColor = Color.FromArgb(138, 142, 147);
                 timerIsAlive = true;
                 timer1.Enabled = true;
                 timer1_Tick(null, null);
@@ -478,6 +497,11 @@ namespace Server
                 tbthang.Enabled = false;
                 tbnam.Enabled = false;
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

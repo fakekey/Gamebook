@@ -71,7 +71,7 @@ namespace Server
                 f.Opacity = 0.85f;
                 f.Location = this.Parent.Parent.Parent.Parent.Location;
                 f.Size = this.Parent.Parent.Parent.Parent.Size;
-                using (EditProduct fOverlay = new EditProduct(lID,lIconPath, lTieuDe, lPhienBan, lGia, lNgay, lNsx))
+                using (EditProduct fOverlay = new EditProduct(lID, lIconPath, lTieuDe, lPhienBan, lGia, lNgay, lNsx))
                 {
                     f.Show();
                     fOverlay.Owner = f;
@@ -84,7 +84,14 @@ namespace Server
 
         private void ListProduct_Load(object sender, EventArgs e)
         {
-            panel5.BackgroundImage = Image.FromFile(lIconPath);
+            if (lIconPath != string.Empty)
+            {
+                panel5.BackgroundImage = Image.FromFile(lIconPath);
+            }
+            else
+            {
+                panel5.BackgroundImage = Properties.Resources._default;
+            }
         }
     }
 }

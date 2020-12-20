@@ -21,11 +21,6 @@ namespace Server
             tbthang.Text = DateTime.Now.Month.ToString();
             tbnam.Text = DateTime.Now.Year.ToString();
         }
-
-        private void panel1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
         private void VeBorder(Control control, PaintEventArgs e, int r, int g, int b)
         {
             ControlPaint.DrawBorder(e.Graphics, control.ClientRectangle, Color.FromArgb(r, g, b), ButtonBorderStyle.Solid);
@@ -385,23 +380,48 @@ namespace Server
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if(tbtieude.Text != string.Empty && tbphienban.Text != string.Empty && fileName != null)
-            {   
-                string ngay = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
+            if (tbtieude.Text != string.Empty && tbphienban.Text != string.Empty)
+            {
+                string ngayt = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
                 string cate = comboBox1.SelectedItem.ToString();
-                float gia = float.Parse(tbgia.Text);
-                string path = fileName.Replace(@"\", @"\\");
-                Product sp = new Product(0, tbtieude.Text, cate, tbphienban.Text, gia, ngay, path);
-                int rs = Controller.ThemSP(sp);
-                if(rs == 1)
+                float giaca = float.Parse(tbgia.Text);
+                string path = "";
+                if (fileName != null)
                 {
-                    lbImg.Text = "Thêm thành công !";
-                    lbImg.ForeColor = Color.FromArgb(77, 222, 19);
+                    path = fileName.Replace(@"\", @"\\");
+                }
+                Product sp = new Product(0, tbtieude.Text, cate, tbphienban.Text, giaca, ngayt, path);
+                int rs = Controller.ThemSP(sp);
+                if (rs == 1)
+                {
+                    lbtieude.ForeColor = Color.FromArgb(77, 222, 19);
+                    lbtieude.Text = "- Thêm thành công";
+                    tieudelb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
+                    VeBorder(tieude, eventArgs, 77, 222, 19);
+                    tbTieuDeDontHandle = true;
+                    pblb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs1 = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
+                    VeBorder(phienban, eventArgs1, 77, 222, 19);
+                    tbPhienBanDontHandle = true;
+                    gialb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs2 = new PaintEventArgs(gia.CreateGraphics(), gia.ClientRectangle);
+                    VeBorder(gia, eventArgs2, 77, 222, 19);
+                    tbGiaDontHandle = true;
+                    ngaylb.ForeColor = Color.FromArgb(77, 222, 19);
+                    PaintEventArgs eventArgs3 = new PaintEventArgs(ngay.CreateGraphics(), ngay.ClientRectangle);
+                    VeBorder(ngay, eventArgs3, 77, 222, 19);
+                    tbNgayDontHandle = true;
+                    anhlb.ForeColor = Color.FromArgb(77, 222, 19);
+                    nsxlb.ForeColor = Color.FromArgb(77, 222, 19);
                 }
                 else
                 {
-                    lbImg.Text = "Lỗi hệ thống, thêm thất bại !";
-                    lbImg.ForeColor = Color.FromArgb(240, 71, 71);
+                    lbtieude.Text = "- Thêm thất bại";
+                    tieudelb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
+                    VeBorder(tieude, eventArgs, 240, 71, 71);
+                    tbTieuDeDontHandle = true;
                 }
 
             }
@@ -422,12 +442,6 @@ namespace Server
                     PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
                     VeBorder(phienban, eventArgs, 240, 71, 71);
                     tbPhienBanDontHandle = true;
-                }
-                if (fileName == null)
-                {
-                    lbImg.Text = "- Mục này không thể bỏ trống";
-                    lbImg.ForeColor = Color.FromArgb(240, 71, 71);
-                    label5.ForeColor = Color.FromArgb(240, 71, 71);
                 }
             }
             timer3.Stop();
@@ -455,13 +469,13 @@ namespace Server
                 lbphienban.Text = "";
                 lbgia.Text = "";
                 lbngay.Text = "";
-                lbImg.Text = "";
                 lbtieude.ForeColor = Color.FromArgb(240, 71, 71);
                 tieudelb.ForeColor = Color.FromArgb(138, 142, 147);
                 pblb.ForeColor = Color.FromArgb(138, 142, 147);
                 gialb.ForeColor = Color.FromArgb(138, 142, 147);
                 ngaylb.ForeColor = Color.FromArgb(138, 142, 147);
-                label5.ForeColor = Color.FromArgb(138, 142, 147);
+                anhlb.ForeColor = Color.FromArgb(138, 142, 147);
+                nsxlb.ForeColor = Color.FromArgb(138, 142, 147);
                 timerIsAlive = true;
                 timer1.Enabled = true;
                 timer1_Tick(null, null);
@@ -474,6 +488,11 @@ namespace Server
                 tbthang.Enabled = false;
                 tbnam.Enabled = false;
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

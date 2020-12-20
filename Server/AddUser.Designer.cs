@@ -35,6 +35,7 @@ namespace Server
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.panelRadius1 = new Server.PanelRadius();
+            this.btnClose = new Server.NoFocusButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -42,7 +43,7 @@ namespace Server
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.vaitrolb = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pass = new System.Windows.Forms.Panel();
             this.tbPass = new System.Windows.Forms.TextBox();
@@ -62,7 +63,6 @@ namespace Server
             this.lbMail = new System.Windows.Forms.Label();
             this.mailb = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panelRadius1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -98,9 +98,9 @@ namespace Server
             // panelRadius1
             // 
             this.panelRadius1.BackColor = System.Drawing.Color.Transparent;
+            this.panelRadius1.Controls.Add(this.btnClose);
             this.panelRadius1.Controls.Add(this.panel2);
             this.panelRadius1.Controls.Add(this.label1);
-            this.panelRadius1.Controls.Add(this.panel1);
             this.panelRadius1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelRadius1.Location = new System.Drawing.Point(0, 0);
             this.panelRadius1.Name = "panelRadius1";
@@ -111,6 +111,23 @@ namespace Server
             this.panelRadius1.Size = new System.Drawing.Size(481, 562);
             this.panelRadius1.TabIndex = 0;
             this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
+            // 
+            // btnClose
+            // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Image = global::Server.Properties.Resources.icons8_back_arrow_32px;
+            this.btnClose.Location = new System.Drawing.Point(12, 12);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(32, 32);
+            this.btnClose.TabIndex = 14;
+            this.btnClose.TabStop = false;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // panel2
             // 
@@ -177,7 +194,7 @@ namespace Server
             // panel11
             // 
             this.panel11.Controls.Add(this.comboBox1);
-            this.panel11.Controls.Add(this.label3);
+            this.panel11.Controls.Add(this.vaitrolb);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
@@ -199,19 +216,19 @@ namespace Server
             this.comboBox1.TabIndex = 1;
             this.comboBox1.TabStop = false;
             // 
-            // label3
+            // vaitrolb
             // 
-            this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label3.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
-            this.label3.Location = new System.Drawing.Point(0, 0);
-            this.label3.Margin = new System.Windows.Forms.Padding(0);
-            this.label3.Name = "label3";
-            this.label3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.label3.Size = new System.Drawing.Size(415, 39);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "VAI TRÒ";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.vaitrolb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vaitrolb.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.vaitrolb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
+            this.vaitrolb.Location = new System.Drawing.Point(0, 0);
+            this.vaitrolb.Margin = new System.Windows.Forms.Padding(0);
+            this.vaitrolb.Name = "vaitrolb";
+            this.vaitrolb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.vaitrolb.Size = new System.Drawing.Size(415, 39);
+            this.vaitrolb.TabIndex = 0;
+            this.vaitrolb.Text = "VAI TRÒ";
+            this.vaitrolb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panel8
             // 
@@ -444,24 +461,13 @@ namespace Server
             this.label1.TabIndex = 2;
             this.label1.Text = "Thêm thành viên mới";
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = global::Server.Properties.Resources.icons8_back_arrow_32px;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(32, 32);
-            this.panel1.TabIndex = 1;
-            this.panel1.Click += new System.EventHandler(this.panel1_Click);
-            // 
             // AddUser
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(481, 562);
             this.Controls.Add(this.panelRadius1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -499,7 +505,6 @@ namespace Server
         #endregion
 
         private PanelRadius panelRadius1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -523,12 +528,13 @@ namespace Server
         private System.Windows.Forms.Label namelb;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label vaitrolb;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel panel9;
         private NoFocusButton btnLogin;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
+        private NoFocusButton btnClose;
     }
 }

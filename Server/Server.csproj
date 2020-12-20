@@ -257,6 +257,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Resources\img\default.jpg" />
     <Content Include="Resources\img\forgotPass.png" />
     <Content Include="Resources\img\icon.ico" />
     <Content Include="Resources\img\icons8-image-100.png" />
