@@ -280,7 +280,6 @@
     <Content Include="Resources\img\forgotPass.png" />
     <Content Include="Resources\img\icon.ico" />
     <Content Include="Resources\img\icons8-cancel-24.png" />
-    <Content Include="Resources\img\icons8-image-100.png" />
     <Content Include="Resources\img\icons8-maximize-button-18.png" />
     <Content Include="Resources\img\icons8-minimize-window-18.png" />
     <Content Include="Resources\img\icons8-multiply-20.png" />
