@@ -34,27 +34,12 @@ namespace Server
             dsAll = Controller.getSpAll();
             dsAAA = Controller.getSpAAA();
             dsIndie = Controller.getSpIndie();
-            if (dsIndie != null && dsAAA != null)
-            {
-                label3.Text = $"({dsAAA.Count.ToString()})";
-                label5.Text = $"({dsIndie.Count.ToString()})";
-                dsAll.AddRange(dsAAA);
-                dsAll.AddRange(dsIndie);
-            }
-            else
-            {
-                btnAAA.Enabled = false;
-                btnIndie.Enabled = false;
+            label3.Text = $"({dsAAA.Count.ToString()})";
+            label5.Text = $"({dsIndie.Count.ToString()})";
+            dsAll.AddRange(dsAAA);
+            dsAll.AddRange(dsIndie);
+            label2.Text = "(" + dsAll.Count.ToString() + ")";
 
-            }
-            if (dsAll != null)
-            {
-                label2.Text = "(" + dsAll.Count.ToString() + ")";
-            }
-            else
-            {
-                btnTatCa.Enabled = false;
-            }
         }
         private void addToPanel(List<Product> ds)
         {
@@ -423,27 +408,11 @@ namespace Server
             freeMemory();
             dsAAA = Controller.getSpAAA();
             dsIndie = Controller.getSpIndie();
-            if (dsAAA != null && dsIndie != null)
-            {
-                label3.Text = "(" + dsAAA.Count.ToString() + ")";
-                label5.Text = "(" + dsIndie.Count.ToString() + ")";
-                dsAll.AddRange(dsAAA);
-                dsAll.AddRange(dsIndie);
-            }
-            else
-            {
-                btnAAA.Enabled = false;
-                btnIndie.Enabled = false;
-
-            }
-            if (dsAll != null)
-            {
-                label2.Text = "(" + dsAll.Count.ToString() + ")";
-            }
-            else
-            {
-                btnTatCa.Enabled = false;
-            }
+            label3.Text = $"({dsAAA.Count.ToString()})";
+            label5.Text = $"({dsIndie.Count.ToString()})";
+            dsAll.AddRange(dsAAA);
+            dsAll.AddRange(dsIndie);
+            label2.Text = "(" + dsAll.Count.ToString() + ")";
             freeMemory();
             pnDisplay.Controls.Clear();
             if (tatca == true)
