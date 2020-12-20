@@ -43,7 +43,7 @@ namespace Server
         private void setdata()
         {
             dsAll = Controller.GetBill();
-            if(dschuaxuly == null)
+            if (dschuaxuly == null)
             {
                 dsdaxuly = new List<Bill>();
                 dsdahuy = new List<Bill>();
@@ -628,7 +628,7 @@ namespace Server
             {
                 if (item.isChecked == true)
                 {
-                    if(item.lTinhTrang == "3")
+                    if (item.lTinhTrang == "3")
                     {
                         Controller.XoaBill(item.lMaHD);
                     }
@@ -662,13 +662,10 @@ namespace Server
         {
             dschuaxuly = dsdahuy = dsdaxuly = null;
             setdata();
-            if (dsAll.Count != 0)
-            {
-                label3.Text = $"({dschuaxuly.Count.ToString()})";
-                label5.Text = $"({dsdaxuly.Count.ToString()})";
-                label7.Text = $"({dsdahuy.Count.ToString()})";
-                label2.Text = $"({dsAll.Count.ToString()})";
-            }
+            label3.Text = $"({dschuaxuly.Count.ToString()})";
+            label5.Text = $"({dsdaxuly.Count.ToString()})";
+            label7.Text = $"({dsdahuy.Count.ToString()})";
+            label2.Text = $"({dsAll.Count.ToString()})";
             freeMemory();
             pnDisplay.Controls.Clear();
             if (tatca == true)
