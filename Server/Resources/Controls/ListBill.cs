@@ -58,6 +58,9 @@ namespace Server
                 panelRadius1.Refresh();
                 lTinhTrang = "1";
             }
+            CheckClass.count = 1;
+            Controller.SuaBill(this.lMaHD, this.lTinhTrang);
+            this.Dispose();
         }
 
         private void ListBill_Load(object sender, EventArgs e)
@@ -88,5 +91,28 @@ namespace Server
                 btnXoa.Text = "Xóa vĩnh viễn";
             }
         }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {   
+            if(btnXoa.Text == "Hủy")
+            {
+                if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn hủy hóa đơn này không? Nếu hủy sẽ không thể xử lý được hóa đơn này!", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    CheckClass.count = 1;
+                    Controller.HuyBill(this.lMaHD);
+                    this.Dispose();
+                }
+            }
+            else
+            {
+                if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa vĩnh viễn hóa đơn này không? ", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    CheckClass.count = 1;
+                    Controller.XoaBill(this.lMaHD);
+                    this.Dispose();
+                }
+            }
+        }
+
     }
 }

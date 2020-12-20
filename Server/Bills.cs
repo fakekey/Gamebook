@@ -50,9 +50,15 @@ namespace Server
         private void setdata()
         {
             dsAll = Controller.GetBill();
-            foreach(Bill item in dsAll)
+            if(dschuaxuly == null)
             {
-                if(item._matinhtrang == "1")
+                dsdaxuly = new List<Bill>();
+                dsdahuy = new List<Bill>();
+                dschuaxuly = new List<Bill>();
+            }
+            foreach (Bill item in dsAll)
+            {
+                if (item._matinhtrang == "1")
                 {
                     dschuaxuly.Add(item);
                 }
@@ -81,27 +87,21 @@ namespace Server
                 lbNgayMua.Padding = new Padding(value, 0, 0, 0);
             }
         }
-        struct Bill
+        public int leftPaddingTien
         {
-            public string _mahd;
-            public string _tenkhach;
-            public string _ngaymua;
-            public string _tongtien;
-            public string _matinhtrang;
-            public Bill(string mahd, string tenkhach, string ngaymua, string tongtien, string matinhtrang)
+            set
             {
-                _mahd = mahd;
-                _tenkhach = tenkhach;
-                _ngaymua = ngaymua;
-                _tongtien = tongtien;
-                _matinhtrang = matinhtrang;
+                lbTongTien.Padding = new Padding(value, 0, 0, 0);
             }
-        };
-        Bill[] dsAll = new Bill[] {
-            new Bill("1", "Lã Quốc Nghị", "20/12/2020", "56$", "1"),
-            new Bill("2", "Cao Hoài Nam", "20/12/2020", "46$", "2"),
-            new Bill("3", "Nguyễn Đức Long", "19/12/2020", "16$", "3")
-        };*/
+        }
+        public int leftPaddingTinhTrang
+        {
+            set
+            {
+                lbTinhTrang.Padding = new Padding(value, 0, 0, 0);
+            }
+        }
+
         private void addToPanel(List<Bill> ds)
         {
             for (int i = 0; i < ds.Count; i++)
@@ -257,7 +257,7 @@ namespace Server
             timer4.Enabled = true;
             timer1_Tick(null, null);
             pnDisplay.Visible = false;
-            //reload();
+            reload();
             chuaxuly = daxuly = dahuy = false;
             tatca = true;
             btnTatCa.ForeColor = Color.White;
@@ -265,7 +265,7 @@ namespace Server
             clear();
             freeMemory();
             nBills = dsAll.Count;
-            //ReSize();
+            ReSize();
             pnDisplay.Controls.Clear();
             if (nBills != 0)
             {
@@ -279,80 +279,80 @@ namespace Server
 
         private void btnChua_Click(object sender, EventArgs e)
         {
-            //CheckClass.count = 0;
-            //timer1.Enabled = true;
-            //timer2.Enabled = true;
-            //timer4.Enabled = true;
-            //timer1_Tick(null, null);
-            //pnDisplay.Visible = false;
-            //reload();
-            //tatca = daxuly = dahuy = false;
-            //chuaxuly = true;
-            //clear();
-            //nBills = dschuaxuly.Count;
-            //ReSize();
-            //freeMemory();
-            //pnDisplay.Controls.Clear();
-            //if (nBills != 0)
-            //{
-            //    addToPanel(dschuaxuly);
-            //}
-            //else
-            //{
-            //    NoData();
-            //}
+            CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
+            reload();
+            tatca = daxuly = dahuy = false;
+            chuaxuly = true;
+            clear();
+            nBills = dschuaxuly.Count;
+            ReSize();
+            freeMemory();
+            pnDisplay.Controls.Clear();
+            if (nBills != 0)
+            {
+                addToPanel(dschuaxuly);
+            }
+            else
+            {
+                NoData();
+            }
         }
 
         private void btnDa_Click(object sender, EventArgs e)
         {
-            //CheckClass.count = 0;
-            //timer1.Enabled = true;
-            //timer2.Enabled = true;
-            //timer4.Enabled = true;
-            //timer1_Tick(null, null);
-            //pnDisplay.Visible = false;
-            //reload();
-            //chuaxuly = tatca = dahuy = false;
-            //daxuly = true;
-            //clear();
-            //nBills = dsdaxuly.Count;
-            //ReSize();
-            //freeMemory();
-            //pnDisplay.Controls.Clear();
-            //if (nBills != 0)
-            //{
-            //    addToPanel(dsdaxuly);
-            //}
-            //else
-            //{
-            //    NoData();
-            //}
+            CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
+            reload();
+            chuaxuly = tatca = dahuy = false;
+            daxuly = true;
+            clear();
+            nBills = dsdaxuly.Count;
+            ReSize();
+            freeMemory();
+            pnDisplay.Controls.Clear();
+            if (nBills != 0)
+            {
+                addToPanel(dsdaxuly);
+            }
+            else
+            {
+                NoData();
+            }
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
-            //CheckClass.count = 0;
-            //timer1.Enabled = true;
-            //timer2.Enabled = true;
-            //timer4.Enabled = true;
-            //timer1_Tick(null, null);
-            //pnDisplay.Visible = false;
-            //reload();
-            //chuaxuly = daxuly = tatca = false;
-            //dahuy = true;
-            //clear();
-            //nBills = dsdahuy.Count;
-            //ReSize();
-            //freeMemory();
-            //pnDisplay.Controls.Clear();
-            //if (nBills != 0)
-            //{
-            //    addToPanel(dsdahuy);
-            //}
-            //else
-            //{
-            //    NoData();
-            //}
+            CheckClass.count = 0;
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
+            reload();
+            chuaxuly = daxuly = tatca = false;
+            dahuy = true;
+            clear();
+            nBills = dsdahuy.Count;
+            ReSize();
+            freeMemory();
+            pnDisplay.Controls.Clear();
+            if (nBills != 0)
+            {
+                addToPanel(dsdahuy);
+            }
+            else
+            {
+                NoData();
+            }
         }
         private void clear()
         {
@@ -492,78 +492,78 @@ namespace Server
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            //if (dsAll.Count != 0)
-            //{
-            //    foreach (ListMember item in pnDisplay.Controls)
-            //    {
-            //        item.isChecked = checkBox1.Checked ? true : false;
-            //    }
-            //}
+            if (dsAll.Count != 0)
+            {
+                foreach (ListBill item in pnDisplay.Controls)
+                {
+                    item.isChecked = checkBox1.Checked ? true : false;
+                }
+            }
         }
 
         private void noFocusButton3_Click(object sender, EventArgs e)
         {
-            //string txtFind = textBox1.Text;
-            //textBox1.Text = "";
-            //List<User> dstk = new List<User>(0);
-            //if (tatca == true)
-            //{
-            //    foreach (User item in dsAll)
-            //    {
-            //        if (item.Hoten.Contains(txtFind) || item.Email.Contains(txtFind) || item.Quyen.Contains(txtFind))
-            //        {
-            //            dstk.Add(item);
-            //        }
-            //    }
-            //}
-            //if (chuaxuly == true)
-            //{
-            //    foreach (User item in dschuaxuly)
-            //    {
-            //        if (item.Hoten.Contains(txtFind) || item.Email.Contains(txtFind) || item.Quyen.Contains(txtFind))
-            //        {
-            //            dstk.Add(item);
-            //        }
-            //    }
-            //}
-            //if (daxuly == true)
-            //{
-            //    foreach (User item in dsdaxuly)
-            //    {
-            //        if (item.Hoten.Contains(txtFind) || item.Email.Contains(txtFind) || item.Quyen.Contains(txtFind))
-            //        {
-            //            dstk.Add(item);
-            //        }
-            //    }
-            //}
-            //if (dahuy == true)
-            //{
-            //    foreach (User item in dsdahuy)
-            //    {
-            //        if (item.Hoten.Contains(txtFind) || item.Email.Contains(txtFind) || item.Quyen.Contains(txtFind))
-            //        {
-            //            dstk.Add(item);
-            //        }
-            //    }
-            //}
-            //clear();
-            //nBills = dstk.Count;
-            //ReSize();
-            //timer1.Enabled = true;
-            //timer2.Enabled = true;
-            //timer4.Enabled = true;
-            //timer1_Tick(null, null);
-            //pnDisplay.Visible = false;
-            //freeMemory();
-            //pnDisplay.Controls.Clear();
-            //if (nBills != 0)
-            //{
-            //    addToPanel(dstk);
-            //}
-            //else
-            //{
-            //    NoData();
-            //}
+            string txtFind = textBox1.Text;
+            textBox1.Text = "";
+            List<Bill> dstk = new List<Bill>(0);
+            if (tatca == true)
+            {
+                foreach (Bill item in dsAll)
+                {
+                    if (item._mahd.Contains(txtFind) || item._ngaymua.Contains(txtFind) || item._tenkhach.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if (chuaxuly == true)
+            {
+                foreach (Bill item in dschuaxuly)
+                {
+                    if (item._mahd.Contains(txtFind) || item._ngaymua.Contains(txtFind) || item._tenkhach.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if (daxuly == true)
+            {
+                foreach (Bill item in dsdaxuly)
+                {
+                    if (item._mahd.Contains(txtFind) || item._ngaymua.Contains(txtFind) || item._tenkhach.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            if (dahuy == true)
+            {
+                foreach (Bill item in dsdahuy)
+                {
+                    if (item._mahd.Contains(txtFind) || item._ngaymua.Contains(txtFind) || item._tenkhach.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+            }
+            clear();
+            nBills = dstk.Count;
+            ReSize();
+            timer1.Enabled = true;
+            timer2.Enabled = true;
+            timer4.Enabled = true;
+            timer1_Tick(null, null);
+            pnDisplay.Visible = false;
+            freeMemory();
+            pnDisplay.Controls.Clear();
+            if (nBills != 0)
+            {
+                addToPanel(dstk);
+            }
+            else
+            {
+                NoData();
+            }
         }
         private Panel loadOverlay;
         private PictureBox icoOverlay;
@@ -593,52 +593,48 @@ namespace Server
 
         private void noFocusButton1_Click(object sender, EventArgs e)
         {
-            //if (comboBox1.SelectedItem.ToString() == "Xóa")
-            //{
-            //    if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không?", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //    {
-            //        if (tatca == true)
-            //        {
-            //            if (dsAll.Count != 0)
-            //            {
-            //                Xoa();
-            //            }
-            //        }
-            //        else if (chuaxuly == true)
-            //        {
-            //            if (dschuaxuly.Count != 0)
-            //            {
-            //                Xoa();
-            //            }
-            //        }
-            //        else if (daxuly == true)
-            //        {
-            //            if (dsdaxuly.Count != 0)
-            //            {
-            //                Xoa();
-            //            }
-            //        }
-            //        else if (dahuy == true)
-            //        {
-            //            if (dsdahuy.Count != 0)
-            //            {
-            //                Xoa();
-            //            }
-            //        }
-            //    }
-            //}
+            if (comboBox1.SelectedItem.ToString() == "Xóa")
+            {
+                if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (tatca == true)
+                    {
+                        if (dsAll.Count != 0)
+                        {
+                            Xoa();
+                        }
+                    }
+                    else if (chuaxuly == true)
+                    {
+                        if (dschuaxuly.Count != 0)
+                        {
+                            Xoa();
+                        }
+                    }
+                    else if (daxuly == true)
+                    {
+                        if (dsdaxuly.Count != 0)
+                        {
+                            Xoa();
+                        }
+                    }
+                    else if (dahuy == true)
+                    {
+                        if (dsdahuy.Count != 0)
+                        {
+                            Xoa();
+                        }
+                    }
+                }
+            }
         }
         private void Xoa()
         {
-            foreach (ListMember item in pnDisplay.Controls)
+            foreach (ListBill item in pnDisplay.Controls)
             {
-                if (item.isChecked == true && item.lVaiTro == "Nhân Viên")
+                if (item.isChecked == true && item.lTinhTrang == "3")
                 {
-                    Controller.XoaNV(item.lEmail);
-                }
-                if (item.isChecked == true && item.lVaiTro == "Khách Hàng")
-                {
-                    Controller.XoaKhach(item.lEmail);
+                    Controller.XoaBill(item.lMaHD);
                 }
             }
             pnDisplay.Visible = false;
@@ -662,61 +658,49 @@ namespace Server
         }
         private void reload()
         {
-            //dschuaxuly = dsdahuy = dsdaxuly = null;
-            //dsAll.Clear();
-            //dsdaxuly = Controller.getNhanVien();
-            //dsdahuy = Controller.getKhach();
-            //dschuaxuly = Controller.getAdmin();
-            //if (dsdaxuly != null && dsdahuy != null && dschuaxuly != null)
-            //{
-            //    label3.Text = "(" + dschuaxuly.Count.ToString() + ")";
-            //    label5.Text = "(" + dsdaxuly.Count.ToString() + ")";
-            //    label7.Text = "(" + dsdahuy.Count.ToString() + ")";
-            //    dsAll.AddRange(dschuaxuly);
-            //    dsAll.AddRange(dsdaxuly);
-            //    dsAll.AddRange(dsdahuy);
-            //}
-            //else
-            //{
-            //    btnChua.Enabled = false;
-            //    btnHuy.Enabled = false;
-            //    btnDa.Enabled = false;
+            dschuaxuly = dsdahuy = dsdaxuly = null;
+            setdata();
+            if (dsAll.Count != 0)
+            {
+                label3.Text = $"({dschuaxuly.Count.ToString()})";
+                label5.Text = $"({dsdaxuly.Count.ToString()})";
+                label7.Text = $"({dsdahuy.Count.ToString()})";
+                label2.Text = $"({dsAll.Count.ToString()})";
+            }
+            else
+            {
+                btnTatCa.Enabled = false;
+                btnChua.Enabled = false;
+                btnHuy.Enabled = false;
+                btnDa.Enabled = false;
+            }
 
-            //}
-            //if (dsAll != null)
-            //{
-            //    label2.Text = "(" + dsAll.Count.ToString() + ")";
-            //}
-            //else
-            //{
-            //    btnTatCa.Enabled = false;
-            //}
-            //freeMemory();
-            //pnDisplay.Controls.Clear();
-            //if (tatca == true)
-            //{
-            //    nBills = dsAll.Count;
-            //    ReSize();
-            //    addToPanel(dsAll);
-            //}
-            //if (chuaxuly == true)
-            //{
-            //    nBills = dschuaxuly.Count;
-            //    ReSize();
-            //    addToPanel(dschuaxuly);
-            //}
-            //if (daxuly == true)
-            //{
-            //    nBills = dsdaxuly.Count;
-            //    ReSize();
-            //    addToPanel(dsdaxuly);
-            //}
-            //if (dahuy == true)
-            //{
-            //    nBills = dsdahuy.Count;
-            //    ReSize();
-            //    addToPanel(dsdahuy);
-            //}
+            freeMemory();
+            pnDisplay.Controls.Clear();
+            if (tatca == true)
+            {
+                nBills = dsAll.Count;
+                ReSize();
+                addToPanel(dsAll);
+            }
+            if (chuaxuly == true)
+            {
+                nBills = dschuaxuly.Count;
+                ReSize();
+                addToPanel(dschuaxuly);
+            }
+            if (daxuly == true)
+            {
+                nBills = dsdaxuly.Count;
+                ReSize();
+                addToPanel(dsdaxuly);
+            }
+            if (dahuy == true)
+            {
+                nBills = dsdahuy.Count;
+                ReSize();
+                addToPanel(dsdahuy);
+            }
         }
         private void pnDisplay_ControlRemoved(object sender, ControlEventArgs e)
         {

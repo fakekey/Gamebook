@@ -523,6 +523,33 @@ namespace Server
                 return ds;
             }
         }
+        
+        public static void HuyBill(string id)
+        {
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand($"UPDATE `gamebookdata`.`hoa don` SET `ID_tinhtrang` = 3 WHERE `MAHD` = '{id}'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public static void XoaBill(string id)
+        {
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand($" DELETE from `gamebookdata`.`hoa don` WHERE `MAHD` = '{id}'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        public static void SuaBill(string id , string tinhtrang)
+        {
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand($"UPDATE `gamebookdata`.`hoa don` SET `ID_tinhtrang` = '{tinhtrang}' WHERE `MAHD` = '{id}'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
 
         public static void InDanhSachSP(List<Product> ds)
         {
