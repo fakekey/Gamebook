@@ -270,21 +270,21 @@ namespace Server
                 }
                 if (quyen == "Khách Hàng")
                 {
-                        con.Open();
-                        cmd = new MySqlCommand("INSERT INTO account(`Email`,`Password`,`ID_quyen`) VALUES ( @email, @pass,'3')", con);
-                        cmd.Parameters.Add(new MySqlParameter("@pass", WinAPI.CreateMD5(pass)));
-                        cmd.Parameters.Add(new MySqlParameter("@email", email));
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        con.Open();
-                        cmd = new MySqlCommand("INSERT INTO `khach hang`(`Email`, `Họ Tên`) VALUES (@email,@name);", con);
-                        cmd.Parameters.Add(new MySqlParameter("@name", hoten));
-                        cmd.Parameters.Add(new MySqlParameter("@email", email));
-                        cmd.ExecuteNonQuery();
-                        con.Close();
-                        return 1;
+                    con.Open();
+                    cmd = new MySqlCommand("INSERT INTO account(`Email`,`Password`,`ID_quyen`) VALUES ( @email, @pass,'3')", con);
+                    cmd.Parameters.Add(new MySqlParameter("@pass", pass));
+                    cmd.Parameters.Add(new MySqlParameter("@email", email));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    con.Open();
+                    cmd = new MySqlCommand("INSERT INTO `khach hang`(`Email`, `Họ Tên`) VALUES (@email,@name);", con);
+                    cmd.Parameters.Add(new MySqlParameter("@name", hoten));
+                    cmd.Parameters.Add(new MySqlParameter("@email", email));
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    return 1;
                 }
-                if(quyen == "Nhân Viên")
+                if (quyen == "Nhân Viên")
                 {
                     con.Open();
                     cmd = new MySqlCommand("INSERT INTO account(`Email`,`Password`,`ID_quyen`) VALUES ( @email, @pass,'2')", con);
@@ -293,7 +293,7 @@ namespace Server
                     cmd.ExecuteNonQuery();
                     con.Close();
                 }
-                if(quyen == "Admin")
+                if (quyen == "Admin")
                 {
                     con.Open();
                     cmd = new MySqlCommand("INSERT INTO account(`Email`,`Password`,`ID_quyen`) VALUES ( @email, @pass,'1')", con);
@@ -316,19 +316,19 @@ namespace Server
                 return -99;
             }
         }
-        public static int SuaNV(string email, string hoten , string quyen)
+        public static int SuaNV(string email, string hoten, string quyen)
         {
             // case 1: thanh cong
             // case -99: loi 
             try
             {
-                if(quyen == "Khách Hàng")
+                if (quyen == "Khách Hàng")
                 {
 
                     MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
                     con.Open();
                     MySqlCommand cmd = new MySqlCommand("UPDATE `khach hang` SET `khach hang`.`Họ Tên` = @hoten WHERE `khach hang`.Email = @email", con);
-                    cmd.Parameters.Add(new MySqlParameter("@hoten", hoten ));
+                    cmd.Parameters.Add(new MySqlParameter("@hoten", hoten));
                     cmd.Parameters.Add(new MySqlParameter("@email", email));
                     cmd.ExecuteNonQuery();
                     con.Close();
@@ -345,7 +345,7 @@ namespace Server
                     con.Close();
                     return 1;
                 }
-                
+
             }
             catch
             {
@@ -461,7 +461,7 @@ namespace Server
         }
 
         public static int ThemSP(Product sp)
-        {   
+        {
             // return 1: thanh cong
             //return -99: loi
             try
@@ -523,7 +523,7 @@ namespace Server
                 return ds;
             }
         }
-        
+
         public static void HuyBill(string id)
         {
             MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
@@ -542,7 +542,7 @@ namespace Server
             con.Close();
         }
 
-        public static void SuaBill(string id , string tinhtrang)
+        public static void SuaBill(string id, string tinhtrang)
         {
             MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
             con.Open();

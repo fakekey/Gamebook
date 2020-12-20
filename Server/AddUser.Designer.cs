@@ -215,6 +215,7 @@ namespace Server
             this.comboBox1.Size = new System.Drawing.Size(122, 29);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.TabStop = false;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // vaitrolb
             // 
@@ -262,6 +263,7 @@ namespace Server
             this.tbPass.PasswordChar = '•';
             this.tbPass.Size = new System.Drawing.Size(0, 22);
             this.tbPass.TabIndex = 0;
+            this.tbPass.TextChanged += new System.EventHandler(this.tbPass_TextChanged);
             this.tbPass.Enter += new System.EventHandler(this.tbPass_Enter);
             this.tbPass.Leave += new System.EventHandler(this.tbPass_Leave);
             this.tbPass.MouseEnter += new System.EventHandler(this.tbPass_MouseEnter);
