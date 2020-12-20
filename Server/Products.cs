@@ -593,6 +593,7 @@ namespace Server
                     }
                 }
             }
+            comboBox1.SelectedIndex = 0;
         }
 
         private void Xoa()

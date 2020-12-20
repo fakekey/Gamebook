@@ -593,9 +593,9 @@ namespace Server
 
         private void noFocusButton1_Click(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() == "Xóa")
+            if (comboBox1.SelectedItem.ToString() == "Hủy hoặc Xóa vĩnh viễn")
             {
-                if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn xóa không?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn hủy / xóa không?", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (tatca == true)
                     {
@@ -626,15 +626,24 @@ namespace Server
                         }
                     }
                 }
+                comboBox1.SelectedIndex = 0;
             }
         }
         private void Xoa()
         {
             foreach (ListBill item in pnDisplay.Controls)
             {
-                if (item.isChecked == true && item.lTinhTrang == "3")
+                if (item.isChecked == true)
                 {
-                    Controller.XoaBill(item.lMaHD);
+                    if(item.lTinhTrang == "3")
+                    {
+                        Controller.XoaBill(item.lMaHD);
+                    }
+                    else
+                    {
+                        Controller.HuyBill(item.lMaHD);
+                    }
+
                 }
             }
             pnDisplay.Visible = false;
