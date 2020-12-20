@@ -13,7 +13,7 @@ namespace Server
     public partial class EditProduct : Form
     {
         private int id;
-        public EditProduct(int id,string iconPath, string tieude, string phienban, string gia, string ngay, string nsx)
+        public EditProduct(int id, string iconPath, string tieude, string phienban, string gia, string ngay, string nsx)
         {
             InitializeComponent();
             this.id = id;
@@ -22,9 +22,10 @@ namespace Server
             tbtieude.Text = tieude;
             tbphienban.Text = phienban;
             tbgia.Text = gia.Remove(gia.IndexOf('$'));
-            tbngay.Text = DateTime.Now.Day.ToString();
-            tbthang.Text = DateTime.Now.Month.ToString();
-            tbnam.Text = DateTime.Now.Year.ToString();
+            DateTime dt = DateTime.ParseExact(ngay, "dd/MM/yyyy", null);
+            tbngay.Text = dt.Day.ToString();
+            tbthang.Text = dt.Month.ToString();
+            tbnam.Text = dt.Year.ToString();
             comboBox1.SelectedIndex = (nsx == "AAA") ? 0 : 1;
         }
 
