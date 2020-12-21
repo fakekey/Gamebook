@@ -128,6 +128,7 @@ namespace Server
             this.btnSua.TabIndex = 3;
             this.btnSua.Text = "Chi tiết";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             this.btnSua.MouseEnter += new System.EventHandler(this.btnSua_MouseEnter);
             this.btnSua.MouseLeave += new System.EventHandler(this.btnSua_MouseLeave);
             // 

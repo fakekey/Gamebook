@@ -114,5 +114,26 @@ namespace Server
             }
         }
 
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            using (Form f = new Form())
+            {
+                f.StartPosition = FormStartPosition.Manual;
+                f.FormBorderStyle = FormBorderStyle.None;
+                f.ShowInTaskbar = false;
+                f.BackColor = Color.Black;
+                f.Opacity = 0.85f;
+                f.Location = this.Parent.Parent.Parent.Parent.Location;
+                f.Size = this.Parent.Parent.Parent.Parent.Size;
+                using (UpdateBills fOverlay = new UpdateBills(lMaHD, lTenKH, lNgayMua, lTien))
+                {
+                    f.Show();
+                    fOverlay.Owner = f;
+                    fOverlay.ShowDialog();
+                    CheckClass.count = 1;
+                    this.Dispose();
+                }
+            }
+        }
     }
 }

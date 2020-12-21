@@ -608,7 +608,7 @@ namespace Server
             con.Close();
         }
 
-        public static int ThemBill(string id_sp , string id_khach , string gia , string ngay)
+        public static int ThemBill(string id_sp, string id_khach, string gia, string ngay)
         {
             // 1: thanh cong
             // -99: loi hethong
@@ -620,7 +620,7 @@ namespace Server
                 cmd.ExecuteNonQuery();
                 con.Close();
                 con.Open();
-                cmd = new MySqlCommand("select MAHD from `hoa don` ", con);
+                cmd = new MySqlCommand("select * from `hoa don`", con);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 string mahd = "";
                 while (reader.Read())
