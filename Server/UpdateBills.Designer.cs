@@ -32,6 +32,7 @@ namespace Server
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UpdateBills));
             this.panelRadius1 = new Server.PanelRadius();
+            this.noFocusButton1 = new Server.NoFocusButton();
             this.pnDisplay = new System.Windows.Forms.Panel();
             this.btnClose = new Server.NoFocusButton();
             this.btnLogin = new Server.NoFocusButton();
@@ -85,6 +86,7 @@ namespace Server
             // panelRadius1
             // 
             this.panelRadius1.BackColor = System.Drawing.Color.Transparent;
+            this.panelRadius1.Controls.Add(this.noFocusButton1);
             this.panelRadius1.Controls.Add(this.pnDisplay);
             this.panelRadius1.Controls.Add(this.btnClose);
             this.panelRadius1.Controls.Add(this.btnLogin);
@@ -99,11 +101,29 @@ namespace Server
             this.panelRadius1.Padding = new System.Windows.Forms.Padding(33, 0, 33, 0);
             this.panelRadius1.Radius = 6;
             this.panelRadius1.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.panelRadius1.rSize = new System.Drawing.Size(432, 586);
-            this.panelRadius1.Size = new System.Drawing.Size(433, 587);
+            this.panelRadius1.rSize = new System.Drawing.Size(432, 637);
+            this.panelRadius1.Size = new System.Drawing.Size(433, 638);
             this.panelRadius1.TabIndex = 1;
             this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
             this.panelRadius1.Click += new System.EventHandler(this.panelRadius1_Click);
+            // 
+            // noFocusButton1
+            // 
+            this.noFocusButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(124)))), ((int)(((byte)(65)))));
+            this.noFocusButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.noFocusButton1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(124)))), ((int)(((byte)(65)))));
+            this.noFocusButton1.FlatAppearance.BorderSize = 0;
+            this.noFocusButton1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(12)))), ((int)(((byte)(46)))), ((int)(((byte)(27)))));
+            this.noFocusButton1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(92)))), ((int)(((byte)(55)))));
+            this.noFocusButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.noFocusButton1.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.noFocusButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
+            this.noFocusButton1.Location = new System.Drawing.Point(33, 557);
+            this.noFocusButton1.Name = "noFocusButton1";
+            this.noFocusButton1.Size = new System.Drawing.Size(366, 42);
+            this.noFocusButton1.TabIndex = 15;
+            this.noFocusButton1.Text = "Xuất Exel";
+            this.noFocusButton1.UseVisualStyleBackColor = false;
             // 
             // pnDisplay
             // 
@@ -538,7 +558,7 @@ namespace Server
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(433, 587);
+            this.ClientSize = new System.Drawing.Size(433, 638);
             this.Controls.Add(this.panelRadius1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -609,5 +629,6 @@ namespace Server
         private NoFocusButton btnClose;
         private System.Windows.Forms.Label lbtengame;
         private System.Windows.Forms.Panel pnDisplay;
+        private NoFocusButton noFocusButton1;
     }
 }
