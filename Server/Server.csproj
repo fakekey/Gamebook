@@ -139,6 +139,12 @@
     <Compile Include="Resources\Controls\BoxBorder.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Resources\Controls\chitietHD.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\chitietHD.Designer.cs">
+      <DependentUpon>chitietHD.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Controls\GameMember.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -262,6 +268,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResetPass.resx">
       <DependentUpon>ResetPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\chitietHD.resx">
+      <DependentUpon>chitietHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Controls\GameMember.resx">
       <DependentUpon>GameMember.cs</DependentUpon>
