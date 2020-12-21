@@ -399,7 +399,7 @@ namespace Server
             timer1.Stop();
             timer2.Stop();
             j = 0;
-            btnLogin.Text = "Thêm ngay";
+            btnLogin.Text = "Cập nhật";
             tbtenkh.Enabled = true;
             tbtengame.Enabled = true;
             tbgia.Enabled = false;
@@ -413,7 +413,7 @@ namespace Server
         {
             if (rs == 1)
             {
-                lbtenkh.Text = "- Thêm thành công";
+                lbtenkh.Text = "- Cập nhật thành công";
                 lbtenkh.ForeColor = Color.FromArgb(77, 222, 19);
                 tenkhlb.ForeColor = Color.FromArgb(77, 222, 19);
                 PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
@@ -436,7 +436,7 @@ namespace Server
             }
             else
             {
-                lbtenkh.Text = "- Thêm thất bại";
+                lbtenkh.Text = "- Cập nhật thất bại";
                 lbtenkh.ForeColor = Color.FromArgb(240, 71, 71);
                 tenkhlb.ForeColor = Color.FromArgb(240, 71, 71);
                 PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
@@ -503,7 +503,7 @@ namespace Server
                         string id_hd = MaHD;
                         string gia = tbgia.Text;
                         string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
-                        int rs = Controller.ThemBill(id_sp, makh, gia, date);
+                        int rs = Controller.CapNhatBill(id_hd, makh, id_sp, gia, date);
                         ShowKQ(rs);
                     }
                 }

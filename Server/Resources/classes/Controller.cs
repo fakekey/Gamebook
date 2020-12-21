@@ -631,12 +631,32 @@ namespace Server
 
         public static int CapNhatBill(string mahd, string makh, string id_sp , string gia, string date)
         {
-            return 0;
+            // 1: thanh cong
+            // -99: loi he thong
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand($"UPDATE `gamebookdata`.`hoa don` SET `MAKH` = '{makh}', `Ngay Mua` = '{date}', `Tong Tien` = '{gia}' WHERE `MAHD` = {mahd}", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                con.Open();
+                cmd = new MySqlCommand($"UPDATE `gamebookdata`.`chi tiet hoa don` SET `ID_sp` = '{id_sp}', `Don gia` = '{gia}' WHERE `MAHD` = {mahd}", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return 1;
+            }
+            catch
+            {
+                return -99;
+            }
+
+
         }
         public static int ThemBill(string id_sp, string id_khach, string gia, string ngay)
         {
             // 1: thanh cong
-            // -99: loi hethong
+            // -99: loi he thong
             try
             {
                 MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
