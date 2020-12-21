@@ -388,22 +388,33 @@ namespace Server
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if (tbtenkh.Text == string.Empty)
+            if(tbtenkh.Text != string.Empty && tbtengame.Text != string.Empty)
             {
-                lbtenkh.Text = "- Mục này không thể bỏ trống";
-                tenkhlb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
-                VeBorder(tenkh, eventArgs, 240, 71, 71);
-                tbTieuDeDontHandle = true;
+                string id_sp = ID_SanPham;
+                string makh = ID_Khach;
+                string gia = tbgia.Text;
+                string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
             }
-            if (tbtengame.Text == string.Empty)
+            else
             {
-                lbtengame.Text = "- Mục này không thể bỏ trống";
-                tengamelb.ForeColor = Color.FromArgb(240, 71, 71);
-                PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
-                VeBorder(tengame, eventArgs, 240, 71, 71);
-                tbPhienBanDontHandle = true;
+                if (tbtenkh.Text == string.Empty)
+                {
+                    lbtenkh.Text = "- Mục này không thể bỏ trống";
+                    tenkhlb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
+                    VeBorder(tenkh, eventArgs, 240, 71, 71);
+                    tbTieuDeDontHandle = true;
+                }
+                if (tbtengame.Text == string.Empty)
+                {
+                    lbtengame.Text = "- Mục này không thể bỏ trống";
+                    tengamelb.ForeColor = Color.FromArgb(240, 71, 71);
+                    PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
+                    VeBorder(tengame, eventArgs, 240, 71, 71);
+                    tbPhienBanDontHandle = true;
+                }
             }
+            
             timer3.Stop();
         }
 
