@@ -754,5 +754,10 @@ namespace Server
             ws.Range["A" + cell, "E" + cell].Font.Size = 14;
             ws.Range["E" + cell].Font.Bold = true;
         }
+
+        public static void XuatBill(string mahd , string makh,string tenkh , string ten_sp ,string gia, string ngaymua)
+        {
+            
+        }
     }
 }

@@ -124,6 +124,7 @@ namespace Server
             this.noFocusButton1.TabIndex = 15;
             this.noFocusButton1.Text = "Xuất Exel";
             this.noFocusButton1.UseVisualStyleBackColor = false;
+            this.noFocusButton1.Click += new System.EventHandler(this.noFocusButton1_Click);
             // 
             // pnDisplay
             // 

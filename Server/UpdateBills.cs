@@ -445,7 +445,7 @@ namespace Server
                 tbTieuDeDontHandle = true;
             }
         }
-
+        private string date;
         private void timer3_Tick(object sender, EventArgs e)
         {
             string id_sp = null;
@@ -458,7 +458,7 @@ namespace Server
                     makh = ID_Khach;
                     string id_hd = MaHD;
                     string gia = tbgia.Text;
-                    string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
+                    date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
                     int rs = Controller.CapNhatBill(id_hd,makh ,id_sp, gia, date);
                     ShowKQ(rs);
                 }
@@ -699,6 +699,12 @@ namespace Server
                     tbgia.Text = CheckClass.DonGiaNowSelected;
                 }
             }
+        }
+
+        private void noFocusButton1_Click(object sender, EventArgs e)
+        {
+            date = $"{tbngay.Text}/{tbthang.Text}/{tbnam.Text}";
+            Controller.XuatBill(MaHD, ID_Khach, tbtenkh.Text,tbtengame.Text, tbgia.Text, date);
         }
     }
 }
