@@ -106,7 +106,7 @@ namespace Server
             this.btnXoa.Location = new System.Drawing.Point(88, 0);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnXoa.Size = new System.Drawing.Size(128, 28);
+            this.btnXoa.Size = new System.Drawing.Size(94, 28);
             this.btnXoa.TabIndex = 4;
             this.btnXoa.Text = "Hủy";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -171,7 +171,7 @@ namespace Server
             // lbTien
             // 
             this.lbTien.BackColor = System.Drawing.Color.Transparent;
-            this.lbTien.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbTien.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbTien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbTien.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbTien.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));
@@ -185,7 +185,7 @@ namespace Server
             // lbNgayMua
             // 
             this.lbNgayMua.BackColor = System.Drawing.Color.Transparent;
-            this.lbNgayMua.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbNgayMua.Cursor = System.Windows.Forms.Cursors.Default;
             this.lbNgayMua.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lbNgayMua.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.lbNgayMua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(221)))), ((int)(((byte)(222)))));

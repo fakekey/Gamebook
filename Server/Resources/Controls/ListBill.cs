@@ -18,7 +18,7 @@ namespace Server
         public string lMaHD { get => lbMaHD.Text; set => lbMaHD.Text = value; }
         public string lTenKH { get => lbTenKH.Text; set => lbTenKH.Text = value; }
         public string lNgayMua { get => lbNgayMua.Text; set => lbNgayMua.Text = value; }
-        public string lTien { get => lbTien.Text; set => lbTien.Text = value; }
+        public string lTien { get => lbTien.Text; set => lbTien.Text = value + "$"; }
         public string lTinhTrang { get; set; }
         private void btnSua_MouseEnter(object sender, EventArgs e)
         {
@@ -93,8 +93,8 @@ namespace Server
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
-        {   
-            if(btnXoa.Text == "Hủy")
+        {
+            if (btnXoa.Text == "Hủy")
             {
                 if (Messagebox.Show("CẢNH BÁO", "Bạn có chắc muốn hủy hóa đơn này không? Nếu hủy sẽ không thể xử lý được hóa đơn này!", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {

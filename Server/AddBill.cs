@@ -384,7 +384,7 @@ namespace Server
             btnLogin.Text = "Thêm ngay";
             tbtenkh.Enabled = true;
             tbtengame.Enabled = true;
-            tbgia.Enabled = true;
+            tbgia.Enabled = false;
             tbngay.Enabled = true;
             tbthang.Enabled = true;
             tbnam.Enabled = true;
@@ -393,14 +393,24 @@ namespace Server
 
         private void ShowKQ(int rs)
         {
-            if(rs == 1)
+            if (rs == 1)
             {
-                lbtenkh.Text = "- Thành công !";
+                lbtenkh.Text = "- Thêm thành công";
                 lbtenkh.ForeColor = Color.FromArgb(77, 222, 19);
                 tenkhlb.ForeColor = Color.FromArgb(77, 222, 19);
                 PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
                 VeBorder(tenkh, eventArgs, 77, 222, 19);
                 tbTieuDeDontHandle = true;
+                lbtengame.ForeColor = Color.FromArgb(77, 222, 19);
+                tengamelb.ForeColor = Color.FromArgb(77, 222, 19);
+                PaintEventArgs eventArgs1 = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
+                VeBorder(tengame, eventArgs1, 77, 222, 19);
+                tbPhienBanDontHandle = true;
+                gialb.ForeColor = Color.FromArgb(77, 222, 19);
+                ngaylb.ForeColor = Color.FromArgb(77, 222, 19);
+                PaintEventArgs eventArgs3 = new PaintEventArgs(ngay.CreateGraphics(), ngay.ClientRectangle);
+                VeBorder(ngay, eventArgs3, 77, 222, 19);
+                tbNgayDontHandle = true;
                 tbtengame.Text = "";
                 tbtenkh.Text = "";
                 ID_Khach = null;
@@ -408,7 +418,7 @@ namespace Server
             }
             else
             {
-                lbtenkh.Text = "- Thêm thất bại !";
+                lbtenkh.Text = "- Thêm thất bại";
                 lbtenkh.ForeColor = Color.FromArgb(240, 71, 71);
                 tenkhlb.ForeColor = Color.FromArgb(240, 71, 71);
                 PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
@@ -423,7 +433,7 @@ namespace Server
             string makh = null;
             if (tbtenkh.Text != string.Empty && tbtengame.Text != string.Empty)
             {
-                if (ID_SanPham != null && ID_Khach !=null)
+                if (ID_SanPham != null && ID_Khach != null)
                 {
                     id_sp = ID_SanPham;
                     makh = ID_Khach;
@@ -449,9 +459,9 @@ namespace Server
                         }
                     }
 
-                    if(id_sp == null || makh == null)
-                    {   
-                        if(makh == null)
+                    if (id_sp == null || makh == null)
+                    {
+                        if (makh == null)
                         {
                             lbtenkh.Text = "- Không tồn tại khách hàng";
                             lbtenkh.ForeColor = Color.FromArgb(240, 71, 71);
@@ -460,7 +470,7 @@ namespace Server
                             VeBorder(tenkh, eventArgs, 240, 71, 71);
                             tbTieuDeDontHandle = true;
                         }
-                        if(id_sp == null)
+                        if (id_sp == null)
                         {
                             lbtengame.Text = "- Không tồn tại sản phẩm";
                             tengamelb.ForeColor = Color.FromArgb(240, 71, 71);
@@ -498,7 +508,7 @@ namespace Server
                     tbPhienBanDontHandle = true;
                 }
             }
-            
+
             timer3.Stop();
         }
 
@@ -516,6 +526,7 @@ namespace Server
                 lbgia.Text = "";
                 lbngay.Text = "";
                 lbtenkh.ForeColor = Color.FromArgb(240, 71, 71);
+                lbtengame.ForeColor = Color.FromArgb(240, 71, 71);
                 tenkhlb.ForeColor = Color.FromArgb(138, 142, 147);
                 tengamelb.ForeColor = Color.FromArgb(138, 142, 147);
                 gialb.ForeColor = Color.FromArgb(138, 142, 147);

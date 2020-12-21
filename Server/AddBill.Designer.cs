@@ -109,7 +109,7 @@ namespace Server
             // 
             this.pnDisplay.AutoScroll = true;
             this.pnDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
-            this.pnDisplay.Location = new System.Drawing.Point(371, 3);
+            this.pnDisplay.Location = new System.Drawing.Point(468, 7);
             this.pnDisplay.Name = "pnDisplay";
             this.pnDisplay.Padding = new System.Windows.Forms.Padding(4);
             this.pnDisplay.Size = new System.Drawing.Size(366, 127);
@@ -510,7 +510,7 @@ namespace Server
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(103, 38);
+            this.label1.Location = new System.Drawing.Point(113, 38);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(208, 30);
             this.label1.TabIndex = 3;
