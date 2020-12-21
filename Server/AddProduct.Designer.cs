@@ -114,10 +114,12 @@ namespace Server
             this.panelRadius1.Size = new System.Drawing.Size(649, 587);
             this.panelRadius1.TabIndex = 1;
             this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
+            this.panelRadius1.Click += new System.EventHandler(this.panelRadius1_Click);
             // 
             // btnClose
             // 
             this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;

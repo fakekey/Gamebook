@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBill.Designer.cs">
+      <DependentUpon>AddBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,18 @@
     <Compile Include="Resources\Controls\BoxBorder.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Resources\Controls\GameMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\GameMember.Designer.cs">
+      <DependentUpon>GameMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Controls\KhachMember.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Resources\Controls\KhachMember.Designer.cs">
+      <DependentUpon>KhachMember.cs</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Controls\lbBills.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +203,8 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Resources\Models\Bill.cs" />
+    <Compile Include="Resources\Models\Game.cs" />
+    <Compile Include="Resources\Models\Khach.cs" />
     <Compile Include="Resources\Models\Product.cs" />
     <Compile Include="Resources\Models\User.cs" />
     <Compile Include="Bills.cs">
@@ -199,6 +219,9 @@
     <Compile Include="Users.Designer.cs">
       <DependentUpon>Users.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddBill.resx">
+      <DependentUpon>AddBill.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddProduct.resx">
       <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +253,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResetPass.resx">
       <DependentUpon>ResetPass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\GameMember.resx">
+      <DependentUpon>GameMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Controls\KhachMember.resx">
+      <DependentUpon>KhachMember.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Controls\lbBills.resx">
       <DependentUpon>lbBills.cs</DependentUpon>

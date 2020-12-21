@@ -13,5 +13,10 @@ namespace Server
         public static int count;
         public static Point location;
         public static Size size;
+        public static string IDKhachNowSelected;
+        public static string TenKhachNowSelected;
+        public static string IDGameNowSelected;
+        public static string TenGameNowSelected;
+        public static string DonGiaNowSelected;
     }
 }

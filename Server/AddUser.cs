@@ -346,5 +346,10 @@ namespace Server
                 tempPass2 = tempPass;
             }
         }
+
+        private void panelRadius1_Click(object sender, EventArgs e)
+        {
+            label1.Select();
+        }
     }
 }

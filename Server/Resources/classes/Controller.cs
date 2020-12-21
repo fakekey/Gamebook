@@ -103,7 +103,60 @@ namespace Server
                 return -99;
             }
         }
-
+        public static List<Khach> getKhach2()
+        {
+            List<Khach> dsk = new List<Khach>();
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select * From `khach hang`";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string MaKH = reader.GetString(0);
+                    string Email = reader.GetString(1);
+                    string HoTen = reader.GetString(2);
+                    Khach nv = new Khach(MaKH, HoTen, Email);
+                    dsk.Add(nv);
+                }
+                return dsk;
+            }
+            catch
+            {
+                return dsk;
+            }
+        }
+        public static List<Game> getGames()
+        {
+            List<Game> dsk = new List<Game>();
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select * From `san pham`";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string IDGame = reader.GetString(0);
+                    string TenGame = reader.GetString(1);
+                    string DonGia = reader.GetString(4);
+                    Game nv = new Game(IDGame, TenGame, DonGia);
+                    dsk.Add(nv);
+                }
+                return dsk;
+            }
+            catch
+            {
+                return dsk;
+            }
+        }
         public static List<User> getNhanVien()
         {
             List<User> dsnv = new List<User>();

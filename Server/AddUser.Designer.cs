@@ -111,6 +111,7 @@ namespace Server
             this.panelRadius1.Size = new System.Drawing.Size(481, 562);
             this.panelRadius1.TabIndex = 0;
             this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
+            this.panelRadius1.Click += new System.EventHandler(this.panelRadius1_Click);
             // 
             // btnClose
             // 

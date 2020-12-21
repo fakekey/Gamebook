@@ -1,7 +1,7 @@
 ﻿
 namespace Server
 {
-    partial class EditProduct
+    partial class AddBill
     {
         /// <summary>
         /// Required designer variable.
@@ -30,14 +30,11 @@ namespace Server
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditProduct));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddBill));
             this.panelRadius1 = new Server.PanelRadius();
+            this.pnDisplay = new System.Windows.Forms.Panel();
             this.btnClose = new Server.NoFocusButton();
             this.btnLogin = new Server.NoFocusButton();
-            this.panelRadius2 = new Server.PanelRadius();
-            this.btnAdd = new System.Windows.Forms.Label();
-            this.anhlb = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.ngay = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,53 +51,45 @@ namespace Server
             this.panel8 = new System.Windows.Forms.Panel();
             this.lbgia = new System.Windows.Forms.Label();
             this.gialb = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.nsxlb = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.phienban = new System.Windows.Forms.Panel();
-            this.tbphienban = new System.Windows.Forms.TextBox();
+            this.tengame = new System.Windows.Forms.Panel();
+            this.tbtengame = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.lbphienban = new System.Windows.Forms.Label();
-            this.pblb = new System.Windows.Forms.Label();
+            this.lbtengame = new System.Windows.Forms.Label();
+            this.tengamelb = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.tieude = new System.Windows.Forms.Panel();
-            this.tbtieude = new System.Windows.Forms.TextBox();
+            this.tenkh = new System.Windows.Forms.Panel();
+            this.tbtenkh = new System.Windows.Forms.TextBox();
             this.tieudepn = new System.Windows.Forms.Panel();
-            this.lbtieude = new System.Windows.Forms.Label();
-            this.tieudelb = new System.Windows.Forms.Label();
+            this.lbtenkh = new System.Windows.Forms.Label();
+            this.tenkhlb = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.timer3 = new System.Windows.Forms.Timer(this.components);
             this.panelRadius1.SuspendLayout();
-            this.panelRadius2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.ngay.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel3.SuspendLayout();
             this.gia.SuspendLayout();
             this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.phienban.SuspendLayout();
+            this.tengame.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.tieude.SuspendLayout();
+            this.tenkh.SuspendLayout();
             this.tieudepn.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelRadius1
             // 
             this.panelRadius1.BackColor = System.Drawing.Color.Transparent;
+            this.panelRadius1.Controls.Add(this.pnDisplay);
             this.panelRadius1.Controls.Add(this.btnClose);
             this.panelRadius1.Controls.Add(this.btnLogin);
-            this.panelRadius1.Controls.Add(this.panelRadius2);
-            this.panelRadius1.Controls.Add(this.anhlb);
-            this.panelRadius1.Controls.Add(this.panel9);
             this.panelRadius1.Controls.Add(this.panel7);
             this.panelRadius1.Controls.Add(this.panel3);
-            this.panelRadius1.Controls.Add(this.panel6);
             this.panelRadius1.Controls.Add(this.panel2);
             this.panelRadius1.Controls.Add(this.panel5);
             this.panelRadius1.Controls.Add(this.label1);
@@ -110,11 +99,23 @@ namespace Server
             this.panelRadius1.Padding = new System.Windows.Forms.Padding(33, 0, 33, 0);
             this.panelRadius1.Radius = 6;
             this.panelRadius1.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(57)))), ((int)(((byte)(63)))));
-            this.panelRadius1.rSize = new System.Drawing.Size(648, 586);
-            this.panelRadius1.Size = new System.Drawing.Size(649, 587);
+            this.panelRadius1.rSize = new System.Drawing.Size(432, 586);
+            this.panelRadius1.Size = new System.Drawing.Size(433, 587);
             this.panelRadius1.TabIndex = 1;
             this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
             this.panelRadius1.Click += new System.EventHandler(this.panelRadius1_Click);
+            // 
+            // pnDisplay
+            // 
+            this.pnDisplay.AutoScroll = true;
+            this.pnDisplay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
+            this.pnDisplay.Location = new System.Drawing.Point(371, 3);
+            this.pnDisplay.Name = "pnDisplay";
+            this.pnDisplay.Padding = new System.Windows.Forms.Padding(4);
+            this.pnDisplay.Size = new System.Drawing.Size(366, 127);
+            this.pnDisplay.TabIndex = 14;
+            this.pnDisplay.ControlRemoved += new System.Windows.Forms.ControlEventHandler(this.pnDisplay_ControlRemoved);
+            this.pnDisplay.Paint += new System.Windows.Forms.PaintEventHandler(this.pnDisplay_Paint);
             // 
             // btnClose
             // 
@@ -128,7 +129,7 @@ namespace Server
             this.btnClose.Location = new System.Drawing.Point(12, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(32, 32);
-            this.btnClose.TabIndex = 14;
+            this.btnClose.TabIndex = 13;
             this.btnClose.TabStop = false;
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -144,70 +145,19 @@ namespace Server
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(243)))), ((int)(((byte)(251)))));
-            this.btnLogin.Location = new System.Drawing.Point(33, 337);
+            this.btnLogin.Location = new System.Drawing.Point(33, 507);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(162, 42);
+            this.btnLogin.Size = new System.Drawing.Size(366, 42);
             this.btnLogin.TabIndex = 12;
-            this.btnLogin.Text = "Cập nhật";
+            this.btnLogin.Text = "Thêm ngay";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // panelRadius2
-            // 
-            this.panelRadius2.Controls.Add(this.btnAdd);
-            this.panelRadius2.Location = new System.Drawing.Point(33, 237);
-            this.panelRadius2.Name = "panelRadius2";
-            this.panelRadius2.Radius = 4;
-            this.panelRadius2.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(67)))), ((int)(((byte)(181)))), ((int)(((byte)(129)))));
-            this.panelRadius2.rSize = new System.Drawing.Size(161, 37);
-            this.panelRadius2.Size = new System.Drawing.Size(162, 38);
-            this.panelRadius2.TabIndex = 11;
-            this.panelRadius2.TopLeft = new System.Drawing.Point(0, 0);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.Transparent;
-            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdd.Font = new System.Drawing.Font("Quicksand", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.btnAdd.ForeColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(0, 0);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(162, 38);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Chọn ảnh";
-            this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // anhlb
-            // 
-            this.anhlb.AutoSize = true;
-            this.anhlb.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.anhlb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
-            this.anhlb.Location = new System.Drawing.Point(30, 114);
-            this.anhlb.Margin = new System.Windows.Forms.Padding(0);
-            this.anhlb.Name = "anhlb";
-            this.anhlb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.anhlb.Size = new System.Drawing.Size(98, 23);
-            this.anhlb.TabIndex = 10;
-            this.anhlb.Text = "ẢNH SẢN PHẨM";
-            this.anhlb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
-            this.panel9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel9.BackgroundImage")));
-            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel9.Location = new System.Drawing.Point(33, 137);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(162, 90);
-            this.panel9.TabIndex = 9;
             // 
             // panel7
             // 
             this.panel7.Controls.Add(this.ngay);
             this.panel7.Controls.Add(this.panel10);
-            this.panel7.Location = new System.Drawing.Point(247, 398);
+            this.panel7.Location = new System.Drawing.Point(33, 393);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(366, 98);
             this.panel7.TabIndex = 8;
@@ -333,14 +283,14 @@ namespace Server
             this.ngaylb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.ngaylb.Size = new System.Drawing.Size(366, 39);
             this.ngaylb.TabIndex = 0;
-            this.ngaylb.Text = "NGÀY SẢN XUẤT";
+            this.ngaylb.Text = "NGÀY MUA";
             this.ngaylb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.gia);
             this.panel3.Controls.Add(this.panel8);
-            this.panel3.Location = new System.Drawing.Point(247, 298);
+            this.panel3.Location = new System.Drawing.Point(33, 293);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(366, 98);
             this.panel3.TabIndex = 7;
@@ -360,13 +310,13 @@ namespace Server
             // 
             this.tbgia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
             this.tbgia.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbgia.Enabled = false;
             this.tbgia.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.tbgia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
             this.tbgia.Location = new System.Drawing.Point(10, 10);
             this.tbgia.Name = "tbgia";
             this.tbgia.Size = new System.Drawing.Size(340, 22);
             this.tbgia.TabIndex = 0;
-            this.tbgia.TextChanged += new System.EventHandler(this.tbgia_TextChanged);
             this.tbgia.Enter += new System.EventHandler(this.tbgia_Enter);
             this.tbgia.Leave += new System.EventHandler(this.tbgia_Leave);
             this.tbgia.MouseEnter += new System.EventHandler(this.tbgia_MouseEnter);
@@ -406,199 +356,165 @@ namespace Server
             this.gialb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
             this.gialb.Size = new System.Drawing.Size(366, 39);
             this.gialb.TabIndex = 0;
-            this.gialb.Text = "GIÁ";
+            this.gialb.Text = "ĐƠN GIÁ";
             this.gialb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.comboBox1);
-            this.panel6.Controls.Add(this.nsxlb);
-            this.panel6.Location = new System.Drawing.Point(247, 500);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(366, 61);
-            this.panel6.TabIndex = 6;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Quicksand", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "AAA",
-            "Indie"});
-            this.comboBox1.Location = new System.Drawing.Point(117, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(249, 29);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.TabStop = false;
-            // 
-            // nsxlb
-            // 
-            this.nsxlb.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.nsxlb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
-            this.nsxlb.Location = new System.Drawing.Point(0, 3);
-            this.nsxlb.Margin = new System.Windows.Forms.Padding(0);
-            this.nsxlb.Name = "nsxlb";
-            this.nsxlb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.nsxlb.Size = new System.Drawing.Size(108, 39);
-            this.nsxlb.TabIndex = 0;
-            this.nsxlb.Text = "NHÀ SẢN XUẤT";
-            this.nsxlb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.phienban);
+            this.panel2.Controls.Add(this.tengame);
             this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(247, 198);
+            this.panel2.Location = new System.Drawing.Point(33, 193);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(366, 98);
             this.panel2.TabIndex = 5;
             // 
-            // phienban
+            // tengame
             // 
-            this.phienban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
-            this.phienban.Controls.Add(this.tbphienban);
-            this.phienban.Dock = System.Windows.Forms.DockStyle.Top;
-            this.phienban.Location = new System.Drawing.Point(0, 39);
-            this.phienban.Name = "phienban";
-            this.phienban.Size = new System.Drawing.Size(366, 42);
-            this.phienban.TabIndex = 1;
-            this.phienban.Paint += new System.Windows.Forms.PaintEventHandler(this.phienban_Paint);
+            this.tengame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
+            this.tengame.Controls.Add(this.tbtengame);
+            this.tengame.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tengame.Location = new System.Drawing.Point(0, 39);
+            this.tengame.Name = "tengame";
+            this.tengame.Size = new System.Drawing.Size(366, 42);
+            this.tengame.TabIndex = 1;
+            this.tengame.Paint += new System.Windows.Forms.PaintEventHandler(this.phienban_Paint);
             // 
-            // tbphienban
+            // tbtengame
             // 
-            this.tbphienban.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
-            this.tbphienban.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbphienban.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.tbphienban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
-            this.tbphienban.Location = new System.Drawing.Point(10, 10);
-            this.tbphienban.Name = "tbphienban";
-            this.tbphienban.Size = new System.Drawing.Size(340, 22);
-            this.tbphienban.TabIndex = 0;
-            this.tbphienban.Enter += new System.EventHandler(this.tbphienban_Enter);
-            this.tbphienban.Leave += new System.EventHandler(this.tbphienban_Leave);
-            this.tbphienban.MouseEnter += new System.EventHandler(this.tbphienban_MouseEnter);
-            this.tbphienban.MouseLeave += new System.EventHandler(this.tbphienban_MouseLeave);
+            this.tbtengame.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
+            this.tbtengame.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbtengame.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.tbtengame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.tbtengame.Location = new System.Drawing.Point(10, 10);
+            this.tbtengame.Name = "tbtengame";
+            this.tbtengame.Size = new System.Drawing.Size(340, 22);
+            this.tbtengame.TabIndex = 0;
+            this.tbtengame.TextChanged += new System.EventHandler(this.tbtengame_TextChanged);
+            this.tbtengame.Enter += new System.EventHandler(this.tbphienban_Enter);
+            this.tbtengame.Leave += new System.EventHandler(this.tbphienban_Leave);
+            this.tbtengame.MouseEnter += new System.EventHandler(this.tbphienban_MouseEnter);
+            this.tbtengame.MouseLeave += new System.EventHandler(this.tbphienban_MouseLeave);
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.lbphienban);
-            this.panel4.Controls.Add(this.pblb);
+            this.panel4.Controls.Add(this.lbtengame);
+            this.panel4.Controls.Add(this.tengamelb);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(366, 39);
             this.panel4.TabIndex = 0;
             // 
-            // lbphienban
+            // lbtengame
             // 
-            this.lbphienban.AutoSize = true;
-            this.lbphienban.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lbphienban.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbphienban.Location = new System.Drawing.Point(65, 16);
-            this.lbphienban.Margin = new System.Windows.Forms.Padding(0);
-            this.lbphienban.Name = "lbphienban";
-            this.lbphienban.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lbphienban.Size = new System.Drawing.Size(0, 23);
-            this.lbphienban.TabIndex = 0;
-            this.lbphienban.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lbtengame.AutoSize = true;
+            this.lbtengame.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lbtengame.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
+            this.lbtengame.Location = new System.Drawing.Point(63, 16);
+            this.lbtengame.Margin = new System.Windows.Forms.Padding(0);
+            this.lbtengame.Name = "lbtengame";
+            this.lbtengame.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lbtengame.Size = new System.Drawing.Size(0, 23);
+            this.lbtengame.TabIndex = 0;
+            this.lbtengame.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // pblb
+            // tengamelb
             // 
-            this.pblb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pblb.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.pblb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
-            this.pblb.Location = new System.Drawing.Point(0, 0);
-            this.pblb.Margin = new System.Windows.Forms.Padding(0);
-            this.pblb.Name = "pblb";
-            this.pblb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.pblb.Size = new System.Drawing.Size(366, 39);
-            this.pblb.TabIndex = 0;
-            this.pblb.Text = "PHIÊN BẢN";
-            this.pblb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.tengamelb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tengamelb.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.tengamelb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
+            this.tengamelb.Location = new System.Drawing.Point(0, 0);
+            this.tengamelb.Margin = new System.Windows.Forms.Padding(0);
+            this.tengamelb.Name = "tengamelb";
+            this.tengamelb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.tengamelb.Size = new System.Drawing.Size(366, 39);
+            this.tengamelb.TabIndex = 0;
+            this.tengamelb.Text = "TÊN GAME";
+            this.tengamelb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // panel5
             // 
-            this.panel5.Controls.Add(this.tieude);
+            this.panel5.Controls.Add(this.tenkh);
             this.panel5.Controls.Add(this.tieudepn);
-            this.panel5.Location = new System.Drawing.Point(247, 98);
+            this.panel5.Location = new System.Drawing.Point(33, 93);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(366, 98);
             this.panel5.TabIndex = 4;
             // 
-            // tieude
+            // tenkh
             // 
-            this.tieude.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
-            this.tieude.Controls.Add(this.tbtieude);
-            this.tieude.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tieude.Location = new System.Drawing.Point(0, 39);
-            this.tieude.Name = "tieude";
-            this.tieude.Size = new System.Drawing.Size(366, 42);
-            this.tieude.TabIndex = 1;
-            this.tieude.Paint += new System.Windows.Forms.PaintEventHandler(this.tieude_Paint);
+            this.tenkh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
+            this.tenkh.Controls.Add(this.tbtenkh);
+            this.tenkh.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tenkh.Location = new System.Drawing.Point(0, 39);
+            this.tenkh.Name = "tenkh";
+            this.tenkh.Size = new System.Drawing.Size(366, 42);
+            this.tenkh.TabIndex = 1;
+            this.tenkh.Paint += new System.Windows.Forms.PaintEventHandler(this.tieude_Paint);
             // 
-            // tbtieude
+            // tbtenkh
             // 
-            this.tbtieude.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
-            this.tbtieude.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tbtieude.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.tbtieude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
-            this.tbtieude.Location = new System.Drawing.Point(10, 10);
-            this.tbtieude.Name = "tbtieude";
-            this.tbtieude.Size = new System.Drawing.Size(340, 22);
-            this.tbtieude.TabIndex = 0;
-            this.tbtieude.Enter += new System.EventHandler(this.tbtieude_Enter);
-            this.tbtieude.Leave += new System.EventHandler(this.tbtieude_Leave);
-            this.tbtieude.MouseEnter += new System.EventHandler(this.tbtieude_MouseEnter);
-            this.tbtieude.MouseLeave += new System.EventHandler(this.tbtieude_MouseLeave);
+            this.tbtenkh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(51)))), ((int)(((byte)(57)))));
+            this.tbtenkh.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbtenkh.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.tbtenkh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(211)))), ((int)(((byte)(212)))));
+            this.tbtenkh.Location = new System.Drawing.Point(10, 10);
+            this.tbtenkh.Name = "tbtenkh";
+            this.tbtenkh.Size = new System.Drawing.Size(340, 22);
+            this.tbtenkh.TabIndex = 0;
+            this.tbtenkh.TextChanged += new System.EventHandler(this.tbtenkh_TextChanged);
+            this.tbtenkh.Enter += new System.EventHandler(this.tbtieude_Enter);
+            this.tbtenkh.Leave += new System.EventHandler(this.tbtieude_Leave);
+            this.tbtenkh.MouseEnter += new System.EventHandler(this.tbtieude_MouseEnter);
+            this.tbtenkh.MouseLeave += new System.EventHandler(this.tbtieude_MouseLeave);
             // 
             // tieudepn
             // 
-            this.tieudepn.Controls.Add(this.lbtieude);
-            this.tieudepn.Controls.Add(this.tieudelb);
+            this.tieudepn.Controls.Add(this.lbtenkh);
+            this.tieudepn.Controls.Add(this.tenkhlb);
             this.tieudepn.Dock = System.Windows.Forms.DockStyle.Top;
             this.tieudepn.Location = new System.Drawing.Point(0, 0);
             this.tieudepn.Name = "tieudepn";
             this.tieudepn.Size = new System.Drawing.Size(366, 39);
             this.tieudepn.TabIndex = 0;
             // 
-            // lbtieude
+            // lbtenkh
             // 
-            this.lbtieude.AutoSize = true;
-            this.lbtieude.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.lbtieude.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
-            this.lbtieude.Location = new System.Drawing.Point(47, 16);
-            this.lbtieude.Margin = new System.Windows.Forms.Padding(0);
-            this.lbtieude.Name = "lbtieude";
-            this.lbtieude.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.lbtieude.Size = new System.Drawing.Size(0, 23);
-            this.lbtieude.TabIndex = 0;
-            this.lbtieude.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.lbtenkh.AutoSize = true;
+            this.lbtenkh.Font = new System.Drawing.Font("Quicksand", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.lbtenkh.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(71)))), ((int)(((byte)(71)))));
+            this.lbtenkh.Location = new System.Drawing.Point(109, 16);
+            this.lbtenkh.Margin = new System.Windows.Forms.Padding(0);
+            this.lbtenkh.Name = "lbtenkh";
+            this.lbtenkh.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.lbtenkh.Size = new System.Drawing.Size(0, 23);
+            this.lbtenkh.TabIndex = 0;
+            this.lbtenkh.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // tieudelb
+            // tenkhlb
             // 
-            this.tieudelb.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tieudelb.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
-            this.tieudelb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
-            this.tieudelb.Location = new System.Drawing.Point(0, 0);
-            this.tieudelb.Margin = new System.Windows.Forms.Padding(0);
-            this.tieudelb.Name = "tieudelb";
-            this.tieudelb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.tieudelb.Size = new System.Drawing.Size(366, 39);
-            this.tieudelb.TabIndex = 0;
-            this.tieudelb.Text = "TIÊU ĐỀ";
-            this.tieudelb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.tenkhlb.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tenkhlb.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            this.tenkhlb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(142)))), ((int)(((byte)(147)))));
+            this.tenkhlb.Location = new System.Drawing.Point(0, 0);
+            this.tenkhlb.Margin = new System.Windows.Forms.Padding(0);
+            this.tenkhlb.Name = "tenkhlb";
+            this.tenkhlb.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.tenkhlb.Size = new System.Drawing.Size(366, 39);
+            this.tenkhlb.TabIndex = 0;
+            this.tenkhlb.Text = "TÊN KHÁCH HÀNG";
+            this.tenkhlb.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(311, 43);
+            this.label1.Location = new System.Drawing.Point(103, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(217, 30);
+            this.label1.Size = new System.Drawing.Size(208, 30);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Chỉnh sửa thông tin";
+            this.label1.Text = "Thêm hóa đơn mới";
             // 
             // timer1
             // 
@@ -615,24 +531,23 @@ namespace Server
             this.timer3.Interval = 950;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
-            // EditProduct
+            // AddBill
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.CancelButton = this.btnClose;
-            this.ClientSize = new System.Drawing.Size(649, 587);
+            this.ClientSize = new System.Drawing.Size(433, 587);
             this.Controls.Add(this.panelRadius1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "EditProduct";
+            this.Name = "AddBill";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chỉnh sửa thông tin";
-            this.Load += new System.EventHandler(this.AddProduct_Load);
+            this.Text = "Thêm hóa đơn";
+            this.Load += new System.EventHandler(this.AddBill_Load);
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
-            this.panelRadius2.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.ngay.ResumeLayout(false);
             this.ngay.PerformLayout();
@@ -643,15 +558,14 @@ namespace Server
             this.gia.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel6.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.phienban.ResumeLayout(false);
-            this.phienban.PerformLayout();
+            this.tengame.ResumeLayout(false);
+            this.tengame.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.tieude.ResumeLayout(false);
-            this.tieude.PerformLayout();
+            this.tenkh.ResumeLayout(false);
+            this.tenkh.PerformLayout();
             this.tieudepn.ResumeLayout(false);
             this.tieudepn.PerformLayout();
             this.ResumeLayout(false);
@@ -662,20 +576,16 @@ namespace Server
         private PanelRadius panelRadius1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel tieude;
-        private System.Windows.Forms.TextBox tbtieude;
+        private System.Windows.Forms.Panel tenkh;
+        private System.Windows.Forms.TextBox tbtenkh;
         private System.Windows.Forms.Panel tieudepn;
-        private System.Windows.Forms.Label lbtieude;
-        private System.Windows.Forms.Label tieudelb;
+        private System.Windows.Forms.Label lbtenkh;
+        private System.Windows.Forms.Label tenkhlb;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel phienban;
-        private System.Windows.Forms.TextBox tbphienban;
+        private System.Windows.Forms.Panel tengame;
+        private System.Windows.Forms.TextBox tbtengame;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label lbphienban;
-        private System.Windows.Forms.Label pblb;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label nsxlb;
+        private System.Windows.Forms.Label tengamelb;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel gia;
         private System.Windows.Forms.TextBox tbgia;
@@ -691,15 +601,13 @@ namespace Server
         private System.Windows.Forms.TextBox tbnam;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel9;
-        private System.Windows.Forms.Label anhlb;
-        private PanelRadius panelRadius2;
-        private System.Windows.Forms.Label btnAdd;
         private NoFocusButton btnLogin;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Timer timer2;
         private System.Windows.Forms.Timer timer3;
         private System.Windows.Forms.Label lbngay;
         private NoFocusButton btnClose;
+        private System.Windows.Forms.Label lbtengame;
+        private System.Windows.Forms.Panel pnDisplay;
     }
 }

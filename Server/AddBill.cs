@@ -1,35 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Server
 {
-    public partial class EditProduct : Form
+    public partial class AddBill : Form
     {
-        private int id;
-        public EditProduct(int id, string iconPath, string tieude, string phienban, string gia, string ngay, string nsx)
+        private List<Khach> dsAll = new List<Khach>();
+        private List<Game> dsGame = new List<Game>();
+        public AddBill()
         {
             InitializeComponent();
-            this.id = id;
-            if (iconPath != string.Empty)
-            {
-                panel9.BackgroundImage = Image.FromFile(iconPath);
-                fileName = iconPath;
-            }
-            tbtieude.Text = tieude;
-            tbphienban.Text = phienban;
-            tbgia.Text = gia.Remove(gia.IndexOf('$'));
-            DateTime dt = DateTime.ParseExact(ngay, "dd/MM/yyyy", null);
-            tbngay.Text = dt.Day.ToString();
-            tbthang.Text = dt.Month.ToString();
-            tbnam.Text = dt.Year.ToString();
-            comboBox1.SelectedIndex = (nsx == "AAA") ? 0 : 1;
+            tbgia.Text = "0";
+            tbngay.Text = DateTime.Now.Day.ToString();
+            tbthang.Text = DateTime.Now.Month.ToString();
+            tbnam.Text = DateTime.Now.Year.ToString();
+            dsAll = Controller.getKhach2();
+            dsGame = Controller.getGames();
         }
         private void VeBorder(Control control, PaintEventArgs e, int r, int g, int b)
         {
@@ -37,12 +25,12 @@ namespace Server
         }
         private void tieude_Paint(object sender, PaintEventArgs e)
         {
-            VeBorder(tieude, e, 34, 36, 40);
+            VeBorder(tenkh, e, 34, 36, 40);
         }
 
         private void phienban_Paint(object sender, PaintEventArgs e)
         {
-            VeBorder(phienban, e, 34, 36, 40);
+            VeBorder(tengame, e, 34, 36, 40);
         }
 
         private void gia_Paint(object sender, PaintEventArgs e)
@@ -63,8 +51,8 @@ namespace Server
         {
             if (tbTieuDeDontHandle == false)
             {
-                PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
-                VeBorder(tieude, eventArgs, 4, 4, 5);
+                PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
+                VeBorder(tenkh, eventArgs, 4, 4, 5);
             }
         }
 
@@ -72,31 +60,42 @@ namespace Server
         {
             if (tbTieuDeDontHandle == false)
             {
-                PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
-                VeBorder(tieude, eventArgs, 34, 36, 40);
+                PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
+                VeBorder(tenkh, eventArgs, 34, 36, 40);
             }
         }
 
         private void tbtieude_Enter(object sender, EventArgs e)
         {
             tbTieuDeDontHandle = true;
-            PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
-            VeBorder(tieude, eventArgs, 114, 137, 218);
+            PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
+            VeBorder(tenkh, eventArgs, 114, 137, 218);
+            if (tbtenkh.Text.IndexOf('@') == 0)
+            {
+                pnDisplay.Location = new Point(33, 179);
+                pnDisplay.Visible = true;
+            }
+            else
+            {
+                pnDisplay.Location = new Point(33, 179);
+                pnDisplay.Visible = false;
+            }
         }
 
         private void tbtieude_Leave(object sender, EventArgs e)
         {
-            PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
-            VeBorder(tieude, eventArgs, 34, 36, 40);
+            PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
+            VeBorder(tenkh, eventArgs, 34, 36, 40);
             tbTieuDeDontHandle = false;
+            pnDisplay.Visible = false;
         }
 
         private void tbphienban_MouseEnter(object sender, EventArgs e)
         {
             if (tbPhienBanDontHandle == false)
             {
-                PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
-                VeBorder(phienban, eventArgs, 4, 4, 5);
+                PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
+                VeBorder(tengame, eventArgs, 4, 4, 5);
             }
         }
 
@@ -104,23 +103,34 @@ namespace Server
         {
             if (tbPhienBanDontHandle == false)
             {
-                PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
-                VeBorder(phienban, eventArgs, 34, 36, 40);
+                PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
+                VeBorder(tengame, eventArgs, 34, 36, 40);
             }
         }
 
         private void tbphienban_Enter(object sender, EventArgs e)
         {
             tbPhienBanDontHandle = true;
-            PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
-            VeBorder(phienban, eventArgs, 114, 137, 218);
+            PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
+            VeBorder(tengame, eventArgs, 114, 137, 218);
+            if (tbtengame.Text.IndexOf('@') == 0)
+            {
+                pnDisplay.Location = new Point(33, 100);
+                pnDisplay.Visible = true;
+            }
+            else
+            {
+                pnDisplay.Location = new Point(33, 100);
+                pnDisplay.Visible = false;
+            }
         }
 
         private void tbphienban_Leave(object sender, EventArgs e)
         {
-            PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
-            VeBorder(phienban, eventArgs, 34, 36, 40);
+            PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
+            VeBorder(tengame, eventArgs, 34, 36, 40);
             tbPhienBanDontHandle = false;
+            pnDisplay.Visible = false;
         }
 
         private void tbgia_MouseEnter(object sender, EventArgs e)
@@ -351,18 +361,6 @@ namespace Server
                 tbngay.Text = "28";
             }
         }
-        string fileName; //dung cai bien nay ma them vao sql, no la duong dan den file da chon
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "JPEG|*.jpg", ValidateNames = true, Multiselect = false })
-            {
-                if (ofd.ShowDialog() == DialogResult.OK)
-                {
-                    fileName = ofd.FileName;
-                    panel9.BackgroundImage = Image.FromFile(fileName);
-                }
-            }
-        }
         int j = 0;
         string[] dotArr = new string[] { "•", "• •", "• • •" };
         bool timerIsAlive = false;
@@ -378,9 +376,9 @@ namespace Server
             timer1.Stop();
             timer2.Stop();
             j = 0;
-            btnLogin.Text = "Cập nhật";
-            tbtieude.Enabled = true;
-            tbphienban.Enabled = true;
+            btnLogin.Text = "Thêm ngay";
+            tbtenkh.Enabled = true;
+            tbtengame.Enabled = true;
             tbgia.Enabled = true;
             tbngay.Enabled = true;
             tbthang.Enabled = true;
@@ -390,108 +388,50 @@ namespace Server
 
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if (tbtieude.Text != string.Empty && tbphienban.Text != string.Empty)
+            if (tbtenkh.Text == string.Empty)
             {
-                string ngayt = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
-                string cate = comboBox1.SelectedItem.ToString();
-                float giaca = float.Parse(tbgia.Text);
-                string path = "";
-                if (fileName != null)
-                {
-                    path = fileName.Replace(@"\", @"\\");
-                }
-                Product sp = new Product(this.id, tbtieude.Text, cate, tbphienban.Text, giaca, ngayt, path);
-                int rs = Controller.SuaSP(sp);
-                if (rs == 1)
-                {
-                    lbtieude.ForeColor = Color.FromArgb(77, 222, 19);
-                    lbtieude.Text = "- Cập nhật thành công";
-                    tieudelb.ForeColor = Color.FromArgb(77, 222, 19);
-                    PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
-                    VeBorder(tieude, eventArgs, 77, 222, 19);
-                    tbTieuDeDontHandle = true;
-                    pblb.ForeColor = Color.FromArgb(77, 222, 19);
-                    PaintEventArgs eventArgs1 = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
-                    VeBorder(phienban, eventArgs1, 77, 222, 19);
-                    tbPhienBanDontHandle = true;
-                    gialb.ForeColor = Color.FromArgb(77, 222, 19);
-                    PaintEventArgs eventArgs2 = new PaintEventArgs(gia.CreateGraphics(), gia.ClientRectangle);
-                    VeBorder(gia, eventArgs2, 77, 222, 19);
-                    tbGiaDontHandle = true;
-                    ngaylb.ForeColor = Color.FromArgb(77, 222, 19);
-                    PaintEventArgs eventArgs3 = new PaintEventArgs(ngay.CreateGraphics(), ngay.ClientRectangle);
-                    VeBorder(ngay, eventArgs3, 77, 222, 19);
-                    tbNgayDontHandle = true;
-                    anhlb.ForeColor = Color.FromArgb(77, 222, 19);
-                    nsxlb.ForeColor = Color.FromArgb(77, 222, 19);
-                }
-                else
-                {
-                    lbtieude.Text = "- Cập nhật thất bại";
-                    tieudelb.ForeColor = Color.FromArgb(240, 71, 71);
-                    PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
-                    VeBorder(tieude, eventArgs, 240, 71, 71);
-                    tbTieuDeDontHandle = true;
-                }
-
+                lbtenkh.Text = "- Mục này không thể bỏ trống";
+                tenkhlb.ForeColor = Color.FromArgb(240, 71, 71);
+                PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
+                VeBorder(tenkh, eventArgs, 240, 71, 71);
+                tbTieuDeDontHandle = true;
             }
-            else
+            if (tbtengame.Text == string.Empty)
             {
-                if (tbtieude.Text == string.Empty)
-                {
-                    lbtieude.Text = "- Mục này không thể bỏ trống";
-                    tieudelb.ForeColor = Color.FromArgb(240, 71, 71);
-                    PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
-                    VeBorder(tieude, eventArgs, 240, 71, 71);
-                    tbTieuDeDontHandle = true;
-                }
-                if (tbphienban.Text == string.Empty)
-                {
-                    lbphienban.Text = "- Mục này không thể bỏ trống";
-                    pblb.ForeColor = Color.FromArgb(240, 71, 71);
-                    PaintEventArgs eventArgs = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
-                    VeBorder(phienban, eventArgs, 240, 71, 71);
-                    tbPhienBanDontHandle = true;
-                }
+                lbtengame.Text = "- Mục này không thể bỏ trống";
+                tengamelb.ForeColor = Color.FromArgb(240, 71, 71);
+                PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
+                VeBorder(tengame, eventArgs, 240, 71, 71);
+                tbPhienBanDontHandle = true;
             }
             timer3.Stop();
         }
 
-        private void AddProduct_Load(object sender, EventArgs e)
+        private void AddBill_Load(object sender, EventArgs e)
         {
-            tbtieude.Select();
-        }
-        private void tbgia_TextChanged(object sender, EventArgs e)
-        {
-            float cost;
-            if (float.TryParse(tbgia.Text, out cost) == false)
-            {
-                tbgia.Text = "0";
-            }
+            tbtenkh.Select();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (timerIsAlive == false)
             {
-                lbtieude.Text = "";
-                lbphienban.Text = "";
+                lbtenkh.Text = "";
+                lbtengame.Text = "";
                 lbgia.Text = "";
                 lbngay.Text = "";
-                lbtieude.ForeColor = Color.FromArgb(240, 71, 71);
-                tieudelb.ForeColor = Color.FromArgb(138, 142, 147);
-                pblb.ForeColor = Color.FromArgb(138, 142, 147);
+                lbtenkh.ForeColor = Color.FromArgb(240, 71, 71);
+                tenkhlb.ForeColor = Color.FromArgb(138, 142, 147);
+                tengamelb.ForeColor = Color.FromArgb(138, 142, 147);
                 gialb.ForeColor = Color.FromArgb(138, 142, 147);
                 ngaylb.ForeColor = Color.FromArgb(138, 142, 147);
-                anhlb.ForeColor = Color.FromArgb(138, 142, 147);
-                nsxlb.ForeColor = Color.FromArgb(138, 142, 147);
                 timerIsAlive = true;
                 timer1.Enabled = true;
                 timer1_Tick(null, null);
                 timer2.Enabled = true;
                 timer3.Enabled = true;
-                tbtieude.Enabled = false;
-                tbphienban.Enabled = false;
+                tbtenkh.Enabled = false;
+                tbtengame.Enabled = false;
                 tbgia.Enabled = false;
                 tbngay.Enabled = false;
                 tbthang.Enabled = false;
@@ -504,9 +444,127 @@ namespace Server
             this.Close();
         }
 
+        private void pnDisplay_Paint(object sender, PaintEventArgs e)
+        {
+            VeBorder(pnDisplay, e, 34, 36, 40);
+        }
+
+        private void tbtenkh_TextChanged(object sender, EventArgs e)
+        {
+            if (tbtenkh.Text.IndexOf('@') == 0)
+            {
+                CheckClass.count = 0;
+                pnDisplay.Location = new Point(33, 179);
+                pnDisplay.Visible = true;
+                string txtFind = tbtenkh.Text.Replace("@", "");
+                List<Khach> dstk = new List<Khach>(0);
+                foreach (Khach item in dsAll)
+                {
+                    if (item.IDKhach.Contains(txtFind) || item.HoTen.Contains(txtFind) || item.Email.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+                pnDisplay.Controls.Clear();
+                if (dstk.Count != 0)
+                {
+                    for (int i = dstk.Count - 1; i >= 0; i--)
+                    {
+                        pnDisplay.Controls.Add(new KhachMember()
+                        {
+                            ID_Khach = dstk[i].IDKhach,
+                            TenKhach = dstk[i].HoTen,
+                            EmailKhach = dstk[i].Email,
+                        });
+                    }
+                }
+                else
+                {
+                    pnDisplay.Controls.Add(new Label()
+                    {
+                        BackColor = Color.Transparent,
+                        Dock = DockStyle.Fill,
+                        Font = new Font("Quicksand", 14F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
+                        ForeColor = Color.White,
+                        Padding = new Padding(0, 0, 0, 20),
+                        Text = "Không tìm thấy dữ liệu",
+                        TextAlign = ContentAlignment.MiddleCenter,
+                    });
+                }
+            }
+            else
+            {
+                pnDisplay.Location = new Point(33, 179);
+                pnDisplay.Visible = false;
+            }
+        }
+
+        private void tbtengame_TextChanged(object sender, EventArgs e)
+        {
+            if (tbtengame.Text.IndexOf('@') == 0)
+            {
+                CheckClass.count = 0;
+                pnDisplay.Location = new Point(33, 100);
+                pnDisplay.Visible = true;
+                string txtFind = tbtengame.Text.Replace("@", "");
+                List<Game> dstk = new List<Game>(0);
+                foreach (Game item in dsGame)
+                {
+                    if (item.IDGame.Contains(txtFind) || item.TenGame.Contains(txtFind) || item.DonGia.Contains(txtFind))
+                    {
+                        dstk.Add(item);
+                    }
+                }
+                pnDisplay.Controls.Clear();
+                if (dstk.Count != 0)
+                {
+                    for (int i = dstk.Count - 1; i >= 0; i--)
+                    {
+                        pnDisplay.Controls.Add(new GameMember()
+                        {
+                            ID_Game = dstk[i].IDGame,
+                            TenGame = dstk[i].TenGame,
+                            Gia = dstk[i].DonGia,
+                        });
+                    }
+                }
+                else
+                {
+                    pnDisplay.Controls.Add(new Label()
+                    {
+                        BackColor = Color.Transparent,
+                        Dock = DockStyle.Fill,
+                        Font = new Font("Quicksand", 14F, FontStyle.Bold, GraphicsUnit.Pixel, 0),
+                        ForeColor = Color.White,
+                        Padding = new Padding(0, 0, 0, 20),
+                        Text = "Không tìm thấy dữ liệu",
+                        TextAlign = ContentAlignment.MiddleCenter,
+                    });
+                }
+            }
+            else
+            {
+                pnDisplay.Location = new Point(33, 100);
+                pnDisplay.Visible = false;
+            }
+        }
+
         private void panelRadius1_Click(object sender, EventArgs e)
         {
-            label1.Select();
+            panelRadius1.Select();
+        }
+        private string ID_Khach;
+        private string ID_SanPham;
+        private void pnDisplay_ControlRemoved(object sender, ControlEventArgs e)
+        {
+            if (CheckClass.count == 1)
+            {
+                ID_Khach = CheckClass.IDKhachNowSelected;
+                tbtenkh.Text = CheckClass.TenKhachNowSelected;
+                ID_SanPham = CheckClass.IDGameNowSelected;
+                tbtengame.Text = CheckClass.TenGameNowSelected;
+                tbgia.Text = CheckClass.DonGiaNowSelected;
+            }
         }
     }
 }

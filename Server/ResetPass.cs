@@ -179,5 +179,10 @@ namespace Server
             timer2.Stop();
             Close();
         }
+
+        private void ResetPass_Click(object sender, EventArgs e)
+        {
+            label1.Select();
+        }
     }
 }

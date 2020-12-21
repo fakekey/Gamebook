@@ -220,6 +220,7 @@ namespace Server
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quên mật khẩu";
             this.Load += new System.EventHandler(this.ResetPass_Load);
+            this.Click += new System.EventHandler(this.ResetPass_Click);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ResetPass_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.ResetPass_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.ResetPass_MouseUp);

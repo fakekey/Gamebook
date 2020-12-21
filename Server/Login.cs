@@ -317,5 +317,10 @@ namespace Server
         {
             DragControl.mouseUp();
         }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+            label1.Select();
+        }
     }
 }

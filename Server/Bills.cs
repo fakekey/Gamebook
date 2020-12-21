@@ -136,7 +136,7 @@ namespace Server
                 f.Opacity = 0.85f;
                 f.Location = this.Parent.Parent.Location;
                 f.Size = this.Parent.Parent.Size;
-                using (AddUser fOverlay = new AddUser())
+                using (AddBill fOverlay = new AddBill())
                 {
                     f.Show();
                     fOverlay.Owner = f;

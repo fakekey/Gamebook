@@ -494,5 +494,10 @@ namespace Server
         {
             this.Close();
         }
+
+        private void panelRadius1_Click(object sender, EventArgs e)
+        {
+            label1.Select();
+        }
     }
 }
