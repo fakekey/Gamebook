@@ -590,7 +590,11 @@ namespace Server
         {
             MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
             con.Open();
-            MySqlCommand cmd = new MySqlCommand($" DELETE from `gamebookdata`.`hoa don` WHERE `MAHD` = '{id}'", con);
+            MySqlCommand cmd = new MySqlCommand($" DELETE from `gamebookdata`.`chi tiet hoa don` WHERE `MAHD` = '{id}'", con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+            con.Open();
+            cmd = new MySqlCommand($" DELETE from `gamebookdata`.`hoa don` WHERE `MAHD` = '{id}'", con);
             cmd.ExecuteNonQuery();
             con.Close();
         }
