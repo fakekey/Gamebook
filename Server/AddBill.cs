@@ -64,10 +64,12 @@ namespace Server
                 VeBorder(tenkh, eventArgs, 34, 36, 40);
             }
         }
-
+        private bool tenkhIsFocus = false;
+        private bool tengameIsFocus = false;
         private void tbtieude_Enter(object sender, EventArgs e)
         {
             tbTieuDeDontHandle = true;
+            tenkhIsFocus = true;
             PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
             VeBorder(tenkh, eventArgs, 114, 137, 218);
             if (tbtenkh.Text.IndexOf('@') == 0)
@@ -84,6 +86,7 @@ namespace Server
 
         private void tbtieude_Leave(object sender, EventArgs e)
         {
+            tenkhIsFocus = false;
             PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
             VeBorder(tenkh, eventArgs, 34, 36, 40);
             tbTieuDeDontHandle = false;
@@ -110,6 +113,7 @@ namespace Server
 
         private void tbphienban_Enter(object sender, EventArgs e)
         {
+            tengameIsFocus = true;
             tbPhienBanDontHandle = true;
             PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
             VeBorder(tengame, eventArgs, 114, 137, 218);
@@ -127,6 +131,7 @@ namespace Server
 
         private void tbphienban_Leave(object sender, EventArgs e)
         {
+            tengameIsFocus = false;
             PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
             VeBorder(tengame, eventArgs, 34, 36, 40);
             tbPhienBanDontHandle = false;
@@ -555,6 +560,7 @@ namespace Server
             }
             else
             {
+                tbgia.Text = "0";
                 pnDisplay.Location = new Point(33, 100);
                 pnDisplay.Visible = false;
             }
@@ -570,11 +576,17 @@ namespace Server
         {
             if (CheckClass.count == 1)
             {
-                ID_Khach = CheckClass.IDKhachNowSelected;
-                tbtenkh.Text = CheckClass.TenKhachNowSelected;
-                ID_SanPham = CheckClass.IDGameNowSelected;
-                tbtengame.Text = CheckClass.TenGameNowSelected;
-                tbgia.Text = CheckClass.DonGiaNowSelected;
+                if (tenkhIsFocus == true)
+                {
+                    ID_Khach = CheckClass.IDKhachNowSelected;
+                    tbtenkh.Text = CheckClass.TenKhachNowSelected;
+                }
+                if (tengameIsFocus == true)
+                {
+                    ID_SanPham = CheckClass.IDGameNowSelected;
+                    tbtengame.Text = CheckClass.TenGameNowSelected;
+                    tbgia.Text = CheckClass.DonGiaNowSelected;
+                }
             }
         }
     }
