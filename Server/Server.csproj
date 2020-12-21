@@ -56,6 +56,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Resources\Models\BillTemp.cs" />
     <Compile Include="UpdateBills.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,12 +139,6 @@
     <Compile Include="Resources\Classes\WinAPI.cs" />
     <Compile Include="Resources\Controls\BoxBorder.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Resources\Controls\chitietHD.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Resources\Controls\chitietHD.Designer.cs">
-      <DependentUpon>chitietHD.cs</DependentUpon>
     </Compile>
     <Compile Include="Resources\Controls\GameMember.cs">
       <SubType>UserControl</SubType>
@@ -268,9 +263,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ResetPass.resx">
       <DependentUpon>ResetPass.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Controls\chitietHD.resx">
-      <DependentUpon>chitietHD.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Controls\GameMember.resx">
       <DependentUpon>GameMember.cs</DependentUpon>

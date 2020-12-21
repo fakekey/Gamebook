@@ -149,7 +149,7 @@ namespace Server
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(366, 42);
             this.btnLogin.TabIndex = 12;
-            this.btnLogin.Text = "Thêm ngay";
+            this.btnLogin.Text = "Cập nhật";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -510,11 +510,11 @@ namespace Server
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(113, 38);
+            this.label1.Location = new System.Drawing.Point(127, 38);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 30);
+            this.label1.Size = new System.Drawing.Size(179, 30);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Thêm hóa đơn mới";
+            this.label1.Text = "Chi tiết hóa đơn";
             // 
             // timer1
             // 
@@ -544,7 +544,7 @@ namespace Server
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "UpdateBills";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Thêm hóa đơn";
+            this.Text = "Chi tiết hóa đơn";
             this.Load += new System.EventHandler(this.UpdateBills_Load);
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();

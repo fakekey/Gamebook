@@ -9,10 +9,15 @@ namespace Server
     {
         private List<Khach> dsAll = new List<Khach>();
         private List<Game> dsGame = new List<Game>();
-        public UpdateBills(string mahd, string tenkhach, string ngaymua, string tongtien)
+        public UpdateBills(string mahd, string tenkhach, string ngaymua, string tongtien, string tinhtrang)
         {
             InitializeComponent();
+            MaHD = mahd;
+            BillTemp temp = Controller.getChitiettemp(mahd);
+            ID_Khach = temp._makh;
+            ID_SanPham = temp._idsanpham;
             tbtenkh.Text = tenkhach;
+            tbtengame.Text = temp._tengame;
             tbgia.Text = tongtien.Remove(tongtien.IndexOf('$'));
             DateTime dt = DateTime.ParseExact(ngaymua, "dd/MM/yyyy", null);
             tbngay.Text = dt.Day.ToString();
@@ -20,7 +25,18 @@ namespace Server
             tbnam.Text = dt.Year.ToString();
             dsAll = Controller.getKhach2();
             dsGame = Controller.getGames();
+            if (tinhtrang == "3")
+            {
+                tbtenkh.Enabled = false;
+                tbtengame.Enabled = false;
+                tbgia.Enabled = false;
+                tbngay.Enabled = false;
+                tbthang.Enabled = false;
+                tbnam.Enabled = false;
+                btnLogin.Enabled = false;
+            }
         }
+        private string MaHD;
         private void VeBorder(Control control, PaintEventArgs e, int r, int g, int b)
         {
             ControlPaint.DrawBorder(e.Graphics, control.ClientRectangle, Color.FromArgb(r, g, b), ButtonBorderStyle.Solid);

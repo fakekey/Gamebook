@@ -130,6 +130,27 @@ namespace Server
                 return dsk;
             }
         }
+        public static BillTemp getChitiettemp(string mahd)
+        {
+            string MaKH = "";
+            string IDSanPham = "";
+            string TenSP = "";
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            con.Open();
+            string query = $"Select * From `chitiethd` where MAHD ='{mahd}'";
+            MySqlCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = query;
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                MaKH = reader.GetString(1);
+                IDSanPham = reader.GetString(2);
+                TenSP = reader.GetString(3);
+            }
+            BillTemp temp = new BillTemp(MaKH, IDSanPham, TenSP);
+            return temp;
+        }
         public static List<Game> getGames()
         {
             List<Game> dsk = new List<Game>();
