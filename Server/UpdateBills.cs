@@ -34,6 +34,7 @@ namespace Server
                 tbthang.Enabled = false;
                 tbnam.Enabled = false;
                 btnLogin.Enabled = false;
+                noFocusButton1.Enabled = false;
             }
         }
         private string MaHD;
