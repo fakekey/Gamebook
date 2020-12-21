@@ -455,9 +455,10 @@ namespace Server
                 {
                     id_sp = ID_SanPham;
                     makh = ID_Khach;
+                    string id_hd = MaHD;
                     string gia = tbgia.Text;
                     string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
-                    int rs = Controller.ThemBill(id_sp, makh, gia, date);
+                    int rs = Controller.CapNhatBill(id_hd,makh ,id_sp, gia, date);
                     ShowKQ(rs);
                 }
                 else
@@ -499,6 +500,7 @@ namespace Server
                     }
                     else
                     {
+                        string id_hd = MaHD;
                         string gia = tbgia.Text;
                         string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
                         int rs = Controller.ThemBill(id_sp, makh, gia, date);

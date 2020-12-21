@@ -629,6 +629,10 @@ namespace Server
             con.Close();
         }
 
+        public static int CapNhatBill(string mahd, string makh, string id_sp , string gia, string date)
+        {
+            return 0;
+        }
         public static int ThemBill(string id_sp, string id_khach, string gia, string ngay)
         {
             // 1: thanh cong
