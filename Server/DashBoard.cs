@@ -348,8 +348,11 @@ namespace Server
             homeIsActive = userIsActive = billIsActive = false;
             productIsActive = true;
             clear();
-            fProducts = new Products();
-            AddForm(fProducts);
+            if (isAdd != "Products")
+            {
+                fProducts = new Products();
+                AddForm(fProducts);
+            }
         }
 
         private void panel14_Click(object sender, EventArgs e)
@@ -357,8 +360,11 @@ namespace Server
             userIsActive = productIsActive = homeIsActive = false;
             billIsActive = true;
             clear();
-            fBills = new Bills();
-            AddForm(fBills);
+            if (isAdd != "Bills")
+            {
+                fBills = new Bills();
+                AddForm(fBills);
+            }
         }
 
         private void label2_Click(object sender, EventArgs e)
