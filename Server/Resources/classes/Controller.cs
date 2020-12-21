@@ -604,6 +604,39 @@ namespace Server
             con.Close();
         }
 
+        public static int ThemBill(string id_sp , string id_khach , string gia , string ngay)
+        {
+            // 1: thanh cong
+            // -99: loi hethong
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand($"INSERT INTO `gamebookdata`.`hoa don`(`MAKH`, `Ngay Mua` , `Tong Tien`) VALUES ('{id_khach}','{ngay}','{gia}')", con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                con.Open();
+                cmd = new MySqlCommand("select MAHD from `hoa don` ", con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                string mahd = "";
+                while (reader.Read())
+                {
+                    mahd = reader.GetString(0);
+                }
+                con.Close();
+                con.Open();
+                cmd = new MySqlCommand($"INSERT INTO `gamebookdata`.`chi tiet hoa don`(`MAHD`, `ID_sp`, `Don gia`) VALUES ('{mahd}','{id_sp}','{gia}')", con);
+                cmd.ExecuteNonQuery();
+                return 1;
+            }
+            catch
+            {
+                return -99;
+            }
+
+
+        }
+
         public static void InDanhSachSP(List<Product> ds)
         {
             // khoi tao excel

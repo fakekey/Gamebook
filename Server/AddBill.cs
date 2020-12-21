@@ -391,20 +391,99 @@ namespace Server
             timerIsAlive = false;
         }
 
+        private void ShowKQ(int rs)
+        {
+            if(rs == 1)
+            {
+                lbtenkh.Text = "- Thành công !";
+                lbtenkh.ForeColor = Color.FromArgb(77, 222, 19);
+                tenkhlb.ForeColor = Color.FromArgb(77, 222, 19);
+                PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
+                VeBorder(tenkh, eventArgs, 77, 222, 19);
+                tbTieuDeDontHandle = true;
+                tbtengame.Text = "";
+                tbtenkh.Text = "";
+                ID_Khach = null;
+                ID_SanPham = null;
+            }
+            else
+            {
+                lbtenkh.Text = "- Thêm thất bại !";
+                lbtenkh.ForeColor = Color.FromArgb(240, 71, 71);
+                tenkhlb.ForeColor = Color.FromArgb(240, 71, 71);
+                PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
+                VeBorder(tenkh, eventArgs, 240, 71, 71);
+                tbTieuDeDontHandle = true;
+            }
+        }
+
         private void timer3_Tick(object sender, EventArgs e)
         {
-            if(tbtenkh.Text != string.Empty && tbtengame.Text != string.Empty)
+            string id_sp = null;
+            string makh = null;
+            if (tbtenkh.Text != string.Empty && tbtengame.Text != string.Empty)
             {
-                string id_sp = ID_SanPham;
-                string makh = ID_Khach;
-                string gia = tbgia.Text;
-                string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
+                if (ID_SanPham != null && ID_Khach !=null)
+                {
+                    id_sp = ID_SanPham;
+                    makh = ID_Khach;
+                    string gia = tbgia.Text;
+                    string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
+                    int rs = Controller.ThemBill(id_sp, makh, gia, date);
+                    ShowKQ(rs);
+                }
+                else
+                {
+                    foreach (var item in dsGame)
+                    {
+                        if (item.TenGame.ToLower().Equals(tbtengame.Text.ToLower()))
+                        {
+                            id_sp = item.IDGame;
+                        }
+                    }
+                    foreach (var item in dsAll)
+                    {
+                        if (item.HoTen.ToLower().Equals(tbtenkh.Text.ToLower()))
+                        {
+                            makh = item.IDKhach;
+                        }
+                    }
+
+                    if(id_sp == null || makh == null)
+                    {   
+                        if(makh == null)
+                        {
+                            lbtenkh.Text = "- Không tồn tại khách hàng";
+                            lbtenkh.ForeColor = Color.FromArgb(240, 71, 71);
+                            tenkhlb.ForeColor = Color.FromArgb(240, 71, 71);
+                            PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
+                            VeBorder(tenkh, eventArgs, 240, 71, 71);
+                            tbTieuDeDontHandle = true;
+                        }
+                        if(id_sp == null)
+                        {
+                            lbtengame.Text = "- Không tồn tại sản phẩm";
+                            tengamelb.ForeColor = Color.FromArgb(240, 71, 71);
+                            PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
+                            VeBorder(tengame, eventArgs, 240, 71, 71);
+                            tbPhienBanDontHandle = true;
+                        }
+                    }
+                    else
+                    {
+                        string gia = tbgia.Text;
+                        string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
+                        int rs = Controller.ThemBill(id_sp, makh, gia, date);
+                        ShowKQ(rs);
+                    }
+                }
             }
             else
             {
                 if (tbtenkh.Text == string.Empty)
                 {
                     lbtenkh.Text = "- Mục này không thể bỏ trống";
+                    lbtenkh.ForeColor = Color.FromArgb(240, 71, 71);
                     tenkhlb.ForeColor = Color.FromArgb(240, 71, 71);
                     PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
                     VeBorder(tenkh, eventArgs, 240, 71, 71);
