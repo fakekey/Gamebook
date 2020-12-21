@@ -757,7 +757,63 @@ namespace Server
 
         public static void XuatBill(string mahd , string makh,string tenkh , string ten_sp ,string gia, string ngaymua)
         {
-            
+            // khoi tao excel
+            Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet ws = workbook.Sheets["Sheet1"];
+            ws.Name = "Hoa Don";
+            ws = workbook.ActiveSheet;
+            app.Visible = true;
+            ws.PageSetup.Orientation = Microsoft.Office.Interop.Excel.XlPageOrientation.xlPortrait;
+            ws.PageSetup.PaperSize = Microsoft.Office.Interop.Excel.XlPaperSize.xlPaperA4;
+            ws.PageSetup.LeftMargin = 50;
+            ws.PageSetup.RightMargin = 50;
+            ws.PageSetup.TopMargin = 50;
+            ws.PageSetup.BottomMargin = 50;
+
+            ws.Range["A1"].ColumnWidth = 8.38;
+            ws.Range["B1"].ColumnWidth = 8.38;
+            ws.Range["C1"].ColumnWidth = 21.25;
+            ws.Range["D1"].ColumnWidth = 11.75;
+            ws.Range["E1"].ColumnWidth = 11.75;
+            ws.Range["A10","G10"].RowHeight = 35.25;
+
+            ws.Range["A9","G9"].Font.Bold = true;
+            ws.Range["A9","G9"].Font.Size = 14;
+            ws.Range["A9","G9"].HorizontalAlignment = 3;
+
+            ws.Range["A10","G10"].Font.Size = 12;
+            ws.Range["A10","G10"].VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+            ws.Range["A10","G10"].HorizontalAlignment = 3;
+
+            ws.Range["B9","E10"].Borders.LineStyle = 1;
+
+
+            ws.Cells[1, 5] = "HÓA ĐƠN MUA HÀNG ";
+            ws.Cells[4, 3] = $"Mã Hóa Đơn: {mahd}";
+            ws.Cells[5, 3] = $"Mã Khách Hàng: {makh}";
+            ws.Cells[6, 3] = $"Họ Tên: {tenkh}";
+            ws.Cells[7, 3] = $"Ngày Mua: {ngaymua}";
+            ws.Cells[9, 2] = "STT";
+            ws.Cells[9, 3] = "Tên Sản Phẩm";
+            ws.Cells[9, 4] = "Giá";
+            ws.Cells[9, 5] = "Tổng Tiền";
+            ws.Cells[10, 2] = "1";
+            ws.Cells[10, 3] = $"{ten_sp.ToUpper()}";
+            ws.Range["C10"].WrapText = true;
+            ws.Cells[10, 4] = $"{gia}$";
+            ws.Cells[10, 5] = $"{gia}$";
+            ws.Cells[14, 2] = "Người Mua Hàng";
+            ws.Cells[14, 5] = "Nhân Viên Bán Hàng";
+
+            ws.Cells[18, 2] = "Ký và ghi rõ họ tên";
+            ws.Cells[18, 5] = "Ký và ghi rõ họ tên";
+
+            ws.Range["A1", "F1"].MergeCells = true;
+            ws.Range["A1", "G1"].Font.Bold = true;
+            ws.Range["A1", "G1"].HorizontalAlignment = 3;
+            ws.Range["A1", "G1"].Font.Size = 16;
+
         }
     }
 }

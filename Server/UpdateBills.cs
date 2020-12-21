@@ -430,10 +430,6 @@ namespace Server
                 PaintEventArgs eventArgs3 = new PaintEventArgs(ngay.CreateGraphics(), ngay.ClientRectangle);
                 VeBorder(ngay, eventArgs3, 77, 222, 19);
                 tbNgayDontHandle = true;
-                tbtengame.Text = "";
-                tbtenkh.Text = "";
-                ID_Khach = null;
-                ID_SanPham = null;
             }
             else
             {
@@ -452,61 +448,48 @@ namespace Server
             string makh = null;
             if (tbtenkh.Text != string.Empty && tbtengame.Text != string.Empty)
             {
-                if (ID_SanPham != null && ID_Khach != null)
+                foreach (var item in dsGame)
                 {
-                    id_sp = ID_SanPham;
-                    makh = ID_Khach;
-                    string id_hd = MaHD;
-                    string gia = tbgia.Text;
-                    date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
-                    int rs = Controller.CapNhatBill(id_hd,makh ,id_sp, gia, date);
-                    ShowKQ(rs);
+                    if (item.TenGame.ToLower().Equals(tbtengame.Text.ToLower()))
+                    {
+                        id_sp = item.IDGame;
+                    }
+                }
+                foreach (var item in dsAll)
+                {
+                    if (item.HoTen.ToLower().Equals(tbtenkh.Text.ToLower()))
+                    {
+                        makh = item.IDKhach;
+                    }
+                }
+
+                if (id_sp == null || makh == null)
+                {
+                    if (makh == null)
+                    {
+                        lbtenkh.Text = "- Không tồn tại khách hàng";
+                        lbtenkh.ForeColor = Color.FromArgb(240, 71, 71);
+                        tenkhlb.ForeColor = Color.FromArgb(240, 71, 71);
+                        PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
+                        VeBorder(tenkh, eventArgs, 240, 71, 71);
+                        tbTieuDeDontHandle = true;
+                    }
+                    if (id_sp == null)
+                    {
+                        lbtengame.Text = "- Không tồn tại sản phẩm";
+                        tengamelb.ForeColor = Color.FromArgb(240, 71, 71);
+                        PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
+                        VeBorder(tengame, eventArgs, 240, 71, 71);
+                        tbPhienBanDontHandle = true;
+                    }
                 }
                 else
                 {
-                    foreach (var item in dsGame)
-                    {
-                        if (item.TenGame.ToLower().Equals(tbtengame.Text.ToLower()))
-                        {
-                            id_sp = item.IDGame;
-                        }
-                    }
-                    foreach (var item in dsAll)
-                    {
-                        if (item.HoTen.ToLower().Equals(tbtenkh.Text.ToLower()))
-                        {
-                            makh = item.IDKhach;
-                        }
-                    }
-
-                    if (id_sp == null || makh == null)
-                    {
-                        if (makh == null)
-                        {
-                            lbtenkh.Text = "- Không tồn tại khách hàng";
-                            lbtenkh.ForeColor = Color.FromArgb(240, 71, 71);
-                            tenkhlb.ForeColor = Color.FromArgb(240, 71, 71);
-                            PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
-                            VeBorder(tenkh, eventArgs, 240, 71, 71);
-                            tbTieuDeDontHandle = true;
-                        }
-                        if (id_sp == null)
-                        {
-                            lbtengame.Text = "- Không tồn tại sản phẩm";
-                            tengamelb.ForeColor = Color.FromArgb(240, 71, 71);
-                            PaintEventArgs eventArgs = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
-                            VeBorder(tengame, eventArgs, 240, 71, 71);
-                            tbPhienBanDontHandle = true;
-                        }
-                    }
-                    else
-                    {
-                        string id_hd = MaHD;
-                        string gia = tbgia.Text;
-                        string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
-                        int rs = Controller.CapNhatBill(id_hd, makh, id_sp, gia, date);
-                        ShowKQ(rs);
-                    }
+                    string id_hd = MaHD;
+                    string gia = tbgia.Text;
+                    string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
+                    int rs = Controller.CapNhatBill(id_hd, makh, id_sp, gia, date);
+                    ShowKQ(rs);
                 }
             }
             else
@@ -704,7 +687,7 @@ namespace Server
         private void noFocusButton1_Click(object sender, EventArgs e)
         {
             date = $"{tbngay.Text}/{tbthang.Text}/{tbnam.Text}";
-            Controller.XuatBill(MaHD, ID_Khach, tbtenkh.Text,tbtengame.Text, tbgia.Text, date);
+            Controller.XuatBill(MaHD, ID_Khach, tbtenkh.Text, tbtengame.Text, tbgia.Text, date);
         }
     }
 }

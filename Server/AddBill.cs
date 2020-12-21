@@ -435,8 +435,20 @@ namespace Server
             {
                 if (ID_SanPham != null && ID_Khach != null)
                 {
-                    id_sp = ID_SanPham;
-                    makh = ID_Khach;
+                    foreach (var item in dsGame)
+                    {
+                        if (item.TenGame.ToLower().Equals(tbtengame.Text.ToLower()))
+                        {
+                            id_sp = item.IDGame;
+                        }
+                    }
+                    foreach (var item in dsAll)
+                    {
+                        if (item.HoTen.ToLower().Equals(tbtenkh.Text.ToLower()))
+                        {
+                            makh = item.IDKhach;
+                        }
+                    }
                     string gia = tbgia.Text;
                     string date = $"{tbnam.Text}/{tbthang.Text}/{tbngay.Text}";
                     int rs = Controller.ThemBill(id_sp, makh, gia, date);
