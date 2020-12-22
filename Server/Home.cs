@@ -10,13 +10,13 @@ namespace Server
         public Home()
         {
             InitializeComponent();
-            setBlock4("12","2020");
+            setBlock4("12", "2020");
             setBlock2("12", "2020");
-            setBlock3("12","2020");
+            setBlock3("12", "2020");
             setBlock1("12", "2020");
         }
 
-        private void setBlock4(string thang , string nam)
+        private void setBlock4(string thang, string nam)
         {
             List<string> ds = Controller.getTongDoanhThu(thang, nam);
             block4.Count = ds[0].ToString();
@@ -35,7 +35,7 @@ namespace Server
             List<string> ds = Controller.getHoaDonHuy(thang, nam);
             block2.Count = ds[0].ToString();
             block2.ThangTruoc = ds[1].ToString();
-            if(block2.ThangTruoc != "0")
+            if (block2.ThangTruoc != "0")
             {
                 string temp = $"{(int.Parse(block2.Count) - int.Parse(block2.ThangTruoc))}";
                 block2.SoVoiThangTruoc = temp;
@@ -43,7 +43,7 @@ namespace Server
                 block2.Percent = $"{percent}";
             }
         }
-        private void setBlock1(string thang , string nam)
+        private void setBlock1(string thang, string nam)
         {
             List<string> ds = Controller.getKhach(thang, nam);
             block1.Count = ds[0].ToString();
@@ -52,11 +52,11 @@ namespace Server
             {
                 string temp = $"{(int.Parse(block1.Count) - int.Parse(block1.ThangTruoc))}";
                 block1.SoVoiThangTruoc = temp;
-                float percent = ((float) int.Parse(temp) / int.Parse(block1.ThangTruoc)) * 100;
+                float percent = ((float)int.Parse(temp) / int.Parse(block1.ThangTruoc)) * 100;
                 block1.Percent = $"{percent}";
             }
         }
-        private void setBlock3(string thang , string nam)
+        private void setBlock3(string thang, string nam)
         {
             List<string> ds = Controller.getTongHoaDon(thang, nam);
             block3.Count = ds[0].ToString();
@@ -72,9 +72,9 @@ namespace Server
 
         private void Home_Load(object sender, EventArgs e)
         {
-            FillChart1();
+            FillChart();
         }
-        private void FillChart1()
+        private void FillChart()
         {
             chart1.Series["Khách"].Points.AddXY("8", 55);
             chart1.Series["Khách"].Points.AddXY("9", 40);
