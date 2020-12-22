@@ -166,8 +166,6 @@ namespace Server
         }
 
         #endregion
-
-        private PanelRadius panelRadius1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -176,5 +174,6 @@ namespace Server
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label7;
+        private PanelRadius panelRadius1;
     }
 }

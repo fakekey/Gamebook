@@ -178,6 +178,75 @@ namespace Server
                 return dsk;
             }
         }
+        public static int getCountAllGame()
+        {
+            int n = 0;
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select Count(*) From `san pham`";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    n = int.Parse(reader.GetString(0));
+                }
+                return n;
+            }
+            catch
+            {
+                return n;
+            }
+        }
+        public static int getCountAAA()
+        {
+            int n = 0;
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select Count(*) From `san pham` where `category` = 'AAA'";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    n = int.Parse(reader.GetString(0));
+                }
+                return n;
+            }
+            catch
+            {
+                return n;
+            }
+        }
+        public static int getCountIndie()
+        {
+            int n = 0;
+            try
+            {
+                MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+                con.Open();
+                string query = "Select Count(*) From `san pham` where `category` = 'Indie'";
+                MySqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    n = int.Parse(reader.GetString(0));
+                }
+                return n;
+            }
+            catch
+            {
+                return n;
+            }
+        }
         public static List<User> getNhanVien()
         {
             List<User> dsnv = new List<User>();
@@ -629,7 +698,7 @@ namespace Server
             con.Close();
         }
 
-        public static int CapNhatBill(string mahd, string makh, string id_sp , string gia, string date)
+        public static int CapNhatBill(string mahd, string makh, string id_sp, string gia, string date)
         {
             // 1: thanh cong
             // -99: loi he thong
@@ -684,9 +753,9 @@ namespace Server
             }
         }
 
-        public static List<string> getTongHoaDon(string thang , string nam)
+        public static List<string> getTongHoaDon(string thang, string nam)
         {
-            List<string> ds = new List<string> {"0","0"};
+            List<string> ds = new List<string> { "0", "0" };
             MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
             con.Open();
             MySqlCommand cmd = new MySqlCommand($"SELECT COUNT(`hoa don`.MAHD) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = {thang} and YEAR(`hoa don`.`Ngay Mua`) = '{nam}'", con);
@@ -705,9 +774,9 @@ namespace Server
             }
             con.Close();
             con.Open();
-            if(int.Parse(thang) - 1 == 0)
+            if (int.Parse(thang) - 1 == 0)
             {
-                cmd = new MySqlCommand($"SELECT COUNT(`hoa don`.MAHD) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = 12 and YEAR(`hoa don`.`Ngay Mua`) = {int.Parse(nam)-1}", con);
+                cmd = new MySqlCommand($"SELECT COUNT(`hoa don`.MAHD) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = 12 and YEAR(`hoa don`.`Ngay Mua`) = {int.Parse(nam) - 1}", con);
             }
             else
             {
@@ -732,7 +801,7 @@ namespace Server
 
         public static List<string> getHoaDonHuy(string thang, string nam)
         {
-            List<string> ds = new List<string>{"0", "0"};
+            List<string> ds = new List<string> { "0", "0" };
             MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
             con.Open();
             MySqlCommand cmd = new MySqlCommand($"SELECT COUNT(`hoa don`.MAHD) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = {thang} and YEAR(`hoa don`.`Ngay Mua`) = '{nam}' and `hoa don`.ID_tinhtrang = 3 ", con);
@@ -807,7 +876,8 @@ namespace Server
             }
             reader = cmd.ExecuteReader();
             while (reader.Read())
-            {   if(reader.IsDBNull(0) == false)
+            {
+                if (reader.IsDBNull(0) == false)
                 {
                     string rs = reader.GetString(0);
                     if (rs != null)
@@ -936,7 +1006,7 @@ namespace Server
             ws.Range["E" + cell].Font.Bold = true;
         }
 
-        public static void XuatBill(string mahd , string makh,string tenkh , string ten_sp ,string gia, string ngaymua)
+        public static void XuatBill(string mahd, string makh, string tenkh, string ten_sp, string gia, string ngaymua)
         {
             // khoi tao excel
             Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
@@ -957,17 +1027,17 @@ namespace Server
             ws.Range["C1"].ColumnWidth = 21.25;
             ws.Range["D1"].ColumnWidth = 11.75;
             ws.Range["E1"].ColumnWidth = 11.75;
-            ws.Range["A10","G10"].RowHeight = 35.25;
+            ws.Range["A10", "G10"].RowHeight = 35.25;
 
-            ws.Range["A9","G9"].Font.Bold = true;
-            ws.Range["A9","G9"].Font.Size = 14;
-            ws.Range["A9","G9"].HorizontalAlignment = 3;
+            ws.Range["A9", "G9"].Font.Bold = true;
+            ws.Range["A9", "G9"].Font.Size = 14;
+            ws.Range["A9", "G9"].HorizontalAlignment = 3;
 
-            ws.Range["A10","G10"].Font.Size = 12;
-            ws.Range["A10","G10"].VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
-            ws.Range["A10","G10"].HorizontalAlignment = 3;
+            ws.Range["A10", "G10"].Font.Size = 12;
+            ws.Range["A10", "G10"].VerticalAlignment = Microsoft.Office.Interop.Excel.XlVAlign.xlVAlignCenter;
+            ws.Range["A10", "G10"].HorizontalAlignment = 3;
 
-            ws.Range["B9","E10"].Borders.LineStyle = 1;
+            ws.Range["B9", "E10"].Borders.LineStyle = 1;
 
 
             ws.Cells[1, 5] = "HÓA ĐƠN MUA HÀNG ";

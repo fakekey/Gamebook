@@ -230,6 +230,9 @@ namespace Server
             chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp3, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp3.ToString(), yearNowSelected.ToString())[0]), 2));
             chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp4, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp4.ToString(), yearNowSelected.ToString())[0]), 2));
             chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp5, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp5.ToString(), yearNowSelected.ToString())[0]), 2));
+
+            chart3.Series["Games"].Points.AddXY("Games AAA", Math.Round(((float)Controller.getCountAAA() / Controller.getCountAllGame()) * 100, 2));
+            chart3.Series["Games"].Points.AddXY("Games Indie", Math.Round(((float)Controller.getCountIndie() / Controller.getCountAllGame()) * 100, 2));
         }
         public void ReSize()
         {
@@ -242,6 +245,7 @@ namespace Server
                 panelRadius3.Size = new Size(563, 311);
                 panelRadius3.rSize = new Size(562, 310);
                 panelRadius3.Refresh();
+                panelRadius5.Visible = false;
             }
             else
             {
@@ -252,6 +256,8 @@ namespace Server
                 panelRadius3.Size = new Size(1115, 467);
                 panelRadius3.rSize = new Size(1114, 466);
                 panelRadius3.Refresh();
+                panelRadius5.Location = new Point(6, 714);
+                panelRadius5.Visible = true;
             }
         }
         private Block block1;
@@ -275,6 +281,7 @@ namespace Server
             chart1.Series["Đơn đặt"].Points.Clear();
             chart1.Series["Đơn hủy"].Points.Clear();
             chart2.Series["Tổng Doanh Thu"].Points.Clear();
+            chart3.Series["Games"].Points.Clear();
             FillChart();
         }
 
@@ -441,6 +448,18 @@ namespace Server
             lbThang.Text = "12";
             lbNam.Text = selectNam.Text;
             reload("12", selectNam.Text);
+        }
+
+        private void chart3_MouseEnter(object sender, EventArgs e)
+        {
+            panelRadius5.rColor = Color.FromArgb(32, 34, 37);
+            panelRadius5.Refresh();
+        }
+
+        private void chart3_MouseLeave(object sender, EventArgs e)
+        {
+            panelRadius5.rColor = Color.FromArgb(41, 43, 47);
+            panelRadius5.Refresh();
         }
     }
 }
