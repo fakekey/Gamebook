@@ -157,9 +157,6 @@
   <data name="logo30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo110" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo57" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo57.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -169,8 +166,8 @@
   <data name="logo132" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo132.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo49" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo49.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -217,6 +214,9 @@
   <data name="logo134" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo134.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo126" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo126.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo39" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo39.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -262,6 +262,9 @@
   <data name="logo102" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo102.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-below-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8-below-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo77" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo77.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -280,9 +283,6 @@
   <data name="logo135" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo135.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-ok-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\icons8-ok-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="logo64" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -297,9 +297,6 @@
   </data>
   <data name="logo131" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo131.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo80" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo87" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo87.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,8 +325,8 @@
   <data name="logo93" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo93.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo85" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo85.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-ok-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8-ok-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo82" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo82.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -351,6 +348,9 @@
   </data>
   <data name="logo45" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo45.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="logo49" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo49.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo59" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo59.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -442,6 +442,9 @@
   <data name="logo33" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo33.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="icons8-cancel-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8-cancel-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo123" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo123.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -502,6 +505,9 @@
   <data name="logo146" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo146.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo85" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo85.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo95" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo95.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -538,8 +544,8 @@
   <data name="icons8_bill_48px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\icons8_bill_48px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo126" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\logo126.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logo110" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\logo110.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo61" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo61.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -547,7 +553,7 @@
   <data name="logo50" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\img\logo50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-cancel-24" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\img\icons8-cancel-24.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-send-letter-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\img\icons8-send-letter-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

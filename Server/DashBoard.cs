@@ -329,6 +329,11 @@ namespace Server
             userIsActive = productIsActive = billIsActive = false;
             homeIsActive = true;
             clear();
+            if (isAdd != "Home")
+            {
+                fHome = new Home();
+                AddForm(fHome);
+            }
         }
 
         private void panel8_Click(object sender, EventArgs e)
@@ -499,6 +504,7 @@ namespace Server
             form.Show();
             isAdd = form.Name;
         }
+        private Home fHome;
         private Users fUsers;
         private Products fProducts;
         private Bills fBills;

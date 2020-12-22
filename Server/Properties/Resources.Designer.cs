@@ -103,6 +103,16 @@ namespace Server.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_below_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-below-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_bill_48px {
             get {
                 object obj = ResourceManager.GetObject("icons8_bill_48px", resourceCulture);
@@ -216,6 +226,16 @@ namespace Server.Properties {
         internal static System.Drawing.Bitmap icons8_ok_24 {
             get {
                 object obj = ResourceManager.GetObject("icons8-ok-24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_send_letter_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-send-letter-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
