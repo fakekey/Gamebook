@@ -7,6 +7,8 @@ namespace Server
 {
     public partial class Home : Form
     {
+        private int monthNowSelected;
+        private int yearNowSelected;
         public Home()
         {
             InitializeComponent();
@@ -22,6 +24,8 @@ namespace Server
             setBlock2(DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString());
             setBlock3(DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString());
             setBlock1(DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString());
+            monthNowSelected = DateTime.Now.Month;
+            yearNowSelected = DateTime.Now.Year;
         }
 
         private void setBlock4(string thang, string nam)
@@ -175,13 +179,63 @@ namespace Server
         }
         private void FillChart()
         {
-            chart1.Series["Khách"].Points.AddXY("8", 55);
-            chart1.Series["Khách"].Points.AddXY("9", 40);
-            chart1.Series["Khách"].Points.AddXY("10", 100);
-            chart1.Series["Khách"].Points.AddXY("11", 75);
-            chart1.Series["Khách"].Points.AddXY("12", 90);
+            int monthtemp1 = (monthNowSelected - 2) % 12;
+            int monthtemp2 = (monthNowSelected - 1) % 12;
+            int monthtemp3 = monthNowSelected % 12;
+            int monthtemp4 = (monthNowSelected + 1) % 12;
+            int monthtemp5 = (monthNowSelected + 2) % 12;
+            if (monthtemp1 == 0)
+            {
+                monthtemp1 = 12;
+            }
+            if (monthtemp2 == 0)
+            {
+                monthtemp2 = 12;
+            }
+            if (monthtemp3 == 0)
+            {
+                monthtemp3 = 12;
+            }
+            if (monthtemp4 == 0)
+            {
+                monthtemp4 = 12;
+            }
+            if (monthtemp5 == 0)
+            {
+                monthtemp5 = 12;
+            }
+            //Series là cột dữ liệu, Point.AddXY để thêm vào biểu đồ hoành độ vs tung độ bn thôi
+            chart1.Series["Khách"].Points.AddXY(monthtemp1, 55);
+            chart1.Series["Khách"].Points.AddXY(monthtemp2, 40);
+            chart1.Series["Khách"].Points.AddXY(monthtemp3, 100);
+            chart1.Series["Khách"].Points.AddXY(monthtemp4, 75);
+            chart1.Series["Khách"].Points.AddXY(monthtemp5, 90);
+            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp1, 70);
+            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp2, 100);
+            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp3, 90);
+            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp4, 76);
+            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp5, 92);
+            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp1, 3);
+            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp2, 5);
+            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp3, 2);
+            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp4, 1);
+            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp5, 7);
         }
-
+        public void ReSize()
+        {
+            if (this.Width == 1231)
+            {
+                panelRadius1.Size = new Size(563, 311);
+                panelRadius1.rSize = new Size(562, 310);
+                panelRadius1.Refresh();
+            }
+            else
+            {
+                panelRadius1.Size = new Size(1115, 311);
+                panelRadius1.rSize = new Size(1114, 310);
+                panelRadius1.Refresh();
+            }
+        }
         private Block block1;
         private Block block2;
         private Block block3;

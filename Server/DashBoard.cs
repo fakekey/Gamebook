@@ -65,6 +65,10 @@ namespace Server
                 this.WindowState = FormWindowState.Maximized;
                 CheckClass.location = this.Location;
                 CheckClass.size = this.Size;
+                if (fHome != null)
+                {
+                    fHome.ReSize();
+                }
                 if (fUsers != null)
                 {
                     fUsers.ReSize();
@@ -83,6 +87,10 @@ namespace Server
                 this.WindowState = FormWindowState.Normal;
                 CheckClass.location = this.Location;
                 CheckClass.size = this.Size;
+                if (fHome != null)
+                {
+                    fHome.ReSize();
+                }
                 if (fUsers != null)
                 {
                     fUsers.ReSize();
