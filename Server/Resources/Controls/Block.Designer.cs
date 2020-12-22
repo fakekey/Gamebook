@@ -1,5 +1,5 @@
 ﻿
-namespace Server.Resources.Controls
+namespace Server
 {
     partial class Block
     {
@@ -72,9 +72,8 @@ namespace Server.Resources.Controls
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(72, 169);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 35);
+            this.label7.Size = new System.Drawing.Size(0, 35);
             this.label7.TabIndex = 9;
-            this.label7.Text = "15.7%";
             // 
             // panel1
             // 
@@ -94,9 +93,8 @@ namespace Server.Resources.Controls
             this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(124, 222);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 21);
+            this.label5.Size = new System.Drawing.Size(0, 21);
             this.label5.TabIndex = 7;
-            this.label5.Text = "30";
             // 
             // label6
             // 
@@ -118,9 +116,8 @@ namespace Server.Resources.Controls
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(162, 258);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 21);
+            this.label4.Size = new System.Drawing.Size(0, 21);
             this.label4.TabIndex = 5;
-            this.label4.Text = "+ 50";
             // 
             // label3
             // 
@@ -142,9 +139,8 @@ namespace Server.Resources.Controls
             this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(29, 83);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 48);
+            this.label2.Size = new System.Drawing.Size(0, 48);
             this.label2.TabIndex = 3;
-            this.label2.Text = "20";
             // 
             // label1
             // 
@@ -154,9 +150,8 @@ namespace Server.Resources.Controls
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(30, 26);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 38);
+            this.label1.Size = new System.Drawing.Size(0, 38);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Khách hàng";
             // 
             // Block
             // 
@@ -165,6 +160,7 @@ namespace Server.Resources.Controls
             this.Controls.Add(this.panelRadius1);
             this.Name = "Block";
             this.Size = new System.Drawing.Size(311, 311);
+            this.Load += new System.EventHandler(this.Block_Load);
             this.panelRadius1.ResumeLayout(false);
             this.panelRadius1.PerformLayout();
             this.ResumeLayout(false);

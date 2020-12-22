@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Server.Resources.Controls
+namespace Server
 {
     public partial class Block : UserControl
     {
@@ -20,7 +20,8 @@ namespace Server.Resources.Controls
         public string Count { get => label2.Text; set => label2.Text = value; }
         public string ThangTruoc { get => label5.Text; set => label5.Text = value; }
         public string SoVoiThangTruoc { get => label4.Text; set => label4.Text = value; }
-        public string Percent { get => label7.Text.Remove(label7.Text.IndexOf('%')); set => label7.Text = value + "%"; }
+        public string Percent { get => label7.Text; set => label7.Text = value; }
+        public bool isTang { get; set; }
 
         private void panelRadius1_MouseEnter(object sender, EventArgs e)
         {
@@ -32,6 +33,21 @@ namespace Server.Resources.Controls
         {
             panelRadius1.rColor = Color.FromArgb(41, 43, 47);
             panelRadius1.Refresh();
+        }
+
+        private void Block_Load(object sender, EventArgs e)
+        {
+            Percent = $"{Percent}%";
+            if (isTang == true)
+            {
+                SoVoiThangTruoc = $"+ {SoVoiThangTruoc}";
+                panel1.BackgroundImage = Properties.Resources.icons8_send_letter_48;
+            }
+            else
+            {
+                SoVoiThangTruoc = $"- {SoVoiThangTruoc.Replace("-", "")}";
+                panel1.BackgroundImage = Properties.Resources.icons8_below_48;
+            }
         }
     }
 }

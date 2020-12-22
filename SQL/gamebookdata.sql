@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 21/12/2020 22:01:39
+ Date: 22/12/2020 22:00:55
 */
 
 SET NAMES utf8mb4;
@@ -44,9 +44,8 @@ INSERT INTO `account` VALUES ('dodiepkhanh@gmail.com', 'b5794e09d61e4dcc0c7a78d5
 INSERT INTO `account` VALUES ('huongleft@gmail.com', 'b67124c5f98bdd42605fbcac6c279ebb', '3');
 INSERT INTO `account` VALUES ('linhcool@gmail.com', 'dba6128e978d638492640f3c4869ffcf', '3');
 INSERT INTO `account` VALUES ('nguyenquyet@gmail.com', '74e8c143f91a302f058c2be8669b40a4', '3');
-INSERT INTO `account` VALUES ('tructiepgame@gmail.com', 'f11065be41be55876fbcf49d014b09c6', '3');
 INSERT INTO `account` VALUES ('truongnt@gmail.com', 'b5794e09d61e4dcc0c7a78d5d95df756', '2');
-INSERT INTO `account` VALUES ('yoneyas@gmail.com', 'ebde58f229c5768e39e7e50255db7d0a', '3');
+INSERT INTO `account` VALUES ('yoneyas@gmail.com', '', '3');
 
 -- ----------------------------
 -- Table structure for chi tiet hoa don
@@ -62,15 +61,18 @@ CREATE TABLE `chi tiet hoa don`  (
   INDEX `cthd_sp`(`ID_sp`) USING BTREE,
   CONSTRAINT `cthd_hd` FOREIGN KEY (`MAHD`) REFERENCES `hoa don` (`MAHD`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `sthd` FOREIGN KEY (`ID_sp`) REFERENCES `san pham` (`ID_sp`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 42 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of chi tiet hoa don
 -- ----------------------------
-INSERT INTO `chi tiet hoa don` VALUES (16, 7, 10, '0');
-INSERT INTO `chi tiet hoa don` VALUES (17, 8, 9, '10');
-INSERT INTO `chi tiet hoa don` VALUES (18, 9, 11, '10');
-INSERT INTO `chi tiet hoa don` VALUES (19, 10, 2, '30');
+INSERT INTO `chi tiet hoa don` VALUES (35, 26, 1, '67');
+INSERT INTO `chi tiet hoa don` VALUES (36, 27, 3, '1.91');
+INSERT INTO `chi tiet hoa don` VALUES (37, 28, 3, '1.91');
+INSERT INTO `chi tiet hoa don` VALUES (38, 29, 1, '67');
+INSERT INTO `chi tiet hoa don` VALUES (39, 30, 2, '30');
+INSERT INTO `chi tiet hoa don` VALUES (40, 31, 30, '3.75');
+INSERT INTO `chi tiet hoa don` VALUES (41, 32, 30, '3.75');
 
 -- ----------------------------
 -- Table structure for hoa don
@@ -87,15 +89,18 @@ CREATE TABLE `hoa don`  (
   INDEX `hd_ttt`(`ID_tinhtrang`) USING BTREE,
   CONSTRAINT `hd_kh` FOREIGN KEY (`MAKH`) REFERENCES `khach hang` (`MAKH`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `hd_ttt` FOREIGN KEY (`ID_tinhtrang`) REFERENCES `tinh trang don hang` (`ID_tinhtrang`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of hoa don
 -- ----------------------------
-INSERT INTO `hoa don` VALUES (7, 27, '2020-12-21', '0', 1);
-INSERT INTO `hoa don` VALUES (8, 21, '2020-12-21', '10', 3);
-INSERT INTO `hoa don` VALUES (9, 20, '2020-12-21', '10', 1);
-INSERT INTO `hoa don` VALUES (10, 26, '2020-02-29', '30', 2);
+INSERT INTO `hoa don` VALUES (26, 20, '2020-12-22', '67', 2);
+INSERT INTO `hoa don` VALUES (27, 20, '2020-12-22', '1.91', 3);
+INSERT INTO `hoa don` VALUES (28, 22, '2020-12-22', '1.91', 2);
+INSERT INTO `hoa don` VALUES (29, 21, '2020-11-22', '67', 2);
+INSERT INTO `hoa don` VALUES (30, 26, '2020-11-22', '30', 3);
+INSERT INTO `hoa don` VALUES (31, 28, '2020-11-22', '3.75', 3);
+INSERT INTO `hoa don` VALUES (32, 20, '2020-12-22', '3.75', 2);
 
 -- ----------------------------
 -- Table structure for khach hang
@@ -108,19 +113,18 @@ CREATE TABLE `khach hang`  (
   PRIMARY KEY (`MAKH`) USING BTREE,
   INDEX `kh_acc`(`Email`) USING BTREE,
   CONSTRAINT `kh_acc` FOREIGN KEY (`Email`) REFERENCES `account` (`Email`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 29 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of khach hang
 -- ----------------------------
-INSERT INTO `khach hang` VALUES (20, 'huongleft@gmail.com', 'Tran Thi Mai Huong');
-INSERT INTO `khach hang` VALUES (21, 'nguyenquyet@gmail.com', 'Nguyen Tien Quyet');
-INSERT INTO `khach hang` VALUES (22, 'anhnt@gmail.com', 'Tran Ngoc Anh');
-INSERT INTO `khach hang` VALUES (23, 'chinhnt@gmail.com', 'Nguyen Thi Chinh');
-INSERT INTO `khach hang` VALUES (24, 'yoneyas@gmail.com', 'Dau beo');
-INSERT INTO `khach hang` VALUES (25, 'cacbacdeem95@gmail.com', 'Duong Cong Tu');
-INSERT INTO `khach hang` VALUES (26, 'linhcool@gmail.com', 'Nguyen Thi Linh');
-INSERT INTO `khach hang` VALUES (27, 'tructiepgame@gmail.com', 'Dung CT');
+INSERT INTO `khach hang` VALUES (20, 'huongleft@gmail.com', 'Trần Thị Mai Hương');
+INSERT INTO `khach hang` VALUES (21, 'nguyenquyet@gmail.com', 'Nguyễn Tiến Quyết');
+INSERT INTO `khach hang` VALUES (22, 'anhnt@gmail.com', 'Trần Ngọc Ánh');
+INSERT INTO `khach hang` VALUES (23, 'chinhnt@gmail.com', 'Nguyễn Thị Chinh');
+INSERT INTO `khach hang` VALUES (25, 'cacbacdeem95@gmail.com', 'Dương Công Tú');
+INSERT INTO `khach hang` VALUES (26, 'linhcool@gmail.com', 'Nguyễn Thị Linh');
+INSERT INTO `khach hang` VALUES (28, 'yoneyas@gmail.com', 'Rỗng Rỗng Rỗng');
 
 -- ----------------------------
 -- Table structure for nhan vien
@@ -139,10 +143,10 @@ CREATE TABLE `nhan vien`  (
 -- Records of nhan vien
 -- ----------------------------
 INSERT INTO `nhan vien` VALUES (1, 'Admin', 'admin');
-INSERT INTO `nhan vien` VALUES (18, 'La Quoc Nghi', 'camdalavip@gmail.com');
-INSERT INTO `nhan vien` VALUES (19, 'Cao Hoai Nam', 'caonam123@gmail.com');
-INSERT INTO `nhan vien` VALUES (20, 'Nguyen The Truong', 'truongnt@gmail.com');
-INSERT INTO `nhan vien` VALUES (21, 'Do Diep Khanh', 'dodiepkhanh@gmail.com');
+INSERT INTO `nhan vien` VALUES (18, 'Lã Quốc Nghị', 'camdalavip@gmail.com');
+INSERT INTO `nhan vien` VALUES (19, 'Cao Hoài Nam', 'caonam123@gmail.com');
+INSERT INTO `nhan vien` VALUES (20, 'Nguyễn Thế Trường', 'truongnt@gmail.com');
+INSERT INTO `nhan vien` VALUES (21, 'Đỗ Diệp Khanh', 'dodiepkhanh@gmail.com');
 
 -- ----------------------------
 -- Table structure for quyen
@@ -174,7 +178,7 @@ CREATE TABLE `san pham`  (
   `date release` date NOT NULL,
   `img_path` varchar(1000) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
   PRIMARY KEY (`ID_sp`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 30 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of san pham
@@ -189,7 +193,9 @@ INSERT INTO `san pham` VALUES (7, 'Homeworld 3', 'AAA', '3.1.12', 6.99, '2020-09
 INSERT INTO `san pham` VALUES (8, 'Fable 2020', 'AAA', '1.3.25', 0.00, '2020-06-01', '');
 INSERT INTO `san pham` VALUES (9, 'Dragon Age 4 The Dread Wolf Rise', 'AAA', '4.1.1', 10.00, '2020-07-20', '');
 INSERT INTO `san pham` VALUES (10, 'Suicide Squad: Kill the Justice League', 'AAA', '2.3.5', 0.00, '2020-03-27', '');
-INSERT INTO `san pham` VALUES (11, 'Demo', 'Indie', '1.0.0', 10.00, '2020-12-06', '');
+INSERT INTO `san pham` VALUES (30, 'VIGIL: The Longest Night', 'Indie', '3.01', 3.75, '2020-10-05', '');
+INSERT INTO `san pham` VALUES (31, 'VAPORUM: Lockdown', 'Indie', '2.25', 7.56, '2020-09-15', '');
+INSERT INTO `san pham` VALUES (32, 'VAMPIRE: Night Road', 'Indie', '1.01', 9.36, '2020-07-02', '');
 
 -- ----------------------------
 -- Table structure for tinh trang don hang
