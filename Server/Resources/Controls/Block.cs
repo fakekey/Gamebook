@@ -22,19 +22,6 @@ namespace Server
         public string SoVoiThangTruoc { get => label4.Text; set => label4.Text = value; }
         public string Percent { get => label7.Text; set => label7.Text = value; }
         public bool isTang { get; set; }
-
-        private void panelRadius1_MouseEnter(object sender, EventArgs e)
-        {
-            panelRadius1.rColor = Color.FromArgb(32, 34, 37);
-            panelRadius1.Refresh();
-        }
-
-        private void panelRadius1_MouseLeave(object sender, EventArgs e)
-        {
-            panelRadius1.rColor = Color.FromArgb(41, 43, 47);
-            panelRadius1.Refresh();
-        }
-
         public void Block_Load(object sender, EventArgs e)
         {
             if (isTang == true)

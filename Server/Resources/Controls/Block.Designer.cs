@@ -61,8 +61,6 @@ namespace Server
             this.panelRadius1.Size = new System.Drawing.Size(311, 311);
             this.panelRadius1.TabIndex = 0;
             this.panelRadius1.TopLeft = new System.Drawing.Point(0, 0);
-            this.panelRadius1.MouseEnter += new System.EventHandler(this.panelRadius1_MouseEnter);
-            this.panelRadius1.MouseLeave += new System.EventHandler(this.panelRadius1_MouseLeave);
             // 
             // label7
             // 
