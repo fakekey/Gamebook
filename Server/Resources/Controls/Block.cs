@@ -35,16 +35,17 @@ namespace Server
             panelRadius1.Refresh();
         }
 
-        private void Block_Load(object sender, EventArgs e)
+        public void Block_Load(object sender, EventArgs e)
         {
-            Percent = $"{Percent}%";
             if (isTang == true)
             {
-                SoVoiThangTruoc = $"+ {SoVoiThangTruoc}";
+                Percent = $"+ {Percent.Replace("+", "")}%";
+                SoVoiThangTruoc = $"+ {SoVoiThangTruoc.Replace("+", "")}";
                 panel1.BackgroundImage = Properties.Resources.icons8_send_letter_48;
             }
             else
             {
+                Percent = $"- {Percent.Replace("-", "")}%";
                 SoVoiThangTruoc = $"- {SoVoiThangTruoc.Replace("-", "")}";
                 panel1.BackgroundImage = Properties.Resources.icons8_below_48;
             }

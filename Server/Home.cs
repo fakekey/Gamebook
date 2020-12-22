@@ -26,6 +26,9 @@ namespace Server
             setBlock1(DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString());
             monthNowSelected = DateTime.Now.Month;
             yearNowSelected = DateTime.Now.Year;
+            lbThang.Text = monthNowSelected.ToString();
+            lbNam.Text = yearNowSelected.ToString();
+            selectNam.Text = yearNowSelected.ToString();
         }
 
         private void setBlock4(string thang, string nam)
@@ -260,6 +263,10 @@ namespace Server
             setBlock2(thang, nam);
             setBlock3(thang, nam);
             setBlock4(thang, nam);
+            block1.Block_Load(null, null);
+            block2.Block_Load(null, null);
+            block3.Block_Load(null, null);
+            block4.Block_Load(null, null);
             monthNowSelected = int.Parse(thang);
             yearNowSelected = int.Parse(nam);
             chart1.Series["Khách"].Points.Clear();
@@ -267,11 +274,6 @@ namespace Server
             chart1.Series["Đơn hủy"].Points.Clear();
             chart2.Series["Tổng Doanh Thu"].Points.Clear();
             FillChart();
-        }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            reload(dateTimePicker1.Value.Month.ToString(), dateTimePicker1.Value.Year.ToString());
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -331,6 +333,112 @@ namespace Server
         {
             panelRadius3.rColor = Color.FromArgb(41, 43, 47);
             panelRadius3.Refresh();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+            selectNam.Text = (int.Parse(selectNam.Text) + 1).ToString();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            selectNam.Text = (int.Parse(selectNam.Text) - 1).ToString();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "1";
+            lbNam.Text = selectNam.Text;
+            reload("1", selectNam.Text);
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "2";
+            lbNam.Text = selectNam.Text;
+            reload("2", selectNam.Text);
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "3";
+            lbNam.Text = selectNam.Text;
+            reload("3", selectNam.Text);
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "4";
+            lbNam.Text = selectNam.Text;
+            reload("4", selectNam.Text);
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "5";
+            lbNam.Text = selectNam.Text;
+            reload("5", selectNam.Text);
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "6";
+            lbNam.Text = selectNam.Text;
+            reload("6", selectNam.Text);
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "7";
+            lbNam.Text = selectNam.Text;
+            reload("7", selectNam.Text);
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "8";
+            lbNam.Text = selectNam.Text;
+            reload("8", selectNam.Text);
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "9";
+            lbNam.Text = selectNam.Text;
+            reload("9", selectNam.Text);
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "10";
+            lbNam.Text = selectNam.Text;
+            reload("10", selectNam.Text);
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "11";
+            lbNam.Text = selectNam.Text;
+            reload("11", selectNam.Text);
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+            panel3.Visible = false;
+            lbThang.Text = "12";
+            lbNam.Text = selectNam.Text;
+            reload("12", selectNam.Text);
         }
     }
 }
