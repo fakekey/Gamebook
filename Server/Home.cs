@@ -38,7 +38,7 @@ namespace Server
                 string temp = $"{(float.Parse(block4.Count) - float.Parse(block4.ThangTruoc))}";
                 block4.SoVoiThangTruoc = temp;
                 float percent = (float.Parse(temp) / float.Parse(block4.ThangTruoc)) * 100;
-                block4.Percent = $"{percent}";
+                block4.Percent = $"{Math.Round(percent,2)}";
                 if (float.Parse(temp) > 0)
                 {
                     block4.isTang = true;
@@ -53,7 +53,7 @@ namespace Server
                 string temp = $"{(float.Parse(block4.Count) - float.Parse(block4.ThangTruoc))}";
                 block4.SoVoiThangTruoc = temp;
                 float percent = (float.Parse(temp) / float.Parse(block4.ThangTruoc)) * 100;
-                block4.Percent = $"{percent}";
+                block4.Percent = $"{Math.Round(percent, 2)}";
                 if (float.Parse(temp) > 0)
                 {
                     block4.isTang = true;
@@ -74,7 +74,7 @@ namespace Server
                 string temp = $"{(int.Parse(block2.Count) - int.Parse(block2.ThangTruoc))}";
                 block2.SoVoiThangTruoc = temp;
                 float percent = ((float)int.Parse(temp) / int.Parse(block2.ThangTruoc)) * 100;
-                block2.Percent = $"{percent}";
+                block2.Percent = $"{Math.Round(percent, 2)}";
                 if (float.Parse(temp) > 0)
                 {
                     block2.isTang = true;
@@ -89,7 +89,7 @@ namespace Server
                 string temp = $"{(int.Parse(block2.Count) - int.Parse(block2.ThangTruoc))}";
                 block2.SoVoiThangTruoc = temp;
                 float percent = ((float)int.Parse(temp) / int.Parse(block2.ThangTruoc)) * 100;
-                block2.Percent = $"{percent}";
+                block2.Percent = $"{Math.Round(percent, 2)}";
                 if (float.Parse(temp) > 0)
                 {
                     block2.isTang = true;
@@ -102,7 +102,7 @@ namespace Server
         }
         private void setBlock1(string thang, string nam)
         {
-            List<string> ds = Controller.getKhach(thang, nam);
+            List<string> ds = Controller.getKhachMua(thang, nam);
             block1.Count = ds[0].ToString();
             block1.ThangTruoc = ds[1].ToString();
             if (block1.ThangTruoc != "0")
@@ -110,7 +110,7 @@ namespace Server
                 string temp = $"{(int.Parse(block1.Count) - int.Parse(block1.ThangTruoc))}";
                 block1.SoVoiThangTruoc = temp;
                 float percent = ((float)int.Parse(temp) / int.Parse(block1.ThangTruoc)) * 100;
-                block1.Percent = $"{percent}";
+                block1.Percent = $"{Math.Round(percent, 2)}";
                 if (float.Parse(temp) > 0)
                 {
                     block1.isTang = true;
@@ -125,7 +125,7 @@ namespace Server
                 string temp = $"{(int.Parse(block1.Count) - int.Parse(block1.ThangTruoc))}";
                 block1.SoVoiThangTruoc = temp;
                 float percent = ((float)int.Parse(temp) / int.Parse(block1.ThangTruoc)) * 100;
-                block1.Percent = $"{percent}";
+                block1.Percent = $"{Math.Round(percent, 2)}";
                 if (float.Parse(temp) > 0)
                 {
                     block1.isTang = true;
@@ -146,7 +146,7 @@ namespace Server
                 string temp = $"{(int.Parse(block3.Count) - int.Parse(block3.ThangTruoc))}";
                 block3.SoVoiThangTruoc = temp;
                 float percent = ((float)int.Parse(temp) / int.Parse(block3.ThangTruoc)) * 100;
-                block3.Percent = $"{percent}";
+                block3.Percent = $"{Math.Round(percent, 2)}";
                 if (float.Parse(temp) > 0)
                 {
                     block3.isTang = true;
@@ -161,7 +161,7 @@ namespace Server
                 string temp = $"{(int.Parse(block3.Count) - int.Parse(block3.ThangTruoc))}";
                 block3.SoVoiThangTruoc = temp;
                 float percent = ((float)int.Parse(temp) / int.Parse(block3.ThangTruoc)) * 100;
-                block3.Percent = $"{percent}";
+                block3.Percent = $"{Math.Round(percent, 2)}";
                 if (float.Parse(temp) > 0)
                 {
                     block3.isTang = true;
@@ -204,22 +204,29 @@ namespace Server
             {
                 monthtemp5 = 12;
             }
+
+            
             //Series là cột dữ liệu, Point.AddXY để thêm vào biểu đồ hoành độ vs tung độ bn thôi
-            chart1.Series["Khách"].Points.AddXY(monthtemp1, 55);
-            chart1.Series["Khách"].Points.AddXY(monthtemp2, 40);
-            chart1.Series["Khách"].Points.AddXY(monthtemp3, 100);
-            chart1.Series["Khách"].Points.AddXY(monthtemp4, 75);
-            chart1.Series["Khách"].Points.AddXY(monthtemp5, 90);
-            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp1, 70);
-            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp2, 100);
-            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp3, 90);
-            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp4, 76);
-            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp5, 92);
-            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp1, 3);
-            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp2, 5);
-            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp3, 2);
-            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp4, 1);
-            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp5, 7);
+            chart1.Series["Khách"].Points.AddXY(monthtemp1, int.Parse(Controller.getKhachMua(monthtemp1.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Khách"].Points.AddXY(monthtemp2, int.Parse(Controller.getKhachMua(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Khách"].Points.AddXY(monthtemp3, int.Parse(Controller.getKhachMua(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Khách"].Points.AddXY(monthtemp4, int.Parse(Controller.getKhachMua(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Khách"].Points.AddXY(monthtemp5, int.Parse(Controller.getKhachMua(monthtemp5.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp1, int.Parse(Controller.getTongHoaDon(monthtemp1.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp2, int.Parse(Controller.getTongHoaDon(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp3, int.Parse(Controller.getTongHoaDon(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp4, int.Parse(Controller.getTongHoaDon(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Đơn đặt"].Points.AddXY(monthtemp5, int.Parse(Controller.getTongHoaDon(monthtemp5.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp1, int.Parse(Controller.getHoaDonHuy(monthtemp1.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp2, int.Parse(Controller.getHoaDonHuy(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp3, int.Parse(Controller.getHoaDonHuy(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp4, int.Parse(Controller.getHoaDonHuy(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+            chart1.Series["Đơn hủy"].Points.AddXY(monthtemp5, int.Parse(Controller.getHoaDonHuy(monthtemp5.ToString(), yearNowSelected.ToString())[0]));
+            chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp1, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp1.ToString(), yearNowSelected.ToString())[0]),2));
+            chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp2, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp2.ToString(), yearNowSelected.ToString())[0]),2));
+            chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp3, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp3.ToString(), yearNowSelected.ToString())[0]),2));
+            chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp4, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp4.ToString(), yearNowSelected.ToString())[0]),2));
+            chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp5, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp5.ToString(), yearNowSelected.ToString())[0]),2));
         }
         public void ReSize()
         {
@@ -240,5 +247,25 @@ namespace Server
         private Block block2;
         private Block block3;
         private Block block4;
+
+        private void reload(string thang , string nam)
+        {
+            setBlock1(thang, nam);
+            setBlock2(thang, nam);
+            setBlock3(thang, nam);
+            setBlock4(thang, nam);
+            monthNowSelected = int.Parse(thang);
+            yearNowSelected = int.Parse(nam);
+            chart1.Series["Khách"].Points.Clear();
+            chart1.Series["Đơn đặt"].Points.Clear();
+            chart1.Series["Đơn hủy"].Points.Clear();
+            chart2.Series["Tổng Doanh Thu"].Points.Clear();
+            FillChart();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            reload(dateTimePicker1.Value.Month.ToString(), dateTimePicker1.Value.Year.ToString());
+        }
     }
 }

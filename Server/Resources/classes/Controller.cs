@@ -820,7 +820,7 @@ namespace Server
             con.Close();
             return ds;
         }
-        public static List<string> getKhach(string thang, string nam)
+        public static List<string> getKhachMua(string thang, string nam)
         {
             List<string> ds = new List<string> { "0", "0" };
             MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
