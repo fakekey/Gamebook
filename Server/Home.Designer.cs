@@ -61,51 +61,51 @@ namespace Server
             // 
             // block4
             // 
-            this.block4.Count = "51700$";
+            this.block4.Count = "0$";
             this.block4.LabelTitle = "Doanh thu tháng";
             this.block4.Location = new System.Drawing.Point(337, 381);
             this.block4.Name = "block4";
-            this.block4.Percent = "15.7";
+            this.block4.Percent = "0";
             this.block4.Size = new System.Drawing.Size(311, 311);
-            this.block4.SoVoiThangTruoc = "+ 50$";
+            this.block4.SoVoiThangTruoc = "+ 0$";
             this.block4.TabIndex = 5;
-            this.block4.ThangTruoc = "51670$";
+            this.block4.ThangTruoc = "0$";
             // 
             // block3
             // 
-            this.block3.Count = "5495";
+            this.block3.Count = "0";
             this.block3.LabelTitle = "Đơn đặt hàng";
             this.block3.Location = new System.Drawing.Point(337, 54);
             this.block3.Name = "block3";
-            this.block3.Percent = "30.5";
+            this.block3.Percent = "0";
             this.block3.Size = new System.Drawing.Size(311, 311);
-            this.block3.SoVoiThangTruoc = "+ 700";
+            this.block3.SoVoiThangTruoc = "+ 0";
             this.block3.TabIndex = 4;
-            this.block3.ThangTruoc = "5395";
+            this.block3.ThangTruoc = "0";
             // 
             // block2
             // 
-            this.block2.Count = "20";
+            this.block2.Count = "0";
             this.block2.LabelTitle = "Đơn bị hủy";
             this.block2.Location = new System.Drawing.Point(6, 381);
             this.block2.Name = "block2";
-            this.block2.Percent = "15.7";
+            this.block2.Percent = "0";
             this.block2.Size = new System.Drawing.Size(311, 311);
-            this.block2.SoVoiThangTruoc = "+ 50";
+            this.block2.SoVoiThangTruoc = "+ 0";
             this.block2.TabIndex = 3;
-            this.block2.ThangTruoc = "30";
+            this.block2.ThangTruoc = "0";
             // 
             // block1
             // 
-            this.block1.Count = "365";
+            this.block1.Count = "0";
             this.block1.LabelTitle = "Khách hàng";
             this.block1.Location = new System.Drawing.Point(6, 54);
             this.block1.Name = "block1";
-            this.block1.Percent = "15.7";
+            this.block1.Percent = "0";
             this.block1.Size = new System.Drawing.Size(311, 311);
-            this.block1.SoVoiThangTruoc = "+ 50";
+            this.block1.SoVoiThangTruoc = "+ 0";
             this.block1.TabIndex = 2;
-            this.block1.ThangTruoc = "315";
+            this.block1.ThangTruoc = "0";
             // 
             // Home
             // 
@@ -121,7 +121,6 @@ namespace Server
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Home";
-            this.Text = "Home";
             this.ResumeLayout(false);
             this.PerformLayout();
 
