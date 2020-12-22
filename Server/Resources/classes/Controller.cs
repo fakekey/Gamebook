@@ -682,9 +682,190 @@ namespace Server
             {
                 return -99;
             }
-
-
         }
+
+        public static List<string> getTongHoaDon(string thang , string nam)
+        {
+            List<string> ds = new List<string> {"0","0"};
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand($"SELECT COUNT(`hoa don`.MAHD) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = {thang} and YEAR(`hoa don`.`Ngay Mua`) = '{nam}'", con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.IsDBNull(0) == false)
+                {
+                    string rs = reader.GetString(0);
+                    if (rs != null)
+                    {
+                        ds[0] = rs;
+
+                    }
+                }
+            }
+            con.Close();
+            con.Open();
+            if(int.Parse(thang) - 1 == 0)
+            {
+                cmd = new MySqlCommand($"SELECT COUNT(`hoa don`.MAHD) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = 12 and YEAR(`hoa don`.`Ngay Mua`) = {int.Parse(nam)-1}", con);
+            }
+            else
+            {
+                cmd = new MySqlCommand($"SELECT COUNT(`hoa don`.MAHD) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = {int.Parse(thang) - 1} and YEAR(`hoa don`.`Ngay Mua`) = {int.Parse(nam)}", con);
+            }
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.IsDBNull(0) == false)
+                {
+                    string rs = reader.GetString(0);
+                    if (rs != null)
+                    {
+                        ds[1] = rs;
+
+                    }
+                }
+            }
+            con.Close();
+            return ds;
+        }
+
+        public static List<string> getHoaDonHuy(string thang, string nam)
+        {
+            List<string> ds = new List<string>{"0", "0"};
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand($"SELECT COUNT(`hoa don`.MAHD) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = {thang} and YEAR(`hoa don`.`Ngay Mua`) = '{nam}' and `hoa don`.ID_tinhtrang = 3 ", con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.IsDBNull(0) == false)
+                {
+                    string rs = reader.GetString(0);
+                    if (rs != null)
+                    {
+                        ds[0] = rs;
+
+                    }
+                }
+            }
+            con.Close();
+            con.Open();
+            if (int.Parse(thang) - 1 == 0)
+            {
+                cmd = new MySqlCommand($"SELECT COUNT(`hoa don`.MAHD) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = 12 and YEAR(`hoa don`.`Ngay Mua`) = {int.Parse(nam) - 1} and `hoa don`.ID_tinhtrang = 3", con);
+            }
+            else
+            {
+                cmd = new MySqlCommand($"SELECT COUNT(`hoa don`.MAHD) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = {int.Parse(thang) - 1} and YEAR(`hoa don`.`Ngay Mua`) = {int.Parse(nam)} and `hoa don`.ID_tinhtrang = 3", con);
+            }
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.IsDBNull(0) == false)
+                {
+                    string rs = reader.GetString(0);
+                    if (rs != null)
+                    {
+                        ds[1] = rs;
+
+                    }
+                }
+            }
+            con.Close();
+            return ds;
+        }
+
+        public static List<string> getTongDoanhThu(string thang, string nam)
+        {
+            List<string> ds = new List<string> { "0", "0" };
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand($"SELECT Sum(`hoa don`.`Tong Tien`) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = {thang} and YEAR(`hoa don`.`Ngay Mua`) = '{nam}' and `hoa don`.ID_tinhtrang = 2 ", con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.IsDBNull(0) == false)
+                {
+                    string rs = reader.GetString(0);
+                    if (rs != null)
+                    {
+                        ds[0] = rs;
+
+                    }
+                }
+            }
+            con.Close();
+            con.Open();
+            if (int.Parse(thang) - 1 == 0)
+            {
+                cmd = new MySqlCommand($"SELECT Sum(`hoa don`.`Tong Tien`) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = 12 and YEAR(`hoa don`.`Ngay Mua`) = {int.Parse(nam) - 1} and `hoa don`.ID_tinhtrang = 2", con);
+            }
+            else
+            {
+                cmd = new MySqlCommand($"SELECT Sum(`hoa don`.`Tong Tien`) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = {int.Parse(thang) - 1} and YEAR(`hoa don`.`Ngay Mua`) = {int.Parse(nam)} and `hoa don`.ID_tinhtrang = 2", con);
+            }
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {   if(reader.IsDBNull(0) == false)
+                {
+                    string rs = reader.GetString(0);
+                    if (rs != null)
+                    {
+                        ds[1] = rs;
+
+                    }
+                }
+            }
+            con.Close();
+            return ds;
+        }
+        public static List<string> getKhach(string thang, string nam)
+        {
+            List<string> ds = new List<string> { "0", "0" };
+            MySqlConnection con = new MySqlConnection(DBconfigs.ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand($"SELECT count( DISTINCT `hoa don`.MAKH) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = {thang} and YEAR(`hoa don`.`Ngay Mua`) = '{nam}'", con);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.IsDBNull(0) == false)
+                {
+                    string rs = reader.GetString(0);
+                    if (rs != null)
+                    {
+                        ds[0] = rs;
+
+                    }
+                }
+            }
+            con.Close();
+            con.Open();
+            if (int.Parse(thang) - 1 == 0)
+            {
+                cmd = new MySqlCommand($"SELECT count( DISTINCT `hoa don`.MAKH) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = 12 and YEAR(`hoa don`.`Ngay Mua`) = {int.Parse(nam) - 1}", con);
+            }
+            else
+            {
+                cmd = new MySqlCommand($"SELECT count( DISTINCT `hoa don`.MAKH) from `hoa don` WHERE MONTH(`hoa don`.`Ngay Mua`) = {int.Parse(thang) - 1} and YEAR(`hoa don`.`Ngay Mua`) = {int.Parse(nam)}", con);
+            }
+            reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if (reader.IsDBNull(0) == false)
+                {
+                    string rs = reader.GetString(0);
+                    if (rs != null)
+                    {
+                        ds[1] = rs;
+
+                    }
+                }
+            }
+            con.Close();
+            return ds;
+        }
+
 
         public static void InDanhSachSP(List<Product> ds)
         {
