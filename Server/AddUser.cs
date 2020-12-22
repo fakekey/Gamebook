@@ -174,21 +174,21 @@ namespace Server
                     int rs = Controller.ThemUser(tbMail.Text, tbPass.Text, comboBox1.SelectedItem.ToString(), tbName.Text);
                     if (rs == 1)
                     {
-                        lbMail.ForeColor = Color.FromArgb(77, 222, 19);
+                        lbMail.ForeColor = Color.FromArgb(40, 167, 69);
                         lbMail.Text = "- Thêm thành công!";
-                        mailb.ForeColor = Color.FromArgb(77, 222, 19);
+                        mailb.ForeColor = Color.FromArgb(40, 167, 69);
                         PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
-                        VeBorder(mail, eventArgs, 77, 222, 19);
+                        VeBorder(mail, eventArgs, 40, 167, 69);
                         tbMailDontHandle = true;
-                        namelb.ForeColor = Color.FromArgb(77, 222, 19);
+                        namelb.ForeColor = Color.FromArgb(40, 167, 69);
                         PaintEventArgs eventArgs1 = new PaintEventArgs(name.CreateGraphics(), name.ClientRectangle);
-                        VeBorder(name, eventArgs1, 77, 222, 19);
+                        VeBorder(name, eventArgs1, 40, 167, 69);
                         tbNameDontHandle = true;
-                        passlb.ForeColor = Color.FromArgb(77, 222, 19);
+                        passlb.ForeColor = Color.FromArgb(40, 167, 69);
                         PaintEventArgs eventArgs2 = new PaintEventArgs(pass.CreateGraphics(), pass.ClientRectangle);
-                        VeBorder(pass, eventArgs2, 77, 222, 19);
+                        VeBorder(pass, eventArgs2, 40, 167, 69);
                         tbPassDontHandle = true;
-                        vaitrolb.ForeColor = Color.FromArgb(77, 222, 19);
+                        vaitrolb.ForeColor = Color.FromArgb(40, 167, 69);
                     }
                     else if (rs == -99)
                     {
@@ -242,17 +242,17 @@ namespace Server
                     int rs = Controller.ThemUser(tbMail.Text, tbPass.Text, comboBox1.SelectedItem.ToString(), tbName.Text);
                     if (rs == 1)
                     {
-                        lbMail.ForeColor = Color.FromArgb(77, 222, 19);
+                        lbMail.ForeColor = Color.FromArgb(40, 167, 69);
                         lbMail.Text = "- Thêm thành công!";
-                        mailb.ForeColor = Color.FromArgb(77, 222, 19);
+                        mailb.ForeColor = Color.FromArgb(40, 167, 69);
                         PaintEventArgs eventArgs = new PaintEventArgs(mail.CreateGraphics(), mail.ClientRectangle);
-                        VeBorder(mail, eventArgs, 77, 222, 19);
+                        VeBorder(mail, eventArgs, 40, 167, 69);
                         tbMailDontHandle = true;
-                        namelb.ForeColor = Color.FromArgb(77, 222, 19);
+                        namelb.ForeColor = Color.FromArgb(40, 167, 69);
                         PaintEventArgs eventArgs1 = new PaintEventArgs(name.CreateGraphics(), name.ClientRectangle);
-                        VeBorder(name, eventArgs1, 77, 222, 19);
+                        VeBorder(name, eventArgs1, 40, 167, 69);
                         tbNameDontHandle = true;
-                        vaitrolb.ForeColor = Color.FromArgb(77, 222, 19);
+                        vaitrolb.ForeColor = Color.FromArgb(40, 167, 69);
                     }
                     else if (rs == -99)
                     {

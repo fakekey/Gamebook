@@ -238,17 +238,19 @@ namespace Server
                 panelRadius1.Size = new Size(563, 311);
                 panelRadius1.rSize = new Size(562, 310);
                 panelRadius1.Refresh();
+                panelRadius3.Location = new Point(668, 384);
                 panelRadius3.Size = new Size(563, 311);
                 panelRadius3.rSize = new Size(562, 310);
                 panelRadius3.Refresh();
             }
             else
             {
-                panelRadius1.Size = new Size(1115, 311);
-                panelRadius1.rSize = new Size(1114, 310);
+                panelRadius1.Size = new Size(1115, 467);
+                panelRadius1.rSize = new Size(1114, 466);
                 panelRadius1.Refresh();
-                panelRadius3.Size = new Size(1115, 311);
-                panelRadius3.rSize = new Size(1114, 310);
+                panelRadius3.Location = new Point(668, 540);
+                panelRadius3.Size = new Size(1115, 467);
+                panelRadius3.rSize = new Size(1114, 466);
                 panelRadius3.Refresh();
             }
         }

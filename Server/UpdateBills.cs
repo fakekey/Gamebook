@@ -415,20 +415,20 @@ namespace Server
             if (rs == 1)
             {
                 lbtenkh.Text = "- Cập nhật thành công";
-                lbtenkh.ForeColor = Color.FromArgb(77, 222, 19);
-                tenkhlb.ForeColor = Color.FromArgb(77, 222, 19);
+                lbtenkh.ForeColor = Color.FromArgb(40, 167, 69);
+                tenkhlb.ForeColor = Color.FromArgb(40, 167, 69);
                 PaintEventArgs eventArgs = new PaintEventArgs(tenkh.CreateGraphics(), tenkh.ClientRectangle);
-                VeBorder(tenkh, eventArgs, 77, 222, 19);
+                VeBorder(tenkh, eventArgs, 40, 167, 69);
                 tbTieuDeDontHandle = true;
-                lbtengame.ForeColor = Color.FromArgb(77, 222, 19);
-                tengamelb.ForeColor = Color.FromArgb(77, 222, 19);
+                lbtengame.ForeColor = Color.FromArgb(40, 167, 69);
+                tengamelb.ForeColor = Color.FromArgb(40, 167, 69);
                 PaintEventArgs eventArgs1 = new PaintEventArgs(tengame.CreateGraphics(), tengame.ClientRectangle);
-                VeBorder(tengame, eventArgs1, 77, 222, 19);
+                VeBorder(tengame, eventArgs1, 40, 167, 69);
                 tbPhienBanDontHandle = true;
-                gialb.ForeColor = Color.FromArgb(77, 222, 19);
-                ngaylb.ForeColor = Color.FromArgb(77, 222, 19);
+                gialb.ForeColor = Color.FromArgb(40, 167, 69);
+                ngaylb.ForeColor = Color.FromArgb(40, 167, 69);
                 PaintEventArgs eventArgs3 = new PaintEventArgs(ngay.CreateGraphics(), ngay.ClientRectangle);
-                VeBorder(ngay, eventArgs3, 77, 222, 19);
+                VeBorder(ngay, eventArgs3, 40, 167, 69);
                 tbNgayDontHandle = true;
             }
             else

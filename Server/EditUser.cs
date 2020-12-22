@@ -148,10 +148,10 @@ namespace Server
                 if (rs == 1)
                 {
                     lbName.Text = "- Sửa thành công";
-                    lbName.ForeColor = Color.FromArgb(77, 222, 19);
-                    namelb.ForeColor = Color.FromArgb(77, 222, 19);
+                    lbName.ForeColor = Color.FromArgb(40, 167, 69);
+                    namelb.ForeColor = Color.FromArgb(40, 167, 69);
                     PaintEventArgs eventArgs = new PaintEventArgs(name.CreateGraphics(), name.ClientRectangle);
-                    VeBorder(name, eventArgs, 77, 222, 19);
+                    VeBorder(name, eventArgs, 40, 167, 69);
                     tbNameDontHandle = true;
                 }
                 else

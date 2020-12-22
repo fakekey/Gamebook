@@ -394,26 +394,26 @@ namespace Server
                 int rs = Controller.ThemSP(sp);
                 if (rs == 1)
                 {
-                    lbtieude.ForeColor = Color.FromArgb(77, 222, 19);
+                    lbtieude.ForeColor = Color.FromArgb(40, 167, 69);
                     lbtieude.Text = "- Thêm thành công";
-                    tieudelb.ForeColor = Color.FromArgb(77, 222, 19);
+                    tieudelb.ForeColor = Color.FromArgb(40, 167, 69);
                     PaintEventArgs eventArgs = new PaintEventArgs(tieude.CreateGraphics(), tieude.ClientRectangle);
-                    VeBorder(tieude, eventArgs, 77, 222, 19);
+                    VeBorder(tieude, eventArgs, 40, 167, 69);
                     tbTieuDeDontHandle = true;
-                    pblb.ForeColor = Color.FromArgb(77, 222, 19);
+                    pblb.ForeColor = Color.FromArgb(40, 167, 69);
                     PaintEventArgs eventArgs1 = new PaintEventArgs(phienban.CreateGraphics(), phienban.ClientRectangle);
-                    VeBorder(phienban, eventArgs1, 77, 222, 19);
+                    VeBorder(phienban, eventArgs1, 40, 167, 69);
                     tbPhienBanDontHandle = true;
-                    gialb.ForeColor = Color.FromArgb(77, 222, 19);
+                    gialb.ForeColor = Color.FromArgb(40, 167, 69);
                     PaintEventArgs eventArgs2 = new PaintEventArgs(gia.CreateGraphics(), gia.ClientRectangle);
-                    VeBorder(gia, eventArgs2, 77, 222, 19);
+                    VeBorder(gia, eventArgs2, 40, 167, 69);
                     tbGiaDontHandle = true;
-                    ngaylb.ForeColor = Color.FromArgb(77, 222, 19);
+                    ngaylb.ForeColor = Color.FromArgb(40, 167, 69);
                     PaintEventArgs eventArgs3 = new PaintEventArgs(ngay.CreateGraphics(), ngay.ClientRectangle);
-                    VeBorder(ngay, eventArgs3, 77, 222, 19);
+                    VeBorder(ngay, eventArgs3, 40, 167, 69);
                     tbNgayDontHandle = true;
-                    anhlb.ForeColor = Color.FromArgb(77, 222, 19);
-                    nsxlb.ForeColor = Color.FromArgb(77, 222, 19);
+                    anhlb.ForeColor = Color.FromArgb(40, 167, 69);
+                    nsxlb.ForeColor = Color.FromArgb(40, 167, 69);
                 }
                 else
                 {

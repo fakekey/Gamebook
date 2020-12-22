@@ -93,11 +93,11 @@ namespace Server
                 switch (rs)
                 {
                     case 1:
-                        lbUser.ForeColor = Color.FromArgb(77, 222, 19);
+                        lbUser.ForeColor = Color.FromArgb(40, 167, 69);
                         lbUser.Text = "- Thành công! Mời bạn quay trở lại đăng nhập";
-                        label3.ForeColor = Color.FromArgb(77, 222, 19);
+                        label3.ForeColor = Color.FromArgb(40, 167, 69);
                         PaintEventArgs eventArgs = new PaintEventArgs(usertb.CreateGraphics(), usertb.ClientRectangle);
-                        VeBorder(usertb, eventArgs, 77, 222, 19);
+                        VeBorder(usertb, eventArgs, 40, 167, 69);
                         tbUserDontHandle = true;
                         break;
                     case -1:
