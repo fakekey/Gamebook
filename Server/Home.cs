@@ -179,7 +179,6 @@ namespace Server
 
         private void Home_Load(object sender, EventArgs e)
         {
-            FillChart();
             timer1.Enabled = true;
         }
         private void FillChart()
@@ -406,6 +405,7 @@ namespace Server
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
+            FillChart();
             ReSize();
             panel3.Location = new Point(595, 40);
         }
