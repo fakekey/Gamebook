@@ -15,6 +15,7 @@ namespace Server
         public Block()
         {
             InitializeComponent();
+            isMoney = false;
         }
         public string LabelTitle { get => label1.Text; set => label1.Text = value; }
         public string Count { get => label2.Text; set => label2.Text = value; }
@@ -22,19 +23,41 @@ namespace Server
         public string SoVoiThangTruoc { get => label4.Text; set => label4.Text = value; }
         public string Percent { get => label7.Text; set => label7.Text = value; }
         public bool isTang { get; set; }
+        private bool isMoney;
+        public bool IsMoney { get => isMoney; set => isMoney = value; }
         public void Block_Load(object sender, EventArgs e)
         {
-            if (isTang == true)
+            if (isMoney == false)
             {
-                Percent = $"+ {Percent.Replace("+", "")}%";
-                SoVoiThangTruoc = $"+ {SoVoiThangTruoc.Replace("+", "")}";
-                panel1.BackgroundImage = Properties.Resources.icons8_send_letter_48;
+                if (isTang == true)
+                {
+                    Percent = $"+ {Percent.Replace("+", "")}%";
+                    SoVoiThangTruoc = $"+ {SoVoiThangTruoc.Replace("+", "")}";
+                    panel1.BackgroundImage = Properties.Resources.icons8_send_letter_48;
+                }
+                else
+                {
+                    Percent = $"- {Percent.Replace("-", "")}%";
+                    SoVoiThangTruoc = $"- {SoVoiThangTruoc.Replace("-", "")}";
+                    panel1.BackgroundImage = Properties.Resources.icons8_below_48;
+                }
             }
             else
             {
-                Percent = $"- {Percent.Replace("-", "")}%";
-                SoVoiThangTruoc = $"- {SoVoiThangTruoc.Replace("-", "")}";
-                panel1.BackgroundImage = Properties.Resources.icons8_below_48;
+                Count = $"{Count}$";
+                ThangTruoc = $"{ThangTruoc}$";
+                if (isTang == true)
+                {
+                    Percent = $"+ {Percent.Replace("+", "")}%";
+                    SoVoiThangTruoc = $"+ {SoVoiThangTruoc.Replace("+", "")}$";
+                    panel1.BackgroundImage = Properties.Resources.icons8_send_letter_48;
+                }
+                else
+                {
+                    Percent = $"- {Percent.Replace("-", "")}%";
+                    SoVoiThangTruoc = $"- {SoVoiThangTruoc.Replace("-", "")}$";
+                    panel1.BackgroundImage = Properties.Resources.icons8_below_48;
+                }
             }
         }
     }

@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 23/12/2020 03:29:28
+ Date: 23/12/2020 11:04:02
 */
 
 SET NAMES utf8mb4;
@@ -75,7 +75,7 @@ CREATE TABLE `chi tiet hoa don`  (
   INDEX `cthd_sp`(`ID_sp`) USING BTREE,
   CONSTRAINT `cthd_hd` FOREIGN KEY (`MAHD`) REFERENCES `hoa don` (`MAHD`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `sthd` FOREIGN KEY (`ID_sp`) REFERENCES `san pham` (`ID_sp`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 72 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 88 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of chi tiet hoa don
@@ -107,6 +107,22 @@ INSERT INTO `chi tiet hoa don` VALUES (68, 59, 55, '7.69');
 INSERT INTO `chi tiet hoa don` VALUES (69, 60, 52, '12');
 INSERT INTO `chi tiet hoa don` VALUES (70, 61, 53, '13.99');
 INSERT INTO `chi tiet hoa don` VALUES (71, 62, 33, '48.93');
+INSERT INTO `chi tiet hoa don` VALUES (72, 63, 39, '44.99');
+INSERT INTO `chi tiet hoa don` VALUES (73, 64, 49, '24.99');
+INSERT INTO `chi tiet hoa don` VALUES (74, 65, 33, '48.93');
+INSERT INTO `chi tiet hoa don` VALUES (75, 66, 35, '24.99');
+INSERT INTO `chi tiet hoa don` VALUES (76, 67, 39, '44.99');
+INSERT INTO `chi tiet hoa don` VALUES (77, 68, 46, '45.99');
+INSERT INTO `chi tiet hoa don` VALUES (78, 69, 55, '7.69');
+INSERT INTO `chi tiet hoa don` VALUES (79, 70, 43, '34.77');
+INSERT INTO `chi tiet hoa don` VALUES (80, 71, 47, '29.99');
+INSERT INTO `chi tiet hoa don` VALUES (81, 72, 56, '29.99');
+INSERT INTO `chi tiet hoa don` VALUES (82, 73, 52, '12');
+INSERT INTO `chi tiet hoa don` VALUES (83, 74, 47, '29.99');
+INSERT INTO `chi tiet hoa don` VALUES (84, 75, 44, '49.99');
+INSERT INTO `chi tiet hoa don` VALUES (85, 76, 33, '48.93');
+INSERT INTO `chi tiet hoa don` VALUES (86, 77, 39, '44.99');
+INSERT INTO `chi tiet hoa don` VALUES (87, 78, 55, '7.69');
 
 -- ----------------------------
 -- Table structure for hoa don
@@ -123,7 +139,7 @@ CREATE TABLE `hoa don`  (
   INDEX `hd_ttt`(`ID_tinhtrang`) USING BTREE,
   CONSTRAINT `hd_kh` FOREIGN KEY (`MAKH`) REFERENCES `khach hang` (`MAKH`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `hd_ttt` FOREIGN KEY (`ID_tinhtrang`) REFERENCES `tinh trang don hang` (`ID_tinhtrang`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
+) ENGINE = InnoDB AUTO_INCREMENT = 79 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = DYNAMIC;
 
 -- ----------------------------
 -- Records of hoa don
@@ -154,7 +170,23 @@ INSERT INTO `hoa don` VALUES (58, 53, '2021-01-20', '29.99', 2);
 INSERT INTO `hoa don` VALUES (59, 52, '2021-01-15', '7.69', 2);
 INSERT INTO `hoa don` VALUES (60, 53, '2021-01-14', '12', 2);
 INSERT INTO `hoa don` VALUES (61, 30, '2021-01-01', '13.99', 3);
-INSERT INTO `hoa don` VALUES (62, 52, '2021-01-23', '48.93', 1);
+INSERT INTO `hoa don` VALUES (62, 52, '2021-01-23', '48.93', 2);
+INSERT INTO `hoa don` VALUES (63, 50, '2021-01-20', '44.99', 2);
+INSERT INTO `hoa don` VALUES (64, 51, '2021-01-04', '24.99', 2);
+INSERT INTO `hoa don` VALUES (65, 39, '2021-02-23', '48.93', 2);
+INSERT INTO `hoa don` VALUES (66, 40, '2021-02-28', '24.99', 2);
+INSERT INTO `hoa don` VALUES (67, 43, '2021-02-17', '44.99', 2);
+INSERT INTO `hoa don` VALUES (68, 45, '2021-02-16', '45.99', 2);
+INSERT INTO `hoa don` VALUES (69, 46, '2021-02-16', '7.69', 2);
+INSERT INTO `hoa don` VALUES (70, 47, '2021-02-17', '34.77', 2);
+INSERT INTO `hoa don` VALUES (71, 49, '2021-02-05', '29.99', 2);
+INSERT INTO `hoa don` VALUES (72, 37, '2021-02-01', '29.99', 2);
+INSERT INTO `hoa don` VALUES (73, 30, '2021-02-09', '12', 2);
+INSERT INTO `hoa don` VALUES (74, 31, '2021-02-10', '29.99', 2);
+INSERT INTO `hoa don` VALUES (75, 50, '2021-02-10', '49.99', 2);
+INSERT INTO `hoa don` VALUES (76, 30, '2021-02-10', '48.93', 3);
+INSERT INTO `hoa don` VALUES (77, 34, '2021-02-10', '44.99', 3);
+INSERT INTO `hoa don` VALUES (78, 30, '2021-02-10', '7.69', 2);
 
 -- ----------------------------
 -- Table structure for khach hang
@@ -265,7 +297,6 @@ INSERT INTO `san pham` VALUES (44, 'Assassin Creed: Valhalla', 'AAA', '1.05', 49
 INSERT INTO `san pham` VALUES (45, 'DiRT 5', 'AAA', '2.00', 59.99, '2020-11-06', '');
 INSERT INTO `san pham` VALUES (46, 'Watch Dogs: Legion', 'AAA', '2.30', 45.99, '2020-10-29', '');
 INSERT INTO `san pham` VALUES (47, 'VALHALL', 'AAA', '1.1.0', 29.99, '2020-10-22', '');
-INSERT INTO `san pham` VALUES (48, 'Amnesia: Rebirth', 'AAA', '1.1', 29.99, '2020-10-20', '');
 INSERT INTO `san pham` VALUES (49, 'Amnesia: Rebirth', 'AAA', '0.4', 24.99, '2020-10-15', '');
 INSERT INTO `san pham` VALUES (51, 'Airborne Kingdom', 'Indie', '1.09', 9.59, '2020-12-17', '');
 INSERT INTO `san pham` VALUES (52, 'BOMJMAN', 'Indie', '1.75', 12.00, '2020-12-15', '');

@@ -33,6 +33,7 @@ namespace Server
 
         private void setBlock4(string thang, string nam)
         {
+            block4.IsMoney = true;
             List<string> ds = Controller.getTongDoanhThu(thang, nam);
             block4.Count = ds[0].ToString();
             block4.ThangTruoc = ds[1].ToString();

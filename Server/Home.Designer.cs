@@ -493,7 +493,7 @@ namespace Server
             this.chart3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            legend1.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             legend1.ForeColor = System.Drawing.Color.White;
             legend1.IsTextAutoFit = false;
             legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
@@ -505,11 +505,11 @@ namespace Server
             this.chart3.Legends.Add(legend1);
             this.chart3.Location = new System.Drawing.Point(0, 0);
             this.chart3.Name = "chart3";
-            this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.chart3.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.CustomProperties = "LabelStyle=Top";
-            series1.Font = new System.Drawing.Font("Quicksand", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            series1.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             series1.IsValueShownAsLabel = true;
             series1.IsXValueIndexed = true;
             series1.LabelForeColor = System.Drawing.Color.White;
