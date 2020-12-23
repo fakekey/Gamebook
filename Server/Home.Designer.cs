@@ -117,7 +117,7 @@ namespace Server
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(595, 40);
+            this.panel3.Location = new System.Drawing.Point(6, 54);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(251, 249);
             this.panel3.TabIndex = 13;

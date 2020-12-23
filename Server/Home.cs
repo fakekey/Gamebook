@@ -236,6 +236,119 @@ namespace Server
             chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp4, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp4.ToString(), yearNowSelected.ToString())[0]), 2));
             chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp5, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp5.ToString(), yearNowSelected.ToString())[0]), 2));
 
+            //dieu kien khac
+            if (monthtemp3 == 11)
+            {
+                chart1.Series["Khách"].Points.Clear();
+                chart1.Series["Đơn đặt"].Points.Clear();
+                chart1.Series["Đơn hủy"].Points.Clear();
+                chart2.Series["Tổng Doanh Thu"].Points.Clear();
+
+                chart1.Series["Khách"].Points.AddXY(monthtemp1, int.Parse(Controller.getKhachMua(monthtemp1.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp2, int.Parse(Controller.getKhachMua(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp3, int.Parse(Controller.getKhachMua(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp4, int.Parse(Controller.getKhachMua(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp5, int.Parse(Controller.getKhachMua(monthtemp5.ToString(), (yearNowSelected + 1).ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp1, int.Parse(Controller.getTongHoaDon(monthtemp1.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp2, int.Parse(Controller.getTongHoaDon(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp3, int.Parse(Controller.getTongHoaDon(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp4, int.Parse(Controller.getTongHoaDon(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp5, int.Parse(Controller.getTongHoaDon(monthtemp5.ToString(), (yearNowSelected + 1).ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp1, int.Parse(Controller.getHoaDonHuy(monthtemp1.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp2, int.Parse(Controller.getHoaDonHuy(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp3, int.Parse(Controller.getHoaDonHuy(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp4, int.Parse(Controller.getHoaDonHuy(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp5, int.Parse(Controller.getHoaDonHuy(monthtemp5.ToString(), (yearNowSelected + 1).ToString())[0]));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp1, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp1.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp2, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp2.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp3, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp3.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp4, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp4.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp5, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp5.ToString(), (yearNowSelected + 1).ToString())[0]), 2));
+            }
+            if (monthtemp3 == 12)
+            {
+                chart1.Series["Khách"].Points.Clear();
+                chart1.Series["Đơn đặt"].Points.Clear();
+                chart1.Series["Đơn hủy"].Points.Clear();
+                chart2.Series["Tổng Doanh Thu"].Points.Clear();
+
+                chart1.Series["Khách"].Points.AddXY(monthtemp1, int.Parse(Controller.getKhachMua(monthtemp1.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp2, int.Parse(Controller.getKhachMua(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp3, int.Parse(Controller.getKhachMua(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp4, int.Parse(Controller.getKhachMua(monthtemp4.ToString(), (yearNowSelected + 1).ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp5, int.Parse(Controller.getKhachMua(monthtemp5.ToString(), (yearNowSelected + 1).ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp1, int.Parse(Controller.getTongHoaDon(monthtemp1.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp2, int.Parse(Controller.getTongHoaDon(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp3, int.Parse(Controller.getTongHoaDon(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp4, int.Parse(Controller.getTongHoaDon(monthtemp4.ToString(), (yearNowSelected + 1).ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp5, int.Parse(Controller.getTongHoaDon(monthtemp5.ToString(), (yearNowSelected + 1).ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp1, int.Parse(Controller.getHoaDonHuy(monthtemp1.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp2, int.Parse(Controller.getHoaDonHuy(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp3, int.Parse(Controller.getHoaDonHuy(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp4, int.Parse(Controller.getHoaDonHuy(monthtemp4.ToString(), (yearNowSelected + 1).ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp5, int.Parse(Controller.getHoaDonHuy(monthtemp5.ToString(), (yearNowSelected + 1).ToString())[0]));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp1, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp1.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp2, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp2.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp3, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp3.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp4, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp4.ToString(), (yearNowSelected + 1).ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp5, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp5.ToString(), (yearNowSelected + 1).ToString())[0]), 2));
+            }
+            if (monthtemp3 == 1)
+            {
+                chart1.Series["Khách"].Points.Clear();
+                chart1.Series["Đơn đặt"].Points.Clear();
+                chart1.Series["Đơn hủy"].Points.Clear();
+                chart2.Series["Tổng Doanh Thu"].Points.Clear();
+
+                chart1.Series["Khách"].Points.AddXY(monthtemp1, int.Parse(Controller.getKhachMua(monthtemp1.ToString(), (yearNowSelected - 1).ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp2, int.Parse(Controller.getKhachMua(monthtemp2.ToString(), (yearNowSelected - 1).ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp3, int.Parse(Controller.getKhachMua(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp4, int.Parse(Controller.getKhachMua(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp5, int.Parse(Controller.getKhachMua(monthtemp5.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp1, int.Parse(Controller.getTongHoaDon(monthtemp1.ToString(), (yearNowSelected - 1).ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp2, int.Parse(Controller.getTongHoaDon(monthtemp2.ToString(), (yearNowSelected - 1).ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp3, int.Parse(Controller.getTongHoaDon(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp4, int.Parse(Controller.getTongHoaDon(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp5, int.Parse(Controller.getTongHoaDon(monthtemp5.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp1, int.Parse(Controller.getHoaDonHuy(monthtemp1.ToString(), (yearNowSelected - 1).ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp2, int.Parse(Controller.getHoaDonHuy(monthtemp2.ToString(), (yearNowSelected - 1).ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp3, int.Parse(Controller.getHoaDonHuy(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp4, int.Parse(Controller.getHoaDonHuy(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp5, int.Parse(Controller.getHoaDonHuy(monthtemp5.ToString(), yearNowSelected.ToString())[0]));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp1, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp1.ToString(), (yearNowSelected - 1).ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp2, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp2.ToString(), (yearNowSelected - 1).ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp3, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp3.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp4, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp4.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp5, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp5.ToString(), yearNowSelected.ToString())[0]), 2));
+            }
+            if (monthtemp3 == 2)
+            {
+                chart1.Series["Khách"].Points.Clear();
+                chart1.Series["Đơn đặt"].Points.Clear();
+                chart1.Series["Đơn hủy"].Points.Clear();
+                chart2.Series["Tổng Doanh Thu"].Points.Clear();
+
+                chart1.Series["Khách"].Points.AddXY(monthtemp1, int.Parse(Controller.getKhachMua(monthtemp1.ToString(), (yearNowSelected - 1).ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp2, int.Parse(Controller.getKhachMua(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp3, int.Parse(Controller.getKhachMua(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp4, int.Parse(Controller.getKhachMua(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Khách"].Points.AddXY(monthtemp5, int.Parse(Controller.getKhachMua(monthtemp5.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp1, int.Parse(Controller.getTongHoaDon(monthtemp1.ToString(), (yearNowSelected - 1).ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp2, int.Parse(Controller.getTongHoaDon(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp3, int.Parse(Controller.getTongHoaDon(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp4, int.Parse(Controller.getTongHoaDon(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn đặt"].Points.AddXY(monthtemp5, int.Parse(Controller.getTongHoaDon(monthtemp5.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp1, int.Parse(Controller.getHoaDonHuy(monthtemp1.ToString(), (yearNowSelected - 1).ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp2, int.Parse(Controller.getHoaDonHuy(monthtemp2.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp3, int.Parse(Controller.getHoaDonHuy(monthtemp3.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp4, int.Parse(Controller.getHoaDonHuy(monthtemp4.ToString(), yearNowSelected.ToString())[0]));
+                chart1.Series["Đơn hủy"].Points.AddXY(monthtemp5, int.Parse(Controller.getHoaDonHuy(monthtemp5.ToString(), yearNowSelected.ToString())[0]));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp1, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp1.ToString(), (yearNowSelected - 1).ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp2, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp2.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp3, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp3.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp4, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp4.ToString(), yearNowSelected.ToString())[0]), 2));
+                chart2.Series["Tổng Doanh Thu"].Points.AddXY(monthtemp5, Math.Round(float.Parse(Controller.getTongDoanhThu(monthtemp5.ToString(), yearNowSelected.ToString())[0]), 2));
+            }
             chart3.Series["Games"].Points.AddXY("Games AAA", Math.Round(((float)Controller.getCountAAA() / Controller.getCountAllGame()) * 100, 2));
             chart3.Series["Games"].Points.AddXY("Games Indie", Math.Round(((float)Controller.getCountIndie() / Controller.getCountAllGame()) * 100, 2));
         }
@@ -294,6 +407,7 @@ namespace Server
         {
             timer1.Stop();
             ReSize();
+            panel3.Location = new Point(595, 40);
         }
 
         private void panelRadius4_Click(object sender, EventArgs e)
