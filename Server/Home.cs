@@ -580,5 +580,10 @@ namespace Server
             panelRadius5.rColor = Color.FromArgb(41, 43, 47);
             panelRadius5.Refresh();
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Controller.InBaoCaoThang(monthNowSelected.ToString(), yearNowSelected.ToString(), block4, block3, block1, block2);
+        }
     }
 }

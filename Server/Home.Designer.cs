@@ -716,6 +716,7 @@ namespace Server
             this.label4.TabIndex = 0;
             this.label4.Text = "Xuất báo cáo";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // panelRadius1
             // 
