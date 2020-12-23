@@ -48,7 +48,7 @@ namespace Server
             // 
             // timer2
             // 
-            this.timer2.Interval = 7500;
+            this.timer2.Interval = 3300;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // pictureBox1
@@ -75,7 +75,7 @@ namespace Server
             // 
             // timer3
             // 
-            this.timer3.Interval = 2000;
+            this.timer3.Interval = 1300;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // panel1
