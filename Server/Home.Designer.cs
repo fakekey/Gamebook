@@ -65,9 +65,9 @@ namespace Server
             this.panel5 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.triangle21 = new Server.Triangle2();
             this.panelRadius5 = new Server.PanelRadius();
             this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.triangle21 = new Server.Triangle2();
             this.panelRadius4 = new Server.PanelRadius();
             this.label3 = new System.Windows.Forms.Label();
             this.lbNam = new System.Windows.Forms.Label();
@@ -439,15 +439,6 @@ namespace Server
             this.panel4.Size = new System.Drawing.Size(251, 8);
             this.panel4.TabIndex = 0;
             // 
-            // triangle21
-            // 
-            this.triangle21.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.triangle21.Location = new System.Drawing.Point(10, 0);
-            this.triangle21.Name = "triangle21";
-            this.triangle21.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(124)))));
-            this.triangle21.Size = new System.Drawing.Size(21, 8);
-            this.triangle21.TabIndex = 1;
-            // 
             // panelRadius5
             // 
             this.panelRadius5.Controls.Add(this.chart3);
@@ -502,7 +493,7 @@ namespace Server
             this.chart3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chart3.Dock = System.Windows.Forms.DockStyle.Fill;
             legend1.BackColor = System.Drawing.Color.Transparent;
-            legend1.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
+            legend1.Font = new System.Drawing.Font("Quicksand", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel, ((byte)(0)));
             legend1.ForeColor = System.Drawing.Color.White;
             legend1.IsTextAutoFit = false;
             legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
@@ -518,11 +509,14 @@ namespace Server
             series1.ChartArea = "ChartArea1";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.CustomProperties = "LabelStyle=Top";
+            series1.EmptyPointStyle.AxisLabel = " ";
             series1.Font = new System.Drawing.Font("Quicksand", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             series1.IsValueShownAsLabel = true;
             series1.IsXValueIndexed = true;
+            series1.Label = "#PERCENT";
             series1.LabelForeColor = System.Drawing.Color.White;
             series1.Legend = "Legend1";
+            series1.LegendText = "#VALX";
             series1.Name = "Games";
             series1.SmartLabelStyle.Enabled = false;
             this.chart3.Series.Add(series1);
@@ -532,6 +526,15 @@ namespace Server
             this.chart3.TextAntiAliasingQuality = System.Windows.Forms.DataVisualization.Charting.TextAntiAliasingQuality.Normal;
             this.chart3.MouseEnter += new System.EventHandler(this.chart3_MouseEnter);
             this.chart3.MouseLeave += new System.EventHandler(this.chart3_MouseLeave);
+            // 
+            // triangle21
+            // 
+            this.triangle21.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.triangle21.Location = new System.Drawing.Point(10, 0);
+            this.triangle21.Name = "triangle21";
+            this.triangle21.rColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(124)))));
+            this.triangle21.Size = new System.Drawing.Size(21, 8);
+            this.triangle21.TabIndex = 1;
             // 
             // panelRadius4
             // 
