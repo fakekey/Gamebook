@@ -213,22 +213,6 @@ namespace Server
             {
                 monthtemp1 = 11;
             }
-            if (monthtemp2 == -1)
-            {
-                monthtemp2 = 11;
-            }
-            if (monthtemp3 == -1)
-            {
-                monthtemp3 = 11;
-            }
-            if (monthtemp4 == -1)
-            {
-                monthtemp4 = 11;
-            }
-            if (monthtemp5 == -1)
-            {
-                monthtemp5 = 11;
-            }
 
             //Series là cột dữ liệu, Point.AddXY để thêm vào biểu đồ hoành độ vs tung độ bn thôi
             chart1.Series["Khách"].Points.AddXY(monthtemp1, int.Parse(Controller.getKhachMua(monthtemp1.ToString(), yearNowSelected.ToString())[0]));
