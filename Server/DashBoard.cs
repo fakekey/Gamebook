@@ -625,7 +625,6 @@ namespace Server
                 f3.AutoSize = false;
                 f3.Size = new Size(196, 68);
                 labelProducts = new lbProducts();
-                f3.Show();
                 labelProducts.ShowInTaskbar = false;
                 labelProducts.AutoSize = false;
                 labelProducts.Owner = f3;
